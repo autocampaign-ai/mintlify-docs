@@ -293,9 +293,25 @@
     "metatags": {
       "og:site_name": "Autocampaign AI Help Center",
       "og:type": "website",
-      "og:locale": "en_US",
-      "twitter:card": "summary_large_image"
+      "og:locale": "en_US"
     },
     "indexing": "navigable"
+  },
+  "description": "Help center for Autocampaign AI — guides for SMS, email, WhatsApp and call campaigns, CRM, automation, AI Employees, the unified inbox, compliance, and the developer API.",
+  "background": {
+    "color": {
+      "light": "#FFFFFF",
+      "dark": "#0F172A"
+    }
+  },
+  "fonts": {
+    "heading": {
+      "family": "Space Grotesk",
+      "weight": 700
+    },
+    "body": {
+      "family": "Inter",
+      "weight": 400
+    }
   }
 }
