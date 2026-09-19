@@ -31,6 +31,17 @@ Filter by status using the tabs (each shows a live count): **All**, **Scheduled*
 with the **All channels** filter. Columns include Name, Status, Channel, Segment,
 Delivery progress, Date, and Cost.
 
+{/* MEDIA-TODO screenshot | /images/campaigns/overview-campaigns-list.png
+Capture: The campaigns list with the status tabs and their live counts, the All channels filter, the New Campaign button, and rows in several statuses (Scheduled, Running, Completed) showing delivery progress and cost.
+Route: /campaigns
+Redact: Use demo campaign and segment names; nothing else sensitive.
+Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+{/*
+<Frame caption="The campaigns list with status tabs and the New Campaign button">
+  <img src="/images/campaigns/overview-campaigns-list.png" alt="Campaigns list with status tabs showing counts, a channel filter, and rows with status, segment, delivery progress, and cost" />
+</Frame>
+*/}
+
 Row actions depend on status:
 
 - **Pause** — while a campaign is Running.
@@ -50,6 +61,18 @@ Click **New Campaign** (`/campaigns/new`), pick **Text message** or **Email** on
 the channel screen, and click **Continue**. **Change channel** takes you back;
 switching to a different channel clears channel-specific fields.
 
+{/* MEDIA-TODO video | /videos/campaigns/overview-campaign-wizard.mp4
+Capture: Creating and sending an SMS campaign through every step of the campaign wizard. Target length: 90-120 seconds.
+Script: 1) On the campaigns list click New Campaign, pick Text message, and click Continue 2) Sender: select two phone numbers and name the campaign in the summary panel 3) Message: write a message, insert a first name variable, add a link, and toggle Track this link 4) Experiment: click Next to skip 5) Audience: pick two segments under Select Segments and point out the skipped counts and the final Recipients count 6) Schedule: choose Schedule for Later with a date, time, and Timezone, and leave Quiet hours on Use organization default 7) Wait for the Ready badge in the summary panel and click Send Campaign
+Route: /campaigns/new
+Redact: Use demo sender phone numbers (555-01xx), demo segment names, demo message text, and a demo link domain; do not show real recipient counts or costs from a customer workspace.
+Publish: add the file at the path above (or swap the video tag for a YouTube or Loom iframe), then delete this note and the comment markers around the Frame below. */}
+{/*
+<Frame caption="Create and send a campaign with the campaign wizard">
+  <video controls className="w-full aspect-video rounded-xl" src="/videos/campaigns/overview-campaign-wizard.mp4" title="Walkthrough of the campaign wizard from choosing a channel through sender, message, audience, schedule, and Send Campaign"></video>
+</Frame>
+*/}
+
 <Steps>
   <Step title="Sender" icon="hashtag">
     **SMS:** select one or more phone numbers — Autocampaign AI rotates them
@@ -62,6 +85,17 @@ switching to a different channel clears channel-specific fields.
     saved **Template**, attach media to send as MMS (the counter switches to
     "1 MMS"), and toggle **Track this link** on detected URLs. The panel shows
     the character count and SMS segments.
+
+    {/* MEDIA-TODO screenshot | /images/campaigns/overview-sms-message-step.png
+    Capture: The Message step for an SMS campaign with a message containing a merge tag and a URL, the Variables and Template controls, the Track this link toggle on, the character and segment counter, and the summary panel on the side.
+    Route: /campaigns/new
+    Redact: Use demo message text and a demo link domain; hide the real sender phone numbers in the summary panel.
+    Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+    {/*
+    <Frame caption="The Message step for a text campaign">
+      <img src="/images/campaigns/overview-sms-message-step.png" alt="Campaign wizard Message step with an SMS body, variable and template controls, link tracking toggle, and segment counter" />
+    </Frame>
+    */}
 
     **Email:** set a **Subject** (or use **Write subject with AI**), optional
     **Preview text**, and choose **Plain email** (rich text, with **AI draft**)
@@ -159,6 +193,17 @@ Details** card lists the audience, schedule type, timezone, **Quiet hours**
 and — for recurring campaigns — last run, next run, the recurrence rule, and
 upcoming occurrences shown in the campaign's timezone. Experiments show an
 **Experiment results** panel here.
+
+{/* MEDIA-TODO screenshot | /images/campaigns/overview-campaign-overview-tab.png
+Capture: A completed SMS campaign's page on the Overview tab with the Overview, Executions, and Links tabs, the header actions, the metric cards (Queued, Sent, Delivered, Failed, Cancelled, Total cost, clicks), and the Campaign Details card including the Quiet hours line.
+Route: /campaigns/:id
+Redact: Use a demo campaign name and segment names; hide sender phone numbers; make sure no recipient names or numbers are visible.
+Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+{/*
+<Frame caption="A campaign's Overview tab with delivery metrics and details">
+  <img src="/images/campaigns/overview-campaign-overview-tab.png" alt="Campaign page Overview tab with delivery metric cards, total cost, click totals, and the Campaign Details card" />
+</Frame>
+*/}
 
 **Executions:** pick a run (recurring campaigns) to see its metrics — email runs
 add **Opens** and **Unique opens** — and the **Messages for this run** table

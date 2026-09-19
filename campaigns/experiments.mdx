@@ -32,6 +32,18 @@ page (`/campaigns/:id`).
   <Step title="Turn it on" icon="toggle-on">
     On the **Experiment** step, switch on **Test two versions of this
     campaign**.
+
+    {/* MEDIA-TODO video | /videos/campaigns/experiments-experiment-setup.mp4
+    Capture: Setting up an A/B experiment on the Experiment step of the campaign wizard, from turning it on to the summary line shown before sending. Target length: 60-90 seconds.
+    Script: 1) In the campaign wizard, with the Message step finished, open the Experiment step 2) Switch on Test two versions of this campaign 3) Under What do you want to test pick Message content 4) Click Generate ideas, pick the Friendly tone, click Generate, and choose one idea as Version B 5) Under How should we split your audience keep Smart test (Recommended) 6) Under How should we pick the winner choose Click rate and set the test to run for 3 hours 7) Turn on Ask me before sending the winner 8) Point out the contacts per version hint and the experiment line in the summary panel
+    Route: /campaigns/new
+    Redact: Use demo sender numbers, demo message text, and a demo link domain; do not show real segment names or recipient counts from a customer workspace.
+    Publish: add the file at the path above (or swap the video tag for a YouTube or Loom iframe), then delete this note and the comment markers around the Frame below. */}
+    {/*
+    <Frame caption="Set up an A/B experiment in the campaign wizard">
+      <video controls className="w-full aspect-video rounded-xl" src="/videos/campaigns/experiments-experiment-setup.mp4" title="Walkthrough of turning on an experiment, writing Version B, choosing the audience split, and choosing how the winner is picked"></video>
+    </Frame>
+    */}
   </Step>
   <Step title="Choose what to test" icon="vial">
     Under **What do you want to test?** pick **Subject line** (email only) or
@@ -55,6 +67,17 @@ page (`/campaigns/:id`).
     (Recommended)** — 10% get A, 10% get B, the winner goes to the remaining
     80% — or **Even split** (50/50, nothing held back), or **Custom** with your
     own **Version A %**, **Version B %**, and **Winner %** adding up to 100.
+
+    {/* MEDIA-TODO screenshot | /images/campaigns/experiments-audience-split.png
+    Capture: The Experiment step with Test two versions of this campaign on, Version A and Version B both filled in, and the How should we split your audience options visible with Smart test (Recommended) selected. Include the contacts per version hint below.
+    Route: /campaigns/new
+    Redact: Use demo message text and a demo link domain; nothing else sensitive.
+    Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+    {/*
+    <Frame caption="Choose how the audience is split between Version A, Version B, and the winner">
+      <img src="/images/campaigns/experiments-audience-split.png" alt="Experiment step showing Version A and Version B with the Smart test, Even split, and Custom audience split options" />
+    </Frame>
+    */}
   </Step>
   <Step title="Decide how to pick the winner" icon="trophy">
     Under **How should we pick the winner?** choose **Open rate** (email only),
@@ -104,6 +127,17 @@ experiment is waiting on you, open the campaign, click **Send this version** on
 the card you prefer, and confirm. Click **Don't send to remaining audience** to
 end the experiment without sending more messages.
 
+{/* MEDIA-TODO screenshot | /images/campaigns/experiments-waiting-for-decision.png
+Capture: The Experiment results panel in the Waiting for your decision state, with both version cards showing a Send this version button and the Don't send to remaining audience link.
+Route: /campaigns/:id
+Redact: Use a demo campaign name and demo message text in both version cards; hide sender phone numbers or email addresses.
+Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+{/*
+<Frame caption="Pick the winner yourself when the experiment is waiting on you">
+  <img src="/images/campaigns/experiments-waiting-for-decision.png" alt="Experiment results panel waiting for a decision, with a Send this version button on each version card" />
+</Frame>
+*/}
+
 <Note>
   The campaign must still be **Running**. Pausing or cancelling it cancels the
   experiment, and no winner is sent.
@@ -120,6 +154,17 @@ test runs, the leading card says "Version B is ahead so far"; afterwards the
 winner gets a **Winner** badge and a tag: **High confidence**, **Small audience
 — directional result**, or **Picked manually**. Delivery totals for the whole
 campaign appear in the metric cards above.
+
+{/* MEDIA-TODO screenshot | /images/campaigns/experiments-results-panel.png
+Capture: The Experiment results panel on the campaign's Overview tab after a winner was sent: the timeline ending in Winner sent, both version cards with Delivered, Open rate, Click rate, and Unsubscribes, and the Winner badge with a High confidence tag.
+Route: /campaigns/:id
+Redact: Use a demo campaign name and demo message text; hide sender phone numbers or email addresses.
+Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+{/*
+<Frame caption="Experiment results with the winning version marked">
+  <img src="/images/campaigns/experiments-results-panel.png" alt="Experiment results timeline and two version cards with delivery and engagement rates, one marked Winner with High confidence" />
+</Frame>
+*/}
 
 ## FAQ
 

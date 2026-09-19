@@ -36,6 +36,17 @@ are hidden or disabled.
     Enter a **Subject** (required, up to 500 characters) and an optional
     **Description** (up to 10,000 characters). Choose a **Priority** (defaults to
     **Medium**), an **Assignee**, an optional **Due** date and time, and **Tags**.
+
+    {/* MEDIA-TODO screenshot | /images/inbox/tickets-new-ticket-form.png
+    Capture: The New Ticket form filled in with a Subject, a short Description, Priority set to Medium, an Assignee, a Due date and time, and two Tags, with the Create ticket button visible.
+    Route: /tickets
+    Redact: Use a demo subject and description with no customer details; replace the assignee name and avatar with a demo user.
+    Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+    {/*
+    <Frame caption="The New Ticket form">
+      <img src="/images/inbox/tickets-new-ticket-form.png" alt="New Ticket form with subject, description, priority, assignee, due date, and tags filled in" />
+    </Frame>
+    */}
   </Step>
   <Step title="Click Create ticket">
     New tickets start as **Open** and get a number such as `TCK-123`. You're
@@ -48,6 +59,17 @@ are hidden or disabled.
 Switch between **List view** and **Board view** (one column per status); your
 choice is remembered on that browser. On the board, drag a card to another column
 to change its status — only valid moves are accepted.
+
+{/* MEDIA-TODO screenshot | /images/inbox/tickets-board-view.png
+Capture: The Tickets page in Board view with one column per status and several cards spread across Open, In progress, and Resolved. The List view and Board view switch, Search tickets field, and Filters button must be visible.
+Route: /tickets
+Redact: Use demo ticket subjects; replace assignee names and avatars with demo users; make sure no customer names appear on cards.
+Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+{/*
+<Frame caption="Board view groups tickets into one column per status">
+  <img src="/images/inbox/tickets-board-view.png" alt="Tickets board with status columns holding ticket cards, plus the view switch, search field, and Filters button" />
+</Frame>
+*/}
 
 Use **Search tickets…** to match the subject, description, or ticket number. Open
 **Filters** to narrow by **Status**, **Priority**, **Assignee**, **Due date range**,
@@ -92,6 +114,17 @@ Open a ticket to:
 - Review the **Activity** tab — a timeline of status changes, assignments, due
   dates, tags, comments, and attachments.
 - **Delete ticket** from the sidebar. This can't be undone.
+
+{/* MEDIA-TODO screenshot | /images/inbox/tickets-ticket-detail.png
+Capture: A single ticket page showing the subject and description, the Comments tab with one comment, the Attachments area with one uploaded file, and the sidebar with Status, Priority, Assignee, Due, Reporter, and Tags.
+Route: /tickets/:ticketId
+Redact: Use a demo subject, description, comment text, and attachment file name; replace the reporter, assignee, and commenter names with demo users.
+Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+{/*
+<Frame caption="A ticket page with comments, attachments, and the sidebar">
+  <img src="/images/inbox/tickets-ticket-detail.png" alt="Ticket page with a comment thread, an attachment, and a sidebar for status, priority, assignee, and due date" />
+</Frame>
+*/}
 
 ## FAQ
 

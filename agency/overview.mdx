@@ -46,6 +46,17 @@ high usage or a missing plan), up to six client cards under **Your clients**
 with **View all clients** (`/agency/clients`), and **Recent activity**, a
 plain-language log of price changes, setup installs and branding updates.
 
+{/* MEDIA-TODO screenshot | /images/agency/overview-my-agency-page.png
+Capture: The My Agency page with the four stats (Client workspaces, Monthly revenue, Platform cost, Estimated earnings), Agency usage this period, Clients needing attention, client cards under Your clients, and Recent activity.
+Route: /agency
+Redact: Replace client workspace names with demo businesses; replace revenue, cost and earnings amounts with round demo figures; replace teammate names in Recent activity.
+Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+{/*
+<Frame caption="The My Agency page">
+  <img src="/images/agency/overview-my-agency-page.png" alt="My Agency page showing client workspace health, revenue, platform cost and earnings stats above client cards and recent activity" />
+</Frame>
+*/}
+
 <Note>
   Revenue, cost and health come from live billing data. When it is temporarily
   unavailable for a client, the card shows **No billing data** and the totals
@@ -56,6 +67,18 @@ plain-language log of price changes, setup installs and branding updates.
 
 Click **Add Client** on **My Agency**, on **Clients**, or in the workspace
 switcher. The wizard (`/agency/clients/new`) has five steps:
+
+{/* MEDIA-TODO video | /videos/agency/overview-add-client-walkthrough.mp4
+Capture: Add a client workspace with the five-step Add Client wizard, ending on the success screen. Target length: 2–3 minutes.
+Script: 1) On My Agency click Add Client 2) Enter the Business name, Industry and contact details 3) Choose a setup marked Recommended 4) Choose a plan and point out Your cost 5) Choose Add a percentage on top, answer Who pays AutoCampaign?, and show the Your numbers panel 6) Choose Use my agency branding and click Create client workspace 7) Show the success screen with Open workspace and Add another client
+Route: /agency/clients/new
+Redact: Use a fictional business name, contact name, email and phone; use demo prices and margins in Your numbers; no real client workspace names in the switcher.
+Publish: add the file at the path above (or swap the video tag for a YouTube or Loom iframe), then delete this note and the comment markers around the Frame below. */}
+{/*
+<Frame caption="Adding a client workspace">
+  <video controls className="w-full aspect-video rounded-xl" src="/videos/agency/overview-add-client-walkthrough.mp4" title="Walkthrough of the Add Client wizard: client details, setup, plan, price, branding and the success screen"></video>
+</Frame>
+*/}
 
 <Steps>
   <Step title="About the client" icon="user">
@@ -74,6 +97,17 @@ switcher. The wizard (`/agency/clients/new`) has five steps:
     **Set my own price**, answer **Who pays AutoCampaign?**, and optionally
     fill **Invite your client (optional)**. The **Your numbers** panel is for
     your eyes only.
+
+    {/* MEDIA-TODO screenshot | /images/agency/overview-wizard-set-your-price.png
+    Capture: The Set your price step with Add a percentage on top selected, the Who pays AutoCampaign? question answered, the optional Invite your client fields, and the Your numbers panel showing cost, client price and earnings.
+    Route: /agency/clients/new (Set your price step)
+    Redact: Use demo prices and margins; leave the invite email empty or use a demo address; no real client business name in the wizard header.
+    Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+    {/*
+    <Frame caption="Setting the client's price in the wizard">
+      <img src="/images/agency/overview-wizard-set-your-price.png" alt="Add Client wizard price step with three pricing options, the who pays question and a Your numbers panel" />
+    </Frame>
+    */}
   </Step>
   <Step title="Branding" icon="palette">
     Choose **Use my agency branding** or **Use the client's branding**, then
@@ -100,6 +134,17 @@ make**, usage bars for **Texts**, **Email** and **AI**, and the member count.
 **Open workspace** switches you into the client's workspace (the one you are in
 reads **Current workspace**). **More actions** offers **View pricing**, **Open
 workspace**, **Getting started checklist** and **Save as Setup**.
+
+{/* MEDIA-TODO screenshot | /images/agency/overview-client-card-more-actions.png
+Capture: The Clients page with several client cards showing plan, health badge, Your client pays, You make, usage bars and member count, with one card's More actions menu open.
+Route: /agency/clients
+Redact: Replace client workspace names with demo businesses and the Your client pays and You make amounts with demo figures.
+Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+{/*
+<Frame caption="A client card with More actions open">
+  <img src="/images/agency/overview-client-card-more-actions.png" alt="Agency Clients page with client cards showing plan, health badge, prices and usage bars, and an open More actions menu" />
+</Frame>
+*/}
 
 The checklist tracks the client's first steps. Six items — from **Plan chosen**
 to **Team member invited** — complete automatically; **Branding reviewed

@@ -12,6 +12,18 @@ widgets you add, resize, and reorder. Every saved dashboard has its own address
 (`/dashboards/:id`), and you switch between them from the dashboard selector next
 to the period filter.
 
+{/* MEDIA-TODO video | /videos/analytics/custom-dashboards-build-a-dashboard.mp4
+Capture: End-to-end walkthrough of creating a custom dashboard, adding and arranging widgets, and sharing it with a teammate. Target length: 60–90 seconds.
+Script: 1) On the Dashboard, open the dashboard selector and choose New dashboard… 2) Enter a Name, choose Blank under Starting point, keep Only me, and click Create 3) Click Customize, browse a category in the Add a widget gallery, click Preview on a widget, then Add 4) Add two more widgets, drag one by its handle to reorder, and change a widget's Size from Widget actions 5) Click Done 6) Open the selector, click Dashboard actions, choose Share…, pick Selected people, set a teammate to Can view, and click Save
+Route: /
+Redact: Use a demo workspace; replace teammate names and email addresses in the Share dialog with demo users, and make sure widgets that show conversations or campaigns contain only sample contact names and message text.
+Publish: add the file at the path above (or swap the video tag for a YouTube or Loom iframe), then delete this note and the comment markers around the Frame below. */}
+{/*
+<Frame caption="Build, arrange, and share a custom dashboard">
+  <video controls className="w-full aspect-video rounded-xl" src="/videos/analytics/custom-dashboards-build-a-dashboard.mp4" title="Walkthrough of creating a custom dashboard, adding and resizing widgets, and sharing it with a teammate"></video>
+</Frame>
+*/}
+
 <Info>
   **Difficulty:** Beginner &nbsp;·&nbsp; Changes save automatically while you
   customize.
@@ -36,6 +48,17 @@ to the period filter.
     Enter a **Name** (up to 60 characters; each of your dashboards needs a unique
     name). Under **Starting point**, choose **Standard layout** to start with the
     default set of widgets, or **Blank** to start empty.
+
+    {/* MEDIA-TODO screenshot | /images/analytics/custom-dashboards-new-dashboard-dialog.png
+    Capture: The New dashboard dialog with a sample Name entered, the Starting point options (Standard layout and Blank), and the Assign users options (Only me, Everyone in workspace, Selected people) visible along with the Create button.
+    Route: / (dashboard selector → New dashboard…)
+    Redact: nothing sensitive
+    Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+    {/*
+    <Frame caption="Name the dashboard and pick a starting point">
+      <img src="/images/analytics/custom-dashboards-new-dashboard-dialog.png" alt="New dashboard dialog with a name field, standard or blank starting point, and access options" />
+    </Frame>
+    */}
   </Step>
   <Step title="Choose who can access it" icon="user-group">
     Under **Assign users**, keep **Only me**, or pick **Everyone in workspace** or
@@ -59,6 +82,17 @@ to the period filter.
     The **Add a widget** gallery opens. Browse by category (**Marketing**,
     **Conversations**, **Analytics**, **Appointments**, **Workspace**), use
     **Search widgets…**, or pick from **Recommended**.
+
+    {/* MEDIA-TODO screenshot | /images/analytics/custom-dashboards-widget-gallery.png
+    Capture: The Add a widget gallery open after clicking Customize, showing the category list (Marketing, Conversations, Analytics, Appointments, Workspace), the Search widgets… field, the Recommended section, and widget cards with Preview and Add buttons. At least one widget should show the On dashboard marker.
+    Route: /dashboards/:id (Customize)
+    Redact: nothing sensitive (gallery previews use sample numbers marked Example)
+    Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+    {/*
+    <Frame caption="The Add a widget gallery">
+      <img src="/images/analytics/custom-dashboards-widget-gallery.png" alt="Widget gallery with category navigation, a search field, recommended widgets, and preview and add buttons on each card" />
+    </Frame>
+    */}
   </Step>
   <Step title="Add widgets" icon="plus">
     Click **Preview** to see an example and what the widget shows, then **Add**
@@ -129,6 +163,17 @@ on the built-in **Overview** if you have none.
   <Step title="Pick who can access" icon="lock">
     Under **Who can access?**, choose **Only me**, **Everyone in workspace**
     (view-only for everyone), or **Selected people**.
+
+    {/* MEDIA-TODO screenshot | /images/analytics/custom-dashboards-share-dialog.png
+    Capture: The Share dialog with Who can access? set to Selected people, two teammates listed with one set to Can view and one to Can edit, and the Save button visible.
+    Route: /dashboards/:id (selector → Dashboard actions → Share…)
+    Redact: Replace teammate names and email addresses with demo users.
+    Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+    {/*
+    <Frame caption="Choose who can access a dashboard">
+      <img src="/images/analytics/custom-dashboards-share-dialog.png" alt="Share dialog with access options and two selected teammates set to can view and can edit" />
+    </Frame>
+    */}
   </Step>
   <Step title="Set each person's access" icon="user-pen">
     For **Selected people**, search for teammates and set each to **Can view** or

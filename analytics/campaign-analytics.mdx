@@ -32,6 +32,17 @@ Open **Campaigns** in the sidebar (`/campaigns`) and click a campaign
     recipients were skipped because they had opted out, **Failed** adds a note
     such as *12 unsubscribed, not sent*. Text campaigns also show **Total cost**,
     **Total clicks**, and **Unique clicks**.
+
+    {/* MEDIA-TODO screenshot | /images/analytics/campaign-analytics-overview-tab.png
+    Capture: A sent text campaign's detail page on the Overview tab, showing the three tabs (Overview, Executions, Links), the Refresh button, and the Aggregate Performance (All Runs) cards including Total cost, Total clicks, and Unique clicks.
+    Route: /campaigns/:id
+    Redact: Use a demo campaign name and replace the Total cost amount with a sample figure; make sure no real message content with customer names shows in Template Preview.
+    Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+    {/*
+    <Frame caption="Aggregate performance on a campaign's Overview tab">
+      <img src="/images/analytics/campaign-analytics-overview-tab.png" alt="Campaign detail page on the Overview tab with queued, sent, delivered, failed, and cancelled cards plus cost and click totals" />
+    </Frame>
+    */}
   </Step>
   <Step title="Review experiment results" icon="flask">
     If the campaign ran an A/B test, **Experiment results** compares **Version A**
@@ -77,6 +88,17 @@ many for a recurring campaign.
     **Clicked** chips for email. For email, click **Activity** on a row to open
     **Recipient activity** — the delivery timeline for that person (**Processed**,
     **Delivered**, **Opened**, **Clicked**, **Bounced**, and so on).
+
+    {/* MEDIA-TODO screenshot | /images/analytics/campaign-analytics-run-recipients.png
+    Capture: The Executions tab with one run selected and the Messages for this run table visible, showing the Contact, From, To, Status, Engagement, and Sent columns with a mix of statuses and at least one Replied chip and one clicked link. Include the search box, Status filter, and Bulk actions button.
+    Route: /campaigns/:id (Executions tab)
+    Redact: Replace every contact name, phone number, and email address in the table with demo data, and replace the From number with a sample number.
+    Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+    {/*
+    <Frame caption="Recipients for a single run on the Executions tab">
+      <img src="/images/analytics/campaign-analytics-run-recipients.png" alt="Executions tab showing a selected run and a recipients table with status and engagement chips for each contact" />
+    </Frame>
+    */}
   </Step>
   <Step title="Filter and search" icon="filter">
     Search by name, number, or email, filter by **Status**, and filter failed
@@ -99,6 +121,17 @@ The **Links** tab summarizes **Total links**, **Total clicks**, **Unique clicks*
 and **CTR**; highlights the **Top link**, **Most clicks by** (contact), **Top
 device**, **Top country**, and **Top browser**; and lists every link with
 **Destination**, **Clicks**, **Unique clicks**, **CTR**, and **Last click**.
+
+{/* MEDIA-TODO screenshot | /images/analytics/campaign-analytics-links-tab.png
+Capture: The Links tab of a campaign that has tracked links with clicks: the summary cards (Total links, Total clicks, Unique clicks, CTR), the highlights (Top link, Most clicks by, Top device, Top country, Top browser), and the per-link table.
+Route: /campaigns/:id (Links tab)
+Redact: Replace the contact shown under Most clicks by with a demo name, and use demo destination URLs in the link table.
+Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+{/*
+<Frame caption="Link performance on the Links tab">
+  <img src="/images/analytics/campaign-analytics-links-tab.png" alt="Links tab with click summary cards, top link and device highlights, and a table of tracked links" />
+</Frame>
+*/}
 
 <Note>
   Analytics on this page cover one campaign. To compare campaigns, see revenue

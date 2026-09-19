@@ -46,6 +46,17 @@ teammates, IVR menu, voicemail), and every call lands under **Calls** in the sid
     (**Always**, **Never**, **Incoming calls only**, **Outgoing calls only**,
     **Business hours only**), set the **Ring Timeout** (5–600 seconds), and click
     **Save Changes**.
+
+    {/* MEDIA-TODO screenshot | /images/inbox/calls-number-basic-info.png
+    Capture: The per-number voice settings page with the Basic Info section open: Enable line switched on, the Recording Policy dropdown expanded to show all five options, Ring Timeout filled in, and the Save Changes button visible.
+    Route: /settings/voice/<number-id> (click a number in the table on /settings/voice)
+    Redact: Replace the real phone number and its label with a demo number such as (555) 010-0142; hide any other workspace numbers listed on the page.
+    Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+    {/*
+    <Frame caption="Basic Info settings for a voice-enabled number">
+      <img src="/images/inbox/calls-number-basic-info.png" alt="Basic Info section of a number's voice settings with Enable line on, Recording Policy options, and Ring Timeout" />
+    </Frame>
+    */}
   </Step>
 </Steps>
 
@@ -53,6 +64,18 @@ teammates, IVR menu, voicemail), and every call lands under **Calls** in the sid
 
 Each number uses one strategy — **IVR Menu** or **Direct Forwarding** — with
 separate **Business Hours** and **After Hours** settings.
+
+{/* MEDIA-TODO video | /videos/inbox/calls-inbound-routing-setup.mp4
+Capture: An end-to-end walkthrough of routing inbound calls for one number, from availability through Direct Forwarding, the IVR Menu alternative, and voicemail. Target length: 90-120 seconds.
+Script: 1) Open Settings, then Voice, and click a number in the table 2) Under Availability set the timezone, weekly Business Hours, and one holiday 3) In Direct Forwarding use Add Teammate under Who rings first, then pick a rule for All teammates busy, No answer, and No one available 4) Show Max wait and Hold queue with Max hold 5) Switch to Use IVR Menu, add a greeting and two keypad options (Ring Teammates and Voicemail Box), and show the After Hours choice 6) Under Voicemail Settings toggle Enable voicemail, set the Greeting Message and Max Recording Length 7) Click Save Changes
+Route: /settings/voice
+Redact: Use demo phone numbers only (555-01xx), including any Forward to a number or External Forward value; replace teammate names and avatars with demo users; do not play any real greeting audio or call recording.
+Publish: add the file at the path above (or swap the video tag for a YouTube or Loom iframe), then delete this note and the comment markers around the Frame below. */}
+{/*
+<Frame caption="Set up inbound call routing for a number">
+  <video controls className="w-full aspect-video rounded-xl" src="/videos/inbox/calls-inbound-routing-setup.mp4" title="Walkthrough of setting business hours, direct forwarding, an IVR menu, and voicemail for an inbound number in Settings, Voice"></video>
+</Frame>
+*/}
 
 <Steps>
   <Step title="Set availability" icon="clock">
@@ -65,6 +88,17 @@ separate **Business Hours** and **After Hours** settings.
     voicemail**, **Ring teammates**, or **Forward to a number**. **Max wait** holds
     a caller for a busy teammate; **Hold queue** parks unanswered callers on hold
     music for up to **Max hold** so any online agent can pick them up.
+
+    {/* MEDIA-TODO screenshot | /images/inbox/calls-direct-forwarding-rules.png
+    Capture: The Direct Forwarding section for Business Hours with two teammates added under Who rings first, and the three rules (All teammates busy, No answer, No one available) each set to a different action. Max wait and Hold queue with Max hold must be visible.
+    Route: /settings/voice/<number-id>
+    Redact: Replace teammate names, avatars, and emails with demo users; any Forward to a number value must be a demo number such as (555) 010-0199.
+    Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+    {/*
+    <Frame caption="Direct Forwarding rules for busy, unanswered, and unavailable teammates">
+      <img src="/images/inbox/calls-direct-forwarding-rules.png" alt="Direct Forwarding settings showing who rings first and the fallback rules for busy, no answer, and no one available" />
+    </Frame>
+    */}
   </Step>
   <Step title="IVR Menu" icon="list-ol">
     Set a greeting and keypad options (`0`–`9`, `*`, `#`) that **Ring Teammates**,
@@ -121,6 +155,17 @@ date range, **Direction**, **Status** (**Completed**, **Missed**, **Voicemail**,
 **Busy**, **No answer**, **Failed**, **Canceled**), **Disposition**, and
 **Recording**. Click a row for **Duration**, **Wait**, **Talk**, and **Billed**
 minutes, **Recordings**, **Info** and **Timeline** tabs, and **Open contact**.
+
+{/* MEDIA-TODO screenshot | /images/inbox/calls-call-log.png
+Capture: The Calls page with the four stat cards (Total calls, Missed rate, Total talk time, Avg duration), the filter row, and a table that mixes Completed, Missed, and Voicemail rows. Open one row so the detail panel with Duration, Wait, Talk, Billed, and the Recordings tab shows.
+Route: /calls
+Redact: Replace every caller name and phone number with demo data; do not show a real call recording or voicemail (use a test recording); hide agent names that belong to real staff.
+Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+{/*
+<Frame caption="The call log with stats, filters, and a call's details">
+  <img src="/images/inbox/calls-call-log.png" alt="Calls page with summary stat cards, a filterable call table, and an open call detail panel showing durations and recordings" />
+</Frame>
+*/}
 
 Recordings and voicemails play inline with skip, speed, and volume controls and a
 **Download** button; voicemails show who heard them. Finished calls also appear as

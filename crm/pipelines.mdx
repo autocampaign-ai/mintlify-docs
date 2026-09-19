@@ -51,6 +51,18 @@ The **Customize pipeline** sheet and the Pipelines page offer the same controls:
   your own; blank shows **Value**.
 - **Currency** — applies to new opportunities; existing ones keep theirs.
 
+{/* MEDIA-TODO video | /videos/crm/pipelines-customize-walkthrough.mp4
+Capture: Customizing a pipeline from the board: value label and currency, then adding, renaming, reordering and deleting stages, and adding a custom field. Target length: 90–120 seconds.
+Script: 1) On the board click the pipeline name in the header and choose Customize pipeline 2) Edit the Pipeline name and Description inline 3) Set a Value label (for example Treatment value) and a Currency 4) Click Add stage, type a name and press Enter 5) Click a stage name to rename it, drag it to reorder, and use the stage's ⋮ menu to Set as default 6) Delete a stage that holds deals and pick a target under Move opportunities to 7) In Fields click Add field, name it, choose Dropdown, enter Options and choose Available in 8) Close the sheet and show the board reflecting the new stages and value label.
+Route: /pipelines
+Redact: record in a demo workspace: board cards visible behind the sheet must use fictional opportunity and contact names and round demo deal values; owner names must be demo users.
+Publish: add the file at the path above (or swap the video tag for a YouTube or Loom iframe), then delete this note and the comment markers around the Frame below. */}
+{/*
+<Frame caption="Customizing a pipeline">
+  <video controls className="w-full aspect-video rounded-xl" src="/videos/crm/pipelines-customize-walkthrough.mp4" title="Walkthrough of customizing a pipeline: value label, currency, adding and reordering stages, deleting a stage and adding a custom field"></video>
+</Frame>
+*/}
+
 ### Stages
 
 *Click a name to rename · drag to reorder · ★ marks where new opportunities start.*
@@ -58,6 +70,17 @@ The **Customize pipeline** sheet and the Pipelines page offer the same controls:
 - **Add stage** — type a name and press Enter. Up to 20 open stages; new ones go right before Won.
 - **Stage options** (⋮) — **Rename**, **Set as default** (where new opportunities land) and **Delete**.
 - **Won** and **Lost** are marked **System stage**: no rename, reorder or delete.
+
+{/* MEDIA-TODO screenshot | /images/crm/pipelines-stages-section.png
+Capture: The Stages section of the Customize pipeline sheet showing the open stages, the ★ default marker, one stage's ⋮ Stage options menu open (Rename, Set as default, Delete), the Add stage input, and Won and Lost marked System stage.
+Route: /pipelines
+Redact: if board cards are visible behind the sheet, use fictional opportunity names and round demo deal values; otherwise nothing sensitive.
+Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+{/*
+<Frame caption="Stages in the Customize pipeline sheet">
+  <img src="/images/crm/pipelines-stages-section.png" alt="Customize pipeline sheet listing stages with a default star, a stage options menu and the Won and Lost system stages" />
+</Frame>
+*/}
 
 The board offers the same edits: click a column title to rename, use ⋮ for
 **Move left**, **Move right**, **Set as default**, **Add automation** (opens
@@ -77,6 +100,17 @@ Workflows) and **Delete**, plus a trailing **Add stage** column.
   </Step>
   <Step title="Relocate its opportunities" icon="arrow-right">
     If the stage holds deals, pick another open stage under **Move opportunities to**, then **Delete**.
+
+    {/* MEDIA-TODO screenshot | /images/crm/pipelines-delete-stage-move-opportunities.png
+    Capture: The delete-stage confirmation for a stage that still holds deals, showing the Delete "Name"? prompt, the Move opportunities to picker with another open stage selected, and the Delete button.
+    Route: /pipelines
+    Redact: use a generic stage name; if opportunity names or deal values show behind the dialog, they must be fictional demo data.
+    Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+    {/*
+    <Frame caption="Moving deals before deleting a stage">
+      <img src="/images/crm/pipelines-delete-stage-move-opportunities.png" alt="Delete stage dialog with a Move opportunities to picker for choosing where the stage's deals go" />
+    </Frame>
+    */}
   </Step>
 </Steps>
 
@@ -92,6 +126,17 @@ Each pipeline's **Fields** section lists its custom fields, tagged **All pipelin
     Click **Add field** (or **Create field** in the list view's **Columns** menu).
     Type a **Field name**, press Enter and answer **What type?**: Text, Number,
     Currency, Date, Dropdown, Multi-select, Checkbox, URL, Email or Phone.
+
+    {/* MEDIA-TODO screenshot | /images/crm/pipelines-add-field.png
+    Capture: The Fields section with a couple of existing fields tagged All pipelines or This pipeline, and the Add field flow open showing a Field name and the What type? choices.
+    Route: /pipelines
+    Redact: use generic demo field names (for example Treatment type, Referral partner); nothing else sensitive.
+    Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+    {/*
+    <Frame caption="Adding a custom field to a pipeline">
+      <img src="/images/crm/pipelines-add-field.png" alt="Pipeline Fields section with existing fields tagged by scope and the Add field type picker open" />
+    </Frame>
+    */}
   </Step>
   <Step title="Options and scope" icon="list">
     Dropdown and Multi-select need **Options**, one per line. With more than one

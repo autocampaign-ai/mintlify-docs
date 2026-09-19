@@ -48,6 +48,17 @@ You need:
   <Step title="Open the Telnyx channel">
     Go to **Settings → Channels**. Under **SMS**, find the **Telnyx** card
     ("Carrier-grade SMS messaging via Telnyx") and click **Configure**.
+
+    {/* MEDIA-TODO screenshot | /images/providers/telnyx-card.png
+    Capture: Settings → Channels scrolled to the SMS group, with the Telnyx card and its Configure button clearly visible (not yet connected).
+    Route: Settings → Channels
+    Redact: account IDs or real phone numbers on any other connected provider card
+    Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+    {/*
+    <Frame caption="Settings → Channels → Telnyx">
+      <img src="/images/providers/telnyx-card.png" alt="Channel settings SMS group showing the Telnyx provider card with its description and a Configure button" />
+    </Frame>
+    */}
   </Step>
   <Step title="Enter your credentials">
     On the **Connect** tab, fill in:
@@ -65,9 +76,16 @@ You need:
     messaging profiles as a live check before saving. On success you'll see
     **"Channel connected successfully"** and the setup wizard opens.
 
+    {/* MEDIA-TODO screenshot | /images/providers/telnyx-connect.png
+    Capture: The Telnyx Connect tab with the API Key and Messaging Profile ID fields and the Connect & Save Credentials button. Fill both fields with obviously fake values in the right format so live validation passes.
+    Route: Settings → Channels (Telnyx card → Configure → Connect tab)
+    Redact: the API Key (show a fake value starting with KEY or keep it masked) and the Messaging Profile ID (use a made-up UUID)
+    Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+    {/*
     <Frame caption="Telnyx Connect tab">
-      <img src="/images/providers/telnyx-connect.png" alt="Telnyx Connect tab" />
+      <img src="/images/providers/telnyx-connect.png" alt="Telnyx Connect tab with API Key and optional Messaging Profile ID fields and a Connect and Save Credentials button" />
     </Frame>
+    */}
   </Step>
 </Steps>
 
@@ -81,6 +99,17 @@ After connecting, the **Set Up Your Channel** wizard runs in the recommended ord
   </Step>
   <Step title="Messaging Profile" icon="gear">
     Select one or more messaging profiles, or create a new one.
+
+    {/* MEDIA-TODO screenshot | /images/providers/telnyx-setup-wizard.png
+    Capture: The Set Up Your Channel wizard on the Messaging Profile step, with the four steps (10DLC Brand, Messaging Profile, 10DLC Campaign, Numbers) visible in the progress header and one profile selected.
+    Route: Settings → Channels (Telnyx, Set Up Your Channel wizard)
+    Redact: messaging profile names and IDs; 10DLC brand name if it is a real business
+    Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+    {/*
+    <Frame caption="The setup wizard on the Messaging Profile step">
+      <img src="/images/providers/telnyx-setup-wizard.png" alt="Set Up Your Channel wizard showing four steps, with a messaging profile selected on the second step" />
+    </Frame>
+    */}
   </Step>
   <Step title="10DLC Campaign" icon="file-lines">
     Register a campaign linked to your profile, or skip to numbers (recommended,

@@ -20,6 +20,17 @@ Each booking shows the **invitee**, **meeting type**, **host**, **when**, and
 **status**. Filter by status, meeting type, host, and date range. Times display in
 your workspace timezone.
 
+{/* MEDIA-TODO screenshot | /images/scheduling/bookings-list-filters.png
+Capture: The bookings list with rows in several statuses, showing the invitee, meeting type, host, when and status columns, and the status, meeting type, host and date range filters.
+Route: /bookings
+Redact: Replace invitee names, emails and phone numbers and host names with demo data.
+Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+{/*
+<Frame caption="The bookings list with filters">
+  <img src="/images/scheduling/bookings-list-filters.png" alt="Bookings list showing invitee, meeting type, host, time and status columns with filters above the table" />
+</Frame>
+*/}
+
 ## Booking statuses
 
 **Scheduled**, **Confirmed**, **Completed**, **Cancelled**, **Rescheduled**, and
@@ -33,6 +44,17 @@ can:
 - **Reschedule** — pick a new day and slot.
 - **Cancel** — with an optional reason (the invitee is notified).
 - **Mark completed** or **Mark no-show** — available once the start time has passed.
+
+{/* MEDIA-TODO screenshot | /images/scheduling/bookings-booking-detail-actions.png
+Capture: An open booking whose start time has passed, showing invitee details, question answers, and the Reschedule, Cancel, Mark completed and Mark no-show actions.
+Route: /bookings (open a booking)
+Redact: Replace the invitee name, email, phone number and question answers with demo data; use a demo host name.
+Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+{/*
+<Frame caption="Booking details and actions">
+  <img src="/images/scheduling/bookings-booking-detail-actions.png" alt="Booking detail view with invitee details, question answers and buttons to reschedule, cancel, mark completed or mark no-show" />
+</Frame>
+*/}
 
 <Note>
   Confirmed bookings are auto-marked **Completed** 12 hours after they end if you

@@ -7,6 +7,18 @@ icon: "rocket"
 This guide takes you from a brand-new account to a live SMS campaign. Along the
 way you will connect a sending channel, import contacts, and send a message.
 
+{/* MEDIA-TODO video | /videos/home/quickstart-first-campaign.mp4
+Capture: End-to-end walkthrough from a brand-new account to a sent SMS campaign, following the five steps on this page. Target length: 3–4 minutes.
+Script: 1) Name the organization and set default country and timezone 2) Open Settings → Channels and connect an SMS provider until the green Connected badge shows 3) Open Contacts → Import, upload a CSV, map columns, confirm consent, run the import 4) Open Campaigns → New, pick the sending number, write a message with a first-name merge tag, choose recipients 5) Send now, then show delivery on the Dashboard and a reply in the Inbox
+Route: Settings → Channels (then Contacts → Import, Campaigns → New)
+Redact: provider API keys, auth tokens and account IDs; real phone numbers; contact names and emails in the CSV and Inbox (use demo data); any billing amounts
+Publish: add the file at the path above (or swap the video tag for a YouTube or Loom iframe), then delete this note and the comment markers around the Frame below. */}
+{/*
+<Frame caption="From sign-up to your first campaign">
+  <video controls className="w-full aspect-video rounded-xl" src="/videos/home/quickstart-first-campaign.mp4" title="Video walkthrough of connecting a channel, importing contacts, and sending a first SMS campaign in Autocampaign AI"></video>
+</Frame>
+*/}
+
 <Info>
   **Time to complete:** ~20 minutes &nbsp;·&nbsp; **Difficulty:** Beginner
 </Info>
@@ -40,6 +52,17 @@ Before you begin, you need:
     - **Email:** verify a domain and sender in [Email channel](/channels/email).
 
     A channel shows a green **Connected** badge once credentials are valid.
+
+    {/* MEDIA-TODO screenshot | /images/home/quickstart-channel-connected.png
+    Capture: The Settings → Channels page with one SMS provider connected, so the green Connected badge is clearly visible on its card.
+    Route: Settings → Channels
+    Redact: account IDs and any masked credential fragments; real phone numbers; workspace name if it is a real customer
+    Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+    {/*
+    <Frame caption="A connected channel shows a green Connected badge">
+      <img src="/images/home/quickstart-channel-connected.png" alt="Channels settings page listing providers, with a green Connected badge on the connected SMS provider card" />
+    </Frame>
+    */}
   </Step>
   <Step title="Import your contacts" icon="file-import">
     Open **Contacts → Import**, upload your CSV, and map the columns to contact

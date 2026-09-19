@@ -15,6 +15,18 @@ Twilio is one of two SMS providers Autocampaign AI supports (the other is
 from your Twilio numbers, receive replies in your [Inbox](/inbox/overview), and
 manage [A2P 10DLC](/compliance/a2p-10dlc) registration for you.
 
+{/* MEDIA-TODO video | /videos/providers/twilio-connect-and-setup.mp4
+Capture: Connecting Twilio from the Channels page and completing the four-step Set Up Your Channel wizard. Target length: 2–3 minutes.
+Script: 1) Open Settings → Channels, find the Twilio card under SMS and click Configure 2) On the Connect tab paste the Account SID and Auth Token and show the live format validation 3) Click Connect & Save Credentials and show the Channel connected successfully message 4) In the wizard, show Register 10DLC Brand 5) Select or create a messaging service 6) Show Skip to Numbers on the 10DLC Campaign step 7) Assign a number or click Buy New Number 8) Click Finish Setup and show the Active status in the channel header
+Route: Settings → Channels
+Redact: Account SID and Auth Token (use fake values in the right format and blur them anyway); real phone numbers; messaging service IDs; 10DLC brand and business details; number purchase prices
+Publish: add the file at the path above (or swap the video tag for a YouTube or Loom iframe), then delete this note and the comment markers around the Frame below. */}
+{/*
+<Frame caption="Connect Twilio and finish channel setup">
+  <video controls className="w-full aspect-video rounded-xl" src="/videos/providers/twilio-connect-and-setup.mp4" title="Video walkthrough of connecting a Twilio account and completing the messaging service, numbers, and 10DLC setup wizard"></video>
+</Frame>
+*/}
+
 <Note>
   Only **one SMS provider can be active at a time** per workspace. If you already
   have Telnyx connected, connecting Twilio will prompt you to switch — the previous
@@ -43,9 +55,16 @@ You need:
     In Autocampaign AI, go to **Settings → Channels**. Under **SMS**, find the **Twilio**
     card ("Enterprise SMS and MMS via Twilio") and click **Configure**.
 
+    {/* MEDIA-TODO screenshot | /images/providers/twilio-card.png
+    Capture: Settings → Channels scrolled to the SMS group, with the Twilio card and its Configure button clearly visible (not yet connected).
+    Route: Settings → Channels
+    Redact: account IDs or real phone numbers on any other connected provider card
+    Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+    {/*
     <Frame caption="Settings → Channels → Twilio">
-      <img src="/images/providers/twilio-card.png" alt="Twilio provider card in Channel settings" />
+      <img src="/images/providers/twilio-card.png" alt="Channel settings SMS group showing the Twilio provider card with its description and a Configure button" />
     </Frame>
+    */}
   </Step>
   <Step title="Enter your credentials">
     On the **Connect** tab, fill in:
@@ -63,9 +82,16 @@ You need:
     verify the credentials before saving. On success you'll see
     **"Channel connected successfully"** and the setup wizard opens automatically.
 
+    {/* MEDIA-TODO screenshot | /images/providers/twilio-connect.png
+    Capture: The Twilio Connect tab right after a successful connection, with the Account SID and masked Auth Token saved and the Channel connected successfully message visible if it can be caught.
+    Route: Settings → Channels (Twilio card → Configure → Connect tab)
+    Redact: the Account SID (replace with a fake value starting with AC) and the Auth Token (must stay fully masked)
+    Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+    {/*
     <Frame caption="Connect tab with saved credentials">
-      <img src="/images/providers/twilio-connect.png" alt="Twilio Connect tab" />
+      <img src="/images/providers/twilio-connect.png" alt="Twilio Connect tab showing a saved Account SID and a masked Auth Token after connecting successfully" />
     </Frame>
+    */}
   </Step>
 </Steps>
 
@@ -112,6 +138,17 @@ From the **Numbers** step (or tab), click **Buy New Number**:
 
 Numbers you buy from within a setup step are attached to the selected messaging
 service automatically.
+
+{/* MEDIA-TODO screenshot | /images/providers/twilio-buy-number.png
+Capture: The Buy New Number dialog after a search, with Country, Area Code, Contains and Capabilities (SMS, MMS, Voice) filled in and a list of available numbers each with a Buy button.
+Route: Settings → Channels (Twilio, Numbers tab → Buy New Number)
+Redact: real phone numbers in the results (blur the last four digits) and number prices
+Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+{/*
+<Frame caption="Search for and buy a phone number">
+  <img src="/images/providers/twilio-buy-number.png" alt="Buy New Number dialog with country, area code, and capability filters above a list of available numbers" />
+</Frame>
+*/}
 
 ## Webhooks
 
