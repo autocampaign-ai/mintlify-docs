@@ -1,0 +1,183 @@
+---
+title: "Pipelines"
+description: "Create pipelines, shape their stages, set the value label and currency, add custom fields, manage lost reasons, and automate deals with workflows."
+icon: "diagram-project"
+---
+
+## Overview
+
+A pipeline is the ordered set of stages an [opportunity](/crm/opportunities)
+travels through. Every pipeline has your own open stages plus two fixed system
+stages, **Won** and **Lost**, at the end. Run as many as you need (sales,
+bookings, projects), each with its own currency, value label and custom fields.
+
+Manage them under **CRM → Opportunities → Pipelines** (`/pipelines`), or from
+the board: click the pipeline name in the header and choose **Customize pipeline**.
+
+<Info>
+  **Difficulty:** Intermediate &nbsp;·&nbsp; Requires the Owner, Admin or Manager role.
+</Info>
+
+## Before you start
+
+Nothing to set up. Your workspace gets a default **Sales Pipeline** with the stages
+**New Lead**, **Contacted**, **Qualified**, **Proposal**, **Won** and **Lost** in USD,
+plus five lost reasons: *Too expensive*, *Chose competitor*, *Not ready*,
+*No response*, *Other*.
+
+## Create a pipeline
+
+<Steps>
+  <Step title="Start a new pipeline" icon="plus">
+    Click **New Pipeline** on the Pipelines page or in the board's header switcher.
+  </Step>
+  <Step title="Name it" icon="pen">
+    Enter a **Pipeline name** and a **Description** ("What is this pipeline for?"),
+    then click **Create pipeline**.
+  </Step>
+  <Step title="Shape it" icon="sliders">
+    It starts with the four default stages plus Won and Lost, and the board
+    switches to it. Customize the stages right after.
+  </Step>
+</Steps>
+
+## Customize a pipeline
+
+The **Customize pipeline** sheet and the Pipelines page offer the same controls:
+
+- **Pipeline name** and **Description** — edit inline.
+- **Value label** — the name of the money field on cards, lists and dialogs, e.g.
+  *Deal value* or *Treatment value* (up to 40 characters). Pick a preset or type
+  your own; blank shows **Value**.
+- **Currency** — applies to new opportunities; existing ones keep theirs.
+
+### Stages
+
+*Click a name to rename · drag to reorder · ★ marks where new opportunities start.*
+
+- **Add stage** — type a name and press Enter. Up to 20 open stages; new ones go right before Won.
+- **Stage options** (⋮) — **Rename**, **Set as default** (where new opportunities land) and **Delete**.
+- **Won** and **Lost** are marked **System stage**: no rename, reorder or delete.
+
+The board offers the same edits: click a column title to rename, use ⋮ for
+**Move left**, **Move right**, **Set as default**, **Add automation** (opens
+Workflows) and **Delete**, plus a trailing **Add stage** column.
+
+<Note>
+  Stage colors and default win probabilities aren't editable in the app. The
+  default pipeline ships with 10 / 20 / 40 / 60 % on its four stages; stages you
+  add have none, so set **Probability** on the opportunity instead.
+</Note>
+
+### Delete a stage
+
+<Steps>
+  <Step title="Choose Delete from the stage's ⋮ menu" icon="trash">
+    An empty stage is removed once you confirm **Delete "Name"?**.
+  </Step>
+  <Step title="Relocate its opportunities" icon="arrow-right">
+    If the stage holds deals, pick another open stage under **Move opportunities to**, then **Delete**.
+  </Step>
+</Steps>
+
+You can't delete Won, Lost or the last open stage. Deleting the default stage
+promotes the first remaining open stage.
+
+## Custom fields
+
+Each pipeline's **Fields** section lists its custom fields, tagged **All pipelines** or **This pipeline**.
+
+<Steps>
+  <Step title="Add a field" icon="plus">
+    Click **Add field** (or **Create field** in the list view's **Columns** menu).
+    Type a **Field name**, press Enter and answer **What type?**: Text, Number,
+    Currency, Date, Dropdown, Multi-select, Checkbox, URL, Email or Phone.
+  </Step>
+  <Step title="Options and scope" icon="list">
+    Dropdown and Multi-select need **Options**, one per line. With more than one
+    pipeline, choose **Available in**: **This pipeline** or **All pipelines**. Click **Create field**.
+  </Step>
+  <Step title="Edit or remove later" icon="pen">
+    From a field's ⋮ menu choose **Edit field** (rename, options, availability) or
+    **Delete field**. Required, read-only and help-text settings live in
+    **Module Setup** — see [Module builder](/automation/module-builder).
+  </Step>
+</Steps>
+
+Managing fields needs pipeline rights; filling values needs the edit-opportunity
+permission; read-only fields can't be edited in the panel. **Hide field** is
+personal — it hides the field for you only, in this browser.
+
+## Default pipeline
+
+Exactly one pipeline is the default; it receives opportunities created without a
+pipeline (for example by an AI Employee). On the Pipelines page, click
+**Set as default** on a row; the current one is tagged **Default**.
+
+## Delete a pipeline
+
+In **Customize pipeline**, click **Delete pipeline**. Only empty pipelines can be
+deleted — move or delete their opportunities first — and the last pipeline can't
+be removed. Deleting the default makes another pipeline the default.
+
+<Note>
+  There is no archive option; a deleted pipeline disappears from all pickers and reports.
+</Note>
+
+## Lost reasons
+
+Lost reasons are shared by every pipeline and asked whenever an opportunity is
+marked as lost. On the Pipelines page, use **Lost reasons** to **Add reason**,
+rename inline or delete. Deleting a reason only removes it from the list for future deals.
+
+## Automate with workflows
+
+In the [Workflow builder](/automation/workflow-builder):
+
+**Triggers**
+
+- **Opportunity created** — optionally one pipeline.
+- **Opportunity enters stage** — a pipeline and one or more stages (none = any).
+- **Opportunity won** — optionally one pipeline.
+- **Opportunity lost** — optionally one pipeline and specific lost reasons.
+
+They expose variables such as *Opportunity name*, *Opportunity value*, *New stage* and *Lost reason*.
+
+**Actions**
+
+- **Create opportunity** — pipeline, stage, **Opportunity name** template (default
+  `{{first_name}} {{last_name}}`), **Value**, **Source** (default `Automation`),
+  **Owner (optional)** and **Skip when the contact already has an open opportunity here**.
+- **Move opportunity** — **Move to** a stage, with a lost reason when the target is Lost.
+- **Assign opportunity owner** — **Team members** plus a **Distribution**: **Round-robin** or **Always the first member**.
+- **Add next step** — a **Next step** title such as `Call {{first_name}}`, **Due in
+  (days)**, and **Assign to**: **The opportunity owner**, **A specific member** or **Nobody**.
+
+Actions use the opportunity that triggered the run, otherwise the contact's most
+recently updated open deal; with none, the step is skipped rather than failing.
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Can I move a deal to a different pipeline?">
+    Not from the app today. Create it in the right pipeline instead.
+  </Accordion>
+  <Accordion title="Can two stages share a name?">
+    No. Stage names are unique within a pipeline; pipeline names are unique in the workspace.
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Delete pipeline is refused">
+    The pipeline still holds opportunities (including won and lost ones), or it is the only pipeline.
+  </Accordion>
+  <Accordion title="I don't see Customize pipeline or New Pipeline">
+    Those need pipeline-management rights (Owner, Admin, Manager). Ask an admin.
+  </Accordion>
+</AccordionGroup>
+
+<Card title="Automate your pipeline" icon="bolt" href="/automation/workflow-builder">
+  Trigger follow-ups when deals enter a stage, are won or are lost.
+</Card>

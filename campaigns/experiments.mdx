@@ -1,0 +1,173 @@
+---
+title: "Campaign experiments"
+description: "A/B test two versions of a text or email campaign on a slice of your audience, then send the winner to everyone else."
+icon: "flask"
+---
+
+## Overview
+
+An experiment sends **Version A** and **Version B** of a campaign to small test
+groups, waits for results, and sends the winning version to the rest of the
+audience. You set it up on the **Experiment** step of the campaign wizard
+(**Marketing → Campaigns → Text & Email Campaigns → New Campaign**,
+`/campaigns/new`) and follow it under **Experiment results** on the campaign
+page (`/campaigns/:id`).
+
+<Info>
+  **Difficulty:** Intermediate &nbsp;·&nbsp; Available on **Send Now** and
+  **Schedule for Later** campaigns — not on recurring ones.
+</Info>
+
+## Before you start
+
+- Finish the **Message** step first: Version A is whatever you wrote there.
+- To pick a winner by **Click rate**, a text campaign needs a link with **Track
+  this link** on, and an email needs a link in its body.
+- Sending the winner (automatically or by hand) requires the campaign
+  **send** permission. See [Users & roles](/getting-started/users-roles).
+
+## Set up an experiment
+
+<Steps>
+  <Step title="Turn it on" icon="toggle-on">
+    On the **Experiment** step, switch on **Test two versions of this
+    campaign**.
+  </Step>
+  <Step title="Choose what to test" icon="vial">
+    Under **What do you want to test?** pick **Subject line** (email only) or
+    **Message content**. A **Designed email** can only test the subject line —
+    switch to a **Plain email** to test the body.
+  </Step>
+  <Step title="Write Version B" icon="pen">
+    Version A is shown for reference. Type **Version B's subject line** (up to
+    500 characters) or **Version B's message**; text messages show the character
+    and SMS segment count. Merge tags work as usual.
+  </Step>
+  <Step title="Or generate ideas" icon="sparkles">
+    Click **Generate ideas**, optionally pick a tone — **Professional**,
+    **Friendly**, **Short**, **Urgent**, or **Sales** — and click **Generate**.
+    You get up to five ideas, each with a one-line reason; click one to use it as
+    Version B. Text ideas longer than your original are flagged "Uses N texts".
+    Generating ideas uses AI credits from your plan.
+  </Step>
+  <Step title="Split the audience" icon="scale-balanced">
+    Under **How should we split your audience?** choose **Smart test
+    (Recommended)** — 10% get A, 10% get B, the winner goes to the remaining
+    80% — or **Even split** (50/50, nothing held back), or **Custom** with your
+    own **Version A %**, **Version B %**, and **Winner %** adding up to 100.
+  </Step>
+  <Step title="Decide how to pick the winner" icon="trophy">
+    Under **How should we pick the winner?** choose **Open rate** (email only),
+    **Click rate**, or **I'll pick the winner myself**. Set **How long should the
+    test run?** to 30 minutes, 1 hour, 3 hours, 6 hours, or 24 hours (the
+    default). Turn on **Ask me before sending the winner** to approve it
+    yourself.
+  </Step>
+</Steps>
+
+A hint below shows "~N contacts per version". Under 200 per version reads
+"Small test group — results may be directional." The summary panel lists the
+experiment ("Testing subject line, smart 10/10/80 split") before you click
+**Send Campaign**.
+
+<Note>
+  For email, **Open rate** can be inflated by Apple Mail's privacy protection —
+  **Click rate** is usually the more reliable signal.
+</Note>
+
+## How the test runs
+
+Each contact in the audience is assigned to Version A, Version B, or the
+winner group by a fixed hash, so the groups never overlap and a contact can't
+move between them if a send is retried. The two test groups are sent as
+separate runs; the winner group waits.
+
+Once both test sends finish, the test duration you chose starts. A check runs
+every minute, and when the timer is up the experiment is decided:
+
+- **Open rate** or **Click rate** compares unique opens (or clicks) divided by
+  delivered messages for each version.
+- The result is **High confidence** when each version delivered at least 30
+  messages, there were at least 5 opens or clicks in total, and the difference
+  is statistically significant at 95%. Otherwise the leader still wins, marked
+  **Small audience — directional result**. A tie goes to Version A.
+- With **I'll pick the winner myself**, **Ask me before sending the winner**, a
+  failed test send, or nothing delivered, the experiment moves to **Waiting
+  for your decision** and you get an "Experiment needs your decision"
+  notification.
+
+## Send the winner
+
+When the winner is decided automatically, the winning version is sent to the
+remaining audience right away and you're notified with "Winner sent". If the
+experiment is waiting on you, open the campaign, click **Send this version** on
+the card you prefer, and confirm. Click **Don't send to remaining audience** to
+end the experiment without sending more messages.
+
+<Note>
+  The campaign must still be **Running**. Pausing or cancelling it cancels the
+  experiment, and no winner is sent.
+</Note>
+
+## Read the results
+
+The **Experiment results** panel on the campaign's **Overview** tab shows a
+timeline — **Testing**, **Deciding** ("We'll pick a winner around …"), then
+**Winner sent**, **Waiting for your decision**, or **Cancelled** — plus "Winner
+goes to ~N more people" while a winner group is pending. Each version card lists
+**Delivered**, **Open rate**, **Click rate**, and **Unsubscribes**. While the
+test runs, the leading card says "Version B is ahead so far"; afterwards the
+winner gets a **Winner** badge and a tag: **High confidence**, **Small audience
+— directional result**, or **Picked manually**. Delivery totals for the whole
+campaign appear in the metric cards above.
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Can I test more than two versions?">
+    No — an experiment is always Version A against Version B.
+  </Accordion>
+  <Accordion title="Can I add an experiment to a campaign I already sent?">
+    No. Experiments are configured when the campaign is created and can't be
+    added or edited afterwards.
+  </Accordion>
+  <Accordion title="Does an even split send a winner?">
+    No. **Even split** sends both versions to the whole audience, so there is
+    nobody left to send the winner to; the results panel simply reports which
+    version did better.
+  </Accordion>
+  <Accordion title="What does the winner group receive?">
+    Exactly the winning version — its subject, preview text, or message —
+    sent from the same senders to the contacts that were held back.
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="'Click rate' is greyed out">
+    Text campaigns need a tracked link (turn on **Track this link** in the
+    message step); email campaigns need a link in Version A or Version B.
+  </Accordion>
+  <Accordion title="'Message content' is disabled for my email">
+    You're using a **Designed email**. Switch to **Plain email** to test the
+    body, or test the **Subject line** instead.
+  </Accordion>
+  <Accordion title="The experiment says 'Waiting for your decision' but I chose automatic">
+    A test send failed or nothing was delivered, so no automatic decision was
+    possible. Review the cards and click **Send this version** or **Don't send to
+    remaining audience**.
+  </Accordion>
+  <Accordion title="'Experiments aren't available for recurring campaigns'">
+    Switch the schedule to **Send Now** or **Schedule for Later**.
+  </Accordion>
+</AccordionGroup>
+
+<CardGroup cols={2}>
+  <Card title="Campaign wizard" icon="paper-plane" href="/campaigns/overview">
+    The other steps of creating a campaign.
+  </Card>
+  <Card title="Campaign analytics" icon="chart-line" href="/analytics/campaign-analytics">
+    Delivery and engagement across campaigns.
+  </Card>
+</CardGroup>

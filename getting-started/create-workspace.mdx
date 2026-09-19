@@ -7,55 +7,111 @@ icon: "building"
 ## Overview
 
 Your **workspace** (organization) holds everything — contacts, campaigns,
-channels, and team. When you sign up, a personal workspace is created for you. Set
-its details at **Settings → Organization** (`/settings/organization`).
+channels, and team. When you sign up, a workspace is created for you
+automatically. Set its details at **Settings → Organization**
+(`/settings/organization`).
+
+<Info>
+  **Difficulty:** Beginner &nbsp;·&nbsp; Editing organization details requires a
+  role that can update the organization.
+</Info>
+
+## What happens when you sign up
+
+- **Your plan carries over.** If you clicked a plan on the pricing page, the
+  sign-up form shows **Selected plan: … · free trial — no credit card needed**,
+  and your workspace starts its trial on that plan. You're never asked to pick it
+  again. Without a plan in the link, the trial starts on the default plan.
+- **The trial is card-free.** The app header shows **Trial · N days left**, which
+  links to **Plan & Billing**. See [Plans & trials](/billing/plans-and-trials).
+- **Guided setup starts.** A welcome screen and a short setup collect your
+  **Business name**, **Website (optional)**, **Industry**, and **Timezone**, and
+  save them to the workspace. Then the
+  [Getting Started checklist](/getting-started/onboarding-checklist) tracks the
+  rest — adding an email, phone, or website below completes its first step,
+  **Complete business profile**.
 
 ## Configure your organization
 
 <Steps>
-  <Step title="Open organization settings">
-    Go to **Settings → Organization** and click **Edit**.
+  <Step title="Open organization settings" icon="gear">
+    Go to **Settings → Organization** and stay on the **Details** tab. Fields are
+    always editable — there's no separate edit mode.
   </Step>
-  <Step title="Set identity">
-    Enter your **Organization Name** and optional **Website** and **Logo**. Typing
-    your business name can auto-fill your address, phone, timezone, and currency from
-    a business lookup.
+  <Step title="Set identity" icon="id-card">
+    Enter your **Organization Name** and optional **Website** and logo. Type 3 or
+    more characters of your business name to search for it — picking a match
+    can auto-fill your address, phone, website, and timezone.
   </Step>
-  <Step title="Add contact and location">
-    Fill in your **Email**, **Phone**, and business **Address**.
+  <Step title="Add contact and location" icon="location-dot">
+    Fill in your **Email** and **Phone**, then **Street Address**, **City**,
+    **State / Province**, **ZIP / Postal**, and **Country**.
   </Step>
-  <Step title="Set preferences">
-    Choose your **Timezone** (defaults to UTC) and **Currency** (defaults to USD).
-    These affect scheduling and cost display across the app.
+  <Step title="Set preferences" icon="sliders">
+    Choose your **Timezone** (defaults to UTC), **Currency** (defaults to USD),
+    and **Default calling country**, which completes phone numbers entered without
+    a country code.
   </Step>
-  <Step title="Save">
-    Click **Save**. You can edit these anytime.
+  <Step title="Save" icon="floppy-disk">
+    A bar appears when you have unsaved changes. Click **Save Changes**, or
+    **Cancel** to discard them.
   </Step>
 </Steps>
 
+The same page has **Business hours** and **Quiet hours** tabs. Business hours
+record when you're open; quiet hours stop campaigns from delivering texts or
+emails during a set window. Both use the timezone you set in **Details**.
+
+<Note>
+  Logos must be JPEG, PNG, WebP, or GIF and under 5 MB. If business search is
+  unavailable, enter your address manually.
+</Note>
+
 ## Multiple workspaces
 
-You can create and belong to more than one organization. Use the **workspace
-switcher** at the top of the sidebar to move between them, or create a new one from
-there. Each workspace has its own contacts, channels, billing, and team.
+You can create and belong to more than one organization. Open the **workspace
+switcher** at the top of the sidebar to search and move between them, or click
+**Create Organization**, enter an **Organization Name**, and confirm. Each
+workspace has its own contacts, channels, billing, team, and setup checklist.
 
 ## FAQ
 
 <AccordionGroup>
   <Accordion title="What's the difference between a workspace and an organization?">
-    They're the same thing — your tenant in Autocampaign AI. "Workspace" is the friendly
-    name; settings live under **Organization**.
+    They're the same thing — your account's home in Autocampaign AI. "Workspace" is
+    the friendly name; settings live under **Organization**.
   </Accordion>
   <Accordion title="Can I rebrand the app with my logo?">
-    You can set your organization **logo**. Deeper white-label branding isn't
-    available today.
+    You can set your organization logo here. Branding the whole app for clients is
+    an agency feature — see [Setups and branding](/agency/setups-and-branding).
   </Accordion>
   <Accordion title="Why does timezone matter?">
-    It's used for scheduling campaigns, polls, and bookings, and for displaying times
-    consistently across your team.
+    Business hours, scheduled sends, quiet hours, and reports are all evaluated in
+    your workspace timezone.
+  </Accordion>
+  <Accordion title="Do invited teammates get their own trial?">
+    No. Invited teammates join your existing workspace and share its plan.
   </Accordion>
 </AccordionGroup>
 
-<Card title="Invite your team" icon="user-plus" href="/getting-started/invite-team">
-  Add teammates to your workspace.
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="'Business search isn't available right now'">
+    You can still type your organization name and enter the address fields
+    manually, then save.
+  </Accordion>
+  <Accordion title="The sign-up page didn't show my selected plan">
+    The link didn't carry a valid plan, so the trial starts on the default plan.
+    You can switch plans anytime from **Plan & Billing** — see
+    [Plans & trials](/billing/plans-and-trials).
+  </Accordion>
+  <Accordion title="I can't edit organization details">
+    Your role may not allow it. Ask a workspace admin — see
+    [Users & roles](/getting-started/users-roles).
+  </Accordion>
+</AccordionGroup>
+
+<Card title="Getting Started checklist" icon="list-check" href="/getting-started/onboarding-checklist">
+  Follow the guided setup steps for your new workspace.
 </Card>

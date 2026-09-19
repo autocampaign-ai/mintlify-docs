@@ -1,0 +1,192 @@
+---
+title: "Website chat widget"
+description: "Add a branded chat launcher to your website, let an AI Employee answer visitors, and handle every conversation from the Inbox."
+icon: "comments"
+---
+
+## Overview
+
+Website chat puts a floating chat button on your own site. Visitors open it, send a
+message, and the conversation lands in your [Inbox](/inbox/overview) on the
+**Website chat** channel, where an [AI Employee](/automation/ai-employees) or your
+team replies in real time. Find it under **Settings → Website Chat**
+(`/settings/chat-widget`).
+
+<Info>
+  **Difficulty:** Beginner &nbsp;·&nbsp; Setup is a four-step wizard — **Appearance**,
+  **AI Assistant**, **Customer Experience**, **Install** — with a live **Try it**
+  preview beside it. **Save changes** works from any step.
+</Info>
+
+## Before you start
+
+- You need permission to edit website chat settings. With view-only access the
+  form is read-only.
+- To have AI answer visitors, create an active [AI Employee](/automation/ai-employees) first.
+- To offer in-chat booking, create a [meeting type](/scheduling/meeting-types) first.
+- You need to be able to paste a script tag into your site (or its WordPress,
+  Shopify, Wix, or Squarespace custom-code area).
+
+## Set up your widget
+
+<Steps>
+  <Step title="Appearance" icon="palette">
+    Enter a **Chat name** (up to 100 characters; defaults to "Customer Support") and
+    a **Welcome message** (up to 500 characters) — or click **Use suggestion**.
+    Pick a **Theme color** from the presets, or choose **Custom** and enter a
+    6-digit hex value such as `#6366f1`. Set **Chat position** to **Bottom right**
+    or **Bottom left**.
+
+    Under **Brand images**, add a **Logo** (chat header; **Use my company logo**
+    copies your organization logo), a **Profile photo** (shown beside each
+    assistant reply), and a **Chat button icon** (replaces the default
+    speech-bubble on the floating button — leave it empty to keep the default).
+  </Step>
+  <Step title="AI Assistant" icon="robot">
+    Pick the AI Employee that greets and answers visitors, or choose
+    **No assistant for now** to handle chats yourself. If you don't have one yet,
+    **Create an AI Assistant** takes you to the AI Employee setup and brings you
+    back with your draft intact.
+  </Step>
+  <Step title="Customer Experience" icon="wand-magic-sparkles">
+    - **Show quick questions** — up to 6 one-tap prompts (label up to 60 characters,
+      message up to 500). Add presets such as **Pricing** or **Book a demo**, or
+      **Add custom**. Drag to reorder.
+    - **Allow appointment booking** — pick a **Booking type** so visitors can book
+      without leaving the chat.
+    - **Business hours** — **Always open** (24/7) or **Set specific hours** with a
+      **Timezone** and a weekly schedule.
+    - **Offline & after-hours** — see [Offline behavior](#offline-behavior).
+    - **Smart greetings** — up to 20 rules that swap the welcome message by visitor
+      type (**Returning** / **First-time**), campaign source, the page path the
+      visit started on, or open/closed state. The first matching rule wins;
+      otherwise the default welcome message shows.
+  </Step>
+  <Step title="Install" icon="code">
+    Click **Save changes** first — your install code is generated on the first
+    save. Pick your platform (WordPress, Shopify, Wix, Squarespace, React, or HTML)
+    for tailored instructions, click **Copy code**, and paste it just before the
+    closing `</body>` tag on every page where you want chat.
+  </Step>
+  <Step title="Turn it on" icon="toggle-on">
+    Use the **Turn chat on** switch in the page header. The badge reads **Live** or
+    **Hidden**. Turning it off hides chat from your site without losing settings.
+  </Step>
+</Steps>
+
+## The embed snippet
+
+The code is the same for every platform — one script tag carrying your widget key:
+
+```html
+<script src="https://app.autocampaign.ai/widget.js" data-widget-key="YOUR_WIDGET_KEY" async></script>
+```
+
+Always copy the exact tag from the **Install** step: it contains your real key and
+the correct address for your account. The widget key only identifies your widget —
+it isn't a secret.
+
+If you need to control when the widget starts (for example, after a consent
+banner), leave out `data-widget-key` and start it yourself:
+
+```html
+<script>
+  window.AutoCampaign = window.AutoCampaign || { q: [] };
+  window.AutoCampaign.q.push(['init', 'YOUR_WIDGET_KEY']);
+</script>
+<script src="https://app.autocampaign.ai/widget.js" async></script>
+```
+
+`window.AutoCampaign` also exposes `open()` and `close()`.
+
+## Image rules for the logo, profile photo, and chat button icon
+
+Each image field offers **Upload** or **Image URL**:
+
+- **Upload** accepts PNG, JPEG, GIF, or WebP up to 5 MB (requires permission to
+  add media).
+- **Image URL** must be a full web address starting with `http://` or `https://`,
+  up to 500 characters, pointing to an image that is already online.
+- Pasted images, `data:` addresses, and icon names (such as `chat-bubble`) are
+  rejected with "Use a web address starting with https:// — upload the file
+  instead".
+
+## Allowed domains
+
+In the **Install** step, **Allowed domains** restricts which sites can load your
+widget. Click **Add domain** and enter hostnames only, such as `shop.example` — up
+to 20 entries.
+
+- With no domains listed, **any website can embed this widget** (the page warns you).
+- Matching is exact. `*.example.com` covers every subdomain but **not**
+  `example.com` itself — add both if you need both.
+- Enter international domains exactly as your browser's address bar shows them.
+
+## Where conversations land
+
+Every chat appears in the **Inbox** as a **Website chat** conversation. Reply from
+the composer like any other channel, and the visitor sees your reply live. If you
+assigned an AI Employee, it answers first and hands the conversation to your team
+when one of its **Human help** triggers fires.
+
+Visitors start **anonymous** — there's no pre-chat form. A visitor becomes a
+contact (source: web chat) when the AI Employee collects their details or when
+they submit the leave-a-message form. Details are matched to an existing contact
+by phone, then email, and only fill empty fields. A returning visitor on the same
+browser resumes their conversation for up to 30 days.
+
+## Offline behavior
+
+Offline settings appear only when business hours are **Set specific hours**.
+Outside those hours the widget shows your **Offline message** (up to 500
+characters) and when you're back, in the visitor's local time.
+
+- **Let AI reply outside business hours** on (default) — visitors keep chatting
+  with your AI Employee.
+- Off — visitors see a leave-a-message form (name, email, optional phone, message,
+  and an **I agree to be contacted** checkbox). The message lands in the Inbox
+  and the visitor is saved as a contact.
+
+<Note>
+  **Limits:** one widget per organization; visitor messages are text only, up to
+  4,000 characters, with no file attachments; visitors can send up to 20 messages
+  per minute; schedules can't span midnight (the latest end time is 23:59).
+</Note>
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Can I test the widget before installing it?">
+    Yes. The **Try it** pane gives real AI replies once an AI Employee is assigned.
+    Nothing there is saved or sent to your team.
+  </Accordion>
+  <Accordion title="Does changing settings require re-installing the code?">
+    No. The snippet stays the same; saved changes apply the next time the widget loads.
+  </Accordion>
+  <Accordion title="What happens if no AI Employee is assigned?">
+    Messages still arrive in the Inbox. Your team replies manually.
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="The chat button doesn't appear on my site">
+    Check that **Turn chat on** shows **Live**, the snippet is on the page, and the
+    site's hostname is in **Allowed domains** (or the list is empty). Remember that
+    `*.example.com` doesn't cover `example.com`.
+  </Accordion>
+  <Accordion title="The Install step shows no code">
+    Click **Save changes** once — the code is generated on the first save.
+  </Accordion>
+  <Accordion title="An image URL is rejected">
+    Use an `https://` address of 500 characters or fewer, or switch to **Upload**.
+  </Accordion>
+  <Accordion title="I can't turn on appointment booking">
+    Select a **Booking type**. If none are listed, create a meeting type first.
+  </Accordion>
+</AccordionGroup>
+
+<Card title="Set up an AI Employee" icon="robot" href="/automation/ai-employees">
+  Give your website chat an assistant that answers around the clock.
+</Card>

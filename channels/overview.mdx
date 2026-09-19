@@ -1,6 +1,6 @@
 ---
 title: "Channels overview"
-description: "How SMS, Email, and Advertising channels fit together in Autocampaign AI."
+description: "How SMS, WhatsApp, Email, and Advertising channels fit together in Autocampaign AI."
 icon: "layer-group"
 ---
 
@@ -11,9 +11,12 @@ is powered by a **provider** you connect with your own account and credentials.
 Once a channel is connected, you can use it in campaigns, automations, and your
 inbox.
 
-<CardGroup cols={3}>
+<CardGroup cols={2}>
   <Card title="SMS" icon="comment-sms" href="/channels/sms">
     Two-way text messaging via Twilio or Telnyx.
+  </Card>
+  <Card title="WhatsApp" icon="whatsapp" href="/channels/whatsapp">
+    Conversations and approved templates from your WhatsApp Business number.
   </Card>
   <Card title="Email" icon="envelope" href="/channels/email">
     Campaigns and transactional email from verified domains.
@@ -31,13 +34,19 @@ Think of a **channel** as the *what* (send SMS) and a **provider** as the *who*
 | Channel | Providers | Connected in |
 | --- | --- | --- |
 | SMS | [Twilio](/providers/twilio), [Telnyx](/providers/telnyx) | Settings → Channels → SMS |
-| Email | [Gmail](/providers/gmail), [Microsoft 365](/providers/microsoft-365), [SMTP](/providers/smtp) | Settings → Channels → Email |
+| WhatsApp | [Meta WhatsApp Business](/channels/whatsapp) | Settings → Channels → WhatsApp |
+| Email | Built-in delivery — verify a [sending domain](/providers/email-domains) and add [senders](/providers/email-senders) | Settings → Channels → Email |
 | Advertising | [Google Ads](/providers/google-ads), [Meta Ads](/providers/meta-ads) | Advertising |
 
 <Note>
   For SMS, **one provider is active at a time** per workspace. Switching providers
   removes the previous provider's numbers and messaging services.
 </Note>
+
+WhatsApp works a little differently from SMS: you sign in to Meta and pick one
+WhatsApp Business number, and outbound messages outside a contact's 24-hour reply
+window must use a Meta-approved template. See [WhatsApp](/channels/whatsapp) for the
+connect flow, templates, and consent rules.
 
 ## Connect a channel
 
@@ -46,11 +55,13 @@ Think of a **channel** as the *what* (send SMS) and a **provider** as the *who*
     You'll see providers grouped by channel category.
   </Step>
   <Step title="Choose a provider and click Configure">
-    Enter that provider's credentials on the **Connect** tab.
+    Enter that provider's credentials on the **Connect** tab. For WhatsApp, click
+    **Connect with WhatsApp** and complete the Meta sign-in window instead.
   </Step>
   <Step title="Finish setup">
     For SMS, complete messaging service, numbers, and [10DLC](/compliance/a2p-10dlc).
-    For email, verify your domain and sender.
+    For email, verify your domain and sender. For WhatsApp, create and submit
+    [message templates](/channels/whatsapp#message-templates).
   </Step>
 </Steps>
 
@@ -69,12 +80,13 @@ Connected channels show a status badge:
     No. Connect only the channels you'll use. Many teams start with SMS.
   </Accordion>
   <Accordion title="Can I use my own provider account?">
-    Yes — Autocampaign AI connects to your own Twilio, Telnyx, Gmail, Microsoft 365, or ad
-    accounts. You keep control of billing and numbers with the provider.
+    Yes — Autocampaign AI connects to your own Twilio, Telnyx, WhatsApp Business, Gmail,
+    Microsoft 365, or ad accounts. You keep control of billing and numbers with the
+    provider.
   </Accordion>
   <Accordion title="Where do replies go?">
-    Inbound SMS and email land in your unified [Inbox](/inbox/overview), linked to
-    the contact and any related campaign.
+    Inbound SMS, WhatsApp, and email land in your unified [Inbox](/inbox/overview),
+    linked to the contact and any related campaign.
   </Accordion>
 </AccordionGroup>
 

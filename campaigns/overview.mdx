@@ -1,6 +1,6 @@
 ---
 title: "Campaigns"
-description: "Create, schedule, send, and analyze SMS and email broadcast campaigns."
+description: "Create, schedule, send, and analyze text and email broadcast campaigns."
 icon: "paper-plane"
 ---
 
@@ -10,20 +10,26 @@ icon: "paper-plane"
 
 ## Overview
 
-A campaign sends one message to many contacts. Autocampaign AI supports **SMS** and
-**email** campaigns, sent immediately, scheduled for later, or on a recurring
-schedule. Find them under **Campaigns** in the sidebar (`/campaigns`).
+A campaign sends one message to many contacts. Autocampaign AI supports **SMS**
+(including MMS with attachments) and **email** campaigns, sent immediately,
+scheduled for later, or on a recurring schedule. Find them under **Marketing →
+Campaigns → Text & Email Campaigns** in the sidebar (`/campaigns`). For a
+timed series of messages per contact, use [Sequences](/campaigns/sequences); to
+compare two versions of one campaign, add an [experiment](/campaigns/experiments).
 
 <Note>
   Before sending SMS, connect a [provider](/channels/sms) and — for US traffic —
-  complete [10DLC registration](/compliance/a2p-10dlc).
+  complete [10DLC registration](/compliance/a2p-10dlc). Campaigns send over SMS
+  and email only; [WhatsApp](/channels/whatsapp) messages go out through
+  sequences and workflows.
 </Note>
 
 ## The campaigns list
 
 Filter by status using the tabs (each shows a live count): **All**, **Scheduled**,
-**Running**, **Paused**, **Completed**, **Failed**, **Cancelled**. Columns include
-Campaign, Status, Segment, Delivery progress, Date, and Cost.
+**Running**, **Paused**, **Completed**, **Failed**, **Cancelled**, and by channel
+with the **All channels** filter. Columns include Name, Status, Channel, Segment,
+Delivery progress, Date, and Cost.
 
 Row actions depend on status:
 
@@ -40,40 +46,86 @@ Row actions depend on status:
 
 ## Create a campaign
 
+Click **New Campaign** (`/campaigns/new`), pick **Text message** or **Email** on
+the channel screen, and click **Continue**. **Change channel** takes you back;
+switching to a different channel clears channel-specific fields.
+
 <Steps>
-  <Step title="Choose a channel" icon="layer-group">
-    Pick **Text message** (SMS) or **Email**. You can change it later with **Change
-    channel** (which clears channel-specific fields).
-  </Step>
   <Step title="Sender" icon="hashtag">
-    **SMS:** select one or more phone numbers — Autocampaign AI rotates them round-robin
-    across recipients. **Email:** select one or more verified senders. Give the
-    campaign a **name** in the summary panel (defaults to "Untitled Campaign").
+    **SMS:** select one or more phone numbers — Autocampaign AI rotates them
+    round-robin across recipients. **Email:** select one or more verified
+    senders. Name the campaign in the summary panel (defaults to "Untitled
+    Campaign").
   </Step>
   <Step title="Message" icon="pen">
-    Compose your message. Insert **variables** (merge tags) from the toolbar, watch
-    the **character counter** and SMS segment count, and toggle **link tracking** on
-    detected URLs. The summary panel shows an **estimated cost**.
+    **SMS:** compose your message, insert **Variables** (merge tags), reuse a
+    saved **Template**, attach media to send as MMS (the counter switches to
+    "1 MMS"), and toggle **Track this link** on detected URLs. The panel shows
+    the character count and SMS segments.
 
-    For email, you also set a **Subject**, optional **Preview text**, rich content,
-    and can **send a test email**.
+    **Email:** set a **Subject** (or use **Write subject with AI**), optional
+    **Preview text**, and choose **Plain email** (rich text, with **AI draft**)
+    or **Designed email**. For a designed email, pick **Choose a starting point**
+    (**Start blank** or **My templates**) and click **Edit design** to open the
+    drag-and-drop builder at `/campaigns/new/design`; your wizard progress is
+    kept. Use **Send test email** to preview in a real inbox.
+  </Step>
+  <Step title="Experiment" icon="flask">
+    Optional. Switch on **Test two versions of this campaign** to A/B test a
+    subject line or message on a slice of the audience. See
+    [Campaign experiments](/campaigns/experiments) — or click **Next** to skip.
   </Step>
   <Step title="Audience" icon="filter">
-    Select the **segment** to send to. The recipient count updates as you choose.
-    See [Segments](/contacts/segments).
+    Under **Select Segments**, pick one or more segments (up to 20). Contacts in
+    several selected segments are messaged once. The panel shows **Contacts in
+    segments**, who will be skipped (no phone or email, opted out, unsubscribed
+    from email), and the final **Recipients** count. See
+    [Segments](/contacts/segments).
   </Step>
   <Step title="Schedule" icon="clock">
-    Choose **Send Now**, **Schedule for Later** (with date, time, and timezone), or
-    **Recurring** (SMS only — daily/weekly/monthly with an end date or max runs).
+    Choose **Send Now**, **Schedule for Later** (date, time, and **Timezone**),
+    or **Recurring** (SMS only). Then set **Quiet hours** for this campaign —
+    see below.
   </Step>
 </Steps>
 
-Click **Send Campaign** in the summary panel when the status badge reads **Ready**.
+Click **Send Campaign** in the summary panel when the status badge reads
+**Ready**.
 
 <Note>
-  Audience is **one segment per campaign** today (multi-segment is on the roadmap),
-  and there's no segment-level exclude. Use dynamic-segment rules to shape your
-  audience — see [Segments](/contacts/segments).
+  Segment-level excludes aren't available. Shape the audience with
+  dynamic-segment rules instead.
+</Note>
+
+### Recurring campaigns
+
+For **Recurring** (SMS only), pick a **Timezone**, then build the rule:
+**Repeats** Daily, Weekly, or Monthly, **Every** N, **On days** or **Day of
+month**, and **Send at**. Set a **Start date** (the first run uses the time
+above) and either an **End date** or **Max runs (optional)** — one of the two
+is required. The **Next occurrences** preview confirms the schedule. Every
+occurrence is evaluated in the campaign's timezone, including across daylight
+saving changes.
+
+### Quiet hours
+
+Quiet hours hold messages that come due inside a window and send them as soon
+as it closes. Nothing is dropped, and the campaign still launches on time. They
+apply to **Send Now**, scheduled, and recurring campaigns alike. Pick one of:
+
+- **Use organization default** (the default) — follows the window under
+  **Settings → Organization → Quiet hours**. If none is set, messages send at
+  any hour and the wizard offers a **Set them up** link.
+- **Set a window for this campaign** — choose **Quiet from**, **Quiet until**,
+  and a **Timezone**; this overrides the organization default.
+- **Ignore quiet hours** — sends at any hour even when the organization window
+  is on.
+
+<Note>
+  The window is evaluated in a single timezone — the window's own, otherwise the
+  campaign's schedule timezone, otherwise the organization's — not each
+  contact's local time. While a campaign is inside its window, its page shows a
+  **Quiet hours · resumes 9:00 AM** chip.
 </Note>
 
 ### Merge tags
@@ -81,7 +133,9 @@ Click **Send Campaign** in the summary panel when the status badge reads **Ready
 Personalize messages with these variables, written as `{{tag}}`:
 
 `first_name`, `last_name`, `full_name`, `phone`, `email`, `street_address`,
-`address_line_2`, `city`, `state`, `postal_code`, `country`, `full_address`
+`address_line_2`, `city`, `state`, `postal_code`, `country`, `full_address`,
+plus `organization_name`, `organization_phone`, `organization_email`, and
+`organization_website`.
 
 You can add a fallback: `{{first_name|"there"}}` sends "there" when the field is empty.
 
@@ -92,38 +146,57 @@ You can add a fallback: `{{first_name|"there"}}` sends "there" when the field is
 
 ## Campaign analytics
 
-Open a campaign to see its **Overview** and **Executions** tabs.
+Open a campaign (`/campaigns/:id`) to see its **Overview**, **Executions**, and
+**Links** tabs, with **Refresh**, **Pause**, **Resume**, **End Recurrence**,
+**Cancel**, and **Delete** in the header.
 
-**Summary cards:** Queued, Sent (% of recipients), Delivered (% of sent), Failed,
-Cancelled, and Total cost. Email campaigns also show opens, clicks, bounces,
-unsubscribes, and spam reports; SMS campaigns show link-click analytics.
+**Overview:** Queued, Sent (% of recipients), Delivered (% of sent), Failed
+(with how many were unsubscribed), Cancelled, Total cost (SMS only — email has
+no per-message cost), and click totals. Email campaigns add opens, open rate,
+clicks, bounces, and unsubscribes with a delivery funnel. The **Campaign
+Details** card lists the audience, schedule type, timezone, **Quiet hours**
+(marked "(organization)", "(this campaign)", or "Ignored for this campaign"),
+and — for recurring campaigns — last run, next run, the recurrence rule, and
+upcoming occurrences shown in the campaign's timezone. Experiments show an
+**Experiment results** panel here.
 
-The **Executions** tab (for scheduled/recurring runs) shows per-run metrics and a
-**Messages** table with each recipient's From/To number, status, links opened, and
-sent time.
+**Executions:** pick a run (recurring campaigns) to see its metrics — email runs
+add **Opens** and **Unique opens** — and the **Messages for this run** table
+with each recipient's From/To, status, engagement, and sent time. Search by
+name or number, filter by status, open a recipient's **Recipient activity**
+timeline, and use **Bulk actions** to **Add to segment** or **Remove from
+segment**, or **Export CSV**.
 
-Per-recipient message statuses: **Queued, Processing, Sent, Delivered,
+**Links:** per-link clicks and click-through rate, plus top link, contact,
+device, country, and browser.
+
+Per-recipient message statuses: **Queued, Sending, Sent, Delivered,
 Undelivered, Failed, Cancelled, Rejected**.
 
 <Note>
   Reply tracking lives in the [Inbox](/inbox/overview), not on the campaign
-  dashboard — the campaign view focuses on delivery and cost.
+  dashboard — the campaign view focuses on delivery, engagement, and cost.
 </Note>
 
 ## FAQ
 
 <AccordionGroup>
   <Accordion title="Can I send to more than one segment?">
-    Not yet — one segment per campaign. Build a dynamic segment whose rules capture
-    everyone you want to reach.
+    Yes — select up to 20 segments. Anyone in several of them receives the
+    message once.
   </Accordion>
   <Accordion title="Can I duplicate or re-run a campaign?">
-    Duplicate/repeat isn't available as a one-click action today. Recurring campaigns
+    Duplicate isn't available as a one-click action today. Recurring campaigns
     (SMS) cover repeated sending on a schedule.
   </Accordion>
+  <Accordion title="Why can't I choose Recurring for an email campaign?">
+    Recurring sending is SMS-only for now; email campaigns can be sent now or
+    scheduled once.
+  </Accordion>
   <Accordion title="How is cost estimated?">
-    SMS cost is estimated per segment (a 160-character message is one segment). The
-    summary panel shows the estimate before you send.
+    SMS cost is estimated per segment (a 160-character message is one segment);
+    MMS is priced per message. The summary panel shows the estimate before you
+    send.
   </Accordion>
   <Accordion title="Why don't I see a reply rate?">
     Replies are handled in the unified [Inbox](/inbox/overview). The campaign
@@ -138,8 +211,14 @@ Undelivered, Failed, Cancelled, Rejected**.
     You need an **Active**, SMS-capable number. Add or activate one in
     [Settings → Channels](/channels/sms).
   </Accordion>
-  <Accordion title="Recipients count is 0">
-    The chosen segment is empty. Pick a different segment or add contacts to it.
+  <Accordion title="'This campaign cannot be sent' on the Audience step">
+    No contact in the selected segments has a phone number (SMS) or email
+    address (email). Pick a different segment or add reachable contacts.
+  </Accordion>
+  <Accordion title="Messages are queued but not sending">
+    Check the **Quiet hours** chip on the campaign page — messages resume when
+    the window closes. To bypass it next time, choose **Ignore quiet hours** in
+    the wizard.
   </Accordion>
   <Accordion title="SMS not delivered to US numbers">
     Confirm your [10DLC campaign](/compliance/a2p-10dlc) is approved and the sending
@@ -148,6 +227,12 @@ Undelivered, Failed, Cancelled, Rejected**.
 </AccordionGroup>
 
 <CardGroup cols={2}>
+  <Card title="Sequences" icon="list-ol" href="/campaigns/sequences">
+    Multi-step follow-ups that stop when contacts reply.
+  </Card>
+  <Card title="Experiments" icon="flask" href="/campaigns/experiments">
+    A/B test a subject line or message.
+  </Card>
   <Card title="Reusable templates" icon="file-lines" href="/campaigns/templates">
     Save messages you send often.
   </Card>

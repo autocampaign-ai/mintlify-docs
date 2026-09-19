@@ -1,0 +1,175 @@
+---
+title: "WhatsApp"
+description: "Connect your WhatsApp Business number, get message templates approved, and reply to customers from the inbox, workflows, and AI Employees."
+icon: "whatsapp"
+---
+
+## Overview
+
+The WhatsApp channel connects a **WhatsApp Business** number to Autocampaign AI so
+customers can message you on WhatsApp and you can reply from the
+[Inbox](/inbox/overview), send from [workflows](/automation/workflow-builder) and
+[sequences](/campaigns/sequences), or let an [AI Employee](/automation/ai-employees)
+answer. Connect it under **Settings → Channels → WhatsApp**
+(`/settings/channels/whatsapp`); manage templates under **Templates → WhatsApp**
+(`/templates/whatsapp`).
+
+<Info>
+  **Difficulty:** Intermediate &nbsp;·&nbsp; Connecting needs channel-management
+  permission; templates need the **WhatsApp templates** permissions.
+</Info>
+
+## Before you start
+
+- A Meta Business account with a **WhatsApp Business Account** and a phone number
+  registered to it. One connection (one number) per workspace.
+- Pop-ups allowed — the connection runs in a Meta window.
+
+## Connect WhatsApp
+
+<Steps>
+  <Step title="Open the WhatsApp card" icon="plug">
+    Go to **Settings → Channels**, find **WhatsApp** under **Meta Platforms**, and
+    click **Configure**.
+  </Step>
+  <Step title="Connect with WhatsApp" icon="right-to-bracket">
+    Click **Connect with WhatsApp**. In the Meta window, sign in, choose the WhatsApp
+    Business Account, and select the phone number. Finish within two minutes or the
+    attempt times out.
+  </Step>
+  <Step title="Check the status page" icon="circle-check">
+    You'll see your business name, number, a health badge (**Connected**, **Needs
+    attention**, or **Disconnected**), and a **Manage WhatsApp templates** link.
+    **Disconnect** stops all sending and receiving.
+  </Step>
+</Steps>
+
+## The 24-hour window and consent
+
+Every inbound WhatsApp message opens a **24-hour customer-service window** for that
+contact and records them as opted in to WhatsApp.
+
+- **Window open** — send free-form text (up to 4,096 characters) and media.
+- **Window closed** (no inbound message in the last 24 hours, or none ever) — only an
+  **approved template** can be sent. That's how you start or restart a conversation.
+- **Opted out** — a contact who replies with an opt-out keyword (for example `STOP`,
+  as set under **Settings → Opt-out**) can't be messaged on WhatsApp at all, templates
+  included. Their `STOP` still appears in the thread.
+
+<Note>
+  A WhatsApp `STOP` doesn't silence SMS (though an SMS opt-out also blocks WhatsApp),
+  and it's sticky — there's currently no switch on the contact record to opt them back
+  in.
+</Note>
+
+## Message templates
+
+Templates are pre-written messages Meta reviews and approves. Open **Templates →
+WhatsApp**; the grid filters by **All**, **Draft**, **Pending**, **Approved**, and
+**Rejected**.
+
+<Steps>
+  <Step title="Purpose" icon="bullseye">
+    Click **Create template** and pick a purpose: **Appointment reminder**, **Order
+    update**, **Welcome message**, **Follow-up** (all Utility), **Promotion**
+    (Marketing), or **Other**, where you choose the **Meta category** yourself. Only
+    Marketing and Utility are offered.
+  </Step>
+  <Step title="Editor" icon="pen">
+    Enter a **Template name** and **Language code** (default `en_US`), then write the
+    **Message body** (up to 1,024 characters). Use **Personalize** to insert merge
+    tags such as `{{first_name}}`; add a fallback with `{{first_name|"there"}}`.
+    Optionally add a **Header** and **Footer** (60 characters each) and up to three
+    **Buttons** — **Quick reply** or **Website link**. Merge tags work only in the body.
+  </Step>
+  <Step title="Review" icon="eye">
+    Check the phone preview, then **Save draft** or **Submit for review**.
+  </Step>
+</Steps>
+
+Statuses run **Draft → Under review → Approved / Rejected**; Meta can later mark a
+template **Paused** or **Disabled**. Only drafts and rejected templates (which show
+Meta's reason) can be edited, then resubmitted. Click **Sync status** to pull the
+latest approval state. Built-in **System** templates can't be edited — **Clone to
+use** copies one into your workspace; **Duplicate** copies your own.
+
+## Reply and compose in the inbox
+
+Inbound WhatsApp messages land in the [Inbox](/inbox/overview) on the contact's
+**WhatsApp** channel tab; unknown numbers become a new contact named "Unknown". Text,
+images, and documents arrive with captions; other types show a placeholder such as
+`[Voice message]`. While the window is open the composer shows **You can reply
+normally**. When it's closed, click **Choose a template**, pick one, and click
+**Send template**.
+
+To start a conversation, open the inbox's **Message composer** menu and choose
+**WhatsApp** (shown only when connected). In **Compose WhatsApp**, add up to 50
+existing contacts under **To**, then write a **Message** or pick a **Template**. If
+any recipient's window is closed the panel switches to template mode, and opted-out
+contacts are listed so you can **Remove** them. The **WhatsApp** quick action on a
+contact's page or drawer opens the same composer.
+
+## Workflows, sequences, and AI Employees
+
+- **Send WhatsApp** (workflows) and the **WhatsApp** step (sequences) send free-form
+  text. Set **If WhatsApp can't message this contact right now** to **Skip this step**
+  or **Send an approved template instead** with a **Fallback template**.
+- **Send WhatsApp Template** / **WhatsApp Template** sends an approved template
+  directly. Publishing is blocked while a step references an unapproved template.
+- Both steps respect quiet hours and skip contacts who opted out of WhatsApp.
+- **AI Employees** reply on WhatsApp with WhatsApp-style formatting. If the window
+  closes before the reply goes out, the run is logged as skipped (WhatsApp window
+  closed), not as an error; the AI never sends templates on its own.
+
+<Note>
+  WhatsApp isn't a campaign channel yet — use sequences or workflows for automated
+  WhatsApp sends.
+</Note>
+
+## Status and limits
+
+| Item | Limit |
+| --- | --- |
+| Connected numbers | 1 per workspace |
+| Free-form message | 4,096 characters |
+| Template body / header / footer | 1,024 / 60 / 60 characters |
+| Template buttons | 3, labels up to 25 characters |
+| Compose recipients | 50 contacts per send |
+| Outbound media | Images (`jpg`, `png`, `webp`, `gif`) or documents |
+
+Delivery shows as **Sent** or **Delivered** (read receipts count as delivered). Sends
+and templates count toward your [plan's allowances](/billing/plans-and-trials).
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Why can't I type a reply?">
+    The 24-hour window has closed. Use **Choose a template**; a reply from the contact
+    reopens the window.
+  </Accordion>
+  <Accordion title="Can I message a number that isn't a contact?">
+    No — WhatsApp compose accepts existing contacts only, because a new number has no
+    consent state to check.
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="The connect window failed or timed out">
+    Allow pop-ups, check the number belongs to the selected WhatsApp Business Account,
+    and click **Connect with WhatsApp** again.
+  </Accordion>
+  <Accordion title="A template with this name and language already exists">
+    Names are unique per language in your workspace — rename it or change the
+    **Language code**.
+  </Accordion>
+  <Accordion title="A workflow step was skipped">
+    The contact opted out, or the window was closed and the step is set to **Skip this
+    step**. Add a **Fallback template** to send instead.
+  </Accordion>
+</AccordionGroup>
+
+<Card title="Work the inbox" icon="inbox" href="/inbox/overview">
+  Reply to WhatsApp, SMS, and email conversations in one place.
+</Card>

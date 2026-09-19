@@ -1,0 +1,227 @@
+---
+title: "Sequences"
+description: "Build timed follow-up drips of emails, texts, and WhatsApp messages that stop automatically when a contact replies, books, or opts out."
+icon: "list-ol"
+---
+
+## Overview
+
+A sequence is a linear series of messages sent to each contact over days or
+weeks — for example an email today, a text tomorrow, a second email three days
+later. Contacts enter one at a time as they match your audience, and leave as
+soon as they reply, book, or opt out. Find sequences under **Marketing →
+Campaigns → Sequences** in the sidebar (`/sequences`).
+
+<Info>
+  **Difficulty:** Intermediate &nbsp;·&nbsp; Wizard at `/sequences/new`, timeline
+  editor at `/sequences/:id/edit`, email designer at `/sequences/:id/design`,
+  report at `/sequences/:id/analytics`.
+</Info>
+
+**Sequence, campaign, or workflow?** A [campaign](/campaigns/overview) sends one
+message to a whole audience at once. A sequence sends a fixed chain of messages
+per contact, spread out by waits. A [workflow](/automation/workflow-builder)
+adds branches, conditions, and non-messaging actions — reach for it when a
+straight line isn't enough.
+
+## Before you start
+
+- Text steps need an **Active**, SMS-capable number ([SMS channel](/channels/sms)).
+- Email steps need a **verified sender** ([Email senders](/providers/email-senders)); you can't start the sequence without one.
+- WhatsApp steps need a connected [WhatsApp channel](/channels/whatsapp).
+- Build the [segments](/contacts/segments) or [tags](/contacts/tags) that define who should enter.
+
+## Create a sequence
+
+<Steps>
+  <Step title="Pick a starting point" icon="wand-magic-sparkles">
+    Click **Create sequence**. Choose **Start from scratch** or a ready-made
+    template — Welcome Series, Lead Nurture, Appointment Follow-up,
+    Re-engagement, Customer Onboarding, Review Request, Quote Follow-up, Event
+    Reminder, Product Launch, or Newsletter Follow-up. Each card shows its
+    channels, step count, and rough duration.
+  </Step>
+  <Step title="Name and goal" icon="bullseye">
+    Enter a name under **Name your sequence** and answer **What is your goal?**:
+    **Get replies**, **Book appointments**, **Win customers**, or **Just stay in
+    touch**. Picking a goal switches on the matching **Stop when** rule.
+  </Step>
+  <Step title="Audience" icon="users">
+    Select **Segments** and/or **Tags (contacts with any of these)**, then
+    optionally narrow with **Only contacts in these stages** and **Only contacts
+    from these sources**. The chip shows the live estimate, e.g. "120 contacts
+    (110 reachable by email, 95 by text)".
+  </Step>
+  <Step title="Channels" icon="tower-broadcast">
+    Choose **Email only**, **Text only**, or **Email + text** (a template locks
+    the channels its steps need), then click **Build my sequence**.
+  </Step>
+</Steps>
+
+## Build the timeline
+
+The editor opens with an entry chip ("A contact joins the sequence") and your
+steps in order. Click **Add a step** to insert **Email**, **Text message**,
+**WhatsApp**, **WhatsApp Template**, **Wait**, or **Goal**; drag the handle to
+reorder. Day markers ("Day 1", "Day 4") are computed from the waits. Changes
+autosave.
+
+- **Email** — **Subject line** (with **Write subject with AI**), **Preview text
+  (optional)**, **Send from**, and **Email content** as a **Simple email**
+  (rich text, **AI draft**) or a **Designed email**: click **Choose a
+  template**, then **Edit design** to open the drag-and-drop designer at
+  `/sequences/:id/design`. Use **Swap template** to start over.
+- **Text message** — **Send from** (required per step), **Message** (type `@`
+  for a variable, attach media to send as MMS, or **Choose a template**), and
+  **Track link clicks**.
+- **WhatsApp** — free-form **Message** plus **If WhatsApp can't message this
+  contact right now**: **Skip this step** or **Send an approved template
+  instead** with a **Fallback template**. **WhatsApp Template** sends an
+  approved template only.
+- **Wait** — **Wait for** a number of minutes, hours, days, or weeks (up to 180
+  days).
+- **Goal** — **Count it as a win when the contact…** replies, books an
+  appointment, becomes a customer, or makes a purchase. Leave **Stop the
+  sequence when reached** on to end the drip for contacts who hit it.
+
+Messages support merge tags like `{{first_name}}` and spin text like
+`{Hi|Hey}`; the **Variation 1 of N** cycler previews each version. Click **Send
+test** on an email step (goes to your own address) or a text step (**Send to
+phone number**) to rehearse it.
+
+### When a message may go out
+
+Send timing lives on the message, not on the wait before it. On an email or
+text step, switch on **Only send on certain days** to pick weekdays, and **Only
+send at certain times** to choose **Between** a start and end time or **At
+exactly** one time. The caption confirms the rule and timezone, and the
+timeline card shows a clock chip.
+
+<Note>
+  Older sequences that set a time or weekday on a **Wait** step were migrated
+  automatically — that timing now appears on the message that followed the wait.
+</Note>
+
+## Audience & rules
+
+Click **Audience & rules** in the editor header. The sheet has three tabs:
+
+- **Audience** — the same segment, tag, stage, and source picker as the wizard.
+- **Stop when** — the **Sequence goal** plus exit rules: **They reply** (on by
+  default), **They book an appointment**, **They become qualified or a
+  customer**, **Their email bounces** (on), **Their text message fails**, **They
+  unsubscribe from email** (on), and **They opt out of texting**, which is
+  always on and marked **Required**.
+- **Sending rules** — **Timezone** (defaults to your organization's), **Send
+  during business hours** with **On these days**, **Skip weekends**, **Respect
+  quiet hours** (a 9 PM–8 AM window you can adjust), and caps: **Max messages
+  per day, per contact**, **Max emails per week, per contact**, **Max texts per
+  week, per contact**. Held messages send when the window opens.
+
+<Note>
+  A sequence without its own business hours follows your organization's business
+  hours. **Respect quiet hours** is a per-sequence setting.
+</Note>
+
+## Start, pause, and update
+
+Click **Validate** to open the publish checklist; blocking issues also appear in
+a banner ("To publish, fix: …"). Then click **Start sequence** — contacts who
+already match the audience enroll now, and new matches join automatically. The
+status changes from **Draft** to **Running**.
+
+Edit a running sequence and click **Update live sequence**: changes apply to
+future sends while enrolled contacts continue where they are. From the list's
+row menu use **Pause** (new enrollments stop, in-flight contacts freeze at their
+next send), **Resume**, **Duplicate**, **View report**, **Archive** (cancels
+everyone still in the sequence), **Unarchive**, or **Delete** (drafts only).
+Filter the list with **My sequences**, **Running**, **Paused**, **Drafts**, and
+**Archived**.
+
+## How contacts enter and leave
+
+- **Automatically** — when a contact joins a selected segment, receives a
+  selected tag, moves into a selected stage, or is created from a selected
+  source. Stages and sources act as filters when segments or tags are chosen.
+- **Manually** — in **Contacts**, select rows and use **Bulk Actions → Add to
+  Sequences** (running sequences only; contacts already enrolled are skipped,
+  and opted-out contacts are skipped for any sequence with a text step). Use
+  **Remove from Sequences** to cancel. A contact's page has **Add to Sequence**
+  and an **Active Sequences** panel.
+- **From automations** — the **Add to sequence** workflow action, or a
+  [join keyword](/growth/join-keywords)'s **Follow-up sequence**.
+
+Contacts leave when a **Stop when** rule fires, when they finish the last step,
+or when you click **Remove from sequence** on the report. Each contact goes
+through a given sequence once.
+
+## Read the report
+
+Open **View report** for stat cards — **Entered**, **In progress**,
+**Finished**, **Replied**, **Goals hit**, **Conversion rate** — and the
+**Step-by-step journey**: each step shows how many contacts reached it, plus
+Sent, Delivered, Opened and Clicked rates for email, link clicks for texts, and
+bounced or failed counts. **Why contacts left** tallies exit reasons, **Link
+performance** lists tracked links, and **Contacts in this sequence** shows each
+person's status and join time.
+
+<Note>
+  **Goals hit** counts contacts who left because they replied or booked an
+  appointment. A goal of **Became a customer** or **Made a purchase** still
+  stops the sequence, but isn't counted as a conversion in this report.
+</Note>
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Can I mix email, text, and WhatsApp in one sequence?">
+    Yes. Email and text steps require the matching channel from the wizard;
+    WhatsApp steps are always available once WhatsApp is connected.
+  </Accordion>
+  <Accordion title="What happens when a contact replies?">
+    With **They reply** on (the default), any text or email reply ends their
+    follow-ups. Handle the conversation in the [Inbox](/inbox/overview).
+  </Accordion>
+  <Accordion title="Can a contact go through a sequence twice?">
+    No — enrollment is once per contact per sequence, so re-adding a contact
+    who already finished has no effect.
+  </Accordion>
+  <Accordion title="Does STOP end a sequence?">
+    Yes. Opt-out exit is always on and can't be switched off. See
+    [Opt-out](/compliance/opt-out).
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="'Pick a sending number' or 'Verify an email sender before starting this sequence'">
+    Every text step needs a **Send from** number, and email steps need a
+    verified sender in your workspace. Fix these before **Start sequence**
+    becomes available.
+  </Accordion>
+  <Accordion title="'This step can never run — it comes after a goal that stops the sequence'">
+    Move the step above the goal, or turn off **Stop the sequence when reached**
+    on that goal.
+  </Accordion>
+  <Accordion title="A contact didn't enroll">
+    The sequence must be **Running**. Check that the contact matches every
+    audience filter, isn't already enrolled, and hasn't opted out (text
+    sequences skip opted-out contacts).
+  </Accordion>
+  <Accordion title="A message is 'held' longer than the wait">
+    Business hours, **Skip weekends**, quiet hours, frequency caps, and a step's
+    own day/time schedule all delay sends until they open. The warning "This
+    message only sends on … but the sequence only sends on …" means the two rules
+    never overlap.
+  </Accordion>
+</AccordionGroup>
+
+<CardGroup cols={2}>
+  <Card title="Build a segment" icon="filter" href="/contacts/segments">
+    Define who enters the sequence.
+  </Card>
+  <Card title="One-off sends" icon="paper-plane" href="/campaigns/overview">
+    Send a single text or email campaign instead.
+  </Card>
+</CardGroup>

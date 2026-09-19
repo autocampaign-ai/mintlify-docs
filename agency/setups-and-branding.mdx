@@ -1,0 +1,169 @@
+---
+title: "Setups and branding"
+description: "Reuse a proven marketing system across clients, and put your own logo, colors and support details on their workspaces."
+icon: "layer-group"
+---
+
+## Overview
+
+A **Setup** is a reusable marketing system — automations, templates, forms,
+audiences and more — captured from one client workspace and installed into
+another. **Branding** decides how clients see the platform: your logo, colors
+and support details instead of Autocampaign AI's. Both live in the sidebar for
+agency members: **Setups** (`/agency/setups`) and **Branding**
+(`/agency/branding`).
+
+<Info>
+  **Difficulty:** Intermediate &nbsp;·&nbsp; Saving, installing and editing setups, and changing branding, require the agency **Owner** or **Admin** role.
+</Info>
+
+## Before you start
+
+- You need an agency and at least one client workspace — see
+  [Agency console](/agency/overview).
+- For a custom domain, you need access to your domain provider's DNS settings.
+
+## What a setup contains
+
+Saving a setup copies the structure of a workspace, never its customer data.
+
+| Saved | Never copied |
+| --- | --- |
+| Campaigns & automations ([workflows](/automation/workflow-builder), [sequences](/campaigns/sequences)) | Contacts and conversations |
+| Text & email [templates](/campaigns/templates) | Billing |
+| [Forms](/growth/lead-forms) and [AI employees](/automation/ai-employees) | Passwords and API credentials |
+| Audiences & [tags](/contacts/tags) | Images attached to text templates |
+| [Dashboards](/analytics/custom-dashboards), [appointment types](/scheduling/meeting-types) | Phone numbers, senders, connected schedules |
+
+Business details such as the client's name and phone become placeholders (for
+example `{{business_name}}`) and are filled with the new client's details on
+install.
+
+## Save a setup from a client
+
+<Steps>
+  <Step title="Open Clients" icon="users">
+    Go to **My Agency → View all clients** (`/agency/clients`).
+  </Step>
+  <Step title="Choose Save as Setup" icon="floppy-disk">
+    On the client's card, open **More actions** and click **Save as Setup**.
+  </Step>
+  <Step title="Describe it" icon="pen">
+    Enter a **Setup name**, answer **What does it do?**, set the **Industry**
+    and click **Save Setup**. The dialog lists **What gets saved** and confirms
+    **Customer data is never copied**.
+  </Step>
+</Steps>
+
+The setup appears under **Your setups**. Autocampaign AI also ships
+**Ready-made setups** (for example **Dental Lead Machine**) that you can filter
+by industry, preview and use, but not edit or delete.
+
+## Use, update and share setups
+
+Each card offers **Use This Setup**, a **Preview** and a **More actions** menu
+with **Duplicate**, and — for your own setups — **Share**, **Edit** and
+**Delete**.
+
+- **Use This Setup** opens the **Add Client** wizard with the setup selected.
+  Setups install when a client is created; the only later install is the
+  **Update available** chip on a client card — click **Add the update**.
+- Installed items arrive as drafts, so nothing the client already has is
+  changed or removed. The install report lists finishing touches such as
+  picking a text or email sender, reconnecting a webhook, adding images, or
+  setting availability for an appointment type.
+- **Edit** changes only the name, description and industry. To change contents,
+  adjust a client workspace and save a new setup.
+- **Share** generates a code like `AC-XXXX-XXXX` and a link. Another agency
+  clicks **Import a setup**, enters the **Setup code**, previews it and clicks
+  **Add to my setups**. **Stop sharing** revokes the code.
+
+<Note>
+  **Update available** appears when a ready-made setup you installed has been
+  improved since. Your own setups don't get new versions.
+</Note>
+
+## Set up your branding
+
+<Steps>
+  <Step title="Brand" icon="image">
+    On **Branding**, upload a **Logo** and **Favicon** (PNG, JPEG, WebP, GIF or
+    SVG, up to 5 MB). Set a **Primary color** as a hex value, a **Support
+    email** and a **Support phone**, check the **Color preview**, then **Save**.
+  </Step>
+  <Step title="White label" icon="toggle-on">
+    Switch on what clients should see: **Use my logo**, **Use my colors**,
+    **Use my support information**, **Hide AutoCampaign branding** and **Use my
+    domain**. Each switch saves immediately.
+  </Step>
+  <Step title="Your client portal domain" icon="globe">
+    Enter a **Domain** such as `app.youragency.com` and click **Connect
+    domain**. Add the **CNAME** record shown at your domain provider, then click
+    **I've added it**. The status moves from **Waiting for DNS** to
+    **Connected**, or **Not found yet** if the record isn't visible.
+  </Step>
+</Steps>
+
+## Where branding appears
+
+In a client workspace that uses your agency branding, members see your logo,
+agency name and support email in the sidebar footer instead of the Autocampaign
+AI lockup; your primary color across buttons and highlights (with **Use my
+colors**); your favicon; and, with **Hide AutoCampaign branding**, your agency
+name as the browser tab title. Branding applies inside the app only — emails
+and texts sent from the workspace are not rebranded.
+
+## How clients inherit branding
+
+Branding is set once for the agency and inherited, not copied. In the **Add
+Client** wizard's **Branding** step, **Use my agency branding** (the default)
+makes the workspace inherit everything above; **Use the client's branding**
+keeps its own logo from its settings. Changes on **Branding** reach every
+inheriting client immediately.
+
+<Note>
+  The branding choice is made when you create the client and can't be switched
+  later from the console. A **Connected** domain is verified and stored, but
+  client workspaces are not yet served on that domain.
+</Note>
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Does a setup include contacts or conversations?">
+    No. Only the structure is saved, and a share preview never reveals the
+    source client.
+  </Accordion>
+  <Accordion title="Can I edit a ready-made setup?">
+    Not directly. **Duplicate** it, install it into a client, adjust the
+    workspace and save your own version.
+  </Accordion>
+  <Accordion title="Do my clients see my prices when they see my branding?">
+    No. Branding carries only your name, logo, colors and support details.
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="A setup card says Nothing captured yet">
+    The source workspace had none of the saved item types. Build the
+    automations and templates first, then save again.
+  </Accordion>
+  <Accordion title="An imported setup code isn't found">
+    Codes are revoked with **Stop sharing**. Ask for a fresh code and enter it
+    exactly, including the `AC-` prefix.
+  </Accordion>
+  <Accordion title="My domain stays on Not found yet">
+    DNS changes can take a while to propagate. Confirm the CNAME **Name** and
+    **Value** match exactly, wait, and click **I've added it** again.
+  </Accordion>
+  <Accordion title="A client doesn't see my colors or logo">
+    Check the client was created with **Use my agency branding**, and that
+    **Use my logo** and **Use my colors** are on under **White label**.
+  </Accordion>
+</AccordionGroup>
+
+<Card title="Add your next client" icon="user-plus" href="/agency/overview">
+  Pick a setup and branding in the Add Client wizard.
+</Card>

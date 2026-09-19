@@ -1,0 +1,160 @@
+---
+title: "Opportunities"
+description: "Track every deal on a board or list, work it from the side panel, and see win rates and forecasts in Pipeline reports."
+icon: "handshake"
+---
+
+## Overview
+
+An opportunity is a potential sale, booking or deal that you move through the
+stages of a [pipeline](/crm/pipelines) until it is **Won** or **Lost**. It can
+carry a value, an owner, a linked [contact](/contacts/overview), tags, custom
+fields, next-step tasks, comments and attachments.
+
+Find them under **CRM → Opportunities**: **All** (`/opportunities`),
+**My Opportunities** (`/opportunities?mine=1`) and **Reports** (`/opportunities/reports`).
+Each opportunity also has a full page at `/opportunities/<id>`.
+
+<Info>
+  **Difficulty:** Beginner &nbsp;·&nbsp; A **Sales Pipeline** (New Lead · Contacted ·
+  Qualified · Proposal · Won · Lost) is created the first time anyone opens Opportunities.
+</Info>
+
+## Before you start
+
+- **Owners, Admins and Managers** can create, edit, delete and comment on opportunities, and customize pipelines.
+- **Agents** can create, edit and comment, but not delete or change pipelines.
+- **Viewers** are read-only. See [Users & roles](/getting-started/users-roles).
+
+## Board and list views
+
+Click the pipeline name in the header to switch pipelines (and, with manage
+rights, to open **New Pipeline** or **Customize pipeline**). Beside it: **Total value**,
+**Weighted** (value × probability), **Opportunities**, **Open**, **Won**, **Lost**.
+
+The toolbar has **Search opportunities…**, a **Filter** popover (Stage, Status,
+Owner, Priority, Source, Value range, Expected close range), quick filters
+(**My opportunities**, **Open**, **Won**, **Lost**, **Closing soon** — open deals
+closing within 7 days) and a **Board** / **List** toggle.
+
+- **Board** — one column per stage with count and value. Drag cards between
+  stages; columns load 25 cards then **Load more**. **Add Opportunity** under a
+  column pre-selects that stage.
+- **List** — columns **Opportunity**, **Contact**, **Stage**, **Value**, **Owner**,
+  **Close**, **Next step**, **Priority**. Stage, value, owner, close date and
+  priority edit inline. **Columns** lets you show, hide or drag-reorder columns
+  (including custom fields) and **Create field**.
+
+Search, filters, sort, page and view live in the URL, so any view is shareable;
+column layout is remembered per pipeline in your browser.
+
+## Create an opportunity
+
+<Steps>
+  <Step title="Open the dialog" icon="plus">
+    Click **Add Opportunity**, or **Create opportunity** on a contact's
+    **Opportunities** tab or in an inbox thread header.
+  </Step>
+  <Step title="Fill in the essentials" icon="pen">
+    **Opportunity name** (required), **Contact**, the pipeline · stage line (click
+    **Change** to pick another), **Value**, **Expected close** and **Owner**.
+  </Step>
+  <Step title="Add more details (optional)" icon="list">
+    **Add more details** reveals **Company**, **Priority** (Low / Medium / High),
+    **Probability**, **Source** (suggestions: Website, Referral, Campaign, Inbox,
+    Form, AI Employee, Other), **Tags**, custom fields and **Notes**. Required
+    custom fields must be filled first.
+  </Step>
+  <Step title="Save" icon="check">
+    Click **Create opportunity**. It opens in the side panel.
+  </Step>
+</Steps>
+
+## Work a deal in the side panel
+
+Click a card or row to open the panel; **Open full page** shows the same view at
+its own URL. Everything edits inline:
+
+- **Header** — status, days in stage, name, value and the weighted amount
+  (value × the deal's probability, or the stage default).
+- **Fields** — **Stage**, **Owner**, **Close date**, **Priority**, **Contact**, **Company**,
+  **Probability**, **Source**, and **Lost reason** once lost. Custom fields sit under
+  **Fields** with a ⋮ menu: **Edit field**, **Hide field**, **Delete field**.
+- **Notes**, **Tags** and **Attachments** (drag files in or **Add attachment**; 25 MB
+  per file, executable types refused).
+- **Next steps** — type in **Add a next step…**, set a due date and assignee, tick to
+  complete. Overdue tasks show red on cards and rows.
+- **Comments** — plain text; **Send** or Ctrl/Cmd + Enter; edit or delete your own.
+  AI Employee notes show the agent's name with **(AI)**.
+- **Activity** — every change with before/after values: moves, value, owner,
+  tags, tasks, attachments and field updates.
+
+<Note>
+  `@name` in a comment is highlighted but doesn't notify anyone. The panel moves a
+  deal between stages of its own pipeline only.
+</Note>
+
+## Win, lose and reopen
+
+Move a deal to **Won**: status becomes Won, a conversion with the deal's value
+is recorded, and the team gets an **Opportunity won** notification. Move it to
+**Lost** and **Why was this opportunity lost?** asks for a reason from your
+workspace list and/or a note, then **Mark as lost**. Dragging back to an open
+stage reopens the deal and voids the conversion.
+
+## Notifications
+
+Members get **Opportunity assigned to you** when they become owner, **Next step
+assigned to you** when a task is created for or assigned to them, and
+**Opportunity won** when any deal closes. See [Notifications](/analytics/notifications).
+
+## Automatic opportunities
+
+- **Lead forms** — enable **Create an opportunity** in the follow-up step and pick
+  a pipeline. Submissions create a deal with source `Form` unless the contact
+  already has an open one there. See [Lead forms](/growth/lead-forms).
+- **Inbox** — **Create opportunity** in the thread header pre-links the contact. See [Inbox](/inbox/overview).
+- **Workflows** — triggers and actions are listed on [Pipelines](/crm/pipelines).
+- **AI Employees** — Sales skills **Create Opportunity**, **Update Opportunity** and
+  **Add Opportunity Note** act only on the conversation's contact and their current
+  open deal (source `AI Employee`). See [AI Employees](/automation/ai-employees).
+
+## Pipeline reports
+
+**CRM → Opportunities → Reports** covers one pipeline at a time. Pick the
+**Pipeline** and a date range (default: last 30 days); both stay in the URL.
+
+- **KPIs** — **New deals**, **Open value**, **Won**, **Lost**, **Win rate** (won ÷ won + lost) and **Expected revenue**.
+- **Deals by stage** — where every live deal sits right now.
+- **Stage conversion** — of deals created in the period, the share that moved on from each open stage, ending at Won.
+- **Forecast** — open deals by expected close month with **Open value** and
+  **Expected revenue** (weighted by probability); undated deals sit under **No close date**.
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Where does the probability come from?">
+    The deal's own **Probability** if set, otherwise the stage default (Won 100%,
+    Lost 0%). Stages you add have no default, so set it per deal.
+  </Accordion>
+  <Accordion title="Can a contact have several opportunities?">
+    Yes — see the contact's **Opportunities** tab. Automations and AI Employees only
+    touch the contact's most recently updated open deal.
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="I can't drop a card on Lost">
+    Lost needs a reason. Pick one or type a note, then **Mark as lost**.
+  </Accordion>
+  <Accordion title="My custom field column is missing">
+    New fields start hidden in the list — switch them on under **Columns**. Fields
+    scoped to another pipeline never appear.
+  </Accordion>
+</AccordionGroup>
+
+<Card title="Shape your pipelines" icon="diagram-project" href="/crm/pipelines">
+  Stages, value labels, custom fields, lost reasons and automations.
+</Card>

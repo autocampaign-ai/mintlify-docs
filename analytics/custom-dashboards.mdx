@@ -1,0 +1,191 @@
+---
+title: "Custom dashboards"
+description: "Build your own home screen from widgets, set a default, and share dashboards with your team."
+icon: "table-cells-large"
+---
+
+## Overview
+
+The **Dashboard** in the sidebar (`/`) starts as a built-in layout called
+**Overview**. You can customize it or create more dashboards, each made of
+widgets you add, resize, and reorder. Every saved dashboard has its own address
+(`/dashboards/:id`), and you switch between them from the dashboard selector next
+to the period filter.
+
+<Info>
+  **Difficulty:** Beginner &nbsp;·&nbsp; Changes save automatically while you
+  customize.
+</Info>
+
+## Before you start
+
+- Any role that can open the Dashboard — **Owner**, **Admin**, **Manager**,
+  **Agent**, or **Viewer** — can create and manage their own dashboards.
+- Dashboards are personal by default (**Only me**). You choose whether to share
+  each one.
+- Only **Owners** and **Admins** can set a dashboard as the workspace default.
+
+## Create a dashboard
+
+<Steps>
+  <Step title="Open the selector" icon="chevron-down">
+    On the **Dashboard**, click the dashboard selector (it shows **Overview** until
+    you create one) and choose **New dashboard…**.
+  </Step>
+  <Step title="Name it and pick a starting point" icon="pen">
+    Enter a **Name** (up to 60 characters; each of your dashboards needs a unique
+    name). Under **Starting point**, choose **Standard layout** to start with the
+    default set of widgets, or **Blank** to start empty.
+  </Step>
+  <Step title="Choose who can access it" icon="user-group">
+    Under **Assign users**, keep **Only me**, or pick **Everyone in workspace** or
+    **Selected people**. You can change this later.
+  </Step>
+  <Step title="Create" icon="check">
+    Click **Create**. The new dashboard opens right away.
+  </Step>
+</Steps>
+
+<Note>
+  Clicking **Customize** on the built-in **Overview** saves it as a dashboard
+  named **Overview** and makes it your default, so your edits have somewhere to
+  live.
+</Note>
+
+## Edit the layout
+
+<Steps>
+  <Step title="Click Customize" icon="sliders">
+    The **Add a widget** gallery opens. Browse by category (**Marketing**,
+    **Conversations**, **Analytics**, **Appointments**, **Workspace**), use
+    **Search widgets…**, or pick from **Recommended**.
+  </Step>
+  <Step title="Add widgets" icon="plus">
+    Click **Preview** to see an example and what the widget shows, then **Add**
+    (or **Add to dashboard**). Gallery previews are marked **Example** — they use
+    sample numbers, not your data.
+  </Step>
+  <Step title="Arrange and resize" icon="up-down-left-right">
+    Drag a widget by its handle to reorder it. Open **Widget actions** on a widget
+    to change its **Size** (**Small**, **Medium**, **Large**, **Extra large**,
+    **Full width** — each widget offers only the sizes that suit it) or **Remove**
+    it.
+  </Step>
+  <Step title="Finish" icon="circle-check">
+    Use **Undo** and **Redo** as needed, then click **Done**. Edits save
+    automatically — there is no separate save button.
+  </Step>
+</Steps>
+
+## Available widgets
+
+| Category | Widgets |
+| --- | --- |
+| **Marketing** | **Campaign Performance**, **Channels Engagement**, **Poll Insights**, **Web Form Performance**, **Link Performance** |
+| **Conversations** | **Active Conversations**, **Reply Rate**, **AI vs Human**, **Unread Conversations**, **Recent Inbox** |
+| **Analytics** | **Opt-out Rate**, **Opt-out Trends** |
+| **Appointments** | **Appointments Today** |
+| **Workspace** | **Quick Actions**, **Usage Snapshot**, **Setup Progress** |
+
+Analytics widgets follow the dashboard's period filter. **Quick Actions** shows
+only the shortcuts your role allows, and **Usage Snapshot** appears in the gallery
+only if you can view billing. See [Dashboard](/analytics/dashboard) for what each
+standard widget shows.
+
+<Note>
+  Widgets have no individual settings beyond size and position — you can't
+  rename a widget or give it its own date range or filter. Each widget can appear
+  once per dashboard.
+</Note>
+
+## Rename, duplicate, or delete
+
+Open the selector and click **Dashboard actions** (⋮) next to a dashboard:
+
+- **Edit** — change the name and, if you own it, who can access it.
+- **Duplicate** — creates a private copy named "Copy of …" that you own. This
+  works on dashboards shared with you, too.
+- **Delete** — owner only. Confirm in **Delete dashboard?**; this cannot be
+  undone, and everyone it was shared with loses it.
+
+## Set a default dashboard
+
+- **Set as default** makes a dashboard — your own or one shared with you — the
+  one you see when you open `/`. It is marked **Default** and applies only to you.
+- **Set as workspace default** (Owners and Admins, on a dashboard you own) makes
+  it the home screen for every teammate who hasn't picked their own default. It is
+  marked **Workspace** and becomes visible to everyone in the workspace.
+
+Without either, you land on the dashboard you own that changed most recently, or
+on the built-in **Overview** if you have none.
+
+## Share a dashboard
+
+<Steps>
+  <Step title="Open Share…" icon="share-nodes">
+    In **Dashboard actions**, choose **Share…** (only the dashboard's owner sees
+    it).
+  </Step>
+  <Step title="Pick who can access" icon="lock">
+    Under **Who can access?**, choose **Only me**, **Everyone in workspace**
+    (view-only for everyone), or **Selected people**.
+  </Step>
+  <Step title="Set each person's access" icon="user-pen">
+    For **Selected people**, search for teammates and set each to **Can view** or
+    **Can edit**, then click **Save**.
+  </Step>
+</Steps>
+
+Shared dashboards appear in teammates' selectors with **Shared by** and your
+name. People with **Can edit** can rename the dashboard and customize its layout;
+only you can share or delete it. Switching back to **Only me** removes everyone's
+access.
+
+## Limits
+
+- 20 dashboards per person, per workspace.
+- 30 widgets per dashboard, and one of each widget type — so 16 in practice today.
+- Dashboard names: 60 characters.
+- **Selected people**: up to 100 teammates per dashboard.
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Are dashboards per user or per workspace?">
+    Per user. A dashboard you create is visible only to you until you share it or
+    an Owner or Admin makes it the workspace default.
+  </Accordion>
+  <Accordion title="Does a shared dashboard show my data to the viewer?">
+    Widgets load with the viewer's own permissions. A widget they aren't allowed
+    to see shows **You don't have permission to view this widget.** instead.
+  </Accordion>
+  <Accordion title="Can I set a different date range per dashboard or widget?">
+    No. The period filter at the top applies to every analytics widget on the
+    dashboard you're viewing.
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="I don't see Customize">
+    You have view-only access to this dashboard. Ask its owner for **Can edit**, or
+    **Duplicate** it and customize your copy.
+  </Accordion>
+  <Accordion title="Add is unavailable for a widget">
+    A widget marked **On dashboard** is already placed — each widget can be added
+    once. If you see a message about the 30-widget limit, remove a widget first.
+  </Accordion>
+  <Accordion title="“A dashboard named … already exists” or I can't create another">
+    Names must be unique among your dashboards (ignoring capitalization), and you
+    can have up to 20. Rename or delete one and try again.
+  </Accordion>
+  <Accordion title="A card says “Widget no longer available”">
+    That widget type has been retired. Click **Customize** and **Remove** it from
+    the layout.
+  </Accordion>
+</AccordionGroup>
+
+<Card title="Analytics reports" icon="chart-mixed" href="/analytics/reports">
+  Go deeper with workspace-wide reports and a CSV export.
+</Card>

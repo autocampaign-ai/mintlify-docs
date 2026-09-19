@@ -1,0 +1,175 @@
+---
+title: "Lead forms"
+description: "Build a hosted lead form, publish or embed it, and turn every submission into a contact with automatic follow-up."
+icon: "clipboard-list"
+---
+
+## Overview
+
+A lead form is a hosted, brandable form that captures leads at a public link
+(`/f/<slug>`) or embedded on your website. Every submission is stored, matched to a
+[contact](/contacts/overview), and can trigger follow-ups: tags, a segment, a
+thank-you SMS or email, an opportunity, a team notification, or a workflow. Find
+forms under **CRM → Lead Capture → Forms** in the sidebar (`/forms`).
+
+<Info>
+  **Difficulty:** Intermediate &nbsp;·&nbsp; Forms accept submissions only while
+  **Published**.
+</Info>
+
+For simpler SMS opt-in signup pages, see [join links](/campaigns/join-links).
+
+## Before you start
+
+- You need a role that can create and update forms. Publishing also needs a free
+  published-form slot on your plan; drafts don't count.
+- A thank-you SMS needs an active SMS number; a thank-you email needs a verified
+  [email sender](/providers/email-senders).
+- To add submitters to a segment, create the [segment](/contacts/segments) first.
+
+## Build a form
+
+Click **Create Form** to start blank, or **Use a template** (Contact Us, Get a
+Quote, Book an Appointment, Newsletter Signup, and more). Template questions stay
+editable, and your work autosaves as a draft.
+
+<Steps>
+  <Step title="Basics" icon="pen">
+    Set the **Lead form name**, an internal **Description**, and **Form tags** to
+    organize your forms. These tags don't apply to contacts.
+  </Step>
+  <Step title="Questions" icon="list">
+    Add blocks from the library. **Smart Fields** (Full Name, Email Address, Phone
+    Number, Company Name, Budget, and more) come pre-connected to contact fields.
+    **All question blocks** adds Short answer, Long answer, Email, Phone, Company,
+    Website, Address, Dropdown, Multiple choice, Checkboxes, Date, Time, Rating,
+    File upload, Hidden value, Consent, and Heading, Paragraph, and Divider layout
+    blocks.
+
+    Select a question to set **Required**, **Placeholder**, **Help text**,
+    **Choices**, or answer length, and use **Save answer to contact** to map it to a
+    contact field or a **Custom contact detail…**. File uploads allow up to 25 MB
+    and 10 files per question. **Skip ahead after this question** adds branching;
+    the **Flow** view flags questions that would never be shown.
+  </Step>
+  <Step title="Design" icon="palette">
+    Choose a **Form style** — **Classic** (one page) or **Conversational** (one
+    question at a time) — then a theme or your own **Brand color**, **Background
+    color**, **Font**, **Button style**, **Logo**, and **Background image**. **Save
+    current design as theme** to reuse it.
+  </Step>
+  <Step title="After Submission" icon="bolt">
+    Pick the follow-up actions (below) and write the **Success Message** or a
+    redirect URL (http or https). A redirect replaces the message.
+  </Step>
+  <Step title="Publish" icon="rocket">
+    Turn on **Publish this lead form** and click **Save & Publish**, or **Save
+    Draft** to keep it private. You land on the **Share** tab.
+  </Step>
+</Steps>
+
+Publishing needs at least one answerable question. Forms hold up to 50 questions
+with up to 50 choices each.
+
+## Publish and share
+
+The **Share** tab gives you three routes to visitors:
+
+- **Hosted link** — **Copy link** or **Open form**. The slug is generated from the
+  form name.
+- **QR code** — **Download QR** for print.
+- **Add to your website** — choose **On the page**, **Popup**, or **Slide-in**, then
+  copy the snippet for **HTML**, **React**, **WordPress**, or **Shopify**.
+
+**Preview** (`/forms/<id>/preview`) walks through the form as a visitor. It never
+saves answers, sends follow-ups, or counts in analytics.
+
+Forms move **Draft** → **Published** → **Archived**. **Archive** takes a form
+offline and frees its plan slot; **Unarchive** republishes it. Deleting keeps
+existing submissions and contacts.
+
+## What happens on submit
+
+Autocampaign AI saves the submission first, so a lead is never lost to a failed
+follow-up, then runs each enabled action independently:
+
+- **Save as a contact** matches by phone, then email, filling only empty fields;
+  otherwise it creates a contact with source Lead Form. **Save answers to custom
+  fields** stores unmapped answers on the contact.
+- **Add to Audience** adds the contact to a **Segment**; **Add Tags** applies tags.
+- **Send Thank You SMS** (from a number you pick) skips opted-out contacts.
+  **Send Thank You Email** (from a verified sender) skips suppressed addresses.
+- **Create an opportunity** in a **Pipeline** and **Stage**, optionally with an
+  **Owner**; skipped if the contact already has an open one there. See
+  [Opportunities](/crm/opportunities).
+- **Notify Team** sends an in-app notification.
+- **Enable automations & activity log** records the submission on the contact and
+  lets **Trigger Workflow** start a [workflow](/automation/workflow-builder).
+
+A **Consent** block stores the exact consent text, whether it was checked, and the
+time with the submission.
+
+<Note>
+  Consent is stored as evidence on the submission only. It doesn't change a
+  contact's SMS opt-out status.
+</Note>
+
+<Note>
+  There is no CAPTCHA. Public submissions are rate-limited per visitor, and
+  uploads are re-checked for type and size before a submission is accepted.
+</Note>
+
+## Submissions and analytics
+
+The **Forms** list shows **Form views**, **Submissions**, **Conversion rate**, and
+**Submissions · last 30 days**, with **Edit**, **Preview**, **Duplicate**,
+**Share**, **Analytics**, **Archive**, and **Delete** per form.
+
+A form's **Submissions** tab lists each lead with a **Status** of **New**,
+**Contact created**, **Contact updated**, or **Needs attention**. Open a row for
+**Responses**, **Source & device** (UTM values, referrer, page), and each
+**Follow-up action** as **Done**, **Skipped**, or **Failed**. Use **View contact**
+or **Export CSV**. Submissions also appear on the contact's record.
+
+The **Analytics** tab covers 7, 30, or 90 days: **Views**, **Starts**,
+**Submissions**, **Conversion rate**, **Abandonment**, **Views over time**, a
+**Funnel**, **Devices**, **Top sources**, and **Hosted vs website**.
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Can I change the hosted link's slug?">
+    No. It's generated from the form name at creation. Duplicating a form makes a
+    new slug.
+  </Accordion>
+  <Accordion title="Does a submission duplicate an existing contact?">
+    No. Matching is by phone, then email; only empty fields are filled and tags are
+    appended.
+  </Accordion>
+  <Accordion title="What does a Hidden value block do?">
+    It submits a fixed **Value** with every response without showing anything —
+    handy for labeling a form copy by placement.
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Save & Publish is blocked">
+    Fix the step named in the toast, add an answerable question, or free a
+    published-form slot by archiving another form or upgrading.
+  </Accordion>
+  <Accordion title="The thank-you SMS or email didn't send">
+    Check the submission's **Follow-up actions**. **Failed** usually means the sender
+    number is inactive or the email sender isn't verified; **Skipped** means no
+    phone or email, an opted-out contact, or a suppressed address.
+  </Accordion>
+  <Accordion title="Visitors see 'This form is not available'">
+    The form is a draft or archived, or the link is wrong. Publish it and copy the
+    link again from **Share**.
+  </Accordion>
+</AccordionGroup>
+
+<Card title="Text-to-join keywords" icon="hashtag" href="/growth/join-keywords">
+  Capture subscribers from print and signage with a keyword.
+</Card>

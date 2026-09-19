@@ -8,7 +8,7 @@ icon: "inbox"
 
 The inbox is where you have conversations with contacts. Every inbound reply lands
 here, linked to the contact, so you (and your team, and your
-[AI agent](/automation/ai-agent)) can respond from one place. Open it from
+[AI Employees](/automation/ai-employees)) can respond from one place. Open it from
 **Inbox** in the sidebar (`/inbox`).
 
 <Info>
@@ -58,16 +58,47 @@ contact is opted out, the conversation is archived, or there's no connected numb
   in a later release.
 </Note>
 
+## WhatsApp conversations
+
+Inbound WhatsApp messages appear on the contact's **WhatsApp** channel tab once the
+[WhatsApp channel](/channels/whatsapp) is connected. A reply from the contact opens a
+**24-hour window**:
+
+- While it's open, the composer shows **You can reply normally** and you can send text
+  (up to 4,096 characters) and attachments.
+- When it's closed, the composer is blocked with **Use an approved WhatsApp template to
+  start this message**. Click **Choose a template**, pick an approved template
+  (previewed with the contact's details), and click **Send template**.
+- A contact who replied `STOP` on WhatsApp shows **This contact has opted out of
+  WhatsApp. Sending is disabled** — templates can't override that.
+
+### Compose a new WhatsApp message
+
+Click the **Message composer** button above the conversation list and choose
+**WhatsApp** (it appears only when the channel is connected). In **Compose WhatsApp**,
+add up to 50 existing contacts under **To**, write a **Message**, and click **Send** —
+one message goes to each contact and each lands in its own conversation. If any
+recipient's window is closed, the panel switches to a **Template** picker; you can
+also switch manually with **Send a template instead**. Opted-out contacts are listed
+so you can **Remove** them before sending.
+
+<Note>
+  WhatsApp compose accepts existing contacts only (no typed-in numbers) and can't be
+  scheduled.
+</Note>
+
 ## Schedule a message
 
 Use the send button's dropdown to **schedule** a message for later. Scheduled
 messages appear in a panel where you can reschedule, send now, or cancel them.
 
-## AI assistant
+## AI Employee
 
-In the contact panel, the **AI assistant** card lets you **assign** an
-[AI agent](/automation/ai-agent) to handle the conversation, **take over** to reply
-yourself, or **resume AI**. AI-authored replies are labeled with the agent's name.
+In the contact panel, the **AI Employee** card lets you **Assign** an
+[AI Employee](/automation/ai-employees) to handle the conversation, **Take over** to
+reply yourself, or **Resume AI**. Use the composer's **AI Autopilot** menu to switch
+between **Auto-send** and **Draft & approve** (you **Edit** or **Approve & Send** each
+reply). AI-authored replies are labeled with the employee's name.
 
 ## Real-time
 
@@ -102,11 +133,16 @@ appear instantly for your whole team without refreshing.
     have a connected number for the channel.
   </Accordion>
   <Accordion title="The AI stopped replying">
-    Sending a manual reply pauses the AI (Human controlled). Use **Resume AI** to hand
-    it back. See [AI agent](/automation/ai-agent).
+    In **Auto-send** mode, sending a manual reply pauses the AI (Human controlled).
+    Use **Resume AI** to hand it back. See [AI Employees](/automation/ai-employees).
+  </Accordion>
+  <Accordion title="I can't type a WhatsApp reply">
+    The contact's 24-hour window has closed. Use **Choose a template** to send an
+    approved template, or wait for the contact to message you again. See
+    [WhatsApp](/channels/whatsapp).
   </Accordion>
 </AccordionGroup>
 
-<Card title="Add AI to your inbox" icon="robot" href="/automation/ai-agent">
-  Let an agent handle replies.
+<Card title="Add AI to your inbox" icon="user-robot" href="/automation/ai-employees">
+  Let an AI Employee handle replies.
 </Card>

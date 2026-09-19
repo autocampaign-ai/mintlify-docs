@@ -1,0 +1,166 @@
+---
+title: "Pricing and rebilling"
+description: "Set the prices your clients pay, see your earnings, and charge clients automatically through your own Stripe account."
+icon: "dollar-sign"
+---
+
+## Overview
+
+The pricing page is where you decide what clients pay for each plan, give a
+client a special price, and connect your own Stripe account so clients are
+invoiced automatically. Reach it from a client card's **More actions → View
+pricing** (`/agency/pricing`).
+
+<Info>
+  **Difficulty:** Intermediate &nbsp;·&nbsp; Prices are visible to agency **Owners** and **Admins**; connecting Stripe and starting or stopping billing are **Owner**-only.
+</Info>
+
+## Before you start
+
+- You need an agency with at least one client — see
+  [Agency console](/agency/overview).
+- To bill clients automatically, you need your own Stripe account and its
+  secret key (Stripe shows it under **Developers → API keys**).
+
+## How the numbers work
+
+- **Your cost** — the Autocampaign AI list price for the plan.
+- **Client price** — what you charge. Left empty, a client follows your
+  standard price for their plan.
+- **Your earnings** — client price minus your cost, with the margin as a share
+  of the client price ($70 on $149 is 47%).
+
+Only your agency team sees costs and earnings; client workspaces never do.
+
+## Set your standard prices
+
+<Steps>
+  <Step title="Optionally set a suggested-pricing rule" icon="percent">
+    Under **Suggested pricing**, enter a **Markup percent** and click **Save
+    rule** (Owners only). Empty plan prices then show **Suggested: $X/mo**.
+    Suggestions only — nothing changes until you save a price.
+  </Step>
+  <Step title="Enter a client price per plan" icon="table">
+    In the **Plan / Your cost / Client price / Your earnings** table, type a
+    dollar amount for each plan, or click a suggestion to fill it in.
+  </Step>
+  <Step title="Save" icon="floppy-disk">
+    Click **Save prices**. Every new client starts from these prices.
+  </Step>
+</Steps>
+
+Markups round to a friendly price — a 50% markup on $99 becomes $149, not
+$148.50 — and never drop below your cost.
+
+## Give a client a special price
+
+Under **Client prices**, each row shows the **Plan**, **Client price** and
+**Your earnings**. A client's own price is set in the **Set your price** step
+when you add them; click **Use standard price** to clear it. The **Who pays for
+usage?** menu records **Included in their plan**, **Client pays for extra
+usage** or **I pay for usage**.
+
+<Note>
+  The usage choice, like the wizard's **Who pays AutoCampaign?** answer, is
+  bookkeeping for your team and activity log. Neither changes what Autocampaign
+  AI charges the workspace — its plan and subscription are managed from the
+  workspace's own billing, see [Plans and trials](/billing/plans-and-trials).
+</Note>
+
+## Connect Stripe and bill clients
+
+Rebilling charges each client their monthly **Client price** on your own Stripe
+account. The money goes straight to you.
+
+<Steps>
+  <Step title="Connect your Stripe account" icon="credit-card">
+    Under **Get paid by your clients**, paste **Your Stripe secret key (sk_…)**
+    and click **Connect**. Autocampaign AI verifies the key, stores it encrypted
+    and never shows it again. The card then reads **Connected to Stripe account
+    &lt;id&gt;**, with a **Test mode** badge for a test key.
+  </Step>
+  <Step title="Make sure the client has a price" icon="dollar-sign">
+    Without a **Client price** the button is disabled with **Set a monthly
+    price first**.
+  </Step>
+  <Step title="Start billing" icon="play">
+    In the client's row click **Start billing**. A customer and a monthly
+    subscription are created in your Stripe account at the client's price in
+    USD, and the status shows **Billing on**.
+  </Step>
+  <Step title="Stop when needed" icon="stop">
+    **Stop billing** cancels the subscription in Stripe; you can start again
+    later. **Disconnect** removes the connection from your agency, while
+    existing subscriptions stay in Stripe.
+  </Step>
+</Steps>
+
+## What clients are charged and see
+
+Stripe emails your client a hosted invoice from your Stripe account each month,
+due within 7 days. No card is needed up front — the client pays from the
+invoice, which comes from your account rather than Autocampaign AI. Nothing
+about rebilling appears inside the client's workspace.
+
+## Statuses
+
+| Status | Meaning |
+| --- | --- |
+| **Billing on** | The subscription is active (or trialing) in Stripe. |
+| **Payment past due** | An invoice is unpaid past its due date, or the subscription is incomplete. |
+| No badge | Billing hasn't started, or it was stopped. |
+
+Statuses refresh from Stripe when you open the pricing page, and **Recent
+activity** on **My Agency** records who started or stopped billing and at what
+price.
+
+<Note>
+  Invoices, payment history and payouts live in your Stripe dashboard, not in
+  Autocampaign AI. Non-payment does not suspend the client's workspace.
+</Note>
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Can I charge annually or in another currency?">
+    Rebilling creates monthly subscriptions in USD only. For other terms,
+    invoice from Stripe directly.
+  </Accordion>
+  <Accordion title="Does changing my standard price change existing clients?">
+    Clients with their own price keep it. A running Stripe subscription keeps
+    the amount it started with until you stop and start billing again.
+  </Accordion>
+  <Accordion title="Does my client's payment go to Autocampaign AI?">
+    No. Subscriptions live in your Stripe account, so payments go to you. You
+    pay Autocampaign AI for the workspace separately.
+  </Accordion>
+  <Accordion title="Can I see the Stripe key I connected?">
+    No. It is stored encrypted and never shown again. Disconnect and connect a
+    new key if you rotate it.
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Connect fails with 'We couldn't connect that Stripe account'">
+    The key must be a secret key starting with `sk_test_` or `sk_live_`, not a
+    publishable key, and must be valid for your account.
+  </Accordion>
+  <Accordion title="Start billing is disabled">
+    Set a **Client price** for that client first, and check Stripe shows as
+    connected below the table.
+  </Accordion>
+  <Accordion title="Your earnings shows a dash">
+    The client has no plan yet or billing data is temporarily unavailable, so
+    there is no cost to compare against.
+  </Accordion>
+  <Accordion title="A client shows Payment past due right after starting">
+    The first invoice is due 7 days after it is sent. If the status stays past
+    due, check the invoice in your Stripe dashboard.
+  </Accordion>
+</AccordionGroup>
+
+<Card title="Brand the client experience" icon="palette" href="/agency/setups-and-branding">
+  Put your logo and support details on every client workspace.
+</Card>

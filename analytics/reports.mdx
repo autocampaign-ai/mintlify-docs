@@ -1,0 +1,202 @@
+---
+title: "Analytics reports"
+description: "Six workspace-wide reports — Overview, Marketing, Conversations, Revenue, Appointments, and Deliverability — plus AI insights and a CSV export."
+icon: "chart-mixed"
+---
+
+## Overview
+
+The **Analytics** group under **Insights** in the sidebar holds six reports, each
+on its own route: **Overview** (`/analytics/overview`), **Marketing**
+(`/analytics/marketing`), **Conversations** (`/analytics/conversations`),
+**Revenue** (`/analytics/revenue`), **Appointments** (`/analytics/appointments`),
+and **Deliverability** (`/analytics/deliverability`). Every report covers the
+whole workspace for the period you pick.
+
+<Info>
+  **Difficulty:** Beginner &nbsp;·&nbsp; Numbers roll up daily; a few cards are
+  marked **Updated nightly**.
+</Info>
+
+## Before you start
+
+- You need a role with the analytics permission — **Owner**, **Admin**,
+  **Manager**, or **Viewer** (Agents see the [Dashboard](/analytics/dashboard) but
+  not these reports).
+- Dates follow your workspace timezone. Use `/analytics/overview` for the
+  headline numbers and drill into a domain report when something looks off.
+
+## Pick a period
+
+<Steps>
+  <Step title="Choose a preset" icon="calendar">
+    Open the **Period** selector: **Today**, **Yesterday**, **Last 7 days**,
+    **Last 30 days** (default), or **This month**.
+  </Step>
+  <Step title="Or set a custom range" icon="calendar-range">
+    Use the date-range picker next to it. Custom ranges can span up to 3 years.
+    The selection is stored in the URL, so you can bookmark or share a view.
+  </Step>
+</Steps>
+
+KPI cards show the change **vs previous period** (a window of equal length
+ending where yours starts). Charts and tables show the current period only.
+
+## What each report shows
+
+### Overview
+
+- **KPI cards:** **New Leads**, **Audience Growth** (new contacts minus opt-outs),
+  **Messages Sent** (with the share delivered), **Appointments Booked**,
+  **Conversions** (with total value), **New Customers**, **First Response Time**,
+  and **AI Resolution Rate**.
+- **Business health:** a 0–100 score and band (**Excellent**, **Good**, **Needs
+  attention**, **At risk**) built from six weighted parts — **Message delivery**,
+  **Replies and clicks**, **Audience growth**, **Response speed**, **AI usage**,
+  and **Setup progress**. Weak parts get a fix-it link (for example, to
+  **Channels** or the setup checklist). This card always covers the trailing 30
+  days, regardless of the period selector.
+- **AI business coach:** a short narrative plus recommendations generated each
+  night for the previous day from your own metrics. New workspaces see **Your
+  coach is warming up — check back tomorrow**.
+- **Lifecycle funnel:** contacts added in the period by the furthest stage they
+  reached — **New leads → Engaged → Appointment booked → Customer**.
+- **Channel performance:** **Delivered**, **Replies**, and **Clicks** for
+  **Text messages** and **Email** (email adds **Opens**).
+- **Campaign performance:** a sortable table (**Name**, **Channel**, **Status**,
+  **Sent**, **Delivered**, **Replies**, **Clicks**, **CTR %**, **Created**) with an
+  **All / Text / Email** toggle, 20 rows per page, and **Export CSV**.
+
+### Marketing
+
+**Messages Sent**, **Replies**, **Link Clicks**, and **Audience Growth** KPIs; a
+daily **Messages, replies & clicks** trend; **Audience sources** (where contacts
+came from — **Text-to-Join**, **Signup Form**, **Lead Form**, **Google Ads**,
+**Meta Ads**, **CSV Import**, **Added manually**, and conversation sources); and
+the same campaign performance table as Overview.
+
+### Conversations
+
+**Conversations Started**, **Conversations Closed**, **First Response Time**, and
+**AI Resolution Rate** (the last two are **Updated nightly**); a **Replies
+received** trend; **AI vs. your team** (closed conversations **Handled by AI** vs
+**Handed to your team**); and **Busiest times of day** — inbound messages by
+hour in your workspace timezone.
+
+### Revenue
+
+- **KPIs:** **Conversions**, **Revenue** (split into **From bookings**, **Marked
+  won**, and **Workflow goals**), **Estimated send cost**, **ROI**, and **Cost per
+  conversion**. ROI shows **—** when a campaign has no recorded send cost.
+- **Revenue by source:** **Leads**, **Conversions**, and **Revenue** per
+  acquisition source.
+- **Campaigns:** attributed **Sends**, **Est. cost**, **Conversions**, **Revenue**,
+  **Cost / conversion**, and **ROI** per campaign, 10 per page, plus a **Not linked
+  to a campaign** row. Attribution is last-touch: the sale is credited to the last
+  campaign that reached the contact in the 30 days before they converted.
+
+Conversions come from completed appointments with a service value, from
+**Mark as won** on a contact (enter an optional **Sale amount** and click
+**Record win**), from workflow goals, and from an [opportunity](/crm/opportunities)
+entering a won stage.
+
+<Note>
+  **Estimated send cost** is derived from message volume. For exact charges, see
+  [Wallet & billing](/billing/wallet-billing).
+</Note>
+
+### Appointments
+
+**Booked**, **Completed**, **Show rate**, **No-show rate**, and **Cancellation
+rate**; a **Bookings, completions & no-shows** trend; and three breakdown tables —
+**Meeting types**, **Booking sources** (**Booked by AI**, **Booking page**, UTM
+campaigns, **Other**), and **Hosts** — each with **Booked**, **Completed**,
+**No-show**, and **Show rate**.
+
+<Note>
+  Appointments not marked otherwise within 12 hours are assumed attended. You can
+  correct any appointment later from [Bookings](/scheduling/bookings).
+</Note>
+
+### Deliverability
+
+- **KPIs:** **SMS delivery rate**, **Email delivery rate**, **Opt-out rate**,
+  **Spam report rate**, and **Compliance blocked** (texts held back because a
+  sender wasn't registered).
+- **SMS failures:** undelivered texts by **Reason**, with the raw provider code,
+  **Count**, and **% of sent**.
+- **Email funnel:** **Processed → Delivered → Deferred → Bounced → Blocked →
+  Dropped → Spam reports → Unsubscribes**, a **Bounce breakdown** (permanent vs
+  temporary failures), and a **Not receiving email** suppression list.
+- **Opt-outs:** daily trend, **By channel**, and **Top keywords**.
+- **Sending numbers — 10DLC:** each SMS sender's **Brand** and **Registration
+  status** with a pill — **Approved to send**, **Registration in progress**, or
+  **Blocked — registration needed** — and a **Fix registration in settings** link.
+  See [A2P 10DLC](/compliance/a2p-10dlc).
+
+## Export campaign performance
+
+<Steps>
+  <Step title="Filter the table">
+    On **Overview** or **Marketing**, set the period and the **All / Text / Email**
+    toggle.
+  </Step>
+  <Step title="Click Export CSV">
+    The file contains **Name, Channel, Status, Created, Sent, Delivered, Replies,
+    Clicks, CTR %** for up to 5,000 campaigns in the period, newest first.
+  </Step>
+</Steps>
+
+<Note>
+  Only the campaign performance table exports today. Other cards and tables have
+  no download.
+</Note>
+
+## Weekly digest email
+
+Every Monday, members with analytics access receive an email summarizing the
+previous week (subject: *Your week at &lt;workspace&gt;: N new leads, N bookings*)
+with the same AI-written recommendations. Each email has a one-click unsubscribe
+link in the footer.
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Why don't the Overview and Conversations numbers match my inbox right now?">
+    First response time and AI resolution rate are recalculated overnight, so
+    today's conversations appear tomorrow.
+  </Accordion>
+  <Accordion title="Can I filter by campaign or segment?">
+    Not across the reports. The campaign tables filter by channel; per-campaign
+    detail lives in [Campaign analytics](/analytics/campaign-analytics).
+  </Accordion>
+  <Accordion title="Why is Business health different from my selected period?">
+    It is a current-state gauge and always uses the last 30 days.
+  </Accordion>
+  <Accordion title="Where does ad spend or attribution show up?">
+    Lead sources from ads appear under **Audience sources** and **Revenue by
+    source**. Ad platform attribution is covered in
+    [Ad attribution](/analytics/ad-attribution).
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="A card says “Couldn't load these numbers”">
+    Click **Retry**. Reports are rate-limited per user; wait a moment if you
+    refreshed many times in quick succession.
+  </Accordion>
+  <Accordion title="Revenue shows conversions but the Campaigns table is empty">
+    Those conversions had no campaign touch in the prior 30 days — they sit in the
+    **Not linked to a campaign** row.
+  </Accordion>
+  <Accordion title="Compliance blocked is climbing">
+    Open **Deliverability → Sending numbers — 10DLC** and fix any sender marked
+    **Blocked — registration needed**.
+  </Accordion>
+</AccordionGroup>
+
+<Card title="Build a custom dashboard" icon="table-cells-large" href="/analytics/custom-dashboards">
+  Pin the widgets you check daily to your home screen.
+</Card>

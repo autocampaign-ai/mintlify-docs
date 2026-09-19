@@ -1,6 +1,6 @@
 # Autocampaign AI Documentation
 
-Customer-facing help center for the Autocampaign AI text-campaign platform, built with
+Customer-facing help center for the Autocampaign AI customer-engagement platform, built with
 [Mintlify](https://mintlify.com). Every page is grounded in the actual product
 modules (backend `src/modules/*`, frontend `src/features/*`).
 
@@ -27,16 +27,16 @@ Each nav leaf maps to one `.mdx` file (extensionless, root-relative).
 
 | Tab | Covers | Backing modules |
 | --- | --- | --- |
-| Getting Started | Onboarding, workspace, team, auth | `auth`, `organization`, `invitation`, `user/role/permission` |
-| Channels | SMS / Email / Advertising overview | `channel-core`, `sms-channel`, `email-channel`, `advertising` |
-| Providers | Twilio, Telnyx, Gmail, M365, SMTP, Google/Meta Ads | `sms-channel/providers`, `email-settings`, `advertising/providers` |
+| Getting Started | Onboarding checklist, workspace, team, auth (incl. Google/Microsoft sign-in), navigating the app | `auth`, `organization`, `invitation`, `onboarding`, `user/role/permission`, `search` |
+| Channels | SMS / Email / WhatsApp / Advertising + providers (Twilio, Telnyx, email domains & senders, Google/Meta Ads) | `channel-core`, `sms-channel`, `email-channel`, `whatsapp-channel`, `advertising` |
 | Compliance | A2P 10DLC, toll-free, opt-in, opt-out | `channels` 10DLC, `opt-in`, `opt-out` |
-| Contacts | Contacts, import, custom fields, tags, segments | `contacts`, `contact-import`, `tags`, `segments` |
-| Campaigns | Campaigns, templates, quick messages, polls, links | `campaigns`, `*-templates`, `polls`, `short-links`, `join-links` |
-| Automation & AI | Workflow builder, AI agent, knowledge base, module builder | `workflows`, `ai-agents`, `knowledge-base`, `module-builder` |
-| Inbox | Unified inbox, tickets | `inbox`, `tickets` |
-| Scheduling | Calendar, meeting types, availability, bookings | `calendar*`, `meeting-types`, `bookings` |
-| Analytics & Billing | Dashboard, analytics, attribution, wallet/billing | `dashboard`, `advertising`, `platform-billing` |
+| CRM | Contacts, import, custom fields, tags, segments; opportunities & pipelines; lead forms, join links, join keywords | `contacts`, `contact-import`, `tags`, `segments`, `opportunities`, `lead-forms`, `join-links`, `join-keywords` |
+| Communication | Unified inbox, quick messages, calls, tickets, website chat widget | `inbox`, `quick-messages`, `voice-channel`, `tickets`, `chat-widget` |
+| Marketing | Campaigns, sequences, experiments, polls, text links; templates & template library | `campaigns`, `sequences`, `polls`, `short-links`, `*-templates`, `marketplace`, `media-library` |
+| Automation & AI | Workflow builder, module builder, AI Employees, knowledge base | `workflows`, `module-builder`, `ai-agents`, `knowledge-base` |
+| Scheduling | Calendar, meeting types, availability, bookings, integrations | `scheduling`, `calendar-integrations` |
+| Analytics & Billing | Dashboard, custom dashboards, reports, campaign analytics, attribution, notifications; plans & trials, credits | `dashboard`, `dashboards`, `analytics`, `notifications`, `platform-billing` |
+| Agency | Agency console: clients, setups, branding, pricing & rebilling | `agency` |
 | Developers | API keys, webhooks, API reference | `api-keys`, `webhooks` |
 | Support | FAQ, troubleshooting, release notes | — |
 

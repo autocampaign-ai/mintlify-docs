@@ -1,91 +1,231 @@
 ---
-title: "Message templates"
-description: "Save reusable SMS templates with merge tags for campaigns, welcome flows, and text links."
+title: "Templates"
+description: "Build reusable SMS, email, and WhatsApp templates, design emails with drag-and-drop blocks, and manage the images and attachments your messages use."
 icon: "file-lines"
 ---
 
 ## Overview
 
-Templates are reusable message bodies you can save once and use across the
-product. Autocampaign AI's template library covers **SMS templates**, managed at
-**Settings → SMS Templates** (`/settings/sms-templates`).
+Templates are reusable message bodies you write once and use across campaigns,
+sequences, the Inbox, and join flows. Find them under **Marketing → Campaigns →
+Templates** in the sidebar (`/templates`). The page has four tabs, each with its own
+URL:
+
+| Tab | Route | What it holds |
+| --- | --- | --- |
+| **SMS** | `/templates/sms` | Text templates with merge tags and a segment counter |
+| **Email** | `/templates/email` | Designed emails built in the drag-and-drop builder |
+| **WhatsApp** | `/templates/whatsapp` | Templates you submit for WhatsApp approval |
+| **Library** | `/templates/library` | Curated starters — see [Template Library](/campaigns/template-library) |
 
 <Info>
-  **Difficulty:** Beginner
+  **Difficulty:** Beginner (SMS) to Intermediate (email builder) &nbsp;·&nbsp; Each tab
+  is shown only to members with permission to read that template type. Opening
+  `/templates` lands you on the **Library** tab when you can see it, otherwise SMS.
 </Info>
+
+<Note>
+  Templates moved out of Settings. Old bookmarks to `/settings/templates` or
+  `/settings/sms-templates` redirect to the new location.
+</Note>
+
+## Before you start
+
+- To send test emails from the builder you need a verified sender — see
+  [Email senders](/providers/email-senders).
+- You can draft WhatsApp templates any time, but submitting them for approval needs
+  a connected WhatsApp channel — see [WhatsApp](/channels/whatsapp).
+- Built-in **System** templates are read-only. Editing one saves an editable copy to
+  your workspace and leaves the original untouched.
 
 ## Create an SMS template
 
 <Steps>
-  <Step title="Open SMS Templates">
-    Go to **Settings → SMS Templates** and click **Create template**.
+  <Step title="Open the SMS tab" icon="message">
+    Go to **Templates → SMS** and click **Create template**.
   </Step>
-  <Step title="Fill in the details">
+  <Step title="Fill in the details" icon="pen">
     | Field | Required | Notes |
     | --- | --- | --- |
-    | **Template name** | Yes | Up to 150 characters, e.g. "Black Friday Sale" |
-    | **Description** | No | Internal notes, not shown to recipients |
+    | **Template name** | Yes | Up to 150 characters |
+    | **Description** | No | Internal notes (up to 500 characters), never sent |
     | **Category** | Yes | Marketing, Transactional, Welcome, Reminder, Promotional, Notification, General |
-    | **Tags** | No | Organize your library |
-    | **Message body** | Yes | Up to 1,600 characters, with merge tags |
+    | **Tags** | No | Organize your library with [tags](/contacts/tags) |
+    | **Message body** | Yes | Up to 1,600 characters, merge tags supported |
   </Step>
-  <Step title="Add variables">
-    Use **Insert variable** (or type `{`) to add merge tags like `{{first_name}}`.
-    The footer shows the variable count, character count, and SMS segments, with a
-    live preview using sample values.
+  <Step title="Personalize with merge tags" icon="code">
+    Click **Insert variable** to add a tag such as `{{first_name}}`. The footer shows
+    **N variable(s) · N characters · N segment(s)**, and **Preview** renders the body
+    with sample values so you see what a recipient sees.
   </Step>
-  <Step title="Save">
-    Your template appears in the library, filterable by category and status.
+  <Step title="Save" icon="floppy-disk">
+    Click **Create template**. Your template appears in the grid, where you can search
+    it or filter by **Category**, **Status**, and **Favorites only**.
   </Step>
 </Steps>
 
-## Merge tags
+### Merge tags
 
-Templates support the same 12 standard merge tags as campaigns:
+Templates support 12 contact tags and 4 organization tags:
 
-`first_name`, `last_name`, `full_name`, `phone`, `email`, `street_address`,
-`address_line_2`, `city`, `state`, `postal_code`, `country`, `full_address`
+- **Contact:** `first_name`, `last_name`, `full_name`, `phone`, `email`,
+  `street_address`, `address_line_2`, `city`, `state`, `postal_code`, `country`,
+  `full_address`
+- **Organization:** `organization_name`, `organization_phone`,
+  `organization_email`, `organization_website`
 
 <Tip>
-  Add a fallback for empty values: `{{first_name|"there"}}`.
+  Add a fallback for empty values: `{{first_name|"there"}}` sends "there" when the
+  contact has no first name.
 </Tip>
 
-## Where templates are used
+### Character and segment counter
 
-SMS templates are referenced by other flows rather than picked inside the campaign
-composer:
+The counter is encoding-aware. Plain text sends as GSM-7 (160 characters per single
+segment, 153 each when concatenated). One emoji or other non-GSM character switches
+the whole message to UCS-2 (70 per single segment, 67 when concatenated), so a
+"short" message with an emoji can cost two segments.
 
-- **[Text-link join](/campaigns/join-links)** — the welcome/keyword message.
-- **[Workflows](/automation/workflow-builder)** — send-message steps.
+### Manage SMS templates
+
+From a template card's menu: **Edit**, **Duplicate**, **Preview**, **Use in
+campaign**, **Use in Inbox**, **Archive** or **Restore**, and **Delete**. Templates
+are **Active** or **Archived**. Deleting a template doesn't change campaigns that
+already reference it. Click the star to add a template to favorites.
+
+## Create an email template
+
+<Steps>
+  <Step title="Start a template" icon="envelope">
+    Go to **Templates → Email** and click **New template**. Enter a **Template name**,
+    pick a **Category** (Marketing, Newsletter, Promotional, Announcement,
+    Transactional, Welcome, Event, General), and choose **Start from**: **Blank**,
+    **Template** (a starter gallery of system and active templates), **Copy
+    existing**, or **From Library** (see [Template Library](/campaigns/template-library)).
+  </Step>
+  <Step title="Design in the builder" icon="pen-ruler">
+    The builder opens at `/email-templates/:id/builder`. Add a layout first
+    (**1 column**, **2 columns**, or **3 columns**), then drag blocks from the
+    **Blocks** panel: **Text**, **Heading**, **Image**, **Button**, **Divider**,
+    **Spacer**, **Social**, **Header**, **Footer**, **Menu**, **Columns**, and
+    **Custom HTML**. Presets (**Hero**, **Image + Text**, **3 Features**) drop in a
+    ready-made section. Double-click text to edit it inline and use **Merge tags** to
+    personalize. The **Theme** panel sets colors, font family, container width, and
+    button style; the **Layers** tab shows the structure.
+  </Step>
+  <Step title="Preview and test" icon="eye">
+    Click **Preview** to check **Desktop**, **Tablet**, and **Mobile** renderings, with
+    a **Dark mode** toggle. Click **Send test**, choose **Send from** (a verified
+    sender) and **Send to**, then **Send test** to email a copy to yourself or a
+    teammate.
+  </Step>
+  <Step title="Publish" icon="paper-plane">
+    Changes autosave about 1.5 seconds after you stop editing (the top bar shows
+    **Saved**, **Unsaved changes**, or **Saving…**). Click **Done** to return. New
+    templates are **Draft**; choose **Publish** from the template's menu to make it
+    **Active** — only Active templates appear in campaign pickers.
+  </Step>
+</Steps>
+
+**Export HTML** copies or downloads the compiled, email-client-safe HTML. Use
+**Undo** and **Redo** to step through edits. A design can hold up to 60 rows and 200
+blocks (30 per column).
 
 <Note>
-  Built-in **system templates** open in read-only mode. Use **Clone to use** to make
-  an editable copy for your workspace.
+  The email builder needs a wide window. On small screens you can still manage
+  templates from the list, but the canvas doesn't open.
 </Note>
 
-## Status
+## WhatsApp templates
 
-Templates are **Active** or **Archived**. Archive a template from its card or edit
-view to retire it without deleting.
+The **WhatsApp** tab lists your WhatsApp templates by status (**All**, **Approved**,
+**Pending**, **Rejected**, **Draft**). Click **Create template** to walk through
+**Purpose** → **Editor** → **Review**, then **Save draft** or **Submit for review**.
+Use **Sync status** to pull the latest review decisions. **Personalize** inserts the
+12 contact merge tags in the message body only — the header, footer, and buttons must
+be static text. Only **Draft** and **Rejected** templates can be edited. See
+[WhatsApp](/channels/whatsapp) for setup, approval, and sending rules.
+
+## Use templates elsewhere
+
+- **Campaigns** — click **Use in campaign** on an SMS template, or choose a designed
+  email under **My templates** in the campaign composer. See
+  [Campaigns](/campaigns/overview) and [Sequences](/campaigns/sequences).
+- **Inbox** — click **Use in Inbox** on a card, or open **Templates** in the reply
+  composer. For short, plain replies use [quick messages](/campaigns/quick-messages).
+- **Join links** — the **SMS Template** people send and the **Welcome Template** they
+  receive. See [Join links](/campaigns/join-links).
+- **Workflows** — send-message steps. See [Workflow builder](/automation/workflow-builder).
+
+## Media library
+
+Images and attachments live in a workspace media library that you reach from the
+places that use them — there's no separate media page.
+
+<Steps>
+  <Step title="Add an image to an email" icon="image">
+    In the builder, double-click an **Image** block (or click **Replace** in its
+    settings, or set a **Header** logo). The **Media library** dialog opens with
+    **Browse** and **Upload** tabs. Search images by file name or drag a file onto
+    **Drag an image here, or click to browse**. PNG, JPEG, GIF, or WEBP up to 5 MB.
+  </Step>
+  <Step title="Attach files to a text message" icon="paperclip">
+    In SMS composers (campaigns, sequences, workflows, polls, Inbox) click **Attach
+    file**. Attachments turn the message into MMS. Each file must be under 600 KB —
+    the safe cross-carrier limit — and a message carries at most 10 attachments.
+    Images (JPEG, PNG, GIF), short MP4 or 3GP clips, MP3 or AMR audio, PDFs, and
+    calendar files are accepted. **Attach contact card** adds your organization's
+    vCard from **Settings → Organization**.
+  </Step>
+</Steps>
+
+Every upload gets a permanent, unguessable public link, which is what mail clients
+and carriers fetch when your message is delivered — even days after you schedule it.
+Lead forms and the chat widget offer **Upload** or **Image URL** for logos and
+backgrounds.
+
+<Note>
+  Uploads can't be deleted from the app today, and there's no alt-text or folder
+  organization in the library — set **Alt text** on the email Image block itself.
+</Note>
 
 ## FAQ
 
 <AccordionGroup>
-  <Accordion title="Can I pick a template while creating a campaign?">
-    The campaign composer offers the **Variables** (merge tag) dropdown rather than a
-    template picker. Templates are used by text links and workflows; copy a
-    template's body into a campaign if you want to reuse it there.
+  <Accordion title="Can I edit a System template?">
+    Not directly. Open it and click **Save as copy** (SMS) or make your first edit in
+    the builder (email) — a copy named "… (copy)" is added to your library and the
+    original stays unchanged.
+  </Accordion>
+  <Accordion title="Why doesn't my email template show up in the campaign composer?">
+    Only **Active** templates are listed. Publish the draft from its menu, or restore
+    it if it's archived.
   </Accordion>
   <Accordion title="Can I use custom fields in a template?">
-    No — only the standard merge tags are supported. See
-    [Custom fields](/contacts/custom-fields).
+    No — only the 16 merge tags above. See [Custom fields](/contacts/custom-fields).
   </Accordion>
-  <Accordion title="What are categories for?">
-    Categories help you organize and filter your library (Marketing, Transactional,
-    Welcome, and so on). They don't change how a message sends.
+  <Accordion title="Why did WEBP work in email but not as an attachment?">
+    WEBP is accepted in the email image library but carriers don't deliver it over
+    MMS. Convert to PNG or JPEG for text messages.
   </Accordion>
 </AccordionGroup>
 
-<Card title="Send a campaign" icon="paper-plane" href="/campaigns/overview">
-  Put your message to work.
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Send test is disabled or shows 'No verified email senders'">
+    Add and verify a sender first. See [Email senders](/providers/email-senders).
+  </Accordion>
+  <Accordion title="The builder says 'Template changed elsewhere'">
+    Someone else saved this template while you had it open. Click **Reload** to
+    continue from the latest version.
+  </Accordion>
+  <Accordion title="My upload was rejected even though the file looked fine">
+    The server checks the actual file bytes, not the extension. Re-export the file in
+    a supported format and confirm it's under the size limit shown in the dialog.
+  </Accordion>
+</AccordionGroup>
+
+<Card title="Browse the Template Library" icon="store" href="/campaigns/template-library">
+  Start from curated campaign, email, sequence, form, and automation templates.
 </Card>

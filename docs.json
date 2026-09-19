@@ -15,12 +15,13 @@
         "groups": [
           {
             "group": "Overview",
-            "pages": ["index", "quickstart"]
+            "pages": ["index", "quickstart", "getting-started/navigate-the-app"]
           },
           {
             "group": "Set up your workspace",
             "pages": [
               "getting-started/create-workspace",
+              "getting-started/onboarding-checklist",
               "getting-started/invite-team",
               "getting-started/users-roles",
               "getting-started/authentication"
@@ -37,27 +38,20 @@
               "channels/overview",
               "channels/sms",
               "channels/email",
+              "channels/whatsapp",
               "channels/advertising"
             ]
-          }
-        ]
-      },
-      {
-        "tab": "Providers",
-        "groups": [
+          },
           {
-            "group": "SMS",
+            "group": "SMS providers",
             "pages": ["providers/twilio", "providers/telnyx"]
           },
           {
-            "group": "Email",
-            "pages": [
-              "providers/email-domains",
-              "providers/email-senders"
-            ]
+            "group": "Email providers",
+            "pages": ["providers/email-domains", "providers/email-senders"]
           },
           {
-            "group": "Advertising",
+            "group": "Advertising providers",
             "pages": ["providers/google-ads", "providers/meta-ads"]
           }
         ]
@@ -77,10 +71,10 @@
         ]
       },
       {
-        "tab": "Contacts",
+        "tab": "CRM",
         "groups": [
           {
-            "group": "Contacts",
+            "group": "Audience",
             "pages": [
               "contacts/overview",
               "contacts/import-csv",
@@ -88,27 +82,55 @@
               "contacts/tags",
               "contacts/segments"
             ]
+          },
+          {
+            "group": "Opportunities",
+            "pages": ["crm/opportunities", "crm/pipelines"]
+          },
+          {
+            "group": "Lead capture",
+            "pages": [
+              "growth/lead-forms",
+              "campaigns/join-links",
+              "growth/join-keywords"
+            ]
           }
         ]
       },
       {
-        "tab": "Campaigns",
+        "tab": "Communication",
+        "groups": [
+          {
+            "group": "Inbox",
+            "pages": [
+              "inbox/overview",
+              "campaigns/quick-messages",
+              "inbox/calls",
+              "inbox/tickets"
+            ]
+          },
+          {
+            "group": "Website chat",
+            "pages": ["settings/chat-widget"]
+          }
+        ]
+      },
+      {
+        "tab": "Marketing",
         "groups": [
           {
             "group": "Campaigns",
             "pages": [
               "campaigns/overview",
-              "campaigns/templates",
-              "campaigns/quick-messages"
+              "campaigns/sequences",
+              "campaigns/experiments",
+              "campaigns/polls",
+              "campaigns/text-links"
             ]
           },
           {
-            "group": "Engagement",
-            "pages": [
-              "campaigns/polls",
-              "campaigns/text-links",
-              "campaigns/join-links"
-            ]
+            "group": "Templates",
+            "pages": ["campaigns/templates", "campaigns/template-library"]
           }
         ]
       },
@@ -124,16 +146,7 @@
           },
           {
             "group": "AI",
-            "pages": ["automation/ai-agent", "automation/knowledge-base"]
-          }
-        ]
-      },
-      {
-        "tab": "Inbox",
-        "groups": [
-          {
-            "group": "Inbox",
-            "pages": ["inbox/overview", "inbox/tickets"]
+            "pages": ["automation/ai-employees", "automation/knowledge-base"]
           }
         ]
       },
@@ -159,6 +172,8 @@
             "group": "Analytics",
             "pages": [
               "analytics/dashboard",
+              "analytics/custom-dashboards",
+              "analytics/reports",
               "analytics/campaign-analytics",
               "analytics/ad-attribution",
               "analytics/notifications"
@@ -166,7 +181,20 @@
           },
           {
             "group": "Billing",
-            "pages": ["billing/wallet-billing"]
+            "pages": ["billing/plans-and-trials", "billing/wallet-billing"]
+          }
+        ]
+      },
+      {
+        "tab": "Agency",
+        "groups": [
+          {
+            "group": "Agency console",
+            "pages": [
+              "agency/overview",
+              "agency/setups-and-branding",
+              "agency/pricing-and-rebilling"
+            ]
           }
         ]
       },
@@ -225,6 +253,12 @@
       ]
     }
   },
+  "redirects": [
+    {
+      "source": "/automation/ai-agent",
+      "destination": "/automation/ai-employees"
+    }
+  ],
   "logo": {
     "light": "/logo/light.svg",
     "dark": "/logo/dark.svg"
@@ -248,7 +282,7 @@
   "footer": {
     "socials": {
       "website": "https://autocampaign.ai",
-      "github": "https://github.com/jetani-ravi/mintlify-docs"
+      "github": "https://github.com/autocampaign-ai/mintlify-docs"
     }
   }
 }

@@ -7,49 +7,70 @@ icon: "ticket"
 ## Overview
 
 Tickets track work items and support requests within your team — each with a
-status, priority, assignee, comments, and an activity log. Open them from
-**Tickets** in the sidebar (`/tickets`).
+status, priority, assignee, comments, attachments, and an activity log. Open them
+from **Communication → Tickets** in the sidebar (`/tickets`). Each ticket has its
+own page at `/tickets/:ticketId`.
 
 <Info>
   **Difficulty:** Beginner
 </Info>
 
 <Note>
-  Tickets are standalone team tasks. They aren't linked to inbox conversations or
-  contacts — they reference the teammates assigned to them.
+  You create tickets from the Tickets page. There's no button in the
+  [Inbox](/inbox/overview) to turn a conversation into a ticket today.
 </Note>
+
+## Before you start
+
+What you can do depends on your role: creating, editing, commenting on, and
+deleting tickets are separate permissions. Buttons you don't have permission for
+are hidden or disabled.
 
 ## Create a ticket
 
 <Steps>
-  <Step title="Click Create">
-    On the Tickets page, click **Create**.
+  <Step title="Click New Ticket">
+    On the Tickets page, click **New Ticket**.
   </Step>
   <Step title="Fill in the details">
-    Enter a **Subject** (required), optional **Description**, a **Priority**, an
-    optional **Due** date, an **Assignee**, and **Tags**.
+    Enter a **Subject** (required, up to 500 characters) and an optional
+    **Description** (up to 10,000 characters). Choose a **Priority** (defaults to
+    **Medium**), an **Assignee**, an optional **Due** date and time, and **Tags**.
   </Step>
-  <Step title="Save">
-    New tickets start as **Open**, numbered `TCK-123`.
+  <Step title="Click Create ticket">
+    New tickets start as **Open** and get a number such as `TCK-123`. You're
+    recorded as the **Reporter** automatically.
   </Step>
 </Steps>
 
 ## Views
 
-Switch between a **List** and a **Board** (Kanban, one column per status). Search by
-subject, description, or ticket number, and filter by status, priority, assignee,
-tags, due date, or overdue.
+Switch between **List view** and **Board view** (one column per status); your
+choice is remembered on that browser. On the board, drag a card to another column
+to change its status — only valid moves are accepted.
+
+Use **Search tickets…** to match the subject, description, or ticket number. Open
+**Filters** to narrow by **Status**, **Priority**, **Assignee**, **Due date range**,
+or **Overdue only**, and **Clear all filters** to reset.
 
 ## Statuses and priorities
 
 <Tabs>
   <Tab title="Status">
-    **Open → In progress → Resolved → Closed**, plus **Reopened**. Change status from
-    the ticket sidebar — only valid next states are offered.
+    **Open**, **In progress**, **Resolved**, **Closed**, and **Reopened**. Change
+    status from the ticket sidebar — only valid next statuses are offered:
+
+    | From | You can move to |
+    | --- | --- |
+    | **Open** | In progress, Resolved, Closed |
+    | **In progress** | Open, Resolved, Closed |
+    | **Resolved** | Closed, Reopened |
+    | **Closed** | Reopened |
+    | **Reopened** | In progress, Resolved, Closed |
   </Tab>
   <Tab title="Priority">
-    **Low**, **Medium**, **High**, **Urgent**. A ticket past its due date (and not
-    resolved/closed) is flagged **overdue**.
+    **Low**, **Medium** (default), **High**, **Urgent**. A ticket past its due date
+    that isn't **Resolved** or **Closed** is flagged **Overdue**.
   </Tab>
 </Tabs>
 
@@ -57,23 +78,34 @@ tags, due date, or overdue.
 
 Open a ticket to:
 
-- **Comment** — discuss with your team; edit or delete your own comments.
-- **Change** status, priority, assignee, due date, and tags from the sidebar.
-- **Attach** files (up to 25 MB each).
-- Review the **Activity** timeline of every change.
+- **Comment** — on the **Comments** tab, write up to 5,000 characters and click
+  **Comment**. Only the author can edit or delete a comment.
+- **Change** the **Status**, **Priority**, **Assignee**, and **Due** date from the
+  sidebar. Clear the assignee to leave the ticket **Unassigned**. The **Reporter**
+  is shown but can't be changed there.
+- **Edit** the subject and description with **Edit**, and add or remove **Tags**.
+- **Attach** files under **Attachments** with **Upload** — up to 25 MB each.
+  Anyone who can view the ticket can **Download** them. Executable and other
+  risky file types are blocked.
+- Fill in **Custom fields**, if your workspace has added any to tickets in the
+  [module builder](/automation/module-builder).
+- Review the **Activity** tab — a timeline of status changes, assignments, due
+  dates, tags, comments, and attachments.
+- **Delete ticket** from the sidebar. This can't be undone.
 
 ## FAQ
 
 <AccordionGroup>
   <Accordion title="Can I link a ticket to a conversation or contact?">
-    Not currently — tickets are standalone team tasks referencing assignees and
-    reporters.
+    Not from the app today — the ticket form has no conversation or contact field.
+    Put the contact's name or a link in the description instead.
   </Accordion>
   <Accordion title="Who is the reporter?">
     The person who created the ticket, set automatically.
   </Accordion>
   <Accordion title="Can I reopen a closed ticket?">
-    Yes — closed and resolved tickets can be **Reopened**.
+    Yes — **Closed** and **Resolved** tickets can move to **Reopened**, and from
+    there back to **In progress**, **Resolved**, or **Closed**.
   </Accordion>
 </AccordionGroup>
 
@@ -81,8 +113,16 @@ Open a ticket to:
 
 <AccordionGroup>
   <Accordion title="I can't change a ticket to a certain status">
-    Status changes follow a workflow (for example, you resolve before you close).
-    Only allowed next statuses appear in the dropdown.
+    Status changes follow a fixed workflow — for example, a **Closed** ticket can
+    only be **Reopened**, and a **Resolved** ticket can't go straight back to
+    **Open**. Only allowed next statuses appear in the dropdown.
+  </Accordion>
+  <Accordion title="My file won't upload">
+    Files over 25 MB are rejected ("File is too large"), and executable file types
+    are blocked. Compress the file or share a link in a comment instead.
+  </Accordion>
+  <Accordion title="I can't edit or delete a comment">
+    Only the person who wrote a comment can edit or delete it.
   </Accordion>
 </AccordionGroup>
 
