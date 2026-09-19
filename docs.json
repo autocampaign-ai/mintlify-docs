@@ -7,7 +7,10 @@
     "light": "#818CF8",
     "dark": "#4338CA"
   },
-  "favicon": "/favicon.svg",
+  "favicon": {
+    "light": "/images/favicon_512x512.svg",
+    "dark": "/images/logo_512x512.svg"
+  },
   "navigation": {
     "tabs": [
       {
@@ -260,8 +263,9 @@
     }
   ],
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/images/favicon_512x512_png.png",
+    "dark": "/images/favicon_512x512.svg",
+    "href": "https://docs.autocampaign.ai"
   },
   "navbar": {
     "links": [
