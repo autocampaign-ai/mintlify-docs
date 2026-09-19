@@ -1,0 +1,156 @@
+---
+title: "Agency console"
+description: "Run every client from one place: create an agency, add client workspaces, and see how each one is doing."
+icon: "building"
+---
+
+## Overview
+
+The agency layer sits above your client workspaces. Each client keeps its own
+workspace with its own contacts, campaigns and members; the console adds a
+management view on top, where you add clients, set the prices they pay, apply
+reusable [setups](/agency/setups-and-branding) and watch health and usage. Once
+you belong to an agency, three entries appear in the sidebar: **My Agency**
+(`/agency`), **Setups** (`/agency/setups`) and **Branding** (`/agency/branding`).
+
+<Info>
+  **Difficulty:** Intermediate &nbsp;·&nbsp; The agency entries appear only for agency members; everyone else sees a normal workspace sidebar.
+</Info>
+
+## Before you start
+
+- Any signed-in user can create an agency. Each user belongs to **one** agency.
+- Adding clients and changing prices requires the agency **Owner** or **Admin**
+  role (see [Agency roles](#agency-roles-vs-workspace-roles)).
+
+## Create your agency
+
+<Steps>
+  <Step title="Open the agency page" icon="building">
+    Go to `/agency`. With no agency yet, the page shows **Run your clients from
+    one place** instead of the console.
+  </Step>
+  <Step title="Name it" icon="pen">
+    Enter **Your agency name** and click **Create my agency**. You become the
+    agency **Owner**, and the three sidebar entries appear.
+  </Step>
+</Steps>
+
+## The My Agency page
+
+**My Agency** shows four stats — **Client workspaces** (healthy / need
+attention / at risk), **Monthly revenue** (what clients pay you), **Platform
+cost** (what you pay Autocampaign AI) and **Estimated earnings** — plus
+**Agency usage this period**, **Clients needing attention** (past-due payments,
+high usage or a missing plan), up to six client cards under **Your clients**
+with **View all clients** (`/agency/clients`), and **Recent activity**, a
+plain-language log of price changes, setup installs and branding updates.
+
+<Note>
+  Revenue, cost and health come from live billing data. When it is temporarily
+  unavailable for a client, the card shows **No billing data** and the totals
+  say how many clients they cover.
+</Note>
+
+## Add a client workspace
+
+Click **Add Client** on **My Agency**, on **Clients**, or in the workspace
+switcher. The wizard (`/agency/clients/new`) has five steps:
+
+<Steps>
+  <Step title="About the client" icon="user">
+    Enter the **Business name** (required), plus optional **Website**,
+    **Industry**, **Contact name**, **Email** and **Phone**.
+  </Step>
+  <Step title="Choose a setup" icon="layer-group">
+    Pick one of your setups, a ready-made one, or **Start from scratch**.
+    Ready-made setups matching the industry you typed are marked **Recommended**.
+  </Step>
+  <Step title="Choose their plan" icon="list-check">
+    Select a plan. **Your cost** is the Autocampaign AI price for it.
+  </Step>
+  <Step title="Set your price" icon="dollar-sign">
+    Choose **Use the AutoCampaign price**, **Add a percentage on top** or
+    **Set my own price**, answer **Who pays AutoCampaign?**, and optionally
+    fill **Invite your client (optional)**. The **Your numbers** panel is for
+    your eyes only.
+  </Step>
+  <Step title="Branding" icon="palette">
+    Choose **Use my agency branding** or **Use the client's branding**, then
+    click **Create client workspace**.
+  </Step>
+</Steps>
+
+You get a new workspace with you as its **Owner**, an **Admin** membership for
+every other agency Owner and Admin, an **Admin** invitation to your client if
+you entered an email, and the setup contents as drafts. The success screen
+offers **Open workspace** or **Add another client**.
+
+<Note>
+  The plan you choose drives the price and earnings math in your console. The
+  workspace's own plan and subscription are managed from that workspace's
+  billing, like any other workspace — see [Plans and trials](/billing/plans-and-trials).
+</Note>
+
+## Manage clients
+
+Each card on **Clients** shows the plan, a health badge (**Healthy**, **Needs
+attention**, **At risk** or **No billing data**), **Your client pays**, **You
+make**, usage bars for **Texts**, **Email** and **AI**, and the member count.
+**Open workspace** switches you into the client's workspace (the one you are in
+reads **Current workspace**). **More actions** offers **View pricing**, **Open
+workspace**, **Getting started checklist** and **Save as Setup**.
+
+The checklist tracks the client's first steps. Six items — from **Plan chosen**
+to **Team member invited** — complete automatically; **Branding reviewed
+together** is one you tick off yourself.
+
+## Agency roles vs workspace roles
+
+| Agency role | What it allows |
+| --- | --- |
+| **Owner** | Everything, including the suggested-pricing rule, connecting Stripe and starting or stopping client billing. |
+| **Admin** | Add clients, set prices, manage setups and branding, view activity. |
+| **Staff** | See only the client workspaces they are a member of; view setups. |
+
+Inside a client workspace you act with your **workspace** role, so the usual
+[roles and permissions](/getting-started/users-roles) apply. Your client's
+members never see agency prices or margins.
+
+<Note>
+  There is no screen for adding agency Admins or Staff yet; the person who
+  creates the agency is its only member.
+</Note>
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Can I have more than one agency?">
+    No. Each user belongs to one agency; creating a second is rejected.
+  </Accordion>
+  <Accordion title="Does my client know an agency manages their workspace?">
+    Only through branding. Prices, costs and margins are never shown in a client
+    workspace.
+  </Accordion>
+  <Accordion title="Can I add an existing workspace as a client, or remove one?">
+    Not from the console. Client workspaces are created with **Add Client**,
+    and there is no remove action today.
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="I don't see My Agency in the sidebar">
+    The entries appear only once you belong to an agency. Go to `/agency`
+    directly to create one.
+  </Accordion>
+  <Accordion title="A client shows No plan yet or No billing data">
+    The workspace has no active plan, or billing data could not be fetched just
+    now. Open the workspace, check its billing, then refresh the console.
+  </Accordion>
+</AccordionGroup>
+
+<Card title="Set your prices" icon="dollar-sign" href="/agency/pricing-and-rebilling">
+  Decide what each plan costs your clients and get paid through your own Stripe account.
+</Card>

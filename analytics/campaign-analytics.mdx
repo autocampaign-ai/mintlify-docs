@@ -1,59 +1,161 @@
 ---
 title: "Campaign analytics"
-description: "Track delivery, cost, and engagement for each campaign."
+description: "Track delivery, cost, clicks, replies, and email engagement for each campaign — per run and per recipient."
 icon: "chart-line"
 ---
 
 ## Overview
 
-Every [campaign](/campaigns/overview) has its own analytics on its detail page,
-with **Overview** and **Executions** tabs.
+Every [campaign](/campaigns/overview) has its own analytics on its detail page.
+Open **Campaigns** in the sidebar (`/campaigns`) and click a campaign
+(`/campaigns/:id`). The page has three tabs: **Overview**, **Executions**, and
+**Links**.
 
 <Info>
-  **Difficulty:** Beginner
+  **Difficulty:** Beginner &nbsp;·&nbsp; Click **Refresh** to pull the latest
+  numbers while a campaign is sending.
 </Info>
 
-## Summary metrics
+## Before you start
 
-The Overview tab shows:
+- You need a role that can view campaigns. Bulk actions on recipients also need
+  access to [segments](/contacts/segments).
+- Link click numbers require tracked links in the message. See
+  [Text links](/campaigns/text-links).
 
-- **Queued**, **Sent** (% of recipients), **Delivered** (% of sent), **Failed**,
-  **Cancelled**, and **Total cost**.
-- For **email** campaigns: opens, clicks, bounces, unsubscribes, and spam reports.
-- For **SMS** campaigns: link-click analytics.
+## Read the Overview tab
 
-## Executions and messages
-
-For scheduled and recurring campaigns, the **Executions** tab shows per-run metrics
-and a **Messages** table with each recipient's From/To numbers, status, links
-opened, and sent time.
-
-Per-recipient statuses: **Queued, Processing, Sent, Delivered, Undelivered, Failed,
-Cancelled, Rejected**.
+<Steps>
+  <Step title="Check aggregate performance" icon="chart-simple">
+    **Aggregate Performance (All Runs)** shows **Queued**, **Sent** (% of
+    recipients), **Delivered** (% of sent), **Failed**, and **Cancelled**. If
+    recipients were skipped because they had opted out, **Failed** adds a note
+    such as *12 unsubscribed, not sent*. Text campaigns also show **Total cost**,
+    **Total clicks**, and **Unique clicks**.
+  </Step>
+  <Step title="Review experiment results" icon="flask">
+    If the campaign ran an A/B test, **Experiment results** compares **Version A**
+    and **Version B** and marks the **Winner**. See
+    [Campaign experiments](/campaigns/experiments).
+  </Step>
+  <Step title="Review email performance" icon="envelope-open-text">
+    Email campaigns add **Email performance** — **Sent**, **Delivered**,
+    **Opens**, **Open rate**, **Clicks**, **Click-through rate**, **Bounces**, and
+    **Unsubscribes** — and a **Delivery funnel** (**Recipients → Delivered →
+    Opened → Clicked**).
+  </Step>
+  <Step title="See clicks by link" icon="link">
+    Below **Campaign Details** and **Template Preview**, a per-link table
+    (**Clicks by link** for text, **Link clicks** for email) breaks clicks down by
+    link.
+  </Step>
+</Steps>
 
 <Note>
-  Replies are tracked in the [Inbox](/inbox/overview), not on the campaign
-  dashboard — campaign analytics focus on delivery, cost, and (for email)
-  engagement.
+  **Total cost** counts only charges the carrier has confirmed. While messages
+  are still settling it reads *so far · N/M settled*, and *N of M unconfirmed* if
+  some charges could not be confirmed. Email campaigns don't show a cost card.
+  Apple Mail and some email clients pre-fetch images, so treat open rates as
+  directional.
+</Note>
+
+## Drill into a run
+
+The **Executions** tab lists every run of the campaign — one for a one-time send,
+many for a recurring campaign.
+
+<Steps>
+  <Step title="Select a run" icon="list">
+    Pick a run under **Executions** (for example, *Execution #2*). You see the
+    same delivery cards for that run alone, plus **Total clicks** and **Unique
+    clicks** (and **Opens** and **Unique opens** for email).
+  </Step>
+  <Step title="Inspect recipients" icon="users">
+    **Messages for this run** lists each recipient with **Contact**, **From**,
+    **To**, **Status**, **Engagement**, and **Sent**. **Engagement** shows a
+    **Replied** chip, the links a text recipient clicked, or **Opened** and
+    **Clicked** chips for email. For email, click **Activity** on a row to open
+    **Recipient activity** — the delivery timeline for that person (**Processed**,
+    **Delivered**, **Opened**, **Clicked**, **Bounced**, and so on).
+  </Step>
+  <Step title="Filter and search" icon="filter">
+    Search by name, number, or email, filter by **Status**, and filter failed
+    messages by **Reason** (for example **Out of credits** or **Plan limit
+    reached**).
+  </Step>
+  <Step title="Act on recipients" icon="bolt">
+    Select rows — or select all matching recipients across pages — and open **Bulk
+    actions**: **Add to segment** (static segments only), **Remove from segment**,
+    or **Export CSV** to download the selected contacts.
+  </Step>
+</Steps>
+
+Per-recipient statuses: **Queued**, **Sending**, **Sent**, **Delivered**,
+**Undelivered**, **Failed**, **Cancelled**, **Rejected**.
+
+## Review link performance
+
+The **Links** tab summarizes **Total links**, **Total clicks**, **Unique clicks**,
+and **CTR**; highlights the **Top link**, **Most clicks by** (contact), **Top
+device**, **Top country**, and **Top browser**; and lists every link with
+**Destination**, **Clicks**, **Unique clicks**, **CTR**, and **Last click**.
+
+<Note>
+  Analytics on this page cover one campaign. To compare campaigns, see revenue
+  and ROI, or export a campaign performance CSV, use
+  [Analytics reports](/analytics/reports).
 </Note>
 
 ## FAQ
 
 <AccordionGroup>
-  <Accordion title="Why isn't there a reply rate on the campaign?">
-    Reply handling lives in the unified [Inbox](/inbox/overview). The campaign view
-    reports delivery, cost, and engagement.
+  <Accordion title="Where do I see replies?">
+    Recipients who replied get a **Replied** chip in the run's **Engagement**
+    column. There is no reply-rate card on the campaign; workspace reply totals
+    are in [Analytics reports](/analytics/reports), and the conversations
+    themselves are in the [Inbox](/inbox/overview).
   </Accordion>
-  <Accordion title="How is cost calculated for SMS?">
-    Per message segment (a 160-character SMS is one segment). The total cost card sums
-    the campaign's segments.
+  <Accordion title="Can I create a segment from campaign recipients?">
+    Yes, for an existing static segment: filter the run's recipients (for example
+    by status), select them, and choose **Bulk actions → Add to segment**. Dynamic
+    segments update from their own rules, so you can't add to them.
   </Accordion>
-  <Accordion title="Can I create a segment from campaign responders?">
-    Not directly from a campaign today. Use tags or the
-    [poll → segment](/campaigns/polls) flow to build follow-up audiences.
+  <Accordion title="Why don't text campaigns show opens?">
+    Carriers don't report read receipts for SMS. Use link clicks and replies
+    instead.
+  </Accordion>
+  <Accordion title="What does the recipient export contain?">
+    The contacts you selected in the run — first name, last name, phone, and
+    email. It isn't a per-message delivery log.
   </Accordion>
 </AccordionGroup>
 
-<Card title="Dashboard" icon="gauge" href="/analytics/dashboard">
-  See the big picture.
-</Card>
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="The Links tab says “No tracked links in this campaign.”">
+    The message had no tracked links. Add one next time — see
+    [Text links](/campaigns/text-links).
+  </Accordion>
+  <Accordion title="Total cost looks too low">
+    Look at the hint under the figure. Costs appear as carriers confirm them, so
+    a recent send reads *so far* until every message settles.
+  </Accordion>
+  <Accordion title="Remove from segment is unavailable">
+    The campaign targets no segment, or only dynamic segments whose membership is
+    set by rules.
+  </Accordion>
+  <Accordion title="Executions says “No executions yet”">
+    The campaign hasn't started sending. Scheduled campaigns get their first run
+    at the scheduled time.
+  </Accordion>
+</AccordionGroup>
+
+<CardGroup cols={2}>
+  <Card title="Campaign experiments" icon="flask" href="/campaigns/experiments">
+    A/B test two versions and send the winner.
+  </Card>
+  <Card title="Analytics reports" icon="chart-mixed" href="/analytics/reports">
+    Compare campaigns across the workspace.
+  </Card>
+</CardGroup>

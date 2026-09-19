@@ -1,25 +1,40 @@
 ---
 title: "Sign in & account security"
-description: "Create an account, log in, and reset your password."
+description: "Create an account, sign in with email, Google, or Microsoft, and recover access if you're locked out."
 icon: "lock"
 ---
 
 ## Overview
 
-Autocampaign AI accounts use email and password. This page covers signing up, logging in,
-and recovering a lost password.
+You can sign in to Autocampaign AI with an email and password, or with your
+**Google** or **Microsoft** account. This page covers signing up, signing in,
+resetting a password, and what happens when an account is temporarily locked.
+
+<Info>
+  **Difficulty:** Beginner &nbsp;·&nbsp; Accounts are active immediately — there's
+  no email verification step.
+</Info>
 
 ## Create an account
 
 <Steps>
-  <Step title="Register">
-    Go to the sign-up page and enter your **First Name**, **Email**, and a
-    **Password** (at least 8 characters), then confirm the password. Last name and
-    phone are optional.
+  <Step title="Open the sign-up page" icon="user-plus">
+    If you arrived from the pricing page, a line above the form confirms your
+    selected plan and that the free trial needs no credit card. See
+    [Plans & trials](/billing/plans-and-trials).
   </Step>
-  <Step title="You're in">
-    Your account is active immediately — there's no email verification step. A
-    personal workspace is created for you automatically.
+  <Step title="Choose how to sign up" icon="right-to-bracket">
+    Click **Google** or **Microsoft** to sign up with that account, or fill in the
+    form under **or sign up with email**: **Name**, **Email Address**, **Phone
+    Number** (optional), **Password**, and **Confirm Password**.
+  </Step>
+  <Step title="Set a strong password" icon="key">
+    Passwords need at least 8 characters with no spaces, and must include an
+    uppercase letter, a lowercase letter, a number, and a special character.
+  </Step>
+  <Step title="Accept the terms and create your account" icon="check">
+    Tick the box to agree to the Terms of Use and Privacy Policy, then click
+    **Create Account**. A workspace is created for you automatically.
   </Step>
 </Steps>
 
@@ -29,37 +44,102 @@ and recovering a lost password.
   workspace. See [Invite your team](/getting-started/invite-team).
 </Note>
 
-## Log in
+## Sign in with email
 
-Enter your email and password at the login screen. You'll stay signed in across
-reloads — sessions refresh silently for up to a week before you need to log in
-again.
+On the **Welcome back** screen, enter your **Email** and **Password** and click
+**Sign In**.
+
+Tick **Remember me** to stay signed in on that browser — your session refreshes
+silently for up to a week. Leave it unticked on shared computers, and you're
+signed out when you close the browser.
+
+## Sign in with Google or Microsoft
+
+<Steps>
+  <Step title="Pick a provider" icon="arrow-up-right-from-square">
+    On the log-in or sign-up screen, click **Google** or **Microsoft**.
+  </Step>
+  <Step title="Approve access" icon="shield-check">
+    Sign in with the provider and allow access. Autocampaign AI uses your name and
+    verified email address to identify you.
+  </Step>
+  <Step title="You're signed in" icon="circle-check">
+    You return to the app while it finishes signing you in, then land in your
+    workspace.
+  </Step>
+</Steps>
+
+What happens next depends on your email address:
+
+- **You already have an account with that email** — the Google or Microsoft
+  sign-in is linked to it, and you land in your existing workspace. You can keep
+  using your password too.
+- **The email is new** — a new account and workspace are created, with no
+  password. Any plan you picked on the pricing page carries through.
+
+It doesn't matter whether you start from the log-in or the sign-up screen — an
+existing account always just signs in, and never gets a second workspace.
+
+<Note>
+  The provider must confirm that your email address is verified. If it doesn't,
+  the sign-in is refused and you need to use your email and password instead.
+</Note>
+
+### Add a password to a Google or Microsoft account
+
+Open your account menu, choose **Account**, and under **Security** click **Set a
+password**. After that you can sign in either way.
 
 ## Reset your password
 
 <Steps>
-  <Step title="Request a reset">
-    On the login screen, click **Forgot password?** and enter your email. If an
-    account exists, a reset link is sent (the message is the same either way, to
-    protect your privacy).
+  <Step title="Request a reset" icon="envelope">
+    On the log-in screen, click **Forgot Password?**, enter your email, and click
+    **Send Reset Link**. You see the same **Check Your Email** message whether or
+    not an account exists, to protect your privacy.
   </Step>
-  <Step title="Set a new password">
-    Open the emailed link and choose a new password. Reset passwords must be at
-    least 8 characters and include an uppercase letter, a number, and a special
-    character. The link is valid for **1 hour**.
+  <Step title="Set a new password" icon="key">
+    Open the emailed link and choose a new password that meets the rules above.
+    The link is valid for **1 hour** and works once — using it also cancels any
+    older reset links.
   </Step>
 </Steps>
+
+## Account lockout
+
+To protect against password guessing, an account locks for **15 minutes** after
+**5 failed password attempts** in a row. While it's locked:
+
+- The log-in screen shows "Account temporarily locked after repeated failed
+  sign-in attempts. Try again later or reset your password."
+- Even the correct password is refused until the lock ends.
+
+A successful sign-in resets the count.
+
+<Note>
+  Resetting your password doesn't end a lock early — reset it if you've forgotten
+  it, then sign in once the 15 minutes have passed. The failed-attempt count
+  carries over after a lock expires, so one more wrong password locks the account
+  again. Make sure you have the right password before you retry.
+</Note>
 
 ## FAQ
 
 <AccordionGroup>
-  <Accordion title="Is there two-factor authentication?">
-    Account login uses email and password today. (SMS one-time codes are used for
-    public join-link phone verification, not for logging in.)
+  <Accordion title="Is there two-factor authentication or a one-time code at sign-in?">
+    Not today. You sign in with email and password, Google, or Microsoft. If your
+    Google or Microsoft account has its own two-step verification, that applies
+    when you sign in through it. (SMS one-time codes are used for public join-link
+    phone verification, not for signing in.)
   </Accordion>
-  <Accordion title="Why is the reset password stricter than sign-up?">
-    Password resets enforce a stronger policy (uppercase, number, special character)
-    as an extra safeguard when recovering access.
+  <Accordion title="Can I use both a password and Google or Microsoft?">
+    Yes. Signing in with a provider that shares your account's verified email
+    links it automatically, and provider-only accounts can add a password from
+    **Security** on the profile page.
+  </Accordion>
+  <Accordion title="Do I have to accept an invitation with the same sign-in method?">
+    Use the invitation link from your email — it handles account creation for the
+    invited address. See [Invite your team](/getting-started/invite-team).
   </Accordion>
   <Accordion title="I didn't get a reset email">
     Check spam, confirm you used the right address, and note the link expires after
@@ -70,9 +150,27 @@ again.
 ## Troubleshooting
 
 <AccordionGroup>
-  <Accordion title="'Reset link expired'">
-    The link is older than an hour, or a newer reset request replaced it. Request a
-    new link from **Forgot password?**.
+  <Accordion title="'Couldn't sign in with Google' or '…with Microsoft'">
+    The banner explains why. Common causes: you declined the permission prompt,
+    the sign-in sat open for more than 10 minutes, or you started it in a
+    different browser or tab. Start again from the log-in page.
+  </Accordion>
+  <Accordion title="'We couldn't verify the email on your account'">
+    The provider didn't confirm your email address as verified — this can happen
+    with some work or school accounts. Sign in with your email and password
+    instead.
+  </Accordion>
+  <Accordion title="'This account has been suspended' or '…is inactive'">
+    A suspended account needs support to restore it. For an inactive account,
+    contact your workspace owner.
+  </Accordion>
+  <Accordion title="'Account temporarily locked'">
+    Wait 15 minutes, then sign in with the correct password. If you're unsure of
+    it, reset it while you wait.
+  </Accordion>
+  <Accordion title="'Link Expired' or 'Link No Longer Valid'">
+    The reset link is older than an hour, was already used, or was replaced by a
+    newer request. Click **Request a New Link**.
   </Accordion>
   <Accordion title="Can't log in after being invited">
     Make sure you accepted the invitation first. If your account isn't part of any

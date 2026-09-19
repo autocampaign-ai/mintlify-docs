@@ -1,0 +1,169 @@
+---
+title: "Join keywords (text-to-join)"
+description: "Let people subscribe by texting a keyword to your number, then add them to a segment, send a welcome text, and start a follow-up sequence."
+icon: "hashtag"
+---
+
+## Overview
+
+A join keyword is a word people text to one of your SMS numbers to subscribe —
+"Text `JOIN` to (your number)". When a matching text arrives, Autocampaign AI finds
+or creates the contact, records the subscription, and runs the actions you chose:
+add to a [segment](/contacts/segments), send a welcome message, and enroll in a
+[sequence](/campaigns/sequences). Find keywords under **CRM → Engagement → Join
+Keywords** in the sidebar (`/keywords`).
+
+<Info>
+  **Difficulty:** Beginner &nbsp;·&nbsp; Keywords match only while **Active**.
+</Info>
+
+For hosted signup pages instead, see [join links](/campaigns/join-links).
+
+## Before you start
+
+- Connect at least one SMS-capable number under **Settings → Channels**. Each
+  keyword is bound to a number you have send access to.
+- You need a role that can create keywords. Your plan may cap how many you can have.
+- Segment actions need a **static** segment; sequence actions need an **Active**
+  sequence.
+
+## Create a keyword
+
+Click **Create Join Keyword** and work through the five steps.
+
+<Steps>
+  <Step title="Choose your word" icon="hashtag">
+    Type the **Keyword** — letters and numbers only, up to 64 characters, stored in
+    uppercase. Availability is checked as you type: **is available**, **Already in
+    use on this number**, or **Reserved for compliance replies**. Suggestion chips
+    (`JOIN`, `VIP`, `SALE`, …) are editable shortcuts. With more than one number,
+    pick **Number customers will text**.
+  </Step>
+  <Step title="What happens next" icon="bolt">
+    Check at least one action: **Add to segment**, **Send welcome message**, or
+    **Start follow-up sequence**. A sequence runs through your segment, so it locks
+    **Add to segment** on.
+  </Step>
+  <Step title="Choose segment" icon="filter">
+    Pick the **Segment** (or **Create New Segment**) and, if enabled, the
+    **Follow-up sequence**. The lists filter each other to compatible pairs; saving
+    adds the segment to the sequence's audience.
+  </Step>
+  <Step title="Welcome message" icon="message">
+    Write the **Welcome message** (up to 1,600 characters). Keep `HELP` and `STOP`
+    instructions in it; the default text already does.
+  </Step>
+  <Step title="Review" icon="check">
+    Confirm the **Keyword**, **Number**, **Segment**, **Actions**, and **Welcome
+    message**, then save.
+  </Step>
+</Steps>
+
+<Note>
+  The keyword and its number can't be changed after creation. Edit the segment,
+  welcome message, or sequence any time, or **Duplicate** the keyword under a new
+  word.
+</Note>
+
+## How matching works
+
+Matching is case-insensitive and considers only **Active** keywords on the number
+that received the text. A message matches when the keyword is:
+
+1. **The whole message** — `JOIN`, ` join `.
+2. **The first word** — trailing punctuation is ignored, so `Join please!` matches
+   `JOIN`; `VIP-1` doesn't match `VIP`.
+3. **A whole word anywhere** — `Can I join?` matches `JOIN`; `rejoin` doesn't.
+
+If several keywords match, the closer tier wins, then the longer keyword
+(`VIPCLUB` beats `VIP`). A message that also contains an opt-out word (`STOP`,
+`UNSUBSCRIBE`, `CANCEL`, and so on) never triggers a whole-word match.
+
+**Reserved keywords.** Opt-out and opt-in handling always runs first, and you can't
+create a keyword that collides with it: `STOP`, `STOPALL`, `UNSUBSCRIBE`, `CANCEL`,
+`END`, `QUIT`, `HELP`, `INFO`, `START`, `YES`, `UNSTOP`, plus any custom
+[opt-in](/compliance/opt-in) or [opt-out](/compliance/opt-out) keywords.
+
+## What happens to the contact
+
+- The contact is found by phone or created (first name "Subscriber", source Join
+  Keyword). The text itself appears in the contact's [inbox](/inbox/overview) thread.
+- **Opted-out contacts are declined.** A keyword never re-subscribes someone who
+  texted `STOP`; they must text `START` or `YES` first.
+- The subscription is recorded once per contact per keyword. A first-time join adds
+  a **Keyword joined** entry to the contact's activity timeline with the keyword and
+  message text as consent evidence.
+- The **welcome message** is sent once per contact from the keyword's own number,
+  and mirrored into the inbox thread. Repeat texts don't resend it, and it's
+  skipped if the keyword is paused or deleted first.
+- The contact is added to your **segment** on every matching text, so someone
+  removed from the segment rejoins by texting again. Sequence enrollment follows
+  from segment membership.
+
+<Note>
+  There is no double opt-in step. The keyword text is the opt-in; the welcome
+  message is a confirmation, not a request to reply.
+</Note>
+
+## Manage keywords
+
+Each keyword is **Active** or **Paused**. **Pause** stops matching (texts fall
+through to your inbox), **Resume** reactivates, **Duplicate** copies the settings
+under a new word, and **Delete** removes it.
+
+The **Settings** tab holds the sharing kit: a **QR Code** (**Download PNG** /
+**Download SVG**), a **Short URL**, and **Share Text** ("Text KEYWORD to NUMBER").
+The QR code and short URL open the visitor's messaging app with your number and
+keyword pre-filled.
+
+## Analytics
+
+The list opens with **New Subscribers Today**, **Active Keywords**, **Total
+Subscribers**, **Opt-Out Rate**, and **Conversion Rate**, plus **Best Performing
+Keywords**, **Recent Activity**, and insight cards (top converter, peak joining
+window, follow-up impact) once there's enough data.
+
+A keyword's **Analytics** tab shows **Subscribers**, **Welcome sent**,
+**Replies**, **Opt-outs**, **Appointments booked**, and **Conversions**;
+**Subscriber Growth** by day, week, or month; a **Conversion Funnel** (subscribed →
+welcome sent → follow-up started → appointment booked → converted); and **Top
+Joining Times**. **Activity** is a timeline of joins, welcome sends, sequence
+starts, and bookings; **Subscribers** lists each contact with **Joined Date**,
+**Status**, and **Open Contact**. "Converted" means the contact's stage is now
+Customer.
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Can I use the same keyword on two numbers?">
+    Yes. Keywords are unique per number, so `JOIN` can run different actions on
+    each number.
+  </Accordion>
+  <Accordion title="Can the welcome message use merge tags?">
+    No. It's sent exactly as written.
+  </Accordion>
+  <Accordion title="Does deleting a keyword remove its subscribers?">
+    No. Contacts, segment membership, and activity history are kept.
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="The keyword is 'Reserved for compliance replies'">
+    It collides with a built-in or custom opt-in/opt-out keyword. Choose another
+    word, and avoid look-alikes such as `STOPPING`.
+  </Accordion>
+  <Accordion title="A text didn't subscribe anyone">
+    Confirm the keyword is **Active**, the text went to the bound number, the
+    message didn't also contain an opt-out word, and the sender isn't opted out.
+  </Accordion>
+  <Accordion title="No welcome message arrived">
+    Welcome sends need an active SMS channel and number, a non-empty message, and a
+    contact who isn't opted out. They go out only on the first join.
+  </Accordion>
+</AccordionGroup>
+
+<Card title="Follow up with a sequence" icon="diagram-next" href="/campaigns/sequences">
+  Build the multi-step follow-up your keyword enrolls subscribers into.
+</Card>

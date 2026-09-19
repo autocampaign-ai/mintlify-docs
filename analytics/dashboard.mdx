@@ -1,60 +1,140 @@
 ---
 title: "Dashboard"
-description: "Your at-a-glance view of conversations, campaigns, opt-outs, polls, and join links."
+description: "Your home screen: conversations, campaigns, opt-outs, polls, web forms, and link clicks at a glance."
 icon: "gauge"
 ---
 
 ## Overview
 
-The dashboard is your home screen (`/`) — a snapshot of what's happening across
-your workspace. Use the period selector to view the last 7 or 30 days, this month,
-last month, or a custom range.
+The **Dashboard** is your home screen — the first item in the sidebar (`/`). It
+is built from widgets. Until you change it, you see the built-in **Overview**
+layout described below; you can rearrange it or build your own with
+[custom dashboards](/analytics/custom-dashboards).
 
 <Info>
-  **Difficulty:** Beginner
+  **Difficulty:** Beginner &nbsp;·&nbsp; The default period is **Last 7 days**.
 </Info>
 
-## What it shows
+## Before you start
+
+- Every role — **Owner**, **Admin**, **Manager**, **Agent**, and **Viewer** — can
+  open the Dashboard.
+- Until workspace setup is finished, new members go through onboarding first and
+  may see a setup checklist beside the dashboard. See the
+  [onboarding checklist](/getting-started/onboarding-checklist).
+
+## Choose a period
+
+<Steps>
+  <Step title="Pick a quick period" icon="calendar">
+    Use the period selector at the top: **Last 7 days**, **Last 30 days**, **This
+    month**, or **Last month**.
+  </Step>
+  <Step title="Or set a custom range" icon="calendar-range">
+    Use the date-range picker next to it. Dates before your workspace was created
+    are disabled. The selection is stored in the URL, so you can bookmark a view.
+  </Step>
+</Steps>
+
+The period applies to every analytics widget on the dashboard.
+
+## What the Overview layout shows
 
 <AccordionGroup>
   <Accordion title="Key metrics" icon="chart-simple">
-    Active conversations (broken down by channel), opt-out rate, reply rate, and
-    AI-handled vs human-handled — each with a trend versus the previous period.
+    Four tiles: **Active Conversations** (with a per-channel breakdown),
+    **Opt-out Rate**, **Reply Rate**, and **AI vs Human** (**AI Handled** vs
+    **Human Handled** conversations). Tiles show the change **from last period**.
   </Accordion>
-  <Accordion title="Campaign performance" icon="paper-plane">
-    A chart of sent, delivered, failed, replied, and opt-out across your campaigns.
+  <Accordion title="Campaign Performance Overview" icon="paper-plane">
+    A chart of **Sent**, **Delivered**, **Failed**, **Replied**, and **Opt-out**
+    across your campaigns in the period.
   </Accordion>
-  <Accordion title="Recent inbox" icon="inbox">
-    Your latest conversations with an inline quick reply.
+  <Accordion title="Recent Inbox" icon="inbox">
+    Your latest conversations, filterable by **All**, **SMS**, or **Email**, with
+    an inline **Quick reply...** box. **View All Messages** opens the
+    [Inbox](/inbox/overview).
   </Accordion>
-  <Accordion title="Opt-out & unsubscribe trends" icon="ban">
-    Opt-out trends by channel.
+  <Accordion title="Opt-out & Unsubscribe Trends" icon="ban">
+    Opt-outs over time, by channel.
   </Accordion>
-  <Accordion title="Poll insights" icon="square-poll-vertical">
-    Active poll counts and per-poll analytics.
+  <Accordion title="Channel Subscriptions & Engagement" icon="chart-pie">
+    Two breakdowns: **Channel Subscriptions** (subscribers per channel) and
+    **Message Engagement** (**Read & Replied**, **Read & No Reply**, **Unread**,
+    **Read & Opt Out**). For SMS, "read" is approximated by "delivered" because
+    carriers don't provide read receipts.
   </Accordion>
-  <Accordion title="Join link performance" icon="link-simple">
-    A funnel and traffic sources for your join links.
+  <Accordion title="Poll Insights" icon="square-poll-vertical">
+    **Total Polls**, **Total Responses**, **Avg Response Rate**, and **Top
+    Performing Poll**, plus the option breakdown for the [poll](/campaigns/polls)
+    you select.
+  </Accordion>
+  <Accordion title="Web Form Performance Overview" icon="link-simple">
+    **Total Web Forms**, **Total Clicks**, **Unique Visitors**, and **Conversion
+    Rate**; a **Conversion Funnel** (**Viewed → Unique Views → Submitted →
+    Joined**) for the [web form](/campaigns/join-links) you select; and **Traffic
+    Source Analytics** using last-touch attribution.
+  </Accordion>
+  <Accordion title="Link Performance" icon="link">
+    **Total Clicks**, **Unique Clicks**, **Active Links**, and **Click-Through
+    Rate** for your [tracked links](/campaigns/text-links), with **Top
+    Performers** (top campaign, link, device, country, and browser) and **Recent
+    Link Activity**.
   </Accordion>
 </AccordionGroup>
+
+## More widgets
+
+Click **Customize** to add widgets that aren't in the Overview layout: **Unread
+Conversations**, **Appointments Today**, **Quick Actions**, **Usage Snapshot**,
+and **Setup Progress**. You can also create several dashboards, set a default,
+and share them — see [Custom dashboards](/analytics/custom-dashboards).
+
+<Note>
+  The Dashboard is a snapshot of engagement. For leads, revenue, appointments,
+  deliverability, and a CSV export, use [Analytics reports](/analytics/reports).
+</Note>
 
 ## FAQ
 
 <AccordionGroup>
   <Accordion title="Where do I see cost or spend?">
-    Cost is on individual campaigns and under [Wallet & billing](/billing/wallet-billing).
-    The dashboard focuses on engagement, not spend.
+    Not on the Dashboard. Cost is on individual
+    [campaigns](/analytics/campaign-analytics), estimated send cost and ROI are in
+    [Analytics reports](/analytics/reports), and charges are under
+    [Wallet & billing](/billing/wallet-billing). The **Usage Snapshot** widget shows
+    remaining SMS and email credits if your role can view billing.
   </Accordion>
-  <Accordion title="Can I change the date range?">
-    Yes — use the period selector at the top for preset ranges or a custom range.
+  <Accordion title="Can I change what the Dashboard shows?">
+    Yes. Click **Customize** to add, remove, resize, and reorder widgets. See
+    [Custom dashboards](/analytics/custom-dashboards).
+  </Accordion>
+  <Accordion title="Why is my teammate's Dashboard different from mine?">
+    Dashboards are personal unless shared. Each person can customize their own
+    and choose their own default.
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="A widget says “Failed to load …”">
+    Click **Retry** on the widget. Other widgets load independently.
+  </Accordion>
+  <Accordion title="A widget says “You don't have permission to view this widget.”">
+    Your role doesn't include that data. Ask an Owner or Admin to adjust your
+    [role](/getting-started/users-roles), or remove the widget.
+  </Accordion>
+  <Accordion title="A tile shows “No reading available for this period”">
+    There isn't enough activity in the selected period. Try a longer period.
   </Accordion>
 </AccordionGroup>
 
 <CardGroup cols={2}>
-  <Card title="Campaign analytics" icon="chart-line" href="/analytics/campaign-analytics">
-    Per-campaign delivery and cost.
+  <Card title="Custom dashboards" icon="table-cells-large" href="/analytics/custom-dashboards">
+    Build and share your own layouts.
   </Card>
-  <Card title="Ad attribution" icon="arrows-to-dot" href="/analytics/ad-attribution">
-    Where your contacts come from.
+  <Card title="Analytics reports" icon="chart-mixed" href="/analytics/reports">
+    Workspace-wide reports and CSV export.
   </Card>
 </CardGroup>

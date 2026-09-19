@@ -11,23 +11,30 @@ Tags are simple labels you attach to contacts — like `VIP`, `Trial`, or
 and target campaigns. A contact can have any number of tags.
 
 <Info>
-  **Where to manage them:** Settings → Tags (`/settings/tags`) &nbsp;·&nbsp;
-  **Difficulty:** Beginner
+  **Where to manage them:** **CRM → Audience → Tags** in the sidebar (`/tags`)
+  &nbsp;·&nbsp; **Difficulty:** Beginner
 </Info>
+
+<Note>
+  Tags moved out of Settings. Old links to `/settings/tags` redirect to the new
+  **Tags** page.
+</Note>
 
 ## Manage tags
 
 <Steps>
-  <Step title="Open Tags settings">
-    Go to **Settings → Tags**.
+  <Step title="Open the Tags page">
+    Go to **CRM → Audience → Tags** in the sidebar.
   </Step>
   <Step title="Create a tag">
-    Type a name in the search-or-create box (up to 50 characters) and click **Add**.
-    If a tag with that name already exists, the button stays disabled.
+    Type a name in the **Search tags, or type a new name to add...** box (up to 50
+    characters) and click **Add** or press Enter. If a tag with that name already
+    exists, the button stays disabled. The same box filters the list as you type.
   </Step>
   <Step title="Rename or delete">
-    Use the pencil icon to rename a tag inline, or the trash icon to delete it.
-    Deleting a tag removes it from every contact — this can't be undone.
+    Click **Edit tag** (pencil) to rename a tag inline — press Enter to save or
+    Escape to cancel — or **Delete tag** (trash) to remove it. Deleting a tag removes
+    it from every contact — this can't be undone.
   </Step>
 </Steps>
 
@@ -43,12 +50,14 @@ You can add tags in several places:
 - **On a contact** — in the create/edit dialog, or the **Tags** section of the
   contact detail page. Start typing to search existing tags or create a new one on
   the fly.
+- **In bulk from the contacts list** — select contacts, open **Bulk Actions**, and
+  choose **Assign Tags**. Duplicate assignments are skipped automatically.
 - **During CSV import** — apply tags to every imported contact in the **Tags &
-  options** step. See [Import contacts](/contacts/import-csv).
+  Options** step. See [Import contacts](/contacts/import-csv).
 
 <Tip>
   You can create a tag from anywhere the tag input appears — you don't have to visit
-  Settings first.
+  the **Tags** page first.
 </Tip>
 
 ## Use tags to target contacts
@@ -64,8 +73,9 @@ You can add tags in several places:
     Not manually — Autocampaign AI derives a consistent color from the tag's name.
   </Accordion>
   <Accordion title="What happens when I delete a tag?">
-    It's removed from all contacts (and any join links or templates that used it).
-    This is permanent, so delete with care.
+    It's removed from all contacts, and from any join links, SMS templates, tickets,
+    opportunities, or lead forms that used it. This is permanent, so delete with
+    care.
   </Accordion>
   <Accordion title="How are tags different from segments?">
     A tag is a manual label you attach. A [segment](/contacts/segments) is a group —
@@ -73,8 +83,9 @@ You can add tags in several places:
     can include tags).
   </Accordion>
   <Accordion title="Can I bulk-apply a tag to many contacts at once?">
-    Apply tags in bulk during [CSV import](/contacts/import-csv), or add contacts to
-    a segment. Selecting rows in the list currently supports bulk delete.
+    Yes. Select contacts in the list, open **Bulk Actions → Assign Tags**, pick the
+    tags, and click **Apply Tags**. You can also apply tags to every row during
+    [CSV import](/contacts/import-csv).
   </Accordion>
 </AccordionGroup>
 
@@ -82,8 +93,9 @@ You can add tags in several places:
 
 <AccordionGroup>
   <Accordion title="I can't add a tag — the Add button is disabled">
-    A tag with that exact name already exists (names are case-insensitive), or the
-    name is empty or over 50 characters. Adjust the name.
+    A tag with that exact name already exists, or the name is empty or over 50
+    characters. Adjust the name. Tag names are case-sensitive, so "VIP" and "vip"
+    are treated as different tags — search, however, ignores case.
   </Accordion>
 </AccordionGroup>
 
