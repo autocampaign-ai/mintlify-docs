@@ -288,5 +288,14 @@
       "website": "https://autocampaign.ai",
       "github": "https://github.com/autocampaign-ai/mintlify-docs"
     }
+  },
+  "seo": {
+    "metatags": {
+      "og:site_name": "Autocampaign AI Help Center",
+      "og:type": "website",
+      "og:locale": "en_US",
+      "twitter:card": "summary_large_image"
+    },
+    "indexing": "navigable"
   }
 }
