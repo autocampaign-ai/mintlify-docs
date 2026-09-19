@@ -41,6 +41,17 @@ team replies in real time. Find it under **Settings → Website Chat**
     copies your organization logo), a **Profile photo** (shown beside each
     assistant reply), and a **Chat button icon** (replaces the default
     speech-bubble on the floating button — leave it empty to keep the default).
+
+    {/* MEDIA-TODO screenshot | /images/settings/chat-widget-appearance-step.png
+    Capture: The Appearance step of the Website Chat wizard with Chat name, Welcome message, a Theme color preset selected, Chat position, and the Brand images fields, alongside the live Try it preview reflecting those choices. The four step names should be visible.
+    Route: /settings/chat-widget
+    Redact: Use a demo company name and logo; do not show a real customer's branding or profile photo.
+    Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+    {/*
+    <Frame caption="The Appearance step with the live Try it preview">
+      <img src="/images/settings/chat-widget-appearance-step.png" alt="Website Chat setup on the Appearance step with name, welcome message, color, and position fields beside a live preview" />
+    </Frame>
+    */}
   </Step>
   <Step title="AI Assistant" icon="robot">
     Pick the AI Employee that greets and answers visitors, or choose
@@ -61,12 +72,35 @@ team replies in real time. Find it under **Settings → Website Chat**
       type (**Returning** / **First-time**), campaign source, the page path the
       visit started on, or open/closed state. The first matching rule wins;
       otherwise the default welcome message shows.
+
+    {/* MEDIA-TODO screenshot | /images/settings/chat-widget-customer-experience-step.png
+    Capture: The Customer Experience step with Show quick questions on and three prompts listed, Allow appointment booking on with a Booking type chosen, Business hours set to Set specific hours with a Timezone, and one Smart greetings rule.
+    Route: /settings/chat-widget
+    Redact: Use generic demo quick questions and greeting text; nothing else sensitive.
+    Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+    {/*
+    <Frame caption="Quick questions, booking, hours, and smart greetings">
+      <img src="/images/settings/chat-widget-customer-experience-step.png" alt="Customer Experience step showing quick questions, appointment booking, business hours, and a smart greeting rule" />
+    </Frame>
+    */}
   </Step>
   <Step title="Install" icon="code">
     Click **Save changes** first — your install code is generated on the first
     save. Pick your platform (WordPress, Shopify, Wix, Squarespace, React, or HTML)
     for tailored instructions, click **Copy code**, and paste it just before the
     closing `</body>` tag on every page where you want chat.
+
+    {/* MEDIA-TODO video | /videos/settings/chat-widget-setup-and-install.mp4
+    Capture: The full website chat setup from a blank widget to a live chat button on a test site, with emphasis on copying and pasting the install code. Target length: 90-120 seconds.
+    Script: 1) Open Settings, then Website Chat 2) Appearance: enter a Chat name and Welcome message, pick a Theme color and Chat position 3) AI Assistant: pick an AI Employee 4) Customer Experience: add two quick questions 5) Click Save changes so the install code is generated 6) Install: pick the HTML platform, click Copy code, and add one entry under Allowed domains 7) Paste the tag just before the closing body tag of a demo page 8) Switch on Turn chat on so the badge reads Live 9) Reload the demo page, open the chat button, and send a test message
+    Route: /settings/chat-widget
+    Redact: Blur or replace the widget key in the install code and in the pasted page source; use a demo website domain such as shop.example instead of a real customer site; use a demo company name and logo.
+    Publish: add the file at the path above (or swap the video tag for a YouTube or Loom iframe), then delete this note and the comment markers around the Frame below. */}
+    {/*
+    <Frame caption="Set up and install the website chat widget">
+      <video controls className="w-full aspect-video rounded-xl" src="/videos/settings/chat-widget-setup-and-install.mp4" title="Walkthrough of configuring the website chat widget, copying the install code, pasting it into a page, and turning chat on"></video>
+    </Frame>
+    */}
   </Step>
   <Step title="Turn it on" icon="toggle-on">
     Use the **Turn chat on** switch in the page header. The badge reads **Live** or
@@ -121,6 +155,17 @@ to 20 entries.
 - Matching is exact. `*.example.com` covers every subdomain but **not**
   `example.com` itself — add both if you need both.
 - Enter international domains exactly as your browser's address bar shows them.
+
+{/* MEDIA-TODO screenshot | /images/settings/chat-widget-allowed-domains.png
+Capture: The Install step showing the platform picker, the install code with the Copy code button, and the Allowed domains list with two entries (a hostname and a wildcard subdomain entry) and the Add domain button.
+Route: /settings/chat-widget
+Redact: Blur or replace the widget key inside the install code; use demo website domains such as shop.example rather than a real customer domain.
+Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+{/*
+<Frame caption="Install code and Allowed domains in the Install step">
+  <img src="/images/settings/chat-widget-allowed-domains.png" alt="Install step with platform choices, the script tag to copy, and an Allowed domains list with two entries" />
+</Frame>
+*/}
 
 ## Where conversations land
 

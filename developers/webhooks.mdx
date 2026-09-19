@@ -10,6 +10,18 @@ Webhooks push events from Autocampaign AI to your own URL in real time — for e
 contact is created or a campaign completes. Manage them at **Settings → Webhooks**
 (`/settings/webhooks`).
 
+{/* MEDIA-TODO video | /videos/developers/webhooks-create-and-test-webhook.mp4
+Capture: Walkthrough of creating a signed webhook endpoint, sending a test event, and reading the delivery log. Target length: 60–90 seconds.
+Script: 1) Go to Settings → Webhooks → New 2) Enter an HTTPS Endpoint URL, a Label, and an optional description 3) Pick two or three events 4) Keep Sign payloads on and save 5) Show the one-time signing secret and copy it (masked in the recording) 6) Click Send test 7) Open the delivery log and show the status, payload, and response of the test delivery
+Route: /settings/webhooks
+Redact: Use a demo endpoint URL such as https://example.com/webhooks; blur the signing secret in every frame; use a test payload with no real contact names, phone numbers, or emails; hide any custom header values.
+Publish: add the file at the path above (or swap the video tag for a YouTube or Loom iframe), then delete this note and the comment markers around the Frame below. */}
+{/*
+<Frame caption="Create a webhook, send a test, and check the delivery log">
+  <video controls className="w-full aspect-video rounded-xl" src="/videos/developers/webhooks-create-and-test-webhook.mp4" title="Walkthrough of creating a signed webhook endpoint, sending a test event, and reviewing the delivery log"></video>
+</Frame>
+*/}
+
 <Info>
   **Difficulty:** Advanced &nbsp;·&nbsp; **Permission:** Manage webhooks.
 </Info>
@@ -20,6 +32,17 @@ contact is created or a campaign completes. Manage them at **Settings → Webhoo
   <Step title="Add an endpoint">
     Go to **Settings → Webhooks → New** and enter your **Endpoint URL** (HTTPS), a
     **Label**, and an optional description.
+
+    {/* MEDIA-TODO screenshot | /images/developers/webhooks-new-endpoint-form.png
+    Capture: The new webhook form with the Endpoint URL, Label, and description fields filled with sample values, the event picker with a few events selected, and the Sign payloads toggle on.
+    Route: /settings/webhooks (New)
+    Redact: Replace the endpoint URL with a demo URL such as https://example.com/webhooks and leave custom header values empty or masked.
+    Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+    {/*
+    <Frame caption="Add an endpoint and choose its events">
+      <img src="/images/developers/webhooks-new-endpoint-form.png" alt="New webhook form with endpoint URL, label, selected events, and a sign payloads toggle switched on" />
+    </Frame>
+    */}
   </Step>
   <Step title="Subscribe to events">
     Pick the events you want to receive (see below). You can also add custom headers.
@@ -27,6 +50,17 @@ contact is created or a campaign completes. Manage them at **Settings → Webhoo
   <Step title="Enable signing">
     Keep **Sign payloads** on. On save, your **signing secret** is shown once — copy
     it to verify deliveries.
+
+    {/* MEDIA-TODO screenshot | /images/developers/webhooks-signing-secret.png
+    Capture: The one-time signing secret shown after saving a webhook with Sign payloads on, with the copy control visible.
+    Route: /settings/webhooks (after saving a new webhook)
+    Redact: The signing secret must be masked or replaced with placeholder characters, and the endpoint URL replaced with a demo URL.
+    Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+    {/*
+    <Frame caption="The signing secret is shown once on save">
+      <img src="/images/developers/webhooks-signing-secret.png" alt="One-time webhook signing secret display with a masked value and a copy button" />
+    </Frame>
+    */}
   </Step>
 </Steps>
 
@@ -77,6 +111,17 @@ compare it (in constant time) to `v1`. Reject stale timestamps.
 - View the **delivery log** with status, payload, and response, and **retry** failed
   deliveries manually.
 - Use **Send test** to fire a sample event and inspect it.
+
+{/* MEDIA-TODO screenshot | /images/developers/webhooks-delivery-log.png
+Capture: A webhook's delivery log showing several deliveries with a mix of successful and failed statuses, one delivery expanded to show its payload and response, and the retry and Send test actions visible.
+Route: /settings/webhooks (an endpoint's delivery log)
+Redact: Replace the endpoint URL with a demo URL, use a test payload with no real contact names, phone numbers, or emails, and mask any signature or secret values in headers.
+Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+{/*
+<Frame caption="The delivery log shows status, payload, and response">
+  <img src="/images/developers/webhooks-delivery-log.png" alt="Webhook delivery log with successful and failed deliveries and one entry expanded to show payload and response" />
+</Frame>
+*/}
 
 ## FAQ
 

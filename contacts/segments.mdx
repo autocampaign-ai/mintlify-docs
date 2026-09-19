@@ -31,6 +31,17 @@ Find them under **Segments** in the sidebar (`/segments`).
 
     - **Static** — "Manually add or remove contacts from this segment."
     - **Dynamic** — "Contacts are automatically added based on rules."
+
+    {/* MEDIA-TODO screenshot | /images/contacts/segments-new-segment-type.png
+    Capture: The New Segment form with the Static / Dynamic toggle visible and Dynamic selected, showing the helper text under the toggle and the empty name and description fields.
+    Route: /segments
+    Redact: nothing sensitive
+    Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+    {/*
+    <Frame caption="Choosing static or dynamic">
+      <img src="/images/contacts/segments-new-segment-type.png" alt="New Segment form with the Static and Dynamic type toggle and its helper text, Dynamic selected" />
+    </Frame>
+    */}
   </Step>
   <Step title="Name it (and add rules if dynamic)">
     Give it a name and optional description. For a dynamic segment, build the rules
@@ -58,9 +69,28 @@ Dynamic segments are defined by rules. The builder has two levels of grouping:
 
 You can have up to **10 groups** and **50 conditions** total.
 
+{/* MEDIA-TODO screenshot | /images/contacts/segment-rule-builder.png
+Capture: The rule builder for a dynamic segment with two groups: the top-level Match ALL / ANY toggle, each group's AND / OR toggle, and three or four complete conditions (for example Stage is Qualified, Tags has tag VIP, Created At within last 30 days).
+Route: /segments
+Redact: use demo tag names and values in the conditions; if any contact names, emails or phone numbers appear alongside the builder, replace them with fictional ones.
+Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+{/*
 <Frame caption="Building rules for a dynamic segment">
-  <img src="/images/contacts/segment-rule-builder.png" alt="Segment rule builder" />
+  <img src="/images/contacts/segment-rule-builder.png" alt="Segment rule builder with a Match ALL or ANY toggle, two condition groups and their AND or OR toggles" />
 </Frame>
+*/}
+
+{/* MEDIA-TODO video | /videos/contacts/segments-rule-builder-walkthrough.mp4
+Capture: Building a dynamic segment from scratch with the rule builder, including multiple groups and the live preview. Target length: 60–90 seconds.
+Script: 1) On the Segments page click New Segment and toggle Dynamic 2) Name the segment 3) Add a first condition such as Stage is Qualified 4) Add a second condition in the same group and switch the group's AND / OR toggle 5) Add a second group with a Tags has tag condition and switch the top-level Match ALL / ANY toggle 6) Show the preview panel's matching contact count and sample updating 7) Save and show the status badge moving from Queued or Computing to Idle.
+Route: /segments
+Redact: the preview panel's sample of matching contacts must show fictional names, example.com emails and 555 phone numbers; record in a demo workspace only.
+Publish: add the file at the path above (or swap the video tag for a YouTube or Loom iframe), then delete this note and the comment markers around the Frame below. */}
+{/*
+<Frame caption="Building a dynamic segment with rules">
+  <video controls className="w-full aspect-video rounded-xl" src="/videos/contacts/segments-rule-builder-walkthrough.mp4" title="Walkthrough of creating a dynamic segment: adding conditions and groups, switching AND and OR, and checking the live preview"></video>
+</Frame>
+*/}
 
 ### Fields you can build rules on
 
@@ -106,6 +136,17 @@ You can have up to **10 groups** and **50 conditions** total.
 As you edit rules (once each group has a complete condition), a **preview** panel
 shows the matching contact count and a sample of who qualifies — so you can confirm
 the audience before saving.
+
+{/* MEDIA-TODO screenshot | /images/contacts/segments-live-preview.png
+Capture: The rule builder with complete conditions and the preview panel showing the matching contact count and the sample list of qualifying contacts.
+Route: /segments
+Redact: replace the sample contacts' names, emails and phone numbers with fictional demo data (example.com emails, 555 numbers).
+Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+{/*
+<Frame caption="Live preview of matching contacts">
+  <img src="/images/contacts/segments-live-preview.png" alt="Preview panel beside the rule builder showing the matching contact count and a sample of qualifying contacts" />
+</Frame>
+*/}
 
 ### How dynamic segments stay current
 

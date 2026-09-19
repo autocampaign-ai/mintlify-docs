@@ -31,12 +31,42 @@ contact joins via a form, wait a day, then send a follow-up." You build them on 
   </Step>
   <Step title="Validate and publish">
     Click **Validate** to check for issues, then **Publish** to make it live.
+
+    {/* MEDIA-TODO screenshot | /images/automation/workflow-builder-validate-checklist.png
+    Capture: The workflow canvas after clicking Validate, with the checklist open and listing at least one issue such as an unconfigured node or a missing connection, and the Publish button visible.
+    Route: /workflows (open a workflow)
+    Redact: nothing sensitive; use a demo workflow name and demo message copy in nodes.
+    Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+    {/*
+    <Frame caption="The Validate checklist before publishing">
+      <img src="/images/automation/workflow-builder-validate-checklist.png" alt="Workflow builder with the Validate checklist open listing an unconfigured node and a missing connection beside the Publish button" />
+    </Frame>
+    */}
   </Step>
 </Steps>
 
+{/* MEDIA-TODO screenshot | /images/automation/workflow-canvas.png
+Capture: The workflow builder canvas for a small workflow: a trigger connected to a wait, an action and a Check if condition with Yes and No paths, with the node picker open showing the Triggers, Tools, AI and Actions groups.
+Route: /workflows (open a workflow)
+Redact: nothing sensitive; use a demo workflow name and demo message copy, with no real contact names or phone numbers in node previews.
+Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+{/*
 <Frame caption="The workflow canvas">
-  <img src="/images/automation/workflow-canvas.png" alt="Workflow builder canvas" />
+  <img src="/images/automation/workflow-canvas.png" alt="Workflow builder canvas with a trigger connected to wait, action and condition nodes beside the open node picker" />
 </Frame>
+*/}
+
+{/* MEDIA-TODO video | /videos/automation/workflow-builder-build-and-publish-walkthrough.mp4
+Capture: Build a simple workflow from scratch on the canvas, validate it and publish it. Target length: 2–3 minutes.
+Script: 1) Open Workflows and click Create workflow, choose from scratch and name it 2) Add the Form submitted trigger 3) Open the node picker and show the Triggers, Tools, AI and Actions groups 4) Add a Wait for a set time, then a Send SMS action, and connect them 5) Add a Check if condition with Yes and No paths 6) Click Validate and fix one flagged issue 7) Click Publish and show the Published status
+Route: /workflows
+Redact: Use demo message copy and a demo form name; no real contact names, phone numbers or sender numbers in node settings.
+Publish: add the file at the path above (or swap the video tag for a YouTube or Loom iframe), then delete this note and the comment markers around the Frame below. */}
+{/*
+<Frame caption="Building and publishing a workflow">
+  <video controls className="w-full aspect-video rounded-xl" src="/videos/automation/workflow-builder-build-and-publish-walkthrough.mp4" title="Walkthrough of building a workflow on the canvas: adding a trigger, wait, action and condition, then validating and publishing"></video>
+</Frame>
+*/}
 
 ## Triggers
 
@@ -99,6 +129,17 @@ Steps that do something for the contact:
 - **Analytics** (`/workflows/:id/analytics`) — total runs, active now, completed,
   failed, success rate, conversions, a runs-over-time chart, and a step-performance
   funnel.
+
+{/* MEDIA-TODO screenshot | /images/automation/workflow-builder-runs-list.png
+Capture: The Runs page for a published workflow with runs in several statuses (Running, Waiting, Completed, Failed), one run expanded to show its step-by-step trace, and the CSV export control visible.
+Route: /workflows/:id/runs
+Redact: Replace contact names, phone numbers and emails in the runs list and trace with demo data.
+Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+{/*
+<Frame caption="Workflow runs with a step-by-step trace">
+  <img src="/images/automation/workflow-builder-runs-list.png" alt="Workflow Runs page listing executions by status with one run expanded to show its step-by-step trace" />
+</Frame>
+*/}
 
 ## Publishing and status
 

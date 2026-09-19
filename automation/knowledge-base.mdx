@@ -25,12 +25,35 @@ chunks and embeds them so the employee can retrieve the right passage. Find them
   <Step title="Add sources">
     Open the knowledge base and click **Add source**. Choose a source type (below).
     Content is chunked and embedded automatically.
+
+    {/* MEDIA-TODO screenshot | /images/automation/knowledge-base-add-source-types.png
+    Capture: An open knowledge base after clicking Add source, with the source type choices (File, Text, Website) visible.
+    Route: /knowledge-bases (open a knowledge base, Add source)
+    Redact: nothing sensitive; use a demo knowledge base name and no real customer documents.
+    Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+    {/*
+    <Frame caption="Choosing a source type">
+      <img src="/images/automation/knowledge-base-add-source-types.png" alt="Add source dialog in a knowledge base offering File, Text and Website source types" />
+    </Frame>
+    */}
   </Step>
   <Step title="Wait for ingestion">
     Each source shows an ingestion status. Once it reads **Completed**, the content
     is searchable by your agent.
   </Step>
 </Steps>
+
+{/* MEDIA-TODO video | /videos/automation/knowledge-base-create-and-upload-walkthrough.mp4
+Capture: Create a knowledge base, add one file source and one website source, and watch ingestion reach Completed. Target length: 60–90 seconds.
+Script: 1) Open Knowledge Bases and click New knowledge base 2) Enter a Name and Description and create it 3) Click Add source, choose File and upload a small PDF 4) Click Add source again, choose Website, enter a root URL and set max pages and crawl depth 5) Show the sources moving from Queued to Completed 6) Point out Re-sync on a source
+Route: /knowledge-bases
+Redact: Upload only a demo document with no customer data; use a public demo website URL, not a real client site.
+Publish: add the file at the path above (or swap the video tag for a YouTube or Loom iframe), then delete this note and the comment markers around the Frame below. */}
+{/*
+<Frame caption="Creating a knowledge base and adding sources">
+  <video controls className="w-full aspect-video rounded-xl" src="/videos/automation/knowledge-base-create-and-upload-walkthrough.mp4" title="Walkthrough of creating a knowledge base, uploading a file, crawling a website and waiting for ingestion to complete"></video>
+</Frame>
+*/}
 
 ## Source types
 
@@ -54,6 +77,17 @@ Sources move through **Queued → Extracting → Processing → Completed** (or
 **Completed with errors**, **Failed**, or **Cancelled**). The detail page shows
 source, document, and chunk counts, plus the embedding model. Use **Re-sync** on a
 source to re-fetch and re-ingest — unchanged content is skipped.
+
+{/* MEDIA-TODO screenshot | /images/automation/knowledge-base-ingestion-status-detail.png
+Capture: A knowledge base detail page with several sources in different ingestion statuses (at least Completed and Processing, ideally one Failed), the source, document and chunk counts, the embedding model, and the Re-sync action visible.
+Route: /knowledge-bases (open a knowledge base)
+Redact: Replace source file names and website URLs with demo ones; no customer documents.
+Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+{/*
+<Frame caption="Ingestion status on the knowledge base detail page">
+  <img src="/images/automation/knowledge-base-ingestion-status-detail.png" alt="Knowledge base detail page listing sources with ingestion statuses, document and chunk counts, and a Re-sync action" />
+</Frame>
+*/}
 
 ## Link a knowledge base to an AI Employee
 

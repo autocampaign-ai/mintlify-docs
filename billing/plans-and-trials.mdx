@@ -12,6 +12,17 @@ checkout. Manage all of it at **Account → Plan & Billing** in the sidebar
 (`/billing`). The page is titled **Plan & subscription** and has three tabs:
 **Plans & subscription**, **Usage**, and **Invoices**.
 
+{/* MEDIA-TODO screenshot | /images/billing/plans-and-trials-plan-and-billing-page.png
+Capture: The Plan & subscription page for a workspace on trial: the sidebar entry Account → Plan & Billing highlighted, the three tabs (Plans & subscription, Usage, Invoices), the plan card showing Trialing, Trial ends with a date, and the Choose a plan button. Include the Trial · N days left indicator in the app header.
+Route: /billing
+Redact: Use a demo workspace; replace the plan price with a sample amount if it is in frame, and hide the real workspace and user name in the header.
+Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+{/*
+<Frame caption="Plan & Billing during a card-free trial">
+  <img src="/images/billing/plans-and-trials-plan-and-billing-page.png" alt="Plan and subscription page with three tabs and a plan card showing trial status and end date" />
+</Frame>
+*/}
+
 <Info>
   **Difficulty:** Beginner &nbsp;·&nbsp; **Permission:** Billing read to view,
   Billing manage to change plans, buy add-ons, or cancel. Members without billing
@@ -66,6 +77,17 @@ choose a plan.
     Compare features, **Limits**, and **Includes … credits** on each card, then click
     **Choose plan**. The button reads **Redirecting…** while the hosted checkout
     opens. Enter your card there.
+
+    {/* MEDIA-TODO screenshot | /images/billing/plans-and-trials-plan-catalog.png
+    Capture: The plan catalog with the Monthly / Yearly toggle and at least three plan cards showing features, Limits, Includes … credits, and the Choose plan button. Do not capture the hosted checkout.
+    Route: /billing
+    Redact: Replace plan prices with sample amounts approved for docs (prices may change); never capture card details or the hosted checkout form.
+    Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+    {/*
+    <Frame caption="Compare plans and click Choose plan">
+      <img src="/images/billing/plans-and-trials-plan-catalog.png" alt="Plan catalog with a monthly and yearly toggle and plan cards listing features, limits, and included credits" />
+    </Frame>
+    */}
   </Step>
   <Step title="Return to the app" icon="check">
     You land back on Plan & Billing with a **Payment received** banner while your
@@ -82,6 +104,18 @@ choose a plan.
     On **Plans & subscription**, click **Upgrade** on your plan card. The
     **Upgrade or change plan** dialog shows every plan; cheaper ones are labeled
     **Downgrade**, pricier ones **Upgrade**.
+
+    {/* MEDIA-TODO video | /videos/billing/plans-and-trials-upgrade-plan.mp4
+    Capture: Walkthrough of upgrading a paid plan in place from the plan card, through confirmation, to the updated limits. Target length: 60–90 seconds.
+    Script: 1) Open Account → Plan & Billing 2) On Plans & subscription, click Upgrade on the plan card 3) In the Upgrade or change plan dialog, point out the Upgrade and Downgrade labels and the Monthly / Yearly toggle 4) Choose a pricier plan and confirm 5) Show the Plan updated — your new limits and credits apply now message 6) Open the Usage tab to show the new limits
+    Route: /billing
+    Redact: Record in a demo workspace on a test subscription; blur or replace plan prices and proration amounts, and never show card details, the hosted checkout, invoice numbers, or the billing email.
+    Publish: add the file at the path above (or swap the video tag for a YouTube or Loom iframe), then delete this note and the comment markers around the Frame below. */}
+    {/*
+    <Frame caption="Upgrade a plan from the plan card">
+      <video controls className="w-full aspect-video rounded-xl" src="/videos/billing/plans-and-trials-upgrade-plan.mp4" title="Walkthrough of upgrading a subscription from the plan card and confirming the new limits"></video>
+    </Frame>
+    */}
   </Step>
   <Step title="Confirm">
     Upgrades apply in place and are prorated on your next invoice. You'll see
@@ -96,6 +130,17 @@ choose a plan.
     **Downgrade anyway** or **Keep current plan**. Downgrades take effect
     immediately; included credits are reduced pro-rata and any price difference is
     credited on your next invoice.
+
+    {/* MEDIA-TODO screenshot | /images/billing/plans-and-trials-downgrade-dialog.png
+    Capture: The Downgrade to …? dialog showing Limits that will shrink, Features you will lose, and the reduced Included credits, with the Downgrade anyway and Keep current plan buttons.
+    Route: /billing (Upgrade → Upgrade or change plan → a cheaper plan)
+    Redact: Replace any price or credit amounts with sample figures.
+    Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+    {/*
+    <Frame caption="Review what changes before you downgrade">
+      <img src="/images/billing/plans-and-trials-downgrade-dialog.png" alt="Downgrade confirmation dialog listing shrinking limits, lost features, and reduced credits with two action buttons" />
+    </Frame>
+    */}
   </Step>
 </Steps>
 

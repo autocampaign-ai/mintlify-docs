@@ -57,11 +57,34 @@ Registration has a strict order because each step depends on the previous one:
   approved yet (current status: …). Wait for approval before registering the campaign."*
 </Warning>
 
+{/* MEDIA-TODO video | /videos/compliance/a2p-10dlc-registration-walkthrough.mp4
+Capture: End-to-end A2P 10DLC registration from the SMS channel's Brand & Campaign tab: registering the brand, waiting for the approved badge, then creating the campaign and seeing it In progress. Target length: 2–3 minutes.
+Script: 1) Open the SMS channel's Brand & Campaign tab and click Register 10DLC Brand 2) Fill Business Information, Authorized Representative and Physical Business Address in the Create Brand drawer 3) Click Create Brand and show the "10DLC brand submitted for carrier registration." message and the Pending badge 4) Cut to the brand showing a green Approved badge 5) Click Create new A2P Campaign, pick the A2P Brand and a Use case, then create or select a messaging service 6) Enter the campaign description, opt-in flow and two sample messages, and tick any message content flags 7) Click Create and show the campaign badge as In progress.
+Route: SMS channel → Brand & Campaign tab (the page gives no URL)
+Redact: use a fictional business throughout: replace the legal business name, EIN/tax ID, website, brand contact email, representative name, email and phone number, and street address with demo data; blur any brand ID, campaign ID or messaging service SID shown after submission.
+Publish: add the file at the path above (or swap the video tag for a YouTube or Loom iframe), then delete this note and the comment markers around the Frame below. */}
+{/*
+<Frame caption="Registering a 10DLC brand and campaign">
+  <video controls className="w-full aspect-video rounded-xl" src="/videos/compliance/a2p-10dlc-registration-walkthrough.mp4" title="Walkthrough of registering an A2P 10DLC brand and then a campaign from the Brand & Campaign tab"></video>
+</Frame>
+*/}
+
 ## Register your Brand
 
 Go to your SMS channel's **Brand & Campaign** tab and click **Register 10DLC
 Brand** (also available as the first step of the setup wizard). The **Create Brand**
 drawer has three sections.
+
+{/* MEDIA-TODO screenshot | /images/compliance/a2p-10dlc-create-brand-drawer.png
+Capture: The Create Brand drawer open over the Brand & Campaign tab, with the Business Information section filled in and the Authorized Representative and Physical Business Address sections visible below it. The Create Brand button must be in frame.
+Route: SMS channel → Brand & Campaign tab → Register 10DLC Brand (the page gives no URL)
+Redact: replace the legal business name, EIN/tax ID (use 12-3456789), website URL and brand contact email with demo values; replace the representative's name, email and phone number (use +14155552671) and the street address with fictional ones.
+Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+{/*
+<Frame caption="The Create Brand drawer">
+  <img src="/images/compliance/a2p-10dlc-create-brand-drawer.png" alt="Create Brand drawer showing the Business Information, Authorized Representative and Physical Business Address sections" />
+</Frame>
+*/}
 
 <AccordionGroup>
   <Accordion title="Business Information" icon="building">
@@ -111,6 +134,17 @@ carrier reviews it.
 Once your brand is approved, open the **Brand & Campaign** tab and click
 **Create new A2P Campaign**. Fill in:
 
+{/* MEDIA-TODO screenshot | /images/compliance/a2p-10dlc-create-campaign-form.png
+Capture: The Create new A2P Campaign form with an approved A2P Brand selected, a Use case chosen (for example Marketing), and the campaign description, opt-in flow and sample message fields filled with realistic demo text.
+Route: SMS channel → Brand & Campaign tab → Create new A2P Campaign (the page gives no URL)
+Redact: replace the brand name with a fictional business; blur the brand ID and any messaging service SID or name tied to a real account; sample messages and opt-in text must use a demo business name, a demo URL and no real phone numbers.
+Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+{/*
+<Frame caption="Creating an A2P campaign">
+  <img src="/images/compliance/a2p-10dlc-create-campaign-form.png" alt="A2P campaign form with brand, use case, campaign description, opt-in flow and sample message fields" />
+</Frame>
+*/}
+
 <AccordionGroup>
   <Accordion title="Brand & use case">
     - **A2P Brand** — your approved brand.
@@ -156,6 +190,17 @@ registration."* The campaign starts as **In progress**.
 ## Status reference
 
 Autocampaign AI shows a colored badge for both the brand and the campaign.
+
+{/* MEDIA-TODO screenshot | /images/compliance/a2p-10dlc-status-badges.png
+Capture: The Brand & Campaign tab showing one brand with a green Approved badge and one campaign with an amber In progress badge, so both badge types are visible in a single frame.
+Route: SMS channel → Brand & Campaign tab (the page gives no URL)
+Redact: replace the brand's legal business name with a fictional one; blur the brand ID, campaign ID, EIN/tax ID and any attached phone numbers.
+Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+{/*
+<Frame caption="Brand and campaign status badges">
+  <img src="/images/compliance/a2p-10dlc-status-badges.png" alt="Brand and Campaign tab with a green Approved brand badge and an amber In progress campaign badge" />
+</Frame>
+*/}
 
 <Tabs>
   <Tab title="Brand statuses">

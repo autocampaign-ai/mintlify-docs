@@ -32,6 +32,17 @@ consent, and trigger a welcome message. Each gets a shareable URL and a QR code.
 <Steps>
   <Step title="Create a text link">
     On the **Links → Text Link** tab, click **Create Text Link**.
+
+    {/* MEDIA-TODO screenshot | /images/campaigns/join-links-text-link-tab.png
+    Capture: The Join Links page on the Text Link tab with the Create Text Link button, the Web Form tab beside it, and a short list of existing links with their status.
+    Route: /links
+    Redact: Use demo link names and slugs; replace any sender phone numbers with demo numbers such as (555) 010-0142.
+    Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+    {/*
+    <Frame caption="Create text links and web forms from the Join Links page">
+      <img src="/images/campaigns/join-links-text-link-tab.png" alt="Join Links page showing the Text Link and Web Form tabs, the Create Text Link button, and existing links" />
+    </Frame>
+    */}
   </Step>
   <Step title="Setup">
     Set the **Link Name** and **Custom Slug** (auto-suggested), pick the **Sender
@@ -66,6 +77,17 @@ records the reply as consent, and sends your welcome message.
     name, email, address parts). Toggle **Require consent checkbox** and set its
     label (default "I agree to receive SMS messages"). Optionally turn on **OTP
     verification** to confirm the phone number.
+
+    {/* MEDIA-TODO screenshot | /images/campaigns/join-links-web-form-builder.png
+    Capture: The Form builder step of the web form wizard with First Name and Phone shown as required, two optional fields added, Require consent checkbox on with its label, and the OTP verification toggle visible.
+    Route: /links
+    Redact: Use a demo link name and generic consent wording; nothing else sensitive.
+    Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+    {/*
+    <Frame caption="The web form builder with required fields, consent, and OTP">
+      <img src="/images/campaigns/join-links-web-form-builder.png" alt="Web form builder showing required name and phone fields, optional fields, a consent checkbox label, and OTP verification" />
+    </Frame>
+    */}
   </Step>
   <Step title="Post-submit">
     Attach **Tags**, set a **Thank You Message** or a **Redirect URL** (a redirect
@@ -87,6 +109,17 @@ are redirected.
 Every join link can generate a **QR code** (from the list row or the detail **QR
 Code** tab). Download it as a PNG and track **Total Scans** and **Unique Scans**.
 For text links the QR opens Messages pre-filled; for web forms it opens the form.
+
+{/* MEDIA-TODO screenshot | /images/campaigns/join-links-qr-code-tab.png
+Capture: A join link's detail page on the QR Code tab showing the generated QR code, the PNG download button, and the Total Scans and Unique Scans counts.
+Route: /links (open a join link, then the QR Code tab)
+Redact: Use a demo link name and slug; the QR code must point at a demo link, not a live customer link; hide any real sender number.
+Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+{/*
+<Frame caption="Download the QR code and track scans">
+  <img src="/images/campaigns/join-links-qr-code-tab.png" alt="QR Code tab of a join link with the code, a download button, and total and unique scan counts" />
+</Frame>
+*/}
 
 ## Opt-out protection
 

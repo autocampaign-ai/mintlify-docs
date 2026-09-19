@@ -32,6 +32,17 @@ example **SMS credits**, **Email credits**, **AI credits**, and **Voice minutes*
 depending on your plan. Each tile shows the **available** balance and a breakdown:
 **included · purchased · reserved**.
 
+{/* MEDIA-TODO screenshot | /images/billing/wallet-billing-credits-card.png
+Capture: The Usage tab with the Credits card in view: one tile per pool (SMS credits, Email credits, AI credits, Voice minutes), each showing the available balance and the included · purchased · reserved breakdown, plus the Buy more and Auto-recharge buttons.
+Route: /billing?tab=usage
+Redact: Replace credit balances with sample numbers and hide the real workspace name; no card details or invoice numbers may be in frame.
+Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+{/*
+<Frame caption="The Credits card on the Usage tab">
+  <img src="/images/billing/wallet-billing-credits-card.png" alt="Credits card with one tile per credit pool showing available balance and included, purchased, and reserved amounts" />
+</Frame>
+*/}
+
 - **Included** credits come with your plan (subscription and promotional grants).
 - **Purchased** credits come from credit packs you buy.
 - **Reserved** credits are held by queued work (a campaign mid-send, a call in
@@ -65,6 +76,17 @@ allocation summary on the Plans & subscription tab.
     **Available vs consumed** lists every resource with **Plan allowance**,
     **Add-ons**, **Total**, **Consumed**, **Remaining**, **Utilization**, and a
     **Status** badge: **Healthy**, **Near limit**, **At limit**, or **Unlimited**.
+
+    {/* MEDIA-TODO screenshot | /images/billing/wallet-billing-available-vs-consumed.png
+    Capture: The Available vs consumed table on the Usage tab with the Plan allowance, Add-ons, Total, Consumed, Remaining, Utilization, and Status columns, showing a mix of Healthy, Near limit, and At limit badges.
+    Route: /billing?tab=usage
+    Redact: Use sample usage numbers from a demo workspace.
+    Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+    {/*
+    <Frame caption="Compare your allowance to what you have consumed">
+      <img src="/images/billing/wallet-billing-available-vs-consumed.png" alt="Usage table listing each resource with allowance, consumed, remaining, utilization, and a status badge" />
+    </Frame>
+    */}
   </Step>
   <Step title="Audit activity">
     Under **Resource activity**, **Resource events** lists each consumption (Date,
@@ -89,6 +111,17 @@ rest.
     Under **How should this be charged?**, pick **One-time** (charged once, never
     re-charges) or **Recurring (auto-refill)** and set **Refill when remaining
     units reach** a threshold. Feature unlocks are one-time only.
+
+    {/* MEDIA-TODO screenshot | /images/billing/wallet-billing-purchase-dialog.png
+    Capture: The add-on Purchase dialog showing You get and Cost, with How should this be charged? set to Recurring (auto-refill) so the Refill when remaining units reach threshold field and the Buy now button are visible.
+    Route: /billing (Plans & subscription tab → Add-ons → Purchase)
+    Redact: Replace the Cost amount with a sample price and make sure no saved card brand or last four digits are in frame.
+    Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+    {/*
+    <Frame caption="Choose one-time or recurring when buying a pack">
+      <img src="/images/billing/wallet-billing-purchase-dialog.png" alt="Add-on purchase dialog with pack contents, cost, one-time or recurring options, and a refill threshold field" />
+    </Frame>
+    */}
   </Step>
   <Step title="Buy now">
     Click **Buy now**. The saved card is charged without leaving the app, and the

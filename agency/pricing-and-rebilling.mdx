@@ -43,6 +43,17 @@ Only your agency team sees costs and earnings; client workspaces never do.
   <Step title="Enter a client price per plan" icon="table">
     In the **Plan / Your cost / Client price / Your earnings** table, type a
     dollar amount for each plan, or click a suggestion to fill it in.
+
+    {/* MEDIA-TODO screenshot | /images/agency/pricing-and-rebilling-standard-prices-table.png
+    Capture: The pricing page showing Suggested pricing with a Markup percent saved, and the Plan, Your cost, Client price, Your earnings table with some prices filled and one empty row showing a Suggested price, plus Save prices.
+    Route: /agency/pricing
+    Redact: Use round demo client prices and earnings; no real negotiated prices.
+    Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+    {/*
+    <Frame caption="Standard prices per plan">
+      <img src="/images/agency/pricing-and-rebilling-standard-prices-table.png" alt="Agency pricing table with plan, cost, client price and earnings columns, a suggested price and the Save prices button" />
+    </Frame>
+    */}
   </Step>
   <Step title="Save" icon="floppy-disk">
     Click **Save prices**. Every new client starts from these prices.
@@ -78,6 +89,17 @@ account. The money goes straight to you.
     and click **Connect**. Autocampaign AI verifies the key, stores it encrypted
     and never shows it again. The card then reads **Connected to Stripe account
     &lt;id&gt;**, with a **Test mode** badge for a test key.
+
+    {/* MEDIA-TODO screenshot | /images/agency/pricing-and-rebilling-stripe-connected-card.png
+    Capture: The Get paid by your clients card after connecting with a test key, reading Connected to Stripe account with the Test mode badge and the Disconnect action.
+    Route: /agency/pricing
+    Redact: Blur the connected Stripe account id; the secret key field must be empty, never capture a real or test sk_ key.
+    Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+    {/*
+    <Frame caption="Stripe connected in test mode">
+      <img src="/images/agency/pricing-and-rebilling-stripe-connected-card.png" alt="Get paid by your clients card showing a connected Stripe account with a Test mode badge" />
+    </Frame>
+    */}
   </Step>
   <Step title="Make sure the client has a price" icon="dollar-sign">
     Without a **Client price** the button is disabled with **Set a monthly
@@ -87,6 +109,17 @@ account. The money goes straight to you.
     In the client's row click **Start billing**. A customer and a monthly
     subscription are created in your Stripe account at the client's price in
     USD, and the status shows **Billing on**.
+
+    {/* MEDIA-TODO screenshot | /images/agency/pricing-and-rebilling-client-prices-billing-status.png
+    Capture: The Client prices table with one client showing Billing on and Stop billing, one showing Payment past due, one with Start billing enabled, and one without a price showing the disabled Set a monthly price first button, plus the Who pays for usage? menu.
+    Route: /agency/pricing
+    Redact: Replace client workspace names with demo businesses and client prices and earnings with demo figures.
+    Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+    {/*
+    <Frame caption="Billing status per client">
+      <img src="/images/agency/pricing-and-rebilling-client-prices-billing-status.png" alt="Client prices table with Billing on and Payment past due badges and Start billing and Stop billing buttons" />
+    </Frame>
+    */}
   </Step>
   <Step title="Stop when needed" icon="stop">
     **Stop billing** cancels the subscription in Stripe; you can start again

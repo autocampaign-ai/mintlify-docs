@@ -17,6 +17,18 @@ segment, then run the import in the background.
 
 Reach it from **Contacts → Import CSV**, or directly at `/contacts/import`.
 
+{/* MEDIA-TODO video | /videos/contacts/import-csv-walkthrough.mp4
+Capture: A full CSV import from upload to results, with emphasis on the Map fields step and the action chosen for existing contacts. Target length: 90–120 seconds.
+Script: 1) Open Contacts → Import CSV and point out Download Template 2) On the New Import tab drag in a demo .csv and show the header preview 3) In Map fields show the green High match badges, map First Name and Phone, map one custom field, and change a field's action between Replace, Skip and Overwrite if Empty 4) In Tags & options apply a tag and pick a static segment 5) In Review & import click Start Import 6) Show the progress bar and the Success, Failed and Duplicates counters, then the Import Errors panel 7) Open the Import History tab and find the import by file name.
+Route: /contacts/import
+Redact: use a demo CSV only: fictional names, example.com emails and 555 phone numbers; never record a real customer file, and make sure the row preview and Import Errors panel show no real phone numbers or addresses.
+Publish: add the file at the path above (or swap the video tag for a YouTube or Loom iframe), then delete this note and the comment markers around the Frame below. */}
+{/*
+<Frame caption="Importing contacts from a CSV">
+  <video controls className="w-full aspect-video rounded-xl" src="/videos/contacts/import-csv-walkthrough.mp4" title="Walkthrough of importing a CSV of contacts: upload, map fields, add tags and a segment, then review the results"></video>
+</Frame>
+*/}
+
 <Tip>
   Click **Download Template** on the import page to get a correctly-formatted
   starter CSV with the standard columns.
@@ -60,9 +72,16 @@ Reach it from **Contacts → Import CSV**, or directly at `/contacts/import`.
   </Step>
 </Steps>
 
+{/* MEDIA-TODO screenshot | /images/contacts/import-mapping.png
+Capture: The Map fields step with a demo CSV loaded: CSV columns matched to contact fields, at least one green High match badge, one custom field marked with the Custom badge, and a field's action menu showing Replace, Skip and Overwrite if Empty.
+Route: /contacts/import
+Redact: any sample values shown beside the columns must come from a demo CSV: fictional names, example.com emails, 555 phone numbers and made-up street addresses.
+Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+{/*
 <Frame caption="Field mapping step">
-  <img src="/images/contacts/import-mapping.png" alt="CSV column mapping" />
+  <img src="/images/contacts/import-mapping.png" alt="Map fields step matching CSV columns to contact fields, with High match badges and an action menu for existing contacts" />
 </Frame>
+*/}
 
 ## Duplicates
 
@@ -80,6 +99,17 @@ While the import runs you'll see a progress bar ("X of Y rows") and three counte
 
 If any rows fail, an **Import Errors** panel lists them (for example, *"Row 12:
 Phone — Invalid phone number format"*).
+
+{/* MEDIA-TODO screenshot | /images/contacts/import-csv-progress-results.png
+Capture: A finished or nearly finished import showing the "X of Y rows" progress bar, the Success, Failed and Duplicates counters with non-zero values, and the Import Errors panel listing at least one row error such as an invalid phone number format.
+Route: /contacts/import
+Redact: use a demo file name; the Import Errors panel must not show real phone numbers, names or emails, so import a demo CSV with deliberately malformed 555 numbers.
+Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+{/*
+<Frame caption="Import progress, counters and errors">
+  <img src="/images/contacts/import-csv-progress-results.png" alt="Import progress bar with Success, Failed and Duplicates counters above an Import Errors panel listing failed rows" />
+</Frame>
+*/}
 
 ## Import history
 

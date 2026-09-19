@@ -9,6 +9,18 @@ icon: "key"
 API keys let external systems and integrations act on your workspace through the
 Autocampaign AI API. Manage them at **Settings → API keys** (`/settings/api-keys`).
 
+{/* MEDIA-TODO video | /videos/developers/api-keys-create-and-rotate-key.mp4
+Capture: Walkthrough of creating an API key, copying the secret the one time it is shown, and rotating it. Target length: 60–90 seconds.
+Script: 1) Go to Settings → API keys and click Create API key 2) Enter a Name such as Zapier integration, an optional description, and an optional expiration 3) Show the one-time key reveal and click copy (key masked in the recording) 4) Back in the list, point out the active status and last used 5) Click Rotate on the key and show that a new secret is shown once
+Route: /settings/api-keys
+Redact: Never show a usable key: use a throwaway key that is revoked before publishing AND blur everything after the et_live_ prefix in every frame; hide the real workspace and user name.
+Publish: add the file at the path above (or swap the video tag for a YouTube or Loom iframe), then delete this note and the comment markers around the Frame below. */}
+{/*
+<Frame caption="Create, copy, and rotate an API key">
+  <video controls className="w-full aspect-video rounded-xl" src="/videos/developers/api-keys-create-and-rotate-key.mp4" title="Walkthrough of creating an API key, copying the one-time secret, and rotating the key"></video>
+</Frame>
+*/}
+
 <Info>
   **Difficulty:** Advanced &nbsp;·&nbsp; **Permission:** Manage API keys (human
   users only).
@@ -25,6 +37,17 @@ Autocampaign AI API. Manage them at **Settings → API keys** (`/settings/api-ke
 <Steps>
   <Step title="Create key">
     Go to **Settings → API keys** and click **Create API key**.
+
+    {/* MEDIA-TODO screenshot | /images/developers/api-keys-keys-list.png
+    Capture: The API keys page with the Create API key button visible and two or three existing keys listed, showing their names, statuses (active, revoked, expired), and last used.
+    Route: /settings/api-keys
+    Redact: Show only masked key values (nothing beyond the et_live_ prefix) and use demo key names.
+    Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+    {/*
+    <Frame caption="Create API key is at the top of the API keys page">
+      <img src="/images/developers/api-keys-keys-list.png" alt="API keys settings page with a create button and a list of keys showing status and last used" />
+    </Frame>
+    */}
   </Step>
   <Step title="Name it">
     Give it a **Name** (e.g. "Zapier integration"), an optional description, and an
@@ -33,6 +56,17 @@ Autocampaign AI API. Manage them at **Settings → API keys** (`/settings/api-ke
   <Step title="Copy the secret now">
     The full key (starting with `et_live_`) is shown **once**. Copy and store it
     immediately — you can't see it again.
+
+    {/* MEDIA-TODO screenshot | /images/developers/api-keys-key-reveal.png
+    Capture: The one-time reveal shown right after creating a key, with the copy control and the notice that the key will not be shown again.
+    Route: /settings/api-keys (after Create API key)
+    Redact: The key must not be readable: use a throwaway key that is revoked before publishing and blur or replace everything after the et_live_ prefix with x characters.
+    Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+    {/*
+    <Frame caption="The full key is shown once — copy it now">
+      <img src="/images/developers/api-keys-key-reveal.png" alt="One-time API key reveal with a masked key, a copy button, and a warning it will not be shown again" />
+    </Frame>
+    */}
   </Step>
 </Steps>
 

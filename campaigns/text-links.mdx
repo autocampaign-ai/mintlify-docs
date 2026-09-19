@@ -26,6 +26,17 @@ on the **Links** page (`/links`) under the **Short Links** tab.
     | **Destination URL** | Yes | The `http(s)` URL to shorten (up to 2,048 characters) |
     | **Label** | No | An internal name, e.g. "Spring promo" |
     | **Expiry** | No | Optional expiry date/time — leave empty for a link that never expires |
+
+    {/* MEDIA-TODO screenshot | /images/campaigns/text-links-new-short-link-form.png
+    Capture: The Links page on the Short Links tab with the new short link form open, showing Destination URL, Label, and Expiry filled in.
+    Route: /links
+    Redact: Use a demo destination URL such as https://shop.example/spring and a demo label; hide any existing short links that point at real customer domains.
+    Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+    {/*
+    <Frame caption="Create a short link from the Short Links tab">
+      <img src="/images/campaigns/text-links-new-short-link-form.png" alt="New short link form with destination URL, label, and expiry fields on the Short Links tab" />
+    </Frame>
+    */}
   </Step>
   <Step title="Save">
     Autocampaign AI generates a short code automatically. Your short URL looks like
@@ -47,6 +58,17 @@ Open a short link (`/short-links/:id`) for three tabs:
   device breakdown (mobile/desktop/tablet).
 - **QR Code** — a downloadable QR that points at the link, with scan stats.
 - **Settings** — edit the label and expiry.
+
+{/* MEDIA-TODO screenshot | /images/campaigns/text-links-analytics-overview.png
+Capture: A short link's page on the Overview tab with Total Clicks and Unique Clicks, the clicks-over-time chart with some data, and the device breakdown. The QR Code and Settings tabs must be visible.
+Route: /short-links/:id
+Redact: Replace the short URL domain and the destination URL with demo values; use a demo label.
+Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+{/*
+<Frame caption="Click analytics for a short link">
+  <img src="/images/campaigns/text-links-analytics-overview.png" alt="Short link Overview tab with total and unique click counts, a clicks over time chart, and a device breakdown" />
+</Frame>
+*/}
 
 ## Automatic link tracking in SMS campaigns
 

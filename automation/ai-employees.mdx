@@ -29,6 +29,18 @@ allow, and asks a teammate for help when it should. Find employees under
 Click **New Employee**. The wizard has seven steps; a draft is saved after
 **Employee details**, so you can leave and **Continue hiring** later.
 
+{/* MEDIA-TODO video | /videos/automation/ai-employees-hire-wizard-walkthrough.mp4
+Capture: Walk through the full New Employee wizard, from choosing a job to Create & activate, pausing briefly on each of the seven steps. Target length: 2–3 minutes.
+Script: 1) Open AI Employees and click New Employee 2) Choose the Receptionist job 3) Fill Employee details (Name, Job title, Language, Timezone, Communication style) 4) Pick a goal under Start from a goal and show Goal is completed when, Stop trying when and Max attempts 5) Attach a knowledge base on the Knowledge step 6) Tick skills including Search Knowledge Base and Book Appointment and pick a meeting type 7) Choose human-help triggers and an Assign to teammate 8) Review the summary and click Create & activate
+Route: /ai-employees
+Redact: Use a demo workspace; replace teammate names and emails in the Assign to menu with demo users, and use demo knowledge base and meeting type names.
+Publish: add the file at the path above (or swap the video tag for a YouTube or Loom iframe), then delete this note and the comment markers around the Frame below. */}
+{/*
+<Frame caption="Hiring an AI Employee with the seven-step wizard">
+  <video controls className="w-full aspect-video rounded-xl" src="/videos/automation/ai-employees-hire-wizard-walkthrough.mp4" title="Walkthrough of hiring an AI Employee: choosing a job, setting details, goal, knowledge, skills and human help, then activating"></video>
+</Frame>
+*/}
+
 <Steps>
   <Step title="Choose a job" icon="briefcase">
     Start from a ready-made job — **Receptionist**, **Sales Representative**,
@@ -49,6 +61,17 @@ Click **New Employee**. The wizard has seven steps; a draft is saved after
     completed when**, **Stop trying when**, **If the goal can't be completed**, and
     **Max attempts** (1–20). Collecting goals let you list **What should this
     employee collect?** (up to 8 items).
+
+    {/* MEDIA-TODO screenshot | /images/automation/ai-employees-wizard-goal-step.png
+    Capture: The Goal step of the New Employee wizard with a goal selected under Start from a goal, showing Goal is completed when, Stop trying when, If the goal can't be completed and Max attempts filled in.
+    Route: /ai-employees (New Employee wizard, Goal step)
+    Redact: nothing sensitive; use a generic demo goal name and no real business names.
+    Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+    {/*
+    <Frame caption="The Goal step of the hiring wizard">
+      <img src="/images/automation/ai-employees-wizard-goal-step.png" alt="AI Employee wizard Goal step showing a selected goal, completion and stop conditions, and the max attempts field" />
+    </Frame>
+    */}
   </Step>
   <Step title="Knowledge" icon="book">
     Choose the **Attached knowledge bases**. The employee can only answer from
@@ -108,6 +131,17 @@ choose **Draft & approve**. The chip reads **Autopilot: Draft & approve**, and e
 reply appears as a banner — **&lt;employee&gt; needs approval** — with **Edit** and
 **Approve & Send**. A newer inbound message replaces an unapproved draft.
 
+{/* MEDIA-TODO screenshot | /images/automation/ai-employees-draft-approve-banner.png
+Capture: An inbox conversation in Draft & approve mode: the composer chip reading Autopilot: Draft & approve and the banner saying the employee needs approval, with Edit and Approve & Send visible.
+Route: Inbox conversation with an AI Employee assigned (this page gives no inbox route; reach it from the Inbox)
+Redact: Replace the customer name, phone number, email address and message contents with demo data; use a demo employee name.
+Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+{/*
+<Frame caption="A drafted reply waiting for approval">
+  <img src="/images/automation/ai-employees-draft-approve-banner.png" alt="Inbox conversation with an AI Employee draft reply banner offering Edit and Approve and Send buttons" />
+</Frame>
+*/}
+
 <Steps>
   <Step title="Take over">
     Click **Take over** on the AI Employee card, or just send a reply while in
@@ -153,6 +187,17 @@ profile has **Overview** (edit any section and **Save**), **Activity** (every
 interaction — what the customer asked, the reply, actions taken, knowledge used,
 and why a reply was skipped), and **Test chat**, which runs the saved configuration
 without touching real conversations.
+
+{/* MEDIA-TODO screenshot | /images/automation/ai-employees-profile-activity-tab.png
+Capture: An employee profile on the Activity tab with several interactions listed, including one that shows actions taken and knowledge used, and one skipped reply with its reason.
+Route: /ai-employees (open an employee, Activity tab)
+Redact: Replace customer names, phone numbers, emails and message text in the activity entries with demo data.
+Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+{/*
+<Frame caption="The Activity tab on an employee profile">
+  <img src="/images/automation/ai-employees-profile-activity-tab.png" alt="AI Employee profile Activity tab listing customer questions, replies, actions taken, knowledge used and a skipped reply reason" />
+</Frame>
+*/}
 
 <Note>
   **Retry later** under *If the goal can't be completed* is accepted but currently

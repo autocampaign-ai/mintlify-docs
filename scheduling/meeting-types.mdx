@@ -18,6 +18,17 @@ link. Manage them under **Meeting Types** (`/meeting-types`).
 
 Click **New meeting type**. The form has five tabs:
 
+{/* MEDIA-TODO screenshot | /images/scheduling/meeting-types-form-tabs.png
+Capture: The New meeting type form on the Details tab with Name, URL slug, Description, Color and Location filled in, and all five tabs (Details, Scheduling, Questions, Notifications, Host) visible.
+Route: /meeting-types (New meeting type)
+Redact: nothing sensitive; use a demo meeting name such as Intro Call and a demo slug; no real address in the In person field.
+Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+{/*
+<Frame caption="The meeting type form and its five tabs">
+  <img src="/images/scheduling/meeting-types-form-tabs.png" alt="New meeting type form on the Details tab with name, URL slug, color and location fields and five tabs" />
+</Frame>
+*/}
+
 <AccordionGroup>
   <Accordion title="Details" icon="pen">
     **Name**, a **URL slug** (used in the booking link, auto-suggested), a
@@ -48,6 +59,18 @@ Click **New meeting type**. The form has five tabs:
 Each meeting type has a public link like `yourapp.com/book/<workspace>/<slug>`. Copy
 it from the meeting type's card and share it — invitees pick a time and book
 themselves. See [Bookings](/scheduling/bookings).
+
+{/* MEDIA-TODO video | /videos/scheduling/meeting-types-create-and-book-walkthrough.mp4
+Capture: Create a meeting type, copy its public link, then book it as an invitee would. Target length: 2–3 minutes.
+Script: 1) Open Meeting Types and click New meeting type 2) Fill the Details tab (Name, URL slug, Location: Google Meet) 3) On Scheduling pick an availability schedule and set duration and buffers 4) Add one question on Questions and one reminder on Notifications, set the Host, and save 5) Copy the booking link from the meeting type's card 6) Open the link in a private window, pick a time, choose a timezone, fill in details, tick the consent checkbox and confirm 7) Show the confirmation with Add to Google Calendar and Manage booking
+Route: /meeting-types, then the public link /book/<workspace>/<slug>
+Redact: Use a demo workspace slug in the URL bar; book with a demo invitee name, email and phone number; hide real host names and any real calendar event titles.
+Publish: add the file at the path above (or swap the video tag for a YouTube or Loom iframe), then delete this note and the comment markers around the Frame below. */}
+{/*
+<Frame caption="Creating a meeting type and booking it from the public link">
+  <video controls className="w-full aspect-video rounded-xl" src="/videos/scheduling/meeting-types-create-and-book-walkthrough.mp4" title="Walkthrough of creating a meeting type, copying its booking link and completing a booking as an invitee"></video>
+</Frame>
+*/}
 
 <Note>
   **Google Meet** links are generated automatically only when the host has a

@@ -16,6 +16,18 @@ a few DNS records. This authenticates your mail (SPF and DKIM) and sets up link
 tracking, so your campaigns are trusted and land in inboxes. Manage domains at
 **Settings → Email → Sending domains** (`/settings/email/domains`).
 
+{/* MEDIA-TODO video | /videos/providers/email-domains-verify-domain.mp4
+Capture: Verifying a sending domain end to end: adding the domain, copying the CNAME records, publishing them at a DNS provider, and verifying. Target length: 2–3 minutes.
+Script: 1) Open Settings → Sending domains and click Add domain 2) Enter a bare domain and save 3) Show the CNAME records for SPF, DKIM and the tracking domain, and copy one host and value 4) Switch to a DNS provider and add the records exactly as shown 5) Return and click Verify 6) Show the status moving from Pending to Verified
+Route: /settings/email/domains
+Redact: the real domain name and all DNS host and value strings (use a demo domain); the DNS provider account name, email and any other zones listed there
+Publish: add the file at the path above (or swap the video tag for a YouTube or Loom iframe), then delete this note and the comment markers around the Frame below. */}
+{/*
+<Frame caption="Verify a sending domain with DNS records">
+  <video controls className="w-full aspect-video rounded-xl" src="/videos/providers/email-domains-verify-domain.mp4" title="Video walkthrough of adding a sending domain, publishing its CNAME records at a DNS provider, and verifying it"></video>
+</Frame>
+*/}
+
 ## Verify a domain
 
 <Steps>
@@ -37,15 +49,33 @@ tracking, so your campaigns are trusted and land in inboxes. Manage domains at
   </Step>
 </Steps>
 
+{/* MEDIA-TODO screenshot | /images/providers/email-dns.png
+Capture: The DNS records view for a newly added domain, listing the CNAME records for SPF, DKIM and the tracking domain with each record's host and value, plus the Verify button.
+Route: /settings/email/domains
+Redact: the domain name and every DNS host and value string (use a demo domain such as acme.com and placeholder values)
+Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+{/*
 <Frame caption="DNS records for domain authentication">
-  <img src="/images/providers/email-dns.png" alt="Email domain DNS records" />
+  <img src="/images/providers/email-dns.png" alt="Sending domain details listing CNAME records for SPF, DKIM, and tracking with host and value columns and a Verify button" />
 </Frame>
+*/}
 
 ## Verification status
 
 - **Pending** — waiting for DNS to propagate (can take minutes up to 48 hours).
 - **Verified** — authenticated and ready to send from.
 - **Failed** — DNS wasn't detected within 48 hours; fix the records and re-verify.
+
+{/* MEDIA-TODO screenshot | /images/providers/email-domains-status-list.png
+Capture: The Sending domains list with three domains, one in each status (Pending, Verified, Failed), and the Add domain button visible.
+Route: /settings/email/domains
+Redact: real domain names (use demo domains such as acme.com)
+Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+{/*
+<Frame caption="Each domain shows its verification status">
+  <img src="/images/providers/email-domains-status-list.png" alt="Sending domains list with three domains showing Pending, Verified, and Failed status badges and an Add domain button" />
+</Frame>
+*/}
 
 <Note>
   DNS changes can take time to propagate. Autocampaign AI re-checks pending domains

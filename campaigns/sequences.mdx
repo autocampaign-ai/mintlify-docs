@@ -66,6 +66,18 @@ steps in order. Click **Add a step** to insert **Email**, **Text message**,
 reorder. Day markers ("Day 1", "Day 4") are computed from the waits. Changes
 autosave.
 
+{/* MEDIA-TODO video | /videos/campaigns/sequences-sequence-builder.mp4
+Capture: Building a three-message sequence from the wizard through the timeline editor to Start sequence. Target length: 2-3 minutes.
+Script: 1) On the sequences list click Create sequence and choose Start from scratch 2) Enter a name, pick the goal Get replies 3) Audience: select one segment and show the live contact estimate 4) Channels: choose Email + text and click Build my sequence 5) In the editor click Add a step and add an Email with a subject line, Send from, and a Simple email body 6) Add a Wait of 1 day, then a Text message with Send from and a message using a variable 7) Add a Wait of 3 days and a second Email, and point out the Day markers 8) On the text step switch on Only send on certain days and Only send at certain times 9) Open Audience & rules and show the Stop when and Sending rules tabs 10) Click Validate, review the checklist, then click Start sequence
+Route: /sequences/new
+Redact: Use demo sender email addresses and phone numbers (555-01xx), demo segment names, and demo message text; do not show real contact counts from a customer workspace; send no test to a real address on screen.
+Publish: add the file at the path above (or swap the video tag for a YouTube or Loom iframe), then delete this note and the comment markers around the Frame below. */}
+{/*
+<Frame caption="Build and start a sequence">
+  <video controls className="w-full aspect-video rounded-xl" src="/videos/campaigns/sequences-sequence-builder.mp4" title="Walkthrough of creating a sequence in the wizard, adding email, text, and wait steps in the timeline editor, and starting it"></video>
+</Frame>
+*/}
+
 - **Email** — **Subject line** (with **Write subject with AI**), **Preview text
   (optional)**, **Send from**, and **Email content** as a **Simple email**
   (rich text, **AI draft**) or a **Designed email**: click **Choose a
@@ -83,6 +95,17 @@ autosave.
 - **Goal** — **Count it as a win when the contact…** replies, books an
   appointment, becomes a customer, or makes a purchase. Leave **Stop the
   sequence when reached** on to end the drip for contacts who hit it.
+
+{/* MEDIA-TODO screenshot | /images/campaigns/sequences-timeline-editor.png
+Capture: The timeline editor for a sequence with the entry chip, an Email step, a Wait, a Text message step, and a Goal, with Day markers visible and the Text message step selected so its Send from, Message, and Track link clicks fields show. The Add a step control and the Audience & rules button must be visible.
+Route: /sequences/:id/edit
+Redact: Use a demo sequence name and demo message text; replace Send from phone numbers and sender email addresses with demo values.
+Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+{/*
+<Frame caption="The timeline editor with a text step open">
+  <img src="/images/campaigns/sequences-timeline-editor.png" alt="Sequence timeline with email, wait, text, and goal steps marked by day, and the text step's settings open" />
+</Frame>
+*/}
 
 Messages support merge tags like `{{first_name}}` and spin text like
 `{Hi|Hey}`; the **Variation 1 of N** cycler previews each version. Click **Send
@@ -117,6 +140,17 @@ Click **Audience & rules** in the editor header. The sheet has three tabs:
   quiet hours** (a 9 PM–8 AM window you can adjust), and caps: **Max messages
   per day, per contact**, **Max emails per week, per contact**, **Max texts per
   week, per contact**. Held messages send when the window opens.
+
+{/* MEDIA-TODO screenshot | /images/campaigns/sequences-stop-when-rules.png
+Capture: The Audience & rules sheet on the Stop when tab showing the Sequence goal and every exit rule with its toggle, including They opt out of texting marked Required. The Audience and Sending rules tabs must be visible.
+Route: /sequences/:id/edit
+Redact: Use a demo sequence name; nothing else sensitive.
+Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+{/*
+<Frame caption="Stop when rules decide when a contact leaves the sequence">
+  <img src="/images/campaigns/sequences-stop-when-rules.png" alt="Audience and rules sheet on the Stop when tab with the sequence goal and a list of exit rule toggles" />
+</Frame>
+*/}
 
 <Note>
   A sequence without its own business hours follows your organization's business
@@ -164,6 +198,17 @@ Sent, Delivered, Opened and Clicked rates for email, link clicks for texts, and
 bounced or failed counts. **Why contacts left** tallies exit reasons, **Link
 performance** lists tracked links, and **Contacts in this sequence** shows each
 person's status and join time.
+
+{/* MEDIA-TODO screenshot | /images/campaigns/sequences-report.png
+Capture: A running sequence's report with the six stat cards (Entered, In progress, Finished, Replied, Goals hit, Conversion rate) and the Step-by-step journey showing reach and delivery rates for at least three steps.
+Route: /sequences/:id/analytics
+Redact: Use a demo sequence name and demo subject lines; keep the Contacts in this sequence table out of frame or replace names, emails, and phone numbers with demo contacts.
+Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+{/*
+<Frame caption="The sequence report with stat cards and the step-by-step journey">
+  <img src="/images/campaigns/sequences-report.png" alt="Sequence report with stat cards for entered, finished, replied, and conversion rate above a step-by-step journey" />
+</Frame>
+*/}
 
 <Note>
   **Goals hit** counts contacts who left because they replied or booked an

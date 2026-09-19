@@ -5,3 +5,7 @@
 # Draft content
 drafts/
 *.draft.mdx
+
+# Internal contributor files
+MEDIA-CHECKLIST.md
+scripts/

@@ -41,6 +41,17 @@ answer. Connect it under **Settings → Channels → WhatsApp**
     You'll see your business name, number, a health badge (**Connected**, **Needs
     attention**, or **Disconnected**), and a **Manage WhatsApp templates** link.
     **Disconnect** stops all sending and receiving.
+
+    {/* MEDIA-TODO screenshot | /images/channels/whatsapp-status-page.png
+    Capture: The WhatsApp status page after a successful connection: business name, number, the Connected health badge, the Manage WhatsApp templates link and the Disconnect button.
+    Route: /settings/channels/whatsapp
+    Redact: business name, WhatsApp phone number, WhatsApp Business Account ID and phone number ID (use a demo business and a 555 number)
+    Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+    {/*
+    <Frame caption="The WhatsApp status page after connecting">
+      <img src="/images/channels/whatsapp-status-page.png" alt="WhatsApp channel status page showing business name, phone number, a Connected badge, a templates link, and Disconnect" />
+    </Frame>
+    */}
   </Step>
 </Steps>
 
@@ -67,6 +78,18 @@ contact and records them as opted in to WhatsApp.
 Templates are pre-written messages Meta reviews and approves. Open **Templates →
 WhatsApp**; the grid filters by **All**, **Draft**, **Pending**, **Approved**, and
 **Rejected**.
+
+{/* MEDIA-TODO video | /videos/channels/whatsapp-create-template.mp4
+Capture: Creating a WhatsApp message template through the three-step builder (Purpose, Editor, Review) and submitting it for Meta review. Target length: 90–120 seconds.
+Script: 1) Open Templates → WhatsApp and point out the All, Draft, Pending, Approved and Rejected filters 2) Click Create template and pick the Appointment reminder purpose 3) Enter a Template name and Language code 4) Write the Message body and use Personalize to insert a first-name merge tag with a fallback 5) Add a Footer and one Quick reply button 6) Check the phone preview on Review and click Submit for review 7) Back on the grid, show the template under Pending and click Sync status
+Route: /templates/whatsapp
+Redact: business name and WhatsApp phone number; customer names in any preview data; existing template names from real clients
+Publish: add the file at the path above (or swap the video tag for a YouTube or Loom iframe), then delete this note and the comment markers around the Frame below. */}
+{/*
+<Frame caption="Create a WhatsApp template and submit it for review">
+  <video controls className="w-full aspect-video rounded-xl" src="/videos/channels/whatsapp-create-template.mp4" title="Video walkthrough of building a WhatsApp message template in three steps and submitting it for Meta review"></video>
+</Frame>
+*/}
 
 <Steps>
   <Step title="Purpose" icon="bullseye">
@@ -101,6 +124,17 @@ images, and documents arrive with captions; other types show a placeholder such 
 `[Voice message]`. While the window is open the composer shows **You can reply
 normally**. When it's closed, click **Choose a template**, pick one, and click
 **Send template**.
+
+{/* MEDIA-TODO screenshot | /images/channels/whatsapp-inbox-window-closed.png
+Capture: An Inbox conversation on the contact's WhatsApp channel tab with the 24-hour window closed, so the composer shows the Choose a template action instead of a free-form reply box. Earlier inbound and outbound messages should be visible in the thread.
+Route: Inbox
+Redact: contact name, phone number and message content (use a demo contact and scripted messages); other conversations in the list
+Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+{/*
+<Frame caption="When the 24-hour window is closed, send a template">
+  <img src="/images/channels/whatsapp-inbox-window-closed.png" alt="Inbox WhatsApp conversation with the reply window closed and a Choose a template button in the composer" />
+</Frame>
+*/}
 
 To start a conversation, open the inbox's **Message composer** menu and choose
 **WhatsApp** (shown only when connected). In **Compose WhatsApp**, add up to 50

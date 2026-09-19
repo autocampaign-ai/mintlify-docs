@@ -27,6 +27,17 @@ resetting a password, and what happens when an account is temporarily locked.
     Click **Google** or **Microsoft** to sign up with that account, or fill in the
     form under **or sign up with email**: **Name**, **Email Address**, **Phone
     Number** (optional), **Password**, and **Confirm Password**.
+
+    {/* MEDIA-TODO screenshot | /images/getting-started/authentication-sign-up-form.png
+    Capture: The sign-up page with the Google and Microsoft buttons on top and the empty email form below it (Name, Email Address, Phone Number, Password, Confirm Password). Include the selected-plan line above the form if present.
+    Route: Sign-up page
+    Redact: use a demo name, demo email address and demo phone number if any field is filled; nothing else sensitive
+    Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+    {/*
+    <Frame caption="Sign up with Google, Microsoft, or email">
+      <img src="/images/getting-started/authentication-sign-up-form.png" alt="Sign-up page showing Google and Microsoft buttons above a form for name, email, phone number, and password" />
+    </Frame>
+    */}
   </Step>
   <Step title="Set a strong password" icon="key">
     Passwords need at least 8 characters with no spaces, and must include an
@@ -115,6 +126,17 @@ To protect against password guessing, an account locks for **15 minutes** after
 - Even the correct password is refused until the lock ends.
 
 A successful sign-in resets the count.
+
+{/* MEDIA-TODO screenshot | /images/getting-started/authentication-account-locked.png
+Capture: The log-in screen after five failed password attempts, showing the Account temporarily locked message above the Email and Password fields, with the Forgot Password? link visible.
+Route: Log-in screen
+Redact: replace the email address in the Email field with a demo address
+Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+{/*
+<Frame caption="The log-in screen while an account is locked">
+  <img src="/images/getting-started/authentication-account-locked.png" alt="Log-in screen displaying the account temporarily locked message above the email and password fields" />
+</Frame>
+*/}
 
 <Note>
   Resetting your password doesn't end a lock early — reset it if you've forgotten

@@ -33,6 +33,18 @@ Click **Create Form** to start blank, or **Use a template** (Contact Us, Get a
 Quote, Book an Appointment, Newsletter Signup, and more). Template questions stay
 editable, and your work autosaves as a draft.
 
+{/* MEDIA-TODO video | /videos/growth/lead-forms-builder-walkthrough.mp4
+Capture: Building and publishing a lead form from a template: questions and contact mapping, design, follow-up actions, then sharing. Target length: 2–3 minutes.
+Script: 1) On the Forms page click Use a template and pick Get a Quote 2) In Basics set the Lead form name and Description 3) In Questions add a Smart Field, add a Dropdown with Choices, mark a question Required, and use Save answer to contact to map it 4) Add a Skip ahead after this question rule and open the Flow view 5) In Design switch Form style between Classic and Conversational and set a Brand color 6) In After Submission enable Add Tags and Send Thank You SMS and write the Success Message 7) In Publish turn on Publish this lead form and click Save & Publish 8) On the Share tab click Copy link and show the Add to your website snippet options.
+Route: /forms
+Redact: use a fictional business name and logo; the thank-you SMS sender number must be a demo 555 number or blurred; blur the real hosted link slug and embed snippet IDs on the Share tab; do not show real team member names in any owner or notification pickers.
+Publish: add the file at the path above (or swap the video tag for a YouTube or Loom iframe), then delete this note and the comment markers around the Frame below. */}
+{/*
+<Frame caption="Building and publishing a lead form">
+  <video controls className="w-full aspect-video rounded-xl" src="/videos/growth/lead-forms-builder-walkthrough.mp4" title="Walkthrough of building a lead form from a template, setting follow-up actions, publishing it and copying the share link"></video>
+</Frame>
+*/}
+
 <Steps>
   <Step title="Basics" icon="pen">
     Set the **Lead form name**, an internal **Description**, and **Form tags** to
@@ -51,6 +63,17 @@ editable, and your work autosaves as a draft.
     contact field or a **Custom contact detail…**. File uploads allow up to 25 MB
     and 10 files per question. **Skip ahead after this question** adds branching;
     the **Flow** view flags questions that would never be shown.
+
+    {/* MEDIA-TODO screenshot | /images/growth/lead-forms-questions-step.png
+    Capture: The Questions step with the block library (Smart Fields and All question blocks) visible, a form containing four or five questions, and one question selected so its settings show Required, Placeholder, Help text and Save answer to contact.
+    Route: /forms
+    Redact: use a fictional business name in the form title and question text; nothing else sensitive.
+    Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+    {/*
+    <Frame caption="The Questions step of the form builder">
+      <img src="/images/growth/lead-forms-questions-step.png" alt="Form builder Questions step with the block library, a list of questions and the selected question's settings" />
+    </Frame>
+    */}
   </Step>
   <Step title="Design" icon="palette">
     Choose a **Form style** — **Classic** (one page) or **Conversational** (one
@@ -80,6 +103,17 @@ The **Share** tab gives you three routes to visitors:
 - **QR code** — **Download QR** for print.
 - **Add to your website** — choose **On the page**, **Popup**, or **Slide-in**, then
   copy the snippet for **HTML**, **React**, **WordPress**, or **Shopify**.
+
+{/* MEDIA-TODO screenshot | /images/growth/lead-forms-share-tab.png
+Capture: A published form's Share tab showing the Hosted link with Copy link and Open form, the QR code with Download QR, and Add to your website with the On the page, Popup and Slide-in options and the HTML, React, WordPress and Shopify snippet choices.
+Route: /forms (open a form → Share tab)
+Redact: replace or blur the real hosted link slug and domain, blur form IDs inside the embed snippet, and swap the QR code for one that points to a demo form.
+Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+{/*
+<Frame caption="Sharing a published form">
+  <img src="/images/growth/lead-forms-share-tab.png" alt="Lead form Share tab with the hosted link, a QR code and website embed options with code snippets" />
+</Frame>
+*/}
 
 **Preview** (`/forms/<id>/preview`) walks through the form as a visitor. It never
 saves answers, sends follow-ups, or counts in analytics.
@@ -130,6 +164,17 @@ A form's **Submissions** tab lists each lead with a **Status** of **New**,
 **Responses**, **Source & device** (UTM values, referrer, page), and each
 **Follow-up action** as **Done**, **Skipped**, or **Failed**. Use **View contact**
 or **Export CSV**. Submissions also appear on the contact's record.
+
+{/* MEDIA-TODO screenshot | /images/growth/lead-forms-submission-detail.png
+Capture: A submission opened from the form's Submissions tab, showing Responses, Source & device (UTM values, referrer, page) and the Follow-up actions list with a mix of Done, Skipped and Failed results.
+Route: /forms (open a form → Submissions tab)
+Redact: replace the submitter's name, email, phone number, company and free-text answers with fictional data; blur real referrer URLs, UTM campaign names and any uploaded file names.
+Publish: add the file at the path above, then delete this note and the comment markers around the Frame below. */}
+{/*
+<Frame caption="A submission and its follow-up actions">
+  <img src="/images/growth/lead-forms-submission-detail.png" alt="Submission detail with the lead's responses, source and device data, and follow-up actions marked done, skipped or failed" />
+</Frame>
+*/}
 
 The **Analytics** tab covers 7, 30, or 90 days: **Views**, **Starts**,
 **Submissions**, **Conversion rate**, **Abandonment**, **Views over time**, a
