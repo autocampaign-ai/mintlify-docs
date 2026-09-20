@@ -5,8 +5,9 @@ icon: "cubes"
 ---
 
 A curated overview of the main resources an [API key](/api/authentication) can call.
-Paths are relative to your API host and have **no `/api` prefix**. For complete
-request/response schemas and a try-it console, use the interactive docs at `/docs`.
+Paths are relative to `https://api.autocampaign.ai` and have **no `/api` prefix**. For
+complete request/response schemas and a try-it console, use the
+[interactive docs](https://api.autocampaign.ai/docs).
 
 <Info>
   All endpoints share the same [response envelope, pagination, and errors](/api/conventions).
@@ -17,7 +18,7 @@ request/response schemas and a try-it console, use the interactive docs at `/doc
 
 <CodeGroup>
 ```bash Create a contact
-curl -X POST https://<your-api-host>/contacts \
+curl -X POST https://api.autocampaign.ai/contacts \
   -H "Authorization: Bearer et_live_…" \
   -H "Content-Type: application/json" \
   -d '{ "firstName": "Ada", "phone": "+14155550100", "tagIds": [] }'
@@ -151,6 +152,6 @@ These reject API keys and require a signed-in session:
 - **Inbox** (`/inbox/*`) — conversations, messages, notes.
 - **API key management** (`/api-keys/*`) and **webhooks** (`/webhook-endpoints/*`).
 
-<Card title="Full interactive reference" icon="book-open">
-  Every endpoint with schemas and a try-it console, at <code>/docs</code>.
+<Card title="Full interactive reference" icon="book-open" href="https://api.autocampaign.ai/docs">
+  Every endpoint with schemas and a try-it console, at api.autocampaign.ai/docs.
 </Card>
