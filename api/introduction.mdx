@@ -21,15 +21,15 @@ automate with the API.
 
 ## Base URL
 
-Endpoints are served at the **root** of your API host (there's no `/api` prefix):
+All endpoints live at the root of `https://api.autocampaign.ai` (there's no `/api` prefix):
 
 ```
-https://<your-api-host>/contacts
-https://<your-api-host>/campaigns
+https://api.autocampaign.ai/contacts
+https://api.autocampaign.ai/campaigns
 ```
 
-Ask your administrator for your instance's API host. Paths in this reference are
-shown without the host (for example, `POST /contacts`).
+Paths in this reference are shown without the host (for example, `POST /contacts`).
+The app itself runs at `https://app.autocampaign.ai`; the API is a separate host.
 
 ## Interactive reference
 
@@ -37,9 +37,9 @@ The full, always-current endpoint reference — every route, request schema, and
 response schema, with a **try-it console** — is served by the platform as
 interactive docs (ReDoc):
 
-<Card title="Open the interactive API docs" icon="book-open">
-  Browse and try every endpoint at <code>/docs</code> on your API host (raw spec at
-  <code>/docs-json</code>).
+<Card title="Open the interactive API docs" icon="book-open" href="https://api.autocampaign.ai/docs">
+  Browse and try every endpoint at api.autocampaign.ai/docs. The raw OpenAPI spec is
+  at [api.autocampaign.ai/docs-json](https://api.autocampaign.ai/docs-json).
 </Card>
 
 This Mintlify reference covers **getting started, authentication, conventions, and a
