@@ -1,6 +1,6 @@
 ---
 title: "Import contacts (CSV)"
-description: "Bulk-import contacts from a CSV with column mapping, tags, and a target segment."
+description: "Add many contacts at once from a spreadsheet, match the columns, and apply tags and a segment."
 icon: "file-import"
 ---
 
@@ -11,9 +11,10 @@ icon: "file-import"
 
 ## Overview
 
-Import lets you add many contacts at once from a `.csv` file. You upload the file,
-map its columns to contact fields, optionally apply tags and add everyone to a
-segment, then run the import in the background.
+Import lets you add many contacts at once from a `.csv` file (a spreadsheet saved as
+plain text; Excel and Google Sheets can export one). You upload the file, match its
+columns to contact fields, and optionally apply tags and add everyone to a
+[segment](/getting-started/glossary#segment). The import then runs in the background.
 
 Reach it from **Contacts → Import CSV**, or directly at `/contacts/import`.
 
@@ -30,45 +31,47 @@ Publish: add the file at the path above (or swap the video tag for a YouTube or 
 */}
 
 <Tip>
-  Click **Download Template** on the import page to get a correctly-formatted
-  starter CSV with the standard columns.
+  Click **Download Template** on the import page to get a correctly formatted
+  starter file with the standard columns.
 </Tip>
 
 ## Before you start
 
-- A `.csv` file (UTF-8 / plain text), **10 MB max**, **up to 50,000 rows**.
-- A header row plus at least one data row.
+Have these ready:
+
+- A `.csv` file saved as plain text (UTF-8), **10 MB max**, **up to 50,000 rows**.
+- A heading row plus at least one row of contacts.
 - At minimum a **Phone** column and a **First Name** column.
-- Any [custom fields](/contacts/custom-fields) you want to import must already exist
+- Any [custom fields](/contacts/custom-fields) you want to import, already created
   in **Settings → Module Setup**.
 
 ## Import your contacts
 
 <Steps>
   <Step title="Upload CSV" icon="upload">
-    On the **New Import** tab, drag in or browse to your `.csv`. Autocampaign AI parses the
-    headers and shows a preview of the first rows. Only `.csv` is accepted.
+    On the **New Import** tab, drag in or browse to your `.csv`. Autocampaign AI reads
+    the column headings and shows a preview of the first rows. Only `.csv` is accepted.
   </Step>
   <Step title="Map fields" icon="arrow-right-arrow-left">
-    Match each CSV column to a contact field. Autocampaign AI auto-detects common headers
-    (a green **High match** badge means it's confident). You can map:
+    Match each spreadsheet column to a contact field. Autocampaign AI recognizes common
+    headings on its own (a green **High match** badge means it's confident). You can map:
 
     - **First Name** (required), **Last Name**, **Phone** (required), **Email**
     - **Street Address**, **Address Line 2**, **City**, **State / Province**,
       **Postal Code**, **Country**
     - Any importable **custom fields** (shown with a "Custom" badge)
 
-    Each mapped field has an **action** for existing contacts: **Replace**,
-    **Skip**, or **Overwrite if Empty**. You can't advance until First Name and
+    Each mapped field has an **action** for contacts you already have: **Replace**,
+    **Skip**, or **Overwrite if Empty**. You can't move on until First Name and
     Phone are mapped.
   </Step>
   <Step title="Tags & options" icon="tag">
-    Apply one or more **tags** to every imported contact, and optionally add them
-    all to a **static segment** (or create a new one).
+    Apply one or more [tags](/getting-started/glossary#tag) to every imported
+    contact. Optionally add them all to a **static segment** (or create a new one).
   </Step>
   <Step title="Review & import" icon="circle-check">
-    Check the summary, then click **Start Import**. Processing runs in the
-    background — you can watch live progress.
+    Check the summary, then click **Start Import**. The import runs in the
+    background, and you can watch live progress.
   </Step>
 </Steps>
 
@@ -83,13 +86,13 @@ Publish: add the file at the path above, then delete this note and the comment m
 </Frame>
 */}
 
-## Duplicates
+## How duplicates are handled
 
-Autocampaign AI detects duplicates by **phone number**. If a contact with the same phone
-already exists in your workspace, the imported row is **skipped** (your existing
-contact is left unchanged) and counted under **Duplicates** in the results.
+Autocampaign AI spots duplicates by **phone number**. If a contact with the same phone
+already exists in your workspace, the imported row is **skipped** and your existing
+contact is left unchanged. The row is counted under **Duplicates** in the results.
 
-## Progress and results
+## Watch progress and check results
 
 While the import runs you'll see a progress bar ("X of Y rows") and three counters:
 
@@ -134,14 +137,14 @@ specific import.
     every contact in the import. See [Tags](/contacts/tags).
   </Accordion>
   <Accordion title="Can I import custom fields?">
-    Yes — create them first in **Settings → Module Setup**, then map your CSV
+    Yes. Create them first in **Settings → Module Setup**, then map your spreadsheet
     columns to them. (Lookup, user, and auto-number field types can't be imported.)
   </Accordion>
   <Accordion title="What happens to duplicate phone numbers?">
-    They're skipped and counted as duplicates; the existing contact isn't modified.
+    They're skipped and counted as duplicates; the existing contact isn't changed.
   </Accordion>
   <Accordion title="Can I import into a dynamic segment?">
-    No — only **static** segments can be an import target. Dynamic segments populate
+    No. Only **static** segments can be an import target. Dynamic segments fill
     themselves from rules. See [Segments](/contacts/segments).
   </Accordion>
 </AccordionGroup>
@@ -149,25 +152,25 @@ specific import.
 ## Troubleshooting
 
 <AccordionGroup>
-  <Accordion title="'File does not appear to contain valid CSV text'">
-    The file isn't plain-text CSV (it may be an Excel `.xlsx`, or contain unsupported
-    characters). Re-export as **CSV UTF-8** and try again.
+  <Accordion title="Why do I see 'File does not appear to contain valid CSV text'?">
+    The file isn't a plain-text CSV. It may be an Excel `.xlsx`, or contain unsupported
+    characters. Re-export it as **CSV UTF-8** and try again.
   </Accordion>
-  <Accordion title="'File exceeds 10 MB limit' or too many rows">
+  <Accordion title="Why do I see 'File exceeds 10 MB limit' or too many rows?">
     Split large files into batches under 10 MB / 50,000 rows and import them
     separately.
   </Accordion>
-  <Accordion title="'Required fields missing'">
-    Map both **First Name** and **Phone** to CSV columns and make sure they're
-    enabled before continuing.
+  <Accordion title="Why do I see 'Required fields missing'?">
+    Map both **First Name** and **Phone** to spreadsheet columns and make sure they're
+    turned on before continuing.
   </Accordion>
-  <Accordion title="'Unknown custom field(s)'">
+  <Accordion title="Why do I see 'Unknown custom field(s)'?">
     A column is mapped to a custom field that doesn't exist. Create it in **Settings
-    → Module Setup** first, then re-map.
+    → Module Setup** first, then map the column again.
   </Accordion>
-  <Accordion title="Rows failed with 'Invalid phone number format'">
+  <Accordion title="Why did rows fail with 'Invalid phone number format'?">
     Phone values must be digits, spaces, hyphens, parentheses, or a leading `+`, up
-    to 20 characters. Clean the column and re-import those rows.
+    to 20 characters. Clean the column and import those rows again.
   </Accordion>
 </AccordionGroup>
 

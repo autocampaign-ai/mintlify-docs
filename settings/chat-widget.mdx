@@ -1,31 +1,38 @@
 ---
 title: "Website chat widget"
-description: "Add a branded chat launcher to your website, let an AI Employee answer visitors, and handle every conversation from the Inbox."
+description: "Add a chat button to your website, let an AI Employee answer visitors, and handle every conversation from the Inbox."
 icon: "comments"
 ---
 
 ## Overview
 
-Website chat puts a floating chat button on your own site. Visitors open it, send a
-message, and the conversation lands in your [Inbox](/inbox/overview) on the
-**Website chat** channel, where an [AI Employee](/automation/ai-employees) or your
-team replies in real time. Find it under **Settings → Website Chat**
-(`/settings/chat-widget`).
+Website chat (also called the [chat widget](/getting-started/glossary#chat-widget))
+puts a floating chat button on your own site. Visitors open it, send a message, and
+the conversation lands in your [Inbox](/inbox/overview) on the **Website chat**
+channel. There, an [AI Employee](/automation/ai-employees) or your team replies
+in real time. Find it under **Settings → Website Chat** (`/settings/chat-widget`).
+
+<Tip>
+  **In short:** 1) Name and style your chat button. 2) Pick an AI Employee to
+  answer visitors. 3) Paste the install code on your site and turn it on.
+</Tip>
 
 <Info>
-  **Difficulty:** Beginner &nbsp;·&nbsp; Setup is a four-step wizard — **Appearance**,
+  **Time to complete:** ~20 minutes &nbsp;·&nbsp; **Difficulty:** Beginner &nbsp;·&nbsp; Setup is a four-step wizard — **Appearance**,
   **AI Assistant**, **Customer Experience**, **Install** — with a live **Try it**
   preview beside it. **Save changes** works from any step.
 </Info>
 
 ## Before you start
 
-- You need permission to edit website chat settings. With view-only access the
-  form is read-only.
+- Permission to edit website chat settings. With view-only access you can look
+  but not change anything.
 - To have AI answer visitors, create an active [AI Employee](/automation/ai-employees) first.
-- To offer in-chat booking, create a [meeting type](/scheduling/meeting-types) first.
-- You need to be able to paste a script tag into your site (or its WordPress,
-  Shopify, Wix, or Squarespace custom-code area).
+- To offer in-chat booking, create a [meeting type](/scheduling/meeting-types)
+  (a bookable appointment, such as a 30-minute consultation) first.
+- A way to paste a short piece of code into your website (or its WordPress,
+  Shopify, Wix, or Squarespace custom-code area). If a web designer manages your
+  site, they can do this for you.
 
 ## Set up your widget
 
@@ -33,14 +40,15 @@ team replies in real time. Find it under **Settings → Website Chat**
   <Step title="Appearance" icon="palette">
     Enter a **Chat name** (up to 100 characters; defaults to "Customer Support") and
     a **Welcome message** (up to 500 characters) — or click **Use suggestion**.
-    Pick a **Theme color** from the presets, or choose **Custom** and enter a
-    6-digit hex value such as `#6366f1`. Set **Chat position** to **Bottom right**
-    or **Bottom left**.
+    Pick a **Theme color** from the presets. Or choose **Custom** and enter a
+    6-digit hex value such as `#6366f1` (a color code; your brand guide or web
+    designer will have it). Set **Chat position** to **Bottom right** or **Bottom
+    left**.
 
-    Under **Brand images**, add a **Logo** (chat header; **Use my company logo**
-    copies your organization logo), a **Profile photo** (shown beside each
-    assistant reply), and a **Chat button icon** (replaces the default
-    speech-bubble on the floating button — leave it empty to keep the default).
+    Under **Brand images**, add a **Logo** for the chat header (**Use my company
+    logo** copies your organization logo). Add a **Profile photo**, shown beside
+    each assistant reply. Add a **Chat button icon** to replace the default
+    speech-bubble on the floating button — leave it empty to keep the default.
 
     {/* MEDIA-TODO screenshot | /images/settings/chat-widget-appearance-step.png
     Capture: The Appearance step of the Website Chat wizard with Chat name, Welcome message, a Theme color preset selected, Chat position, and the Brand images fields, alongside the live Try it preview reflecting those choices. The four step names should be visible.
@@ -68,10 +76,11 @@ team replies in real time. Find it under **Settings → Website Chat**
     - **Business hours** — **Always open** (24/7) or **Set specific hours** with a
       **Timezone** and a weekly schedule.
     - **Offline & after-hours** — see [Offline behavior](#offline-behavior).
-    - **Smart greetings** — up to 20 rules that swap the welcome message by visitor
-      type (**Returning** / **First-time**), campaign source, the page path the
-      visit started on, or open/closed state. The first matching rule wins;
-      otherwise the default welcome message shows.
+    - **Smart greetings** — up to 20 rules that change the welcome message. Match
+      on visitor type (**Returning** / **First-time**), campaign source (which ad
+      or link brought them), the page they landed on, or whether you're open or
+      closed. The first matching rule wins; otherwise the default welcome message
+      shows.
 
     {/* MEDIA-TODO screenshot | /images/settings/chat-widget-customer-experience-step.png
     Capture: The Customer Experience step with Show quick questions on and three prompts listed, Allow appointment booking on with a Booking type chosen, Business hours set to Set specific hours with a Timezone, and one Smart greetings rule.
@@ -87,8 +96,9 @@ team replies in real time. Find it under **Settings → Website Chat**
   <Step title="Install" icon="code">
     Click **Save changes** first — your install code is generated on the first
     save. Pick your platform (WordPress, Shopify, Wix, Squarespace, React, or HTML)
-    for tailored instructions, click **Copy code**, and paste it just before the
-    closing `</body>` tag on every page where you want chat.
+    for tailored instructions and click **Copy code**. Paste it just before the
+    closing `</body>` tag on every page where you want chat. Your web designer
+    will know where this is.
 
     {/* MEDIA-TODO video | /videos/settings/chat-widget-setup-and-install.mp4
     Capture: The full website chat setup from a blank widget to a live chat button on a test site, with emphasis on copying and pasting the install code. Target length: 90-120 seconds.
@@ -108,9 +118,11 @@ team replies in real time. Find it under **Settings → Website Chat**
   </Step>
 </Steps>
 
-## The embed snippet
+## Understand the install code
 
-The code is the same for every platform — one script tag carrying your widget key:
+The install code (also called the embed snippet) is the same for every platform.
+It's one line of code that carries your widget key — an ID that tells us which
+widget to show.
 
 ```html
 <script src="https://app.autocampaign.ai/widget.js" data-widget-key="YOUR_WIDGET_KEY" async></script>
@@ -120,8 +132,9 @@ Always copy the exact tag from the **Install** step: it contains your real key a
 the correct address for your account. The widget key only identifies your widget —
 it isn't a secret.
 
-If you need to control when the widget starts (for example, after a consent
-banner), leave out `data-widget-key` and start it yourself:
+Your web designer may need to control when the widget starts (for example, after
+a cookie-consent banner). If so, they can leave out `data-widget-key` and start it
+from their own code:
 
 ```html
 <script>
@@ -131,9 +144,9 @@ banner), leave out `data-widget-key` and start it yourself:
 <script src="https://app.autocampaign.ai/widget.js" async></script>
 ```
 
-`window.AutoCampaign` also exposes `open()` and `close()`.
+For developers, `window.AutoCampaign` also offers `open()` and `close()`.
 
-## Image rules for the logo, profile photo, and chat button icon
+## Choose images for the logo, profile photo, and chat button icon
 
 Each image field offers **Upload** or **Image URL**:
 
@@ -145,15 +158,15 @@ Each image field offers **Upload** or **Image URL**:
   rejected with "Use a web address starting with https:// — upload the file
   instead".
 
-## Allowed domains
+## Limit which websites can show your widget
 
 In the **Install** step, **Allowed domains** restricts which sites can load your
-widget. Click **Add domain** and enter hostnames only, such as `shop.example` — up
-to 20 entries.
+widget. Click **Add domain** and enter the site's domain name only, such as
+`shop.example` (no `https://` and no page path) — up to 20 entries.
 
 - With no domains listed, **any website can embed this widget** (the page warns you).
-- Matching is exact. `*.example.com` covers every subdomain but **not**
-  `example.com` itself — add both if you need both.
+- Matching is exact. `*.example.com` covers every subdomain (such as
+  `shop.example.com`) but **not** `example.com` itself — add both if you need both.
 - Enter international domains exactly as your browser's address bar shows them.
 
 {/* MEDIA-TODO screenshot | /images/settings/chat-widget-allowed-domains.png
@@ -172,13 +185,14 @@ Publish: add the file at the path above, then delete this note and the comment m
 Every chat appears in the **Inbox** as a **Website chat** conversation. Reply from
 the composer like any other channel, and the visitor sees your reply live. If you
 assigned an AI Employee, it answers first and hands the conversation to your team
-when one of its **Human help** triggers fires.
+when one of its **Human help** triggers is met.
 
-Visitors start **anonymous** — there's no pre-chat form. A visitor becomes a
-contact (source: web chat) when the AI Employee collects their details or when
-they submit the leave-a-message form. Details are matched to an existing contact
-by phone, then email, and only fill empty fields. A returning visitor on the same
-browser resumes their conversation for up to 30 days.
+Visitors start **anonymous**: there's no form to fill in before chatting. A visitor
+becomes a [contact](/getting-started/glossary#contact) (source: web chat) when the
+AI Employee collects their details or when they submit the leave-a-message form. If
+a contact with the same phone (or, failing that, the same email) already exists,
+the details are added to that contact and only fill in blank fields. A returning
+visitor on the same browser resumes their conversation for up to 30 days.
 
 ## Offline behavior
 
@@ -193,9 +207,9 @@ characters) and when you're back, in the visitor's local time.
   and the visitor is saved as a contact.
 
 <Note>
-  **Limits:** one widget per organization; visitor messages are text only, up to
-  4,000 characters, with no file attachments; visitors can send up to 20 messages
-  per minute; schedules can't span midnight (the latest end time is 23:59).
+  **Limits:** one widget per organization. Visitor messages are text only, up to
+  4,000 characters, with no file attachments. Visitors can send up to 20 messages
+  per minute. Schedules can't span midnight (the latest end time is 23:59).
 </Note>
 
 ## FAQ
@@ -206,7 +220,8 @@ characters) and when you're back, in the visitor's local time.
     Nothing there is saved or sent to your team.
   </Accordion>
   <Accordion title="Does changing settings require re-installing the code?">
-    No. The snippet stays the same; saved changes apply the next time the widget loads.
+    No. The install code stays the same; saved changes apply the next time the
+    widget loads.
   </Accordion>
   <Accordion title="What happens if no AI Employee is assigned?">
     Messages still arrive in the Inbox. Your team replies manually.
@@ -216,18 +231,18 @@ characters) and when you're back, in the visitor's local time.
 ## Troubleshooting
 
 <AccordionGroup>
-  <Accordion title="The chat button doesn't appear on my site">
-    Check that **Turn chat on** shows **Live**, the snippet is on the page, and the
-    site's hostname is in **Allowed domains** (or the list is empty). Remember that
-    `*.example.com` doesn't cover `example.com`.
+  <Accordion title="Why doesn't the chat button appear on my site?">
+    Check that **Turn chat on** shows **Live**, the install code is on the page,
+    and the site's domain is in **Allowed domains** (or the list is empty).
+    Remember that `*.example.com` doesn't cover `example.com`.
   </Accordion>
-  <Accordion title="The Install step shows no code">
+  <Accordion title="Why does the Install step show no code?">
     Click **Save changes** once — the code is generated on the first save.
   </Accordion>
-  <Accordion title="An image URL is rejected">
+  <Accordion title="Why is my image URL rejected?">
     Use an `https://` address of 500 characters or fewer, or switch to **Upload**.
   </Accordion>
-  <Accordion title="I can't turn on appointment booking">
+  <Accordion title="Why can't I turn on appointment booking?">
     Select a **Booking type**. If none are listed, create a meeting type first.
   </Accordion>
 </AccordionGroup>

@@ -6,16 +6,18 @@ icon: "wallet"
 
 ## Overview
 
-Your plan includes **credits** that are spent when you send messages and emails,
-make calls, or use AI, plus **limits** on how many contacts, seats, segments, and
-other items you can hold. Track both on the **Usage** tab of
-**Account → Plan & Billing** (`/billing?tab=usage`), and extend them with
-**add-ons** on the **Plans & subscription** tab. For choosing, changing, or
-cancelling a plan, see [Plans & trials](/billing/plans-and-trials).
+Your [plan](/getting-started/glossary#plan) includes
+**[credits](/getting-started/glossary#credits)** that are spent when you send
+messages and emails, make calls, or use AI. It also sets **limits** on how many
+contacts, [seats](/getting-started/glossary#seat), segments, and other items you
+can hold. Track both on the **Usage** tab of **Account → Plan & Billing**
+(`/billing?tab=usage`), and extend them with **add-ons** on the **Plans &
+subscription** tab. For choosing, changing, or cancelling a plan, see
+[Plans & trials](/billing/plans-and-trials).
 
 <Info>
-  **Difficulty:** Beginner &nbsp;·&nbsp; **Permission:** Billing read to view,
-  Billing manage to purchase or change auto top-up.
+  **Time to complete:** ~10 minutes &nbsp;·&nbsp; **Difficulty:** Beginner &nbsp;·&nbsp; By default, only Owners and Admins can
+  view this page and buy add-ons or change auto top-up.
 </Info>
 
 ## Before you start
@@ -23,14 +25,14 @@ cancelling a plan, see [Plans & trials](/billing/plans-and-trials).
 - You need an active subscription or trial; credits appear once one exists.
 - Prices and pack sizes are shown in-app and may change.
 - Purchases charge the card saved on your subscription (see
-  [Payment method](/billing/plans-and-trials#payment-method-and-invoices)).
+  [Payment method](/billing/plans-and-trials#update-your-card-and-find-invoices)).
 
-## Credits
+## Understand your credits
 
-The **Credits** card on the Usage tab shows one tile per credit pool — for
-example **SMS credits**, **Email credits**, **AI credits**, and **Voice minutes**,
-depending on your plan. Each tile shows the **available** balance and a breakdown:
-**included · purchased · reserved**.
+The **Credits** card on the Usage tab shows one tile per credit pool (one balance
+per type) — for example **SMS credits**, **Email credits**, **AI credits**, and
+**Voice minutes**, depending on your plan. Each tile shows the **available**
+balance and a breakdown: **included · purchased · reserved**.
 
 {/* MEDIA-TODO screenshot | /images/billing/wallet-billing-credits-card.png
 Capture: The Usage tab with the Credits card in view: one tile per pool (SMS credits, Email credits, AI credits, Voice minutes), each showing the available balance and the included · purchased · reserved breakdown, plus the Buy more and Auto-recharge buttons.
@@ -45,13 +47,14 @@ Publish: add the file at the path above, then delete this note and the comment m
 
 - **Included** credits come with your plan (subscription and promotional grants).
 - **Purchased** credits come from credit packs you buy.
-- **Reserved** credits are held by queued work (a campaign mid-send, a call in
-  progress) and released or settled when it finishes.
+- **Reserved** credits are set aside for work in progress (a campaign mid-send, a
+  call in progress). They are released or charged when it finishes.
 
-SMS credits are charged per message segment and vary by destination country;
-email is charged per send; AI runs and calls reserve an estimate and settle to
-actual usage. Included credits can expire — expiring lots are shown in the
-allocation summary on the Plans & subscription tab.
+SMS credits are charged per message part (a long text counts as more than one)
+and vary by destination country. Email is charged per send. AI runs and calls set
+aside an estimate, then charge the actual amount used. Included credits can
+expire — credits that will expire are shown in the allocation summary (the list
+of your credit grants) on the Plans & subscription tab.
 
 <Note>
   Pools are separate. An empty SMS pool blocks SMS sends even if you have plenty of
@@ -69,13 +72,14 @@ allocation summary on the Plans & subscription tab.
   </Step>
   <Step title="Spot trends">
     **30-day usage trend** charts one resource at a time (pick it from the
-    dropdown) and projects usage to period end — "consider an add-on" appears if
+    dropdown) and projects usage to period end. "Consider an add-on" appears if
     you're on pace to run out.
   </Step>
   <Step title="Compare allowance to consumption">
     **Available vs consumed** lists every resource with **Plan allowance**,
-    **Add-ons**, **Total**, **Consumed**, **Remaining**, **Utilization**, and a
-    **Status** badge: **Healthy**, **Near limit**, **At limit**, or **Unlimited**.
+    **Add-ons**, **Total**, **Consumed**, **Remaining**, **Utilization** (the
+    share used), and a **Status** badge: **Healthy**, **Near limit**, **At
+    limit**, or **Unlimited**.
 
     {/* MEDIA-TODO screenshot | /images/billing/wallet-billing-available-vs-consumed.png
     Capture: The Available vs consumed table on the Usage tab with the Plan allowance, Add-ons, Total, Consumed, Remaining, Utilization, and Status columns, showing a mix of Healthy, Near limit, and At limit badges.
@@ -88,19 +92,19 @@ allocation summary on the Plans & subscription tab.
     </Frame>
     */}
   </Step>
-  <Step title="Audit activity">
-    Under **Resource activity**, **Resource events** lists each consumption (Date,
+  <Step title="Check the activity list">
+    Under **Resource activity**, **Resource events** lists each use (Date,
     Resource, Action, Consumed, Remaining, Source) and can be filtered by resource.
-    **AI credit transactions** lists every credit and debit with the bucket,
-    reason, and **Balance after**.
+    **AI credit transactions** lists every credit added or spent, with the credit
+    type, reason, and **Balance after**.
   </Step>
 </Steps>
 
 ## Buy an add-on or credit pack
 
 Add-ons live on the **Plans & subscription** tab under **Add-ons**. **Your
-add-ons** shows what you own as live meters; **Available to purchase** lists the
-rest.
+add-ons** shows what you own as meters (bars showing how much is left);
+**Available to purchase** lists the rest.
 
 <Steps>
   <Step title="Purchase">
@@ -110,7 +114,7 @@ rest.
   <Step title="Choose how it's charged">
     Under **How should this be charged?**, pick **One-time** (charged once, never
     re-charges) or **Recurring (auto-refill)** and set **Refill when remaining
-    units reach** a threshold. Feature unlocks are one-time only.
+    units reach** a level. Feature unlocks are one-time only.
 
     {/* MEDIA-TODO screenshot | /images/billing/wallet-billing-purchase-dialog.png
     Capture: The add-on Purchase dialog showing You get and Cost, with How should this be charged? set to Recurring (auto-refill) so the Refill when remaining units reach threshold field and the Buy now button are visible.
@@ -125,18 +129,19 @@ rest.
   </Step>
   <Step title="Buy now">
     Click **Buy now**. The saved card is charged without leaving the app, and the
-    grant appears within moments ("… is now active"). If your bank requires extra
-    verification or no card is saved, you're sent to a hosted checkout instead.
+    credits appear within moments ("… is now active"). If your bank requires extra
+    verification or no card is saved, you're sent to a secure checkout page
+    instead.
   </Step>
 </Steps>
 
 To reload a pack you already own, click **Buy again** on its meter — one more pack
 is added to your current balance.
 
-## Auto top-up
+## Set up auto top-up
 
-Auto top-up re-charges your saved card for one more pack whenever the remaining
-units fall to your threshold.
+Auto top-up charges your saved card for one more pack whenever the remaining
+units fall to the level you set.
 
 <Steps>
   <Step title="Open Manage">
@@ -144,11 +149,11 @@ units fall to your threshold.
   </Step>
   <Step title="Turn it on">
     Switch on **Auto top-up** and set **Refill when remaining reaches**. The
-    threshold is marked on the meter and shown as **Top up at …**.
+    level is marked on the meter and shown as **Top up at …**.
   </Step>
   <Step title="Resume if paused">
-    If a charge fails, the policy shows **Paused** with the reason. Fix your card,
-    then click **Resume auto top-up**.
+    If a charge fails, auto top-up shows **Paused** with the reason. Fix your
+    card, then click **Resume auto top-up**.
   </Step>
 </Steps>
 
@@ -164,16 +169,16 @@ to this section.
     capacity add-ons or a higher plan.
   </Accordion>
   <Accordion title="Why is my available balance lower than the total?">
-    Reserved credits are held by work in progress. They return to available (or
-    settle) as soon as the send or call completes.
+    Reserved credits are set aside for work in progress. They return to available
+    (or are charged) as soon as the send or call completes.
   </Accordion>
   <Accordion title="Do purchased credits expire?">
-    Included grants may carry an expiry, shown in the allocation summary.
+    Included credits may carry an expiry, shown in the allocation summary.
     Purchased packs show **Does not expire** or an **Expires** date on their meter.
   </Accordion>
   <Accordion title="Can I see spend by campaign?">
-    Usage is tracked as consumed units per resource. **Resource events** shows the
-    action and source of each consumption, not per-campaign currency spend.
+    Usage is tracked as units used per resource. **Resource events** shows the
+    action and source of each use, not money spent per campaign.
   </Accordion>
 </AccordionGroup>
 
@@ -181,12 +186,12 @@ to this section.
 
 <AccordionGroup>
   <Accordion title="Live usage temporarily unavailable">
-    The usage service is briefly unreachable. Plan details still show from the
-    last snapshot; retry in a moment. Nothing is charged while it's down.
+    Usage data is briefly out of reach. Plan details still show from the last
+    saved copy; retry in a moment. Nothing is charged while it's down.
   </Accordion>
   <Accordion title="A purchase asked for verification">
-    Your bank requested 3-D Secure. Complete the hosted checkout to finish the
-    charge; the grant arrives once payment completes.
+    Your bank asked for an extra security check (3-D Secure). Complete the
+    checkout page to finish the charge; the credits arrive once payment completes.
   </Accordion>
   <Accordion title="Auto top-up isn't refilling">
     Open **Manage** on the add-on: make sure **Auto top-up** is on and not

@@ -7,18 +7,19 @@ icon: "calendar-days"
 ## Overview
 
 Bookings are the meetings people schedule through your
-[meeting types](/scheduling/meeting-types). Manage them under **Bookings**
-(`/bookings`).
+[meeting types](/scheduling/meeting-types) (the kinds of appointments people can
+book). Manage them under **Bookings** (`/bookings`).
 
 <Info>
   **Difficulty:** Beginner
 </Info>
 
-## The bookings list
+## Browse and filter bookings
 
-Each booking shows the **invitee**, **meeting type**, **host**, **when**, and
-**status**. Filter by status, meeting type, host, and date range. Times display in
-your workspace timezone.
+Each booking shows the **invitee** (the person who booked), **meeting type**,
+**host**, **when**, and **status**. Filter by status, meeting type, host, and date
+range. Times display in your [workspace](/getting-started/glossary#workspace)
+timezone.
 
 {/* MEDIA-TODO screenshot | /images/scheduling/bookings-list-filters.png
 Capture: The bookings list with rows in several statuses, showing the invitee, meeting type, host, when and status columns, and the status, meeting type, host and date range filters.
@@ -31,12 +32,12 @@ Publish: add the file at the path above, then delete this note and the comment m
 </Frame>
 */}
 
-## Booking statuses
+## What each status means
 
 **Scheduled**, **Confirmed**, **Completed**, **Cancelled**, **Rescheduled**, and
 **No-show**. Completed, Cancelled, and No-show are final.
 
-## Actions
+## Reschedule, cancel, or mark a booking
 
 Open a booking to see invitee details and question answers. Depending on status you
 can:
@@ -61,11 +62,11 @@ Publish: add the file at the path above, then delete this note and the comment m
   haven't set a status.
 </Note>
 
-## The invitee experience
+## What the person booking sees
 
 When someone opens your booking link, they pick a meeting type and time, choose
-their timezone, fill in their details (and your custom questions), agree to the
-consent checkbox, and confirm. They get a confirmation with an **Add to Google
+their timezone, and fill in their details (and your custom questions). They agree
+to the consent checkbox and confirm. They get a confirmation with an **Add to Google
 Calendar** option and a **Manage booking** link to reschedule or cancel themselves.
 
 Bookings send email and SMS confirmations, reminders, and reschedule/cancel notices
@@ -79,11 +80,13 @@ automatically.
     reschedule or cancel.
   </Accordion>
   <Accordion title="Do bookings appear on my calendar?">
-    Yes — see the [Calendar](/scheduling/calendar) view, and connect an external
-    calendar to sync events out. See [Calendar integrations](/scheduling/calendar-integrations).
+    Yes — see the [Calendar](/scheduling/calendar) view, and connect your Google or
+    Microsoft calendar to send events there too. See
+    [Calendar integrations](/scheduling/calendar-integrations).
   </Accordion>
-  <Accordion title="Can I trigger a workflow when someone books?">
-    Yes — use the **Booking created** trigger in a [workflow](/automation/workflow-builder).
+  <Accordion title="Can I start a workflow when someone books?">
+    Yes — use the **Booking created** trigger (the event that starts a workflow) in a
+    [workflow](/automation/workflow-builder).
   </Accordion>
 </AccordionGroup>
 

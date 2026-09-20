@@ -5,15 +5,23 @@ icon: "plug"
 ---
 
 <Info>
-  **Time to complete:** ~10 minutes to connect &nbsp;·&nbsp; **Difficulty:** Beginner
+  **Time to complete:** ~15–30 minutes to connect and add numbers, plus 1–2 days for
+  10DLC carrier approval &nbsp;·&nbsp; **Difficulty:** Beginner
 </Info>
 
 ## Overview
 
-Twilio is one of two SMS providers Autocampaign AI supports (the other is
-[Telnyx](/providers/telnyx)). Connecting Twilio lets Autocampaign AI send text messages
-from your Twilio numbers, receive replies in your [Inbox](/inbox/overview), and
-manage [A2P 10DLC](/compliance/a2p-10dlc) registration for you.
+Twilio is one of two SMS [providers](/getting-started/glossary#provider) Autocampaign AI
+supports (the other is [Telnyx](/providers/telnyx)). Connecting Twilio lets
+Autocampaign AI send text messages from your Twilio numbers and receive replies in
+your [Inbox](/inbox/overview). It also manages [A2P 10DLC](/compliance/a2p-10dlc)
+registration (the US carrier registration required to send business texts from a
+local number) for you.
+
+<Tip>
+  **In short:** 1) Paste your Twilio Account SID and Auth Token. 2) Register your
+  10DLC brand and pick a messaging service. 3) Add numbers and finish setup.
+</Tip>
 
 {/* MEDIA-TODO video | /videos/providers/twilio-connect-and-setup.mp4
 Capture: Connecting Twilio from the Channels page and completing the four-step Set Up Your Channel wizard. Target length: 2–3 minutes.
@@ -39,12 +47,13 @@ You need:
 
 - A [Twilio account](https://www.twilio.com) with at least one phone number, or
   funds to buy one.
-- Your Twilio **Account SID** and **Auth Token** (both on the Twilio Console
-  dashboard under **Account Info**).
-- The **Manage channels** permission in Autocampaign AI (Owner or Admin).
+- Your Twilio **Account SID** and **Auth Token** — two codes that identify your
+  Twilio account. Both are on the Twilio Console dashboard under **Account Info**.
+- To be an Owner or Admin in Autocampaign AI, or have an admin give you permission to
+  manage channels.
 
 <Tip>
-  You can connect with a Twilio trial number to test end-to-end, then complete
+  You can connect with a Twilio trial number to test everything, then complete
   [10DLC registration](/compliance/a2p-10dlc) before sending to US numbers at volume.
 </Tip>
 
@@ -66,7 +75,7 @@ You need:
     </Frame>
     */}
   </Step>
-  <Step title="Enter your credentials">
+  <Step title="Enter your Twilio details">
     On the **Connect** tab, fill in:
 
     | Field | Where to find it | Format |
@@ -74,12 +83,12 @@ You need:
     | **Account SID** | Twilio Console → Account Info | Starts with `AC`, 34 characters |
     | **Auth Token** | Twilio Console → Account Info | 32 characters (kept masked) |
 
-    Autocampaign AI validates the format as you type — the Account SID must start with
+    Autocampaign AI checks the format as you type — the Account SID must start with
     `AC` and the Auth Token must be 32 characters.
   </Step>
   <Step title="Connect & save">
-    Click **Connect & Save Credentials**. Autocampaign AI makes a live call to Twilio to
-    verify the credentials before saving. On success you'll see
+    Click **Connect & Save Credentials**. Autocampaign AI checks the details with
+    Twilio before saving. On success you'll see
     **"Channel connected successfully"** and the setup wizard opens automatically.
 
     {/* MEDIA-TODO screenshot | /images/providers/twilio-connect.png
@@ -107,12 +116,13 @@ in the recommended order:
     [A2P 10DLC](/compliance/a2p-10dlc).
   </Step>
   <Step title="Service" icon="gear">
-    Select one or more **messaging services**, or click **Create Service** and
-    give it a name (for example, "My SMS Service").
+    Select one or more **messaging services** (the groups that hold your numbers),
+    or click **Create Service** and give it a name (for example, "My SMS Service").
   </Step>
   <Step title="10DLC Campaign" icon="file-lines">
-    Register a campaign linked to your service, or **Skip to Numbers** (a campaign
-    is strongly recommended for compliant A2P sending, but not required to finish).
+    Register a campaign linked to your service, or **Skip to Numbers**. A campaign
+    is strongly recommended so your business texts follow US carrier rules, but it
+    isn't required to finish.
   </Step>
   <Step title="Numbers" icon="hashtag">
     Assign phone numbers to your messaging service, or **Buy New Number**.
@@ -123,8 +133,8 @@ Click **Finish Setup** to save. You can revisit any of these from the **Service*
 **Numbers**, and **Brand & Campaign** tabs on the Twilio channel page at any time.
 
 <Tip>
-  In a hurry? **Skip Setup** auto-selects all discovered messaging services so you
-  can send immediately, then come back to register 10DLC before scaling up.
+  In a hurry? **Skip Setup** selects every messaging service it finds so you can
+  send immediately. Come back to register 10DLC before you send at volume.
 </Tip>
 
 ### Buy a phone number
@@ -133,7 +143,8 @@ From the **Numbers** step (or tab), click **Buy New Number**:
 
 1. Choose a **Country** (required).
 2. Optionally narrow by **Area Code** or a **Contains** pattern (for example, `+1914`).
-3. Pick **Capabilities** — **SMS**, **MMS**, **Voice** (all selected by default).
+3. Pick **Capabilities** — **SMS** (texts), **MMS** (pictures), **Voice** (calls);
+   all are selected by default.
 4. Click **Search Numbers**, then **Buy** on a result and confirm the purchase.
 
 Numbers you buy from within a setup step are attached to the selected messaging
@@ -150,23 +161,26 @@ Publish: add the file at the path above, then delete this note and the comment m
 </Frame>
 */}
 
-## Webhooks
+## How replies reach Autocampaign AI (webhooks)
 
-You don't configure webhooks manually. When you finish setup, Autocampaign AI registers
-its own webhook URLs with Twilio for each messaging service:
+[Webhooks](/getting-started/glossary#webhook) are the addresses Twilio uses to
+send replies and delivery updates to Autocampaign AI. You don't set them up
+yourself. When you finish setup, Autocampaign AI registers them with Twilio for each
+messaging service:
 
-- Inbound messages: `https://<your-app-domain>/webhooks/sms/twilio`
+- Incoming messages: `https://<your-app-domain>/webhooks/sms/twilio`
 - Delivery status: `https://<your-app-domain>/webhooks/sms/twilio/status-callback`
 
-Inbound webhooks are signature-verified (Twilio HMAC via `x-twilio-signature`).
+Incoming webhooks are signature-verified (Twilio HMAC via `x-twilio-signature`),
+so only genuine requests from Twilio are accepted.
 
-## Channel status
+## Check the channel status
 
 The channel header shows one of:
 
 - <Icon icon="circle-check" iconType="solid" color="#16a34a" /> **Active** — connected and able to send.
-- **Disconnected** — no valid credentials.
-- **Error** — credentials or a health check failed.
+- **Disconnected** — no valid login details.
+- **Error** — your login details were rejected or a connection check failed.
 
 Each setup tab also shows a green check when complete or an amber warning when
 something is still required (for example, "Brand registration required").
@@ -192,13 +206,14 @@ unusable and pauses active campaigns using the channel, so confirm carefully.
     [A2P 10DLC registration](/compliance/a2p-10dlc) for reliable delivery to US
     mobile numbers. Register your brand and campaign before sending at volume.
   </Accordion>
-  <Accordion title="Are my credentials stored securely?">
-    Yes. Credentials are encrypted at rest. After saving, the Connect tab shows the
+  <Accordion title="Are my Twilio details stored securely?">
+    Yes. They are stored encrypted. After saving, the Connect tab shows the
     Account SID and a masked Auth Token only.
   </Accordion>
   <Accordion title="Can I change providers later?">
     Yes, but switching wipes the current provider's numbers and messaging services
-    in Autocampaign AI. Your campaigns using that channel are paused until you reconfigure.
+    in Autocampaign AI. Your campaigns using that channel are paused until you set it
+    up again.
   </Accordion>
 </AccordionGroup>
 
@@ -207,13 +222,13 @@ unusable and pauses active campaigns using the channel, so confirm carefully.
 <AccordionGroup>
   <Accordion title="'Invalid credentials' when connecting">
     Twilio rejected the Account SID / Auth Token pair. Re-copy both from the Twilio
-    Console (watch for trailing spaces), confirm the Auth Token is the current one
-    (not a rotated/old value), and try again.
+    Console (watch for stray spaces at the end). Confirm the Auth Token is the
+    current one, not an old value that has since been replaced, then try again.
   </Accordion>
   <Accordion title="'Must be a valid Twilio Account SID (starts with AC)'">
-    The SID field must match `AC` followed by 32 hexadecimal characters. You likely
-    pasted an API Key SID (`SK…`) or a partial value — use the **Account SID** from
-    Account Info.
+    The SID field must be `AC` followed by 32 more characters (digits and the
+    letters a–f). You likely pasted an API Key SID (`SK…`) or a partial value — use
+    the **Account SID** from Account Info.
   </Accordion>
   <Accordion title="'Must be a 32-character auth token'">
     The Auth Token must be exactly 32 characters. Reveal and re-copy the full token.
@@ -223,10 +238,10 @@ unusable and pauses active campaigns using the channel, so confirm carefully.
     profile verification in the Twilio Console, then retry brand registration.
     See [A2P 10DLC troubleshooting](/compliance/a2p-10dlc#troubleshooting).
   </Accordion>
-  <Accordion title="Messages send but replies don't appear">
-    Replies arrive via webhook. Finish the setup wizard so Autocampaign AI can register its
-    webhook URLs on your messaging service, and make sure the number is attached to
-    a managed messaging service.
+  <Accordion title="Why do messages send but replies don't appear?">
+    Replies reach Autocampaign AI through webhooks. Finish the setup wizard so
+    Autocampaign AI can register its webhook addresses on your messaging service.
+    Also make sure the number is attached to a messaging service it manages.
   </Accordion>
 </AccordionGroup>
 

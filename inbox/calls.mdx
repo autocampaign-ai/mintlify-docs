@@ -1,31 +1,39 @@
 ---
 title: "Calls"
-description: "Make and receive phone calls in the browser on your SMS numbers, with business hours, IVR menus, voicemail, recordings, and a searchable call log."
+description: "Make and receive phone calls in the browser on your texting numbers, with business hours, keypad menus, voicemail, recordings, and a searchable call log."
 icon: "phone"
 ---
 
 ## Overview
 
-Voice calling lets your team answer and dial the numbers you already text from,
-right in the browser. Inbound calls follow a per-number flow (business hours, ring
-teammates, IVR menu, voicemail), and every call lands under **Calls** in the sidebar
-(`/calls`) and in the contact's [inbox](/inbox/overview) thread. Configure it under
+Voice calling lets your team answer and make calls on the numbers you already text
+from, right in the browser. Each number has its own flow for incoming calls:
+business hours, which teammates ring, an IVR menu (a keypad menu — "press 1 for
+sales"), and voicemail. Every call shows up under **Calls** in the sidebar
+(`/calls`) and in the contact's [inbox](/inbox/overview) thread. Set it up under
 **Settings → Voice** (`/settings/voice`).
 
+<Tip>
+  **In short:** 1) Turn on voice and pick a caller ID. 2) Set each number's hours,
+  ringing, and voicemail. 3) Call and answer from the floating widget.
+</Tip>
+
 <Info>
-  **Difficulty:** Intermediate &nbsp;·&nbsp; Works on Twilio and Telnyx numbers with
+  **Time to complete:** ~20 minutes &nbsp;·&nbsp; **Difficulty:** Intermediate &nbsp;·&nbsp; Works on Twilio and Telnyx numbers with
   the **Voice** capability.
 </Info>
 
 ## Before you start
 
-- A connected [Twilio](/providers/twilio) or [Telnyx](/providers/telnyx) channel.
-  Voice runs on the same provider as your SMS channel; numbers without the Voice
-  capability show **No voice capability**.
-- Permissions ([Users & roles](/getting-started/users-roles)): `channels:manage` to
-  enable voice, `voice-config:manage` to edit numbers, `voice-calls:make` /
-  `voice-calls:receive` to call, `voice-calls:read` for the call log, and
-  `voice-recordings:listen` / `voice-recordings:delete` for recordings.
+- A connected [Twilio](/providers/twilio) or [Telnyx](/providers/telnyx)
+  [channel](/getting-started/glossary#channel) — the phone-number
+  [provider](/getting-started/glossary#provider) you already text through. Voice
+  uses the same provider as your texting. Numbers that can't take calls show
+  **No voice capability**.
+- The right permissions ([Users & roles](/getting-started/users-roles)). Your admin
+  controls who can turn on voice, edit number settings, make and receive calls, see
+  the call log, and listen to or delete recordings. If a button is missing, ask an
+  Owner or Admin for that permission.
 - A browser with microphone access.
 
 ## Enable voice calling
@@ -33,19 +41,20 @@ teammates, IVR menu, voicemail), and every call lands under **Calls** in the sid
 <Steps>
   <Step title="Turn voice on" icon="power-off">
     Go to **Settings → Voice** and click **Enable voice calling**. If you later
-    switch SMS providers, re-enable voice here; per-number settings are kept.
+    switch SMS providers, turn voice on again here; per-number settings are kept.
   </Step>
   <Step title="Set workspace defaults" icon="sliders">
-    Pick a **Default outgoing caller ID**. Optionally set a **Default voicemail
-    greeting** and an **Unavailable message** as **Text To Speech** or **Audio
-    Upload** (MP3, WAV, or M4A up to 10 MB).
+    Pick a **Default outgoing caller ID** (the number the customer sees when you
+    call). Optionally set a **Default voicemail greeting** and an **Unavailable
+    message**. Each can be **Text To Speech** (you type it and a computer voice
+    reads it) or **Audio Upload** (MP3, WAV, or M4A up to 10 MB).
   </Step>
   <Step title="Enable a number" icon="hashtag">
     Click a number in the table to open its settings (`/settings/voice/<number-id>`).
-    Under **Basic Info**, turn on **Enable line**, choose a **Recording Policy**
-    (**Always**, **Never**, **Incoming calls only**, **Outgoing calls only**,
-    **Business hours only**), set the **Ring Timeout** (5–600 seconds), and click
-    **Save Changes**.
+    Under **Basic Info**, turn on **Enable line** and choose a **Recording Policy**:
+    **Always**, **Never**, **Incoming calls only**, **Outgoing calls only**, or
+    **Business hours only**. Set the **Ring Timeout** (how long a call rings before
+    giving up, 5–600 seconds), then click **Save Changes**.
 
     {/* MEDIA-TODO screenshot | /images/inbox/calls-number-basic-info.png
     Capture: The per-number voice settings page with the Basic Info section open: Enable line switched on, the Recording Policy dropdown expanded to show all five options, Ring Timeout filled in, and the Save Changes button visible.
@@ -62,8 +71,9 @@ teammates, IVR menu, voicemail), and every call lands under **Calls** in the sid
 
 ## Route inbound calls
 
-Each number uses one strategy — **IVR Menu** or **Direct Forwarding** — with
-separate **Business Hours** and **After Hours** settings.
+Each number uses one approach: **IVR Menu** (callers press a key to choose) or
+**Direct Forwarding** (calls ring your team straight away). Each has separate
+**Business Hours** and **After Hours** settings.
 
 {/* MEDIA-TODO video | /videos/inbox/calls-inbound-routing-setup.mp4
 Capture: An end-to-end walkthrough of routing inbound calls for one number, from availability through Direct Forwarding, the IVR Menu alternative, and voicemail. Target length: 90-120 seconds.
@@ -82,12 +92,13 @@ Publish: add the file at the path above (or swap the video tag for a YouTube or 
     Under **Availability**, set the timezone, weekly **Business Hours**, and
     **Holidays**.
   </Step>
-  <Step title="Direct Forwarding" icon="phone-arrow-right">
-    Choose **Who rings first?** with **Add Teammate**, then pick a rule for **All
-    teammates busy**, **No answer**, and **No one available**: **Send to
-    voicemail**, **Ring teammates**, or **Forward to a number**. **Max wait** holds
-    a caller for a busy teammate; **Hold queue** parks unanswered callers on hold
-    music for up to **Max hold** so any online agent can pick them up.
+  <Step title="Set up Direct Forwarding" icon="phone-arrow-right">
+    Choose **Who rings first?** with **Add Teammate**. Then pick what happens for
+    **All teammates busy**, **No answer**, and **No one available**: **Send to
+    voicemail**, **Ring teammates**, or **Forward to a number**. **Max wait** is
+    how long a caller waits for a busy teammate. **Hold queue** keeps unanswered
+    callers on hold music, in order, for up to **Max hold**, so any online
+    teammate can pick them up.
 
     {/* MEDIA-TODO screenshot | /images/inbox/calls-direct-forwarding-rules.png
     Capture: The Direct Forwarding section for Business Hours with two teammates added under Who rings first, and the three rules (All teammates busy, No answer, No one available) each set to a different action. Max wait and Hold queue with Max hold must be visible.
@@ -100,12 +111,13 @@ Publish: add the file at the path above (or swap the video tag for a YouTube or 
     </Frame>
     */}
   </Step>
-  <Step title="IVR Menu" icon="list-ol">
-    Set a greeting and keypad options (`0`–`9`, `*`, `#`) that **Ring Teammates**,
-    **External Forward**, or go to a **Voicemail Box**. After hours, choose **IVR
-    menu**, **Voicemail**, or **Forward to number**.
+  <Step title="Set up the IVR Menu" icon="list-ol">
+    Set a greeting, then give each key (`0`–`9`, `*`, `#`) an action: **Ring
+    Teammates**, **External Forward** (send the call to an outside number), or a
+    **Voicemail Box**. After hours, choose **IVR menu**, **Voicemail**, or
+    **Forward to number**.
   </Step>
-  <Step title="Voicemail" icon="voicemail">
+  <Step title="Set up voicemail" icon="voicemail">
     Under **Voicemail Settings**, toggle **Enable voicemail** and set the
     **Greeting Message** and **Max Recording Length**. With voicemail off, callers
     hear the **Unavailable message** and the call ends.
@@ -113,48 +125,53 @@ Publish: add the file at the path above (or swap the video tag for a YouTube or 
 </Steps>
 
 <Note>
-  Only teammates who are **Active** with the app open are rung; agents on a call
-  count as busy. A number with **Enable line** off announces it's unavailable and
-  hangs up.
+  Only teammates who are set to **Active** and have the app open will ring.
+  Teammates already on a call count as busy. A number with **Enable line** off
+  tells callers it's unavailable and hangs up.
 </Note>
 
 ## Make and receive calls
 
-The call widget floats over every page; open it from the phone badge in the header.
+The call widget (a small phone panel) floats over every page. Open it from the
+phone badge in the header.
 
 - **Status** — set **Active**, **Away**, **Busy**, or **Offline** in the widget
   header. You can't dial while **Offline**.
 - **Dial** — use the **Keypad**, **Contacts**, or **History** tab, or click **Call**
-  on a contact or inbox thread and pick the line. **Caller ID** defaults to **Auto**.
+  on a contact or inbox thread and pick the line. **Caller ID** (the number the
+  customer sees) defaults to **Auto**.
 - **Answer** — incoming calls ring in the widget and header: **Answer** or
-  **Decline**. Parked callers show **Pick up**.
+  **Decline**. Callers waiting on hold show **Pick up**.
 - **In call** — **Mute**, **Hold**, **Keypad**, **Transfer** (to a teammate or an
-  external number), **End call**. A **Recording** indicator shows when recording.
+  outside number), **End call**. A **Recording** indicator shows when recording.
 - **Wrap up** — set an **Outcome** (**Interested**, **Not interested**, **Follow
   up**, **Other** with a required description), add **Notes**, and click **Save
-  wrap-up**. You can also **Call again**, save the caller as a contact, or **Black
-  list** the number.
+  wrap-up**. You can also **Call again**, save the caller as a
+  [contact](/getting-started/glossary#contact), or **Black list** the number.
 
 <Note>
-  One live call per agent — **Answer**, **Pick up**, and **Call again** wait until
-  the current call ends. Transfers are cold handoffs.
+  You can be on one call at a time. **Answer**, **Pick up**, and **Call again**
+  wait until your current call ends. Transfers are cold handoffs: the call moves
+  straight to the other person, without you speaking to them first.
 </Note>
 
 ## Block callers
 
 Under **Settings → Voice → Blocked numbers**, click **Block a number**. Blocked
-callers are rejected on every workspace number before ringing, with no call record.
-A matching contact is also [opted out](/compliance/opt-out) of SMS; **Unblock
-number** lifts the call block only, never the opt-out.
+callers are rejected on every [workspace](/getting-started/glossary#workspace)
+number before anyone's phone rings, and no call record is kept. If the number
+belongs to a contact, that contact is also [opted out](/compliance/opt-out) of
+texts. **Unblock number** lifts the call block only, never the opt-out.
 
 ## Review the call log
 
 **Calls** (`/calls`) shows **Total calls**, **Missed rate**, **Total talk time**,
-and **Avg duration**, then a table you can search by name or number and filter by
-date range, **Direction**, **Status** (**Completed**, **Missed**, **Voicemail**,
-**Busy**, **No answer**, **Failed**, **Canceled**), **Disposition**, and
-**Recording**. Click a row for **Duration**, **Wait**, **Talk**, and **Billed**
-minutes, **Recordings**, **Info** and **Timeline** tabs, and **Open contact**.
+and **Avg duration**. Below is a table you can search by name or number. Filter it
+by date range, **Direction**, **Status** (**Completed**, **Missed**, **Voicemail**,
+**Busy**, **No answer**, **Failed**, **Canceled**), **Disposition** (the outcome
+saved at wrap-up), and **Recording**. Click a row for **Duration**, **Wait**,
+**Talk**, and **Billed** minutes, **Recordings**, **Info** and **Timeline** tabs,
+and **Open contact**.
 
 {/* MEDIA-TODO screenshot | /images/inbox/calls-call-log.png
 Capture: The Calls page with the four stat cards (Total calls, Missed rate, Total talk time, Avg duration), the filter row, and a table that mixes Completed, Missed, and Voicemail rows. Open one row so the detail panel with Duration, Wait, Talk, Billed, and the Recordings tab shows.
@@ -167,22 +184,23 @@ Publish: add the file at the path above, then delete this note and the comment m
 </Frame>
 */}
 
-Recordings and voicemails play inline with skip, speed, and volume controls and a
-**Download** button; voicemails show who heard them. Finished calls also appear as
-a summary bubble (for example **Missed call**) in the contact's inbox thread and
-**Calls** tab.
+Recordings and voicemails play right on the page, with skip, speed, and volume
+controls and a **Download** button. Voicemails show who has listened to them.
+Finished calls also appear as a summary bubble (for example **Missed call**) in the
+contact's inbox thread and **Calls** tab.
 
 ## Billing
 
-Talk time is metered in voice minutes, rounded up per call and shown as **Billed**.
-If your plan caps minutes, the widget shows **No voice minutes left** and disables
-dialing when they run out. See [Plans and trials](/billing/plans-and-trials).
+Talk time is counted in voice minutes, rounded up for each call and shown as
+**Billed**. If your [plan](/getting-started/glossary#plan) has a limit on minutes,
+the widget shows **No voice minutes left** and stops you dialing when they run
+out. See [Plans and trials](/billing/plans-and-trials).
 
 ## FAQ
 
 <AccordionGroup>
   <Accordion title="Do I need a separate number for voice?">
-    No. Enable voice on any [SMS number](/channels/sms) bought with the **Voice**
+    No. Turn on voice for any [SMS number](/channels/sms) bought with the **Voice**
     capability.
   </Accordion>
   <Accordion title="Can a number use both an IVR menu and forwarding?">
@@ -191,28 +209,31 @@ dialing when they run out. See [Plans and trials](/billing/plans-and-trials).
   </Accordion>
   <Accordion title="Can I call from a desk phone or mobile app?">
     Calling happens in the browser. Use **Forward to a number** or transfer a live
-    call to an external number instead.
+    call to an outside number instead.
   </Accordion>
 </AccordionGroup>
 
 ## Troubleshooting
 
 <AccordionGroup>
-  <Accordion title="The Call button is missing or disabled">
-    You need `voice-calls:make`, a voice-enabled number, an **Active** status, and
-    remaining voice minutes. The widget shows the blocking reason.
+  <Accordion title="Why is the Call button missing or greyed out?">
+    You need permission to make calls (ask an Owner or Admin), a number with voice
+    turned on, an **Active** status, and voice minutes left. The widget tells you
+    which one is missing.
   </Accordion>
-  <Accordion title="Incoming calls don't ring me">
+  <Accordion title="Why don't incoming calls ring me?">
     Add yourself under **Who rings first?** and keep the app open with status
     **Active**. Check the number's business hours and timezone.
   </Accordion>
-  <Accordion title="A recording never appeared">
-    Check the number's **Recording Policy** — direction-only and **Business hours
-    only** skip some calls. Recordings take a moment to process.
+  <Accordion title="Why didn't a recording appear?">
+    Check the number's **Recording Policy**. **Incoming calls only**, **Outgoing
+    calls only**, and **Business hours only** skip some calls. Recordings also take
+    a moment to appear.
   </Accordion>
-  <Accordion title="Voice shows an error after enabling">
-    Click **Enable voice calling** again to re-sync with your provider. If it keeps
-    failing, check the credentials under **Settings → Messaging Channels**.
+  <Accordion title="Why does Voice show an error after I turn it on?">
+    Click **Enable voice calling** again to reconnect with your provider. If it
+    keeps failing, check your provider login details under **Settings → Messaging
+    Channels**.
   </Accordion>
 </AccordionGroup>
 

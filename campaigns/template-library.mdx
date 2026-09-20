@@ -8,12 +8,18 @@ icon: "store"
 
 The Template Library is a curated catalog of ready-made starters maintained by
 Autocampaign AI. Instead of writing every message from scratch, pick a template that
-matches your industry and goal, preview it, and add it to your workspace as an
-editable copy or a prefilled draft. Find it under **Marketing → Campaigns →
-Templates** on the **Library** tab (`/templates/library`).
+matches your industry and goal. Preview it, then add it to your
+[workspace](/getting-started/glossary#workspace) as an editable copy or a prefilled
+draft. Find it under **Marketing → Campaigns → Templates** on the **Library** tab
+(`/templates/library`).
+
+<Tip>
+  **In short:** 1) Filter the library by type, industry, or goal. 2) Preview a
+  template. 3) Add it to your workspace and customize it.
+</Tip>
 
 <Info>
-  **Difficulty:** Beginner &nbsp;·&nbsp; The library is the default tab when you open
+  **Time to complete:** ~5 minutes &nbsp;·&nbsp; **Difficulty:** Beginner &nbsp;·&nbsp; The library is the default tab when you open
   **Templates**, as long as you have permission to view it.
 </Info>
 
@@ -31,11 +37,12 @@ The catalog holds about 70 curated entries across seven template types:
 
 ## Before you start
 
-- The library shows every entry, but using one requires permission to **create**
-  that type of asset (campaigns, email templates, sequences, forms, workflows, or
-  AI Employees). Ask an admin if **Use this template** fails with a permission error.
-- Library entries are system-owned. You can't edit the catalog itself — you edit the
-  copy that lands in your workspace.
+- The library shows every entry, but to use one you need permission to create that
+  kind of item (campaigns, email templates, sequences, forms, workflows, or AI
+  Employees). If **Use this template** fails with a permission error, ask an Owner
+  or Admin.
+- Library entries belong to the platform. You can't edit the catalog itself — you
+  edit the copy that lands in your workspace.
 
 ## Find a template
 
@@ -60,9 +67,9 @@ The catalog holds about 70 curated entries across seven template types:
 
     Toggle **Favorites only** to see templates you've starred, and change **Sort:**
     between **Popular**, **Newest**, and **A–Z**. Each filter takes one value, and
-    search matches template names and descriptions only. Filters are kept in the page
-    URL, so you can share a filtered view with a teammate. Click **Clear all** to
-    reset.
+    search matches template names and descriptions only. Filters are saved in the
+    page's web address, so you can copy the link to share a filtered view with a
+    teammate. Click **Clear all** to reset.
 
     {/* MEDIA-TODO screenshot | /images/campaigns/template-library-filters.png
     Capture: The Templates page on the Library tab with the type rail, the Search templates field, the Filters panel open showing Category, Channel, Industry, Goal, and Level, the Favorites only toggle, the Sort control, and a grid of cards behind it.
@@ -87,10 +94,10 @@ The catalog holds about 70 curated entries across seven template types:
 <Steps>
   <Step title="Open the preview" icon="eye">
     Click a card to open the **Template preview** drawer. What you see depends on the
-    type: the **Message** body for text and SMS campaigns, the **Subject** and rendered
-    design for email, **Setup steps** for sequences and automations, the question list
-    for forms, and the persona summary with **About N min to set up** for AI
-    Employees.
+    type. Text and SMS campaigns show the **Message** body; email shows the
+    **Subject** and finished design; sequences and automations show **Setup steps**;
+    forms show the question list; AI Employees show the persona summary with
+    **About N min to set up**.
 
     {/* MEDIA-TODO screenshot | /images/campaigns/template-library-preview-drawer.png
     Capture: The Template preview drawer open for a Sequence template, showing its description, Setup steps, and the Use this template button, with the library grid dimmed behind it.
@@ -106,23 +113,24 @@ The catalog holds about 70 curated entries across seven template types:
   <Step title="Add it to your workspace" icon="plus">
     Click **Use this template** (for email entries the button reads **Edit
     template**). It shows **Adding...** while the copy is created, then a **Template
-    added** toast confirms and Autocampaign AI takes you straight to the result — the
+    added** toast confirms. Autocampaign AI takes you straight to the result — the
     builder, editor, wizard, or Inbox composer listed in the table above.
   </Step>
   <Step title="Customize" icon="pen">
     Everything the library creates is yours to change. Edit the email design in the
     builder, adjust sequence steps and delays, rename the form, or rewrite the
     campaign message before you launch. Text and campaign templates already include
-    merge tags such as `{{first_name}}` and `{{organization_name}}` — see
-    [Templates](/campaigns/templates) for the full list.
+    [merge tags](/getting-started/glossary#merge-tag) (placeholders that fill in
+    each contact's details) such as `{{first_name}}` and `{{organization_name}}` —
+    see [Templates](/campaigns/templates) for the full list.
   </Step>
 </Steps>
 
 <Note>
-  Campaign and text-message templates don't create a saved record on their own. A
+  Campaign and text-message templates don't save anything on their own. A
   campaign template prefills the new-campaign wizard as an unsaved draft, and a text
-  template opens the Inbox composer — finish the wizard or send the message to keep
-  the content. Email, sequence, form, and automation templates create a saved asset
+  template opens the Inbox composer. Finish the wizard or send the message to keep
+  the content. Email, sequence, form, and automation templates create a saved item
   immediately.
 </Note>
 
@@ -148,8 +156,8 @@ The catalog holds about 70 curated entries across seven template types:
 
 <AccordionGroup>
   <Accordion title="Does using a template count against my plan?">
-    The library itself is free to browse. The asset it creates counts like any
-    other asset of that type — for example, an installed email template is one more
+    The library itself is free to browse. The item it creates counts like any
+    other item of that type — for example, an installed email template is one more
     email template in your workspace.
   </Accordion>
   <Accordion title="Can I use the same template twice?">
@@ -169,16 +177,16 @@ The catalog holds about 70 curated entries across seven template types:
 ## Troubleshooting
 
 <AccordionGroup>
-  <Accordion title="I can't see the Library tab">
-    Your role lacks permission to read the marketplace. Ask a workspace admin to
-    grant it. See [Users and roles](/getting-started/users-roles).
+  <Accordion title="Why can't I see the Library tab?">
+    Your role doesn't have permission to view the library. Ask an Owner or Admin
+    to grant it. See [Users and roles](/getting-started/users-roles).
   </Accordion>
-  <Accordion title="'Use this template' fails">
-    You need permission to create that asset type — for example, campaign creation
+  <Accordion title="Why does 'Use this template' fail?">
+    You need permission to create that kind of item — for example, campaign creation
     for a campaign template or workflow creation for an automation. Adding an
-    entry also fails if your plan's limit for that asset type is reached.
+    entry also fails if your plan's limit for that kind of item is reached.
   </Accordion>
-  <Accordion title="The email opened in the builder but isn't in my campaign picker">
+  <Accordion title="Why isn't my new email template in the campaign picker?">
     Library email templates arrive as **Draft**. Choose **Publish** from the
     template's menu in **Templates → Email** to make it **Active**.
   </Accordion>

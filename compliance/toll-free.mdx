@@ -1,24 +1,30 @@
 ---
 title: "Toll-free verification"
-description: "When to use a toll-free number and how A2P toll-free verification works."
+description: "When to use a toll-free number and how to get it verified for business texting."
 icon: "phone"
 ---
 
 ## Overview
 
 Toll-free numbers (numbers starting with 800, 888, 877, etc.) are an alternative to
-10-digit local numbers for A2P messaging. Like local numbers, they must be
-**verified** with the carriers before you can send at scale — otherwise your
-messages are heavily rate-limited or blocked.
+10-digit local numbers for business texting. Like local numbers, they must be
+**verified** with the carriers before you can send in volume. Until then, your
+messages are slowed down heavily or blocked. This is called
+[toll-free verification](/getting-started/glossary#toll-free-verification).
+
+<Info>
+  **Time to complete:** ~15 minutes to submit, then several business days for
+  carrier review &nbsp;·&nbsp; **Difficulty:** Intermediate
+</Info>
 
 <Note>
   For standard 10-digit local numbers, use [A2P 10DLC registration](/compliance/a2p-10dlc)
   instead. This page is about **toll-free** numbers specifically.
 </Note>
 
-## Buying a toll-free number
+## Buy a toll-free number
 
-You can purchase a toll-free number from within Autocampaign AI: on your SMS channel's
+You can buy a toll-free number from within Autocampaign AI. On your SMS channel's
 **Numbers** tab, click **Buy New Number**, choose your country, and filter by the
 **toll-free** number type before searching.
 
@@ -33,16 +39,17 @@ Publish: add the file at the path above, then delete this note and the comment m
 </Frame>
 */}
 
-## Toll-free verification
+## Verify your toll-free number
 
-Toll-free A2P verification is submitted through your connected provider
-([Twilio](/providers/twilio) or [Telnyx](/providers/telnyx)). The carriers review
-your business, use case, opt-in method, and sample messages — similar in spirit to
-10DLC, but for toll-free traffic.
+Toll-free verification is submitted through your connected
+[provider](/getting-started/glossary#provider), the phone company behind your
+numbers ([Twilio](/providers/twilio) or [Telnyx](/providers/telnyx)). The carriers
+review your business, your use case, how people agree to receive your texts, and
+your sample messages. It's similar in spirit to 10DLC, but for toll-free numbers.
 
 <Steps>
   <Step title="Buy or identify your toll-free number">
-    Purchase one in Autocampaign AI or use an existing toll-free number on your provider.
+    Buy one in Autocampaign AI or use an existing toll-free number on your provider.
   </Step>
   <Step title="Submit toll-free verification with your provider">
     Complete the toll-free verification form in your provider's console with your
@@ -58,12 +65,12 @@ your business, use case, opt-in method, and sample messages — similar in spiri
 <AccordionGroup>
   <Accordion title="Toll-free or 10DLC — which should I use?">
     10DLC uses standard local numbers and suits most senders. Toll-free is useful for
-    a recognizable national number and can offer high throughput once verified. You
+    a recognizable national number and can send at high volume once verified. You
     can use either; the registration paths differ.
   </Accordion>
   <Accordion title="Do I still need consent and opt-out handling?">
-    Yes. All the same compliance rules apply — collect consent and honor
-    [opt-outs](/compliance/opt-out) regardless of number type.
+    Yes. All the same compliance rules apply. Collect consent and honor
+    [opt-outs](/compliance/opt-out) whatever type of number you use.
   </Accordion>
   <Accordion title="How long does verification take?">
     Typically several business days, depending on carrier review.
@@ -73,8 +80,8 @@ your business, use case, opt-in method, and sample messages — similar in spiri
 ## Troubleshooting
 
 <AccordionGroup>
-  <Accordion title="Toll-free messages are being filtered">
-    An unverified toll-free number is heavily throttled. Complete toll-free
+  <Accordion title="Why are my toll-free messages being filtered?">
+    An unverified toll-free number is slowed down heavily. Complete toll-free
     verification with your provider, and make sure your opt-in flow and sample
     messages are consistent.
   </Accordion>

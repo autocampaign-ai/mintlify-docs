@@ -14,14 +14,19 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Getting Started",
+        "tab": "Start here",
         "groups": [
           {
-            "group": "Overview",
-            "pages": ["index", "quickstart", "getting-started/navigate-the-app"]
+            "group": "Welcome",
+            "pages": [
+              "index",
+              "quickstart",
+              "getting-started/navigate-the-app",
+              "getting-started/glossary"
+            ]
           },
           {
-            "group": "Set up your workspace",
+            "group": "Your workspace",
             "pages": [
               "getting-started/create-workspace",
               "getting-started/onboarding-checklist",
@@ -33,7 +38,38 @@
         ]
       },
       {
-        "tab": "Channels",
+        "tab": "Contacts & CRM",
+        "groups": [
+          {
+            "group": "Your contacts",
+            "pages": [
+              "contacts/overview",
+              "contacts/import-csv",
+              "contacts/custom-fields",
+              "contacts/tags",
+              "contacts/segments"
+            ]
+          },
+          {
+            "group": "Get more sign-ups",
+            "pages": [
+              "growth/lead-forms",
+              "campaigns/join-links",
+              "growth/join-keywords",
+              "settings/chat-widget"
+            ]
+          },
+          {
+            "group": "Track sales",
+            "pages": [
+              "crm/opportunities",
+              "crm/pipelines"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Texting, email & WhatsApp",
         "groups": [
           {
             "group": "Channels",
@@ -46,24 +82,28 @@
             ]
           },
           {
-            "group": "SMS providers",
-            "pages": ["providers/twilio", "providers/telnyx"]
+            "group": "Connect a texting provider",
+            "pages": [
+              "providers/twilio",
+              "providers/telnyx"
+            ]
           },
           {
-            "group": "Email providers",
-            "pages": ["providers/email-domains", "providers/email-senders"]
+            "group": "Set up email sending",
+            "pages": [
+              "providers/email-domains",
+              "providers/email-senders"
+            ]
           },
           {
-            "group": "Advertising providers",
-            "pages": ["providers/google-ads", "providers/meta-ads"]
-          }
-        ]
-      },
-      {
-        "tab": "Compliance",
-        "groups": [
+            "group": "Connect ad accounts",
+            "pages": [
+              "providers/google-ads",
+              "providers/meta-ads"
+            ]
+          },
           {
-            "group": "Compliance",
+            "group": "Texting rules & consent",
             "pages": [
               "compliance/a2p-10dlc",
               "compliance/toll-free",
@@ -74,55 +114,24 @@
         ]
       },
       {
-        "tab": "CRM",
+        "tab": "Inbox & calls",
         "groups": [
           {
-            "group": "Audience",
-            "pages": [
-              "contacts/overview",
-              "contacts/import-csv",
-              "contacts/custom-fields",
-              "contacts/tags",
-              "contacts/segments"
-            ]
-          },
-          {
-            "group": "Opportunities",
-            "pages": ["crm/opportunities", "crm/pipelines"]
-          },
-          {
-            "group": "Lead capture",
-            "pages": [
-              "growth/lead-forms",
-              "campaigns/join-links",
-              "growth/join-keywords"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Communication",
-        "groups": [
-          {
-            "group": "Inbox",
+            "group": "Conversations",
             "pages": [
               "inbox/overview",
               "campaigns/quick-messages",
               "inbox/calls",
               "inbox/tickets"
             ]
-          },
-          {
-            "group": "Website chat",
-            "pages": ["settings/chat-widget"]
           }
         ]
       },
       {
-        "tab": "Marketing",
+        "tab": "Campaigns & automation",
         "groups": [
           {
-            "group": "Campaigns",
+            "group": "Send messages",
             "pages": [
               "campaigns/overview",
               "campaigns/sequences",
@@ -132,47 +141,48 @@
             ]
           },
           {
-            "group": "Templates",
-            "pages": ["campaigns/templates", "campaigns/template-library"]
-          }
-        ]
-      },
-      {
-        "tab": "Automation & AI",
-        "groups": [
+            "group": "Reuse your writing",
+            "pages": [
+              "campaigns/templates",
+              "campaigns/template-library"
+            ]
+          },
           {
-            "group": "Automation",
+            "group": "Automate follow-ups",
             "pages": [
               "automation/workflow-builder",
               "automation/module-builder"
             ]
           },
           {
-            "group": "AI",
-            "pages": ["automation/ai-employees", "automation/knowledge-base"]
+            "group": "AI Employees",
+            "pages": [
+              "automation/ai-employees",
+              "automation/knowledge-base"
+            ]
           }
         ]
       },
       {
-        "tab": "Scheduling",
+        "tab": "Appointments",
         "groups": [
           {
             "group": "Scheduling",
             "pages": [
-              "scheduling/calendar",
               "scheduling/meeting-types",
               "scheduling/availability",
               "scheduling/bookings",
+              "scheduling/calendar",
               "scheduling/calendar-integrations"
             ]
           }
         ]
       },
       {
-        "tab": "Analytics & Billing",
+        "tab": "Reports & billing",
         "groups": [
           {
-            "group": "Analytics",
+            "group": "Reports",
             "pages": [
               "analytics/dashboard",
               "analytics/custom-dashboards",
@@ -183,13 +193,16 @@
             ]
           },
           {
-            "group": "Billing",
-            "pages": ["billing/plans-and-trials", "billing/wallet-billing"]
+            "group": "Plans & credits",
+            "pages": [
+              "billing/plans-and-trials",
+              "billing/wallet-billing"
+            ]
           }
         ]
       },
       {
-        "tab": "Agency",
+        "tab": "For agencies",
         "groups": [
           {
             "group": "Agency console",
@@ -202,36 +215,31 @@
         ]
       },
       {
-        "tab": "Developers",
+        "tab": "For developers",
         "groups": [
           {
-            "group": "Developers",
-            "pages": ["developers/api-keys", "developers/webhooks"]
-          }
-        ]
-      },
-      {
-        "tab": "API Reference",
-        "groups": [
-          {
-            "group": "Getting started",
+            "group": "Integrations",
             "pages": [
-              "api/introduction",
-              "api/authentication",
-              "api/conventions"
+              "developers/api-keys",
+              "developers/webhooks"
             ]
           },
           {
-            "group": "Endpoints",
-            "pages": ["api/resources"]
+            "group": "API reference",
+            "pages": [
+              "api/introduction",
+              "api/authentication",
+              "api/conventions",
+              "api/resources"
+            ]
           }
         ]
       },
       {
-        "tab": "Support",
+        "tab": "Help",
         "groups": [
           {
-            "group": "Support",
+            "group": "Get help",
             "pages": [
               "support/faq",
               "support/troubleshooting",
@@ -281,7 +289,12 @@
     }
   },
   "contextual": {
-    "options": ["copy", "view", "chatgpt", "claude"]
+    "options": [
+      "copy",
+      "view",
+      "chatgpt",
+      "claude"
+    ]
   },
   "footer": {
     "socials": {

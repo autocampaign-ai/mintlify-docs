@@ -6,25 +6,28 @@ icon: "link-simple"
 
 ## Overview
 
-Join links let people opt in to your messages. There are two kinds, both created on
-the **Join Links** page — open **CRM → Lead Capture → Signup Forms** in the sidebar
-(`/links`):
+[Join links](/getting-started/glossary#join-link) let people
+[opt in](/getting-started/glossary#opt-in) to your messages (agree to receive
+them). There are two kinds, both created on the **Join Links** page — open
+**CRM → Lead Capture → Signup Forms** in the sidebar (`/links`):
 
 - **Text link** — people text a keyword (your message) to your number to join.
-- **Web form** — a hosted public form people fill in to join.
+- **Web form** — a public form, hosted for you, that people fill in to join.
 
-Both can attach a [segment](/contacts/segments) and [tags](/contacts/tags), collect
-consent, and trigger a welcome message. Each gets a shareable URL and a QR code.
+Both can add new contacts to a [segment](/contacts/segments) and
+[tags](/contacts/tags), record consent, and send a welcome message. Each gets a
+shareable web address and a QR code (a square barcode people scan with their phone
+camera).
 
 <Info>
-  **Difficulty:** Beginner (text link) / Intermediate (web form)
+  **Time to complete:** ~10 minutes &nbsp;·&nbsp; **Difficulty:** Beginner (text link) / Intermediate (web form)
 </Info>
 
 <Note>
-  **Related:** for a keyword bound to one number with segment, welcome-message, and
-  sequence actions, see [Join keywords](/growth/join-keywords). For multi-question
-  hosted or embedded forms with contact matching and follow-ups, see
-  [Lead forms](/growth/lead-forms).
+  **Related:** for a keyword tied to one number that can add a segment, send a
+  welcome message, and start a sequence, see [Join keywords](/growth/join-keywords).
+  For multi-question hosted or embedded forms with contact matching and follow-ups,
+  see [Lead forms](/growth/lead-forms).
 </Note>
 
 ## Text link (text-to-join)
@@ -45,9 +48,10 @@ consent, and trigger a welcome message. Each gets a shareable URL and a QR code.
     */}
   </Step>
   <Step title="Setup">
-    Set the **Link Name** and **Custom Slug** (auto-suggested), pick the **Sender
-    Phone Number**, and choose an **SMS Template** (a text-link template — the
-    template body is the "keyword" people send). You can create a template inline.
+    Set the **Link Name** and **Custom Slug** (the last part of the link's web
+    address; a suggestion is filled in), and pick the **Sender Phone Number**.
+    Then choose an **SMS Template** (a text-link template — the template body is
+    the "keyword" people send). You can create a template inline.
   </Step>
   <Step title="Audience">
     Optionally attach a **Segment** and **Tags**, and set an **Auto-Reply** (sent
@@ -76,7 +80,8 @@ records the reply as consent, and sends your welcome message.
     **First Name** and **Phone** are always required. Add **optional fields** (last
     name, email, address parts). Toggle **Require consent checkbox** and set its
     label (default "I agree to receive SMS messages"). Optionally turn on **OTP
-    verification** to confirm the phone number.
+    verification** (a one-time code texted to the visitor) to confirm the phone
+    number.
 
     {/* MEDIA-TODO screenshot | /images/campaigns/join-links-web-form-builder.png
     Capture: The Form builder step of the web form wizard with First Name and Phone shown as required, two optional fields added, Require consent checkbox on with its label, and the OTP verification toggle visible.
@@ -89,20 +94,22 @@ records the reply as consent, and sends your welcome message.
     </Frame>
     */}
   </Step>
-  <Step title="Post-submit">
-    Attach **Tags**, set a **Thank You Message** or a **Redirect URL** (a redirect
-    overrides the thank-you), add a **Welcome Message**, and pick **brand colors**.
+  <Step title="After submit">
+    Attach **Tags** and set a **Thank You Message** or a **Redirect URL** (a web
+    page to send them to; if set, it replaces the thank-you message). Then add a
+    **Welcome Message** and pick **brand colors**.
   </Step>
   <Step title="Preview & save">
     Review the live form preview and save.
   </Step>
 </Steps>
 
-When someone submits, Autocampaign AI validates consent (and OTP if enabled), creates or
-updates the contact (source **Web Form**), adds them to your segment, applies tags,
-records a **consent snapshot** (the exact consent text, a hashed IP, user agent, and
-timestamp), and sends the welcome message. They then see your thank-you screen or
-are redirected.
+When someone submits, Autocampaign AI checks consent (and the OTP code if turned on)
+and creates or updates the contact (source **Web Form**). It adds them to your
+segment, applies tags, and sends the welcome message. It also records a **consent
+snapshot**: the exact consent text, a scrambled (hashed) copy of their IP address,
+their browser details (user agent), and the time. They then see your thank-you
+screen or are redirected.
 
 ## QR codes
 
@@ -123,57 +130,62 @@ Publish: add the file at the path above, then delete this note and the comment m
 
 ## Opt-out protection
 
-Autocampaign AI won't re-onboard an opted-out contact through a join link. If someone who
-previously opted out tries to submit (or request an OTP), the request is refused —
-protecting you under TCPA/GDPR. See [Opt-out management](/compliance/opt-out).
+Autocampaign AI won't re-add an opted-out contact through a join link. If someone who
+previously opted out tries to submit (or request an OTP code), the request is
+refused. This protects you under TCPA and GDPR (US and EU messaging-consent
+laws). See [Opt-out management](/compliance/opt-out).
 
-## Analytics
+## Track submissions and scans
 
 Each join link's detail page shows submissions over time, a submissions table
 (contact name, phone, email), views, and QR scan stats. The list page summarizes
 Total Links, Total Submissions, and Active Links.
 
-## Statuses
+## Pause or archive a link
 
 Join links are **Active**, **Inactive**, or **Archived**. Deactivating rejects new
-submissions until you reactivate; archiving (delete) makes the public URL return a
-404 but keeps existing submissions and contacts.
+submissions until you reactivate. Archiving (delete) makes the public page show a
+"not found" error (404) but keeps existing submissions and contacts.
 
 ## FAQ
 
 <AccordionGroup>
   <Accordion title="What's the 'keyword' for a text link?">
-    It's the SMS template body people send. Autocampaign AI matches the inbound message
-    against it (exact or contains), so extra typed text still counts.
+    It's the SMS template body people send. Autocampaign AI matches the incoming
+    message against it (an exact match, or a message that contains it), so extra
+    typed text still counts.
   </Accordion>
   <Accordion title="Do web forms verify phone numbers?">
     Optionally — turn on **OTP verification** in the form builder to require a
     6-digit code before submission.
   </Accordion>
   <Accordion title="Is consent recorded?">
-    Yes. When consent is required, Autocampaign AI stores the exact consent wording shown,
-    plus a hashed IP, user agent, and timestamp, per submission.
+    Yes. When consent is required, Autocampaign AI stores the exact consent wording
+    shown, plus a scrambled (hashed) IP address, browser details (user agent), and
+    the time, for each submission.
   </Accordion>
   <Accordion title="Can I redirect after submit?">
-    Yes — set a **Redirect URL** in the web-form post-submit step. It overrides the
-    thank-you message.
+    Yes — set a **Redirect URL** in the web form's After submit step. It overrides
+    the thank-you message.
   </Accordion>
 </AccordionGroup>
 
 ## Troubleshooting
 
 <AccordionGroup>
-  <Accordion title="Someone can't submit the form">
-    Check the link is **Active**, they passed the **consent** checkbox (if required),
-    and OTP (if enabled). Opted-out contacts are intentionally blocked.
+  <Accordion title="Why can't someone submit the form?">
+    Check the link is **Active**, they ticked the **consent** checkbox (if required),
+    and entered the OTP code (if turned on). Opted-out contacts are blocked on
+    purpose.
   </Accordion>
-  <Accordion title="'You're already on the list!'">
+  <Accordion title="Why does someone see 'You're already on the list!'?">
     That contact already submitted this link — duplicates per link are prevented and
     show the already-joined screen.
   </Accordion>
-  <Accordion title="No welcome message arrived">
-    Welcome sends are best-effort and skip opted-out contacts. Confirm the contact
-    isn't opted out and that your SMS channel is connected.
+  <Accordion title="Why didn't the welcome message arrive?">
+    Welcome messages are sent when possible but aren't guaranteed, and they skip
+    opted-out contacts. Confirm the contact isn't opted out and that your SMS
+    channel is connected.
   </Accordion>
 </AccordionGroup>
 

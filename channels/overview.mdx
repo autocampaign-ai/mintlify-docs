@@ -7,9 +7,14 @@ icon: "layer-group"
 ## What is a channel?
 
 A **channel** is a way Autocampaign AI reaches and hears from your audience. Each channel
-is powered by a **provider** you connect with your own account and credentials.
-Once a channel is connected, you can use it in campaigns, automations, and your
-inbox.
+is powered by a [**provider**](/getting-started/glossary#provider) — a company such
+as Twilio that carries your messages — which you connect with your own account and
+login details. Once a channel is connected, you can use it in campaigns,
+automations, and your inbox.
+
+<Info>
+  **Time to complete:** ~15–30 minutes per channel &nbsp;·&nbsp; **Difficulty:** Beginner
+</Info>
 
 <CardGroup cols={2}>
   <Card title="SMS" icon="comment-sms" href="/channels/sms">
@@ -19,14 +24,14 @@ inbox.
     Conversations and approved templates from your WhatsApp Business number.
   </Card>
   <Card title="Email" icon="envelope" href="/channels/email">
-    Campaigns and transactional email from verified domains.
+    Campaigns and automatic one-off emails from your own verified domain.
   </Card>
   <Card title="Advertising" icon="bullhorn" href="/channels/advertising">
-    Capture and attribute leads from Google and Meta Ads.
+    Capture leads from Google and Meta Ads and see which ads they came from.
   </Card>
 </CardGroup>
 
-## Channels vs. providers
+## Tell channels and providers apart
 
 Think of a **channel** as the *what* (send SMS) and a **provider** as the *who*
 (Twilio). You pick a channel, then connect a provider under it:
@@ -43,10 +48,11 @@ Think of a **channel** as the *what* (send SMS) and a **provider** as the *who*
   removes the previous provider's numbers and messaging services.
 </Note>
 
-WhatsApp works a little differently from SMS: you sign in to Meta and pick one
-WhatsApp Business number, and outbound messages outside a contact's 24-hour reply
-window must use a Meta-approved template. See [WhatsApp](/channels/whatsapp) for the
-connect flow, templates, and consent rules.
+WhatsApp works a little differently from SMS. You sign in to Meta and pick one
+WhatsApp Business number. Messages you send more than 24 hours after a contact's
+last reply must use a Meta-approved [template](/getting-started/glossary#template)
+(a pre-written message Meta has reviewed). See [WhatsApp](/channels/whatsapp) for
+how to connect, templates, and consent rules.
 
 ## Connect a channel
 
@@ -66,23 +72,26 @@ connect flow, templates, and consent rules.
     */}
   </Step>
   <Step title="Choose a provider and click Configure">
-    Enter that provider's credentials on the **Connect** tab. For WhatsApp, click
-    **Connect with WhatsApp** and complete the Meta sign-in window instead.
+    Enter your login details for that provider (for example, Twilio's Account SID
+    and Auth Token) on the **Connect** tab. For WhatsApp, click **Connect with
+    WhatsApp** and complete the Meta sign-in window instead.
   </Step>
   <Step title="Finish setup">
-    For SMS, complete messaging service, numbers, and [10DLC](/compliance/a2p-10dlc).
-    For email, verify your domain and sender. For WhatsApp, create and submit
+    For SMS, set up a messaging service (the group that holds your numbers) and
+    add numbers. Then register for [10DLC](/compliance/a2p-10dlc) (the US carrier
+    registration for sending business texts from a local number). For email,
+    verify your domain and sender. For WhatsApp, create and submit
     [message templates](/channels/whatsapp#message-templates).
   </Step>
 </Steps>
 
-## Channel status
+## Check a channel's status
 
 Connected channels show a status badge:
 
 - **Active** — connected and able to send.
-- **Disconnected** — no valid credentials.
-- **Error** — a credential or health check failed.
+- **Disconnected** — no valid login details.
+- **Error** — your login details were rejected or a connection check failed.
 
 ## FAQ
 
@@ -96,7 +105,7 @@ Connected channels show a status badge:
     provider.
   </Accordion>
   <Accordion title="Where do replies go?">
-    Inbound SMS, WhatsApp, and email land in your unified [Inbox](/inbox/overview),
+    Incoming SMS, WhatsApp, and email land in your shared [Inbox](/inbox/overview),
     linked to the contact and any related campaign.
   </Accordion>
 </AccordionGroup>

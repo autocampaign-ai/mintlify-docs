@@ -1,6 +1,6 @@
 ---
 title: "Ad attribution"
-description: "Trace each contact back to the ad platform, campaign, and lead form they came from."
+description: "See which ad platform, ad campaign, and lead form each contact came from."
 icon: "arrows-to-dot"
 ---
 
@@ -13,19 +13,21 @@ icon: "arrows-to-dot"
 ## Overview
 
 When a lead arrives from [Google or Meta Ads](/channels/advertising), Autocampaign AI
-records where they came from. You can see this on each contact, and roll it up
-across your whole list on the **Lead Sources** and **Campaign Performance** pages.
+records where they came from. This is called attribution (knowing which ad or
+link a customer came from). You can see it on each
+[contact](/getting-started/glossary#contact), and add it up across your whole
+list on the **Lead Sources** and **Campaign Performance** pages.
 
-## On a contact
+## See where one contact came from
 
 Open any ad-sourced contact and look for the **"Where this contact came from"**
 card. It shows:
 
 - **Platform** — Google Ads or Meta Ads.
-- **Campaign** — the campaign that first brought them in.
-- **Lead form** — the form they submitted.
+- **Campaign** — the ad campaign that first brought them in.
+- **Lead form** — the [lead form](/getting-started/glossary#lead-form) they submitted.
 - **First contact** — when they first arrived.
-- **Most recent campaign** — the latest campaign touch.
+- **Most recent campaign** — the latest ad campaign they responded to.
 
 {/* MEDIA-TODO screenshot | /images/analytics/ad-attribution-contact-source-card.png
 Capture: An ad-sourced contact opened with the "Where this contact came from" card in view, showing Platform, Campaign, Lead form, First contact, and Most recent campaign, all with resolved names (no raw IDs).
@@ -39,26 +41,27 @@ Publish: add the file at the path above, then delete this note and the comment m
 */}
 
 <Note>
-  Autocampaign AI resolves the human-readable campaign and lead-form **names** — you won't
-  see opaque IDs. Rows are hidden until the name is available.
+  Autocampaign AI shows the plain campaign and lead-form **names** — you won't
+  see internal ID numbers. A row stays hidden until its name is available.
 </Note>
 
-## Lead Sources page
+## See where all your contacts come from
 
 **Advertising → Lead Sources** shows where **all** your contacts come from — not
-just ads — as a donut and a table of source, new contacts, and % of total. Sources
-include CSV Import, Manual, Web Form, Text Link, Inbound SMS, Google Ads, and Meta
-Ads.
+just ads. It has a donut chart and a table with each source, its new contacts,
+and its share of the total. Sources include CSV Import, Manual, Web Form, Text
+Link, Inbound SMS, Google Ads, and Meta Ads.
 
-## Campaign Performance page
+## See which ad campaigns turn into customers
 
 **Advertising → Campaign Performance** turns ad activity into outcomes:
 
-- **KPIs** — New Contacts, Appointments Booked, Qualified Leads, New Customers, and
-  Conversion Rate.
-- **Funnel** — Contacts → Engaged → Qualified → Appointment Booked → Customers.
-- **Campaign table** — per-campaign contacts, appointments, qualified, customers,
-  and conversion rate.
+- **KPIs** (your headline numbers) — New Contacts, Appointments Booked, Qualified
+  Leads, New Customers, and Conversion Rate.
+- **Funnel** (how many contacts reach each step) — Contacts → Engaged →
+  Qualified → Appointment Booked → Customers.
+- **Campaign table** — for each ad campaign: contacts, appointments, qualified
+  leads, customers, and conversion rate.
 
 Filter by period (last 7/30 days, this/last month), custom date range, and platform.
 
@@ -76,20 +79,22 @@ Publish: add the file at the path above, then delete this note and the comment m
 ## FAQ
 
 <AccordionGroup>
-  <Accordion title="Does Autocampaign AI track conversions back to Google/Meta?">
-    Attribution here is inbound — it traces contacts and their pipeline progress to
-    an ad source. Sending conversions back to the ad platforms isn't available yet.
+  <Accordion title="Does Autocampaign AI report my sales back to Google or Meta?">
+    Not yet. Attribution here works in one direction: it traces contacts and
+    their progress through your [pipeline](/getting-started/glossary#pipeline)
+    back to an ad. Sending results back to the ad platforms isn't available yet.
   </Accordion>
   <Accordion title="Why is the campaign name missing on a contact?">
-    The campaign or lead form hasn't finished syncing, or the name isn't available
-    yet. Autocampaign AI hides the row rather than show a raw ID.
+    The ad campaign or lead form hasn't finished syncing, or the name isn't
+    available yet. Autocampaign AI hides the row rather than show an ID number.
   </Accordion>
-  <Accordion title="What's first-touch vs most-recent?">
-    First contact/campaign is where they entered; most-recent campaign is the latest
-    ad touch — useful when a contact engages with several campaigns.
+  <Accordion title="What's the difference between first contact and most recent campaign?">
+    First contact/campaign is where they entered. Most recent campaign is the
+    latest ad they responded to — useful when a contact engages with several
+    campaigns.
   </Accordion>
 </AccordionGroup>
 
 <Card title="Connect your ad accounts" icon="bullhorn" href="/channels/advertising">
-  Start capturing and attributing leads.
+  Start capturing leads and seeing where they came from.
 </Card>

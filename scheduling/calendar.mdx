@@ -6,24 +6,26 @@ icon: "calendar"
 
 ## Overview
 
-The calendar gives you a single view of your bookings and external busy times. Open
-it from **Calendar** in the sidebar (`/calendar`).
+The calendar gives you a single view of your bookings and the busy times from your
+connected Google or Microsoft calendars. Open it from **Calendar** in the sidebar
+(`/calendar`).
 
 <Info>
   **Difficulty:** Beginner
 </Info>
 
-## Views and navigation
+## Switch views and move around
 
 Switch between **Day**, **Week**, **Month**, and **Agenda** views, jump to
-**Today**, and page forward/back. Times display in your workspace timezone.
+**Today**, and page forward/back. Times display in your
+[workspace](/getting-started/glossary#workspace) timezone.
 
 The calendar shows two kinds of events:
 
 - **Bookings** — colored by their [meeting type](/scheduling/meeting-types), titled
-  with the invitee's name.
-- **Busy blocks** — gray, read-only times synced from your connected external
-  calendars.
+  with the invitee's name (the person who booked).
+- **Busy blocks** — gray, read-only (can't be edited) times synced from your
+  connected calendars.
 
 {/* MEDIA-TODO screenshot | /images/scheduling/calendar-week-view.png
 Capture: The calendar in Week view with several bookings colored by meeting type, at least one gray busy block, the Day, Week, Month and Agenda switcher, Today, and the side panel with the mini month and upcoming bookings.
@@ -40,8 +42,8 @@ Publish: add the file at the path above, then delete this note and the comment m
 
 - **Filter** by meeting type, host, and status.
 - **Click** a booking to open its details (reschedule, cancel, mark completed/no-show).
-- **Drag** a booking to a new time to reschedule (with a confirmation). External
-  busy blocks and finished bookings are read-only.
+- **Drag** a booking to a new time to reschedule (with a confirmation). Busy blocks
+  from other calendars and finished bookings can't be moved.
 
 A side panel shows a mini month view and your upcoming bookings.
 
@@ -49,8 +51,8 @@ A side panel shows a mini month view and your upcoming bookings.
 
 <AccordionGroup>
   <Accordion title="Why do I see gray 'Busy' blocks?">
-    Those come from external calendars you've connected and marked "Check for
-    conflicts". They prevent double-booking. See
+    Those come from calendars you've connected and marked "Check for conflicts".
+    They prevent double-booking. See
     [Calendar integrations](/scheduling/calendar-integrations).
   </Accordion>
   <Accordion title="Can I create an event directly on the calendar?">

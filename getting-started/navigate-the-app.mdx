@@ -11,6 +11,11 @@ feature by what you're doing — managing customers, talking to them, marketing 
 them. The **header** across the top holds search, notifications, the language
 picker, and your account menu.
 
+<Tip>
+  **In short:** 1) Find every feature in the left sidebar. 2) Jump anywhere with
+  the search box. 3) Manage notifications, language, and your profile from the header.
+</Tip>
+
 {/* MEDIA-TODO screenshot | /images/getting-started/navigate-the-app-layout.png
 Capture: The full app window on the Dashboard as an Owner, sidebar expanded so every group is visible (CRM, Communication, Marketing, Planning, Insights, Account), with the header showing Search or jump to…, the bell, the language button and the avatar. Annotate the sidebar and the header if possible.
 Route: Dashboard
@@ -23,11 +28,12 @@ Publish: add the file at the path above, then delete this note and the comment m
 */}
 
 <Info>
-  **Difficulty:** Beginner &nbsp;·&nbsp; You only see the items your role allows,
-  so your sidebar may be shorter than the one described here.
+  **Time to complete:** ~10 minutes &nbsp;·&nbsp; **Difficulty:** Beginner &nbsp;·&nbsp;
+  You only see the items your role allows, so your sidebar may be shorter than the
+  one described here.
 </Info>
 
-## The sidebar
+## Find your way around the sidebar
 
 The **workspace switcher** sits at the top — use it to move between workspaces
 (see [Create your workspace](/getting-started/create-workspace)). Click the
@@ -35,7 +41,7 @@ toggle at the left of the header to collapse the sidebar to icons.
 
 ### Top of the sidebar
 
-- **Dashboard** — your home page with customizable widgets. See
+- **Dashboard** — your home page with widgets (small panels you can arrange). See
   [Dashboard](/analytics/dashboard) and
   [Custom dashboards](/analytics/custom-dashboards).
 - **Getting Started · N%** — the setup checklist, shown until setup is complete.
@@ -46,6 +52,8 @@ toggle at the left of the header to collapse the sidebar to icons.
 
 ### CRM
 
+Your customer records (CRM stands for customer relationship management).
+
 - **Audience** — **Contacts**, **Segments**, and **Tags**. See
   [Contacts](/contacts/overview), [Segments](/contacts/segments), and
   [Tags](/contacts/tags).
@@ -54,8 +62,8 @@ toggle at the left of the header to collapse the sidebar to icons.
   [Pipelines](/crm/pipelines).
 - **Lead Capture** — **Forms** and **Signup Forms**. See
   [Lead forms](/growth/lead-forms) and [Join links](/campaigns/join-links).
-- **Engagement** — **Join Keywords** for text-to-join. See
-  [Join keywords](/growth/join-keywords).
+- **Engagement** — **Join Keywords** for text-to-join (customers text a word to
+  your number to sign up). See [Join keywords](/growth/join-keywords).
 
 ### Communication
 
@@ -104,8 +112,8 @@ toggle at the left of the header to collapse the sidebar to icons.
 
 ## Search and jump anywhere
 
-The **Search or jump to…** box in the header opens a command palette that both
-navigates and searches your data.
+The **Search or jump to…** box in the header opens a search panel (sometimes
+called a command palette) that both takes you to pages and finds your records.
 
 <Steps>
   <Step title="Open it" icon="keyboard">
@@ -113,9 +121,9 @@ navigates and searches your data.
     to…**. Press the shortcut again to close it.
   </Step>
   <Step title="Pick a suggestion or type" icon="magnifying-glass">
-    Before you type, you see **Recent** items and **Suggested** commands — pages
-    like **Contacts**, **Inbox**, or **Billing**, and quick actions like **New
-    Campaign**, **Import Contacts**, **New Poll**, or **New Workflow**.
+    Before you type, you see **Recent** items and **Suggested** commands. These
+    include pages like **Contacts**, **Inbox**, or **Billing**, and quick actions
+    like **New Campaign**, **Import Contacts**, **New Poll**, or **New Workflow**.
 
     {/* MEDIA-TODO screenshot | /images/getting-started/navigate-the-app-command-palette.png
     Capture: The command palette open before anything is typed, showing the Recent group with two or three items and the Suggested group with page commands and quick actions such as New Campaign and Import Contacts.
@@ -143,7 +151,7 @@ navigates and searches your data.
 Remove a single recent item with its **Remove** button, or click **Clear recent
 searches**. Recents are kept per workspace, in your current browser only.
 
-## Notifications
+## Check your notifications
 
 Click the bell in the header to open **Notifications**. Items are split into
 **Messages** and **Alerts** tabs. Use **Mark all as read** to clear the unread
@@ -174,9 +182,9 @@ The same picker appears on the log-in and sign-up screens.
   use the header picker for that.
 </Note>
 
-## Your profile and account menu
+## Open your profile and account menu
 
-Click your avatar at the top right to open the account menu:
+Click your avatar (profile picture) at the top right to open the account menu:
 
 - **Account** — opens your **Profile** page (`/profile`).
 - **Billing** — opens **Plan & Billing**.
@@ -195,9 +203,10 @@ Publish: add the file at the path above, then delete this note and the comment m
 </Frame>
 */}
 
-On the **Profile** page you can upload a photo (JPG, PNG, or WebP, up to 2 MB),
-edit your **Personal Information**, set your **Timezone** and **Language** under
-**Preferences**, and **Change Password** under **Security**. If you signed up
+On the **Profile** page you can upload a photo (JPG, PNG, or WebP, up to 2 MB)
+and edit your **Personal Information**. You can also set your **Timezone** and
+**Language** under **Preferences**, and **Change Password** under **Security**.
+If you signed up
 with Google or Microsoft, **Security** shows **Set a password** instead, so you
 can also log in with email. See
 [Sign in & account security](/getting-started/authentication).
@@ -214,7 +223,7 @@ can also log in with email. See
     only covers the workspace you're currently in.
   </Accordion>
   <Accordion title="Can I search conversations or message text?">
-    Not from the command palette. It searches the record types listed above; use
+    Not from the search panel. It searches the record types listed above; use
     the **Inbox** to find conversations.
   </Accordion>
   <Accordion title="Where did Getting Started go?">
@@ -226,7 +235,7 @@ can also log in with email. See
 
 <AccordionGroup>
   <Accordion title="Search shows 'Search is unavailable — showing commands only.'">
-    Data search couldn't be reached. Navigation commands still work; try your
+    The search service couldn't be reached. Page shortcuts still work; try your
     search again in a moment.
   </Accordion>
   <Accordion title="Search returns 'No results found.'">
@@ -234,7 +243,7 @@ can also log in with email. See
     right workspace.
   </Accordion>
   <Accordion title="The shortcut doesn't open search">
-    Another browser extension or app may be capturing `⌘K` / `Ctrl K`. Click the
+    Another browser extension or app may be using the `⌘K` / `Ctrl K` shortcut. Click the
     **Search or jump to…** box instead.
   </Accordion>
   <Accordion title="The app switched back to English">

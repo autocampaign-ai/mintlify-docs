@@ -6,13 +6,14 @@ icon: "book"
 
 ## Overview
 
-A knowledge base is a collection of sources your [AI Employees](/automation/ai-employees)
-search to answer accurately. You add files, pasted text, or websites; Autocampaign AI
-chunks and embeds them so the employee can retrieve the right passage. Find them under
+A [knowledge base](/getting-started/glossary#knowledge-base) is a collection of
+sources your [AI Employees](/automation/ai-employees) search to answer accurately.
+You add files, pasted text, or websites. Autocampaign AI breaks them into
+searchable passages so the employee can find the right one. Find them under
 **Knowledge Bases** (`/knowledge-bases`).
 
 <Info>
-  **Difficulty:** Beginner
+  **Time to complete:** ~10 minutes &nbsp;·&nbsp; **Difficulty:** Beginner
 </Info>
 
 ## Create a knowledge base
@@ -24,7 +25,7 @@ chunks and embeds them so the employee can retrieve the right passage. Find them
   </Step>
   <Step title="Add sources">
     Open the knowledge base and click **Add source**. Choose a source type (below).
-    Content is chunked and embedded automatically.
+    Content is processed and made searchable automatically.
 
     {/* MEDIA-TODO screenshot | /images/automation/knowledge-base-add-source-types.png
     Capture: An open knowledge base after clicking Add source, with the source type choices (File, Text, Website) visible.
@@ -37,9 +38,9 @@ chunks and embeds them so the employee can retrieve the right passage. Find them
     </Frame>
     */}
   </Step>
-  <Step title="Wait for ingestion">
-    Each source shows an ingestion status. Once it reads **Completed**, the content
-    is searchable by your agent.
+  <Step title="Wait for processing to finish">
+    Each source shows an ingestion status (how far along the processing is). Once it
+    reads **Completed**, your AI Employee can search the content.
   </Step>
 </Steps>
 
@@ -60,23 +61,26 @@ Publish: add the file at the path above (or swap the video tag for a YouTube or 
 <Tabs>
   <Tab title="File">
     Upload a document — **PDF, DOCX, XLSX, Markdown, or plain text** — up to **20 MB**.
-    (Legacy `.xls` files aren't supported; re-save as `.xlsx`.)
+    (Older `.xls` files aren't supported; re-save as `.xlsx`.)
   </Tab>
   <Tab title="Text">
     Paste text directly, with a title. Up to **1 MB** of content.
   </Tab>
   <Tab title="Website">
-    Crawl a site from a root URL. Set **max pages** (up to 200) and **crawl depth**
-    (up to 5), and optionally include/exclude paths.
+    Crawl (automatically read) a site starting from its root URL, such as your home
+    page address. Set **max pages** (up to 200) and **crawl depth** (how many links
+    deep it follows, up to 5). Optionally include or exclude parts of the site by
+    path.
   </Tab>
 </Tabs>
 
-## Ingestion status
+## Check whether a source is ready
 
 Sources move through **Queued → Extracting → Processing → Completed** (or
-**Completed with errors**, **Failed**, or **Cancelled**). The detail page shows
-source, document, and chunk counts, plus the embedding model. Use **Re-sync** on a
-source to re-fetch and re-ingest — unchanged content is skipped.
+**Completed with errors**, **Failed**, or **Cancelled**). The detail page shows how
+many sources, documents, and passages (chunks) it holds, plus the AI model used to
+make them searchable. Use **Re-sync** on a source to fetch it again and re-process
+it — unchanged content is skipped.
 
 {/* MEDIA-TODO screenshot | /images/automation/knowledge-base-ingestion-status-detail.png
 Capture: A knowledge base detail page with several sources in different ingestion statuses (at least Completed and Processing, ideally one Failed), the source, document and chunk counts, the embedding model, and the Re-sync action visible.
@@ -102,16 +106,18 @@ searches them. You can attach several knowledge bases to one employee.
     PDF, DOCX, XLSX, Markdown, and plain text, up to 20 MB per file. Text paste is
     capped at 1 MB.
   </Accordion>
-  <Accordion title="How does the agent use it?">
-    When you enable knowledge retrieval, the agent searches the attached knowledge
-    bases for relevant passages and answers from them, optionally citing the source.
+  <Accordion title="How does the AI Employee use it?">
+    When the **Search Knowledge Base** skill is on, the employee searches the
+    attached knowledge bases for relevant passages and answers from them. It may
+    also cite the source.
   </Accordion>
   <Accordion title="My website has many pages — will it all be crawled?">
-    Crawling is bounded by your **max pages** (up to 200) and **crawl depth** (up to
+    Crawling is limited by your **max pages** (up to 200) and **crawl depth** (up to
     5). Use include/exclude paths to focus on the right sections.
   </Accordion>
   <Accordion title="I updated a source document. How do I refresh it?">
-    Use **Re-sync** on the source. Autocampaign AI re-ingests it and skips unchanged content.
+    Use **Re-sync** on the source. Autocampaign AI processes it again and skips
+    unchanged content.
   </Accordion>
 </AccordionGroup>
 
@@ -119,12 +125,12 @@ searches them. You can attach several knowledge bases to one employee.
 
 <AccordionGroup>
   <Accordion title="A source shows 'Failed' or 'Completed with errors'">
-    Check the file type and size (20 MB max), and that a website URL includes the
-    protocol (`https://`). Re-sync after fixing.
+    Check the file type and size (20 MB max), and that a website URL starts with
+    `https://`. Re-sync after fixing.
   </Accordion>
-  <Accordion title="The agent isn't using my knowledge base">
+  <Accordion title="The AI Employee isn't using my knowledge base">
     Confirm the knowledge base is attached to the employee, the **Search Knowledge
-    Base** skill is ticked, and ingestion finished (**Completed**).
+    Base** skill is ticked, and processing finished (**Completed**).
   </Accordion>
 </AccordionGroup>
 

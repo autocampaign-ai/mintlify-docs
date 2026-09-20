@@ -5,7 +5,9 @@ icon: "rocket"
 ---
 
 This guide takes you from a brand-new account to a live SMS campaign. Along the
-way you will connect a sending channel, import contacts, and send a message.
+way you will connect a sending [channel](/getting-started/glossary#channel) (the
+way you reach customers, such as SMS or email), import
+[contacts](/getting-started/glossary#contact), and send a message.
 
 {/* MEDIA-TODO video | /videos/home/quickstart-first-campaign.mp4
 Capture: End-to-end walkthrough from a brand-new account to a sent SMS campaign, following the five steps on this page. Target length: 3–4 minutes.
@@ -23,17 +25,19 @@ Publish: add the file at the path above (or swap the video tag for a YouTube or 
   **Time to complete:** ~20 minutes &nbsp;·&nbsp; **Difficulty:** Beginner
 </Info>
 
-## Prerequisites
+## Before you start
 
-Before you begin, you need:
+You need:
 
 - An Autocampaign AI account. [Sign up](https://app.autocampaign.ai) if you do not have one.
 - A [Twilio](/providers/twilio) or [Telnyx](/providers/telnyx) account with a
   phone number, **or** an email domain you can verify for the email channel.
-- A short list of contacts (name and phone number) to message. A CSV works best.
+- A short list of contacts (name and phone number) to message. A CSV file (a
+  spreadsheet saved as plain text, which Excel and Google Sheets can export) works best.
 
 <Note>
-  Sending A2P SMS to US numbers requires [10DLC registration](/compliance/a2p-10dlc).
+  Sending business texts to US numbers requires [10DLC registration](/compliance/a2p-10dlc)
+  (the US carrier registration required to send business texts from a local number).
   You can complete the steps below with a trial number first, then register before
   sending at volume.
 </Note>
@@ -46,12 +50,15 @@ Before you begin, you need:
     timezone. See [Create your workspace](/getting-started/create-workspace).
   </Step>
   <Step title="Connect a sending channel" icon="plug">
-    Go to **Settings → Channels** and connect a provider:
+    Go to **Settings → Channels** and connect a
+    [provider](/getting-started/glossary#provider) (the company, such as Twilio,
+    that actually carries your messages):
 
     - **SMS:** follow [Connect Twilio](/providers/twilio) or [Connect Telnyx](/providers/telnyx).
     - **Email:** verify a domain and sender in [Email channel](/channels/email).
 
-    A channel shows a green **Connected** badge once credentials are valid.
+    A channel shows a green **Connected** badge once your provider login details
+    are accepted.
 
     {/* MEDIA-TODO screenshot | /images/home/quickstart-channel-connected.png
     Capture: The Settings → Channels page with one SMS provider connected, so the green Connected badge is clearly visible on its card.
@@ -70,9 +77,11 @@ Before you begin, you need:
     [Import contacts](/contacts/import-csv).
   </Step>
   <Step title="Create a campaign" icon="paper-plane">
-    Go to **Campaigns → New**, pick your sending number, write your message
-    (add merge tags like `{{first_name}}`), and choose who receives it.
-    See [Campaigns](/campaigns/overview).
+    Go to **Campaigns → New**, pick your sending number, write your message, and
+    choose who receives it. You can add
+    [merge tags](/getting-started/glossary#merge-tag) like `{{first_name}}` —
+    placeholders that fill in each contact's own details. See
+    [Campaigns](/campaigns/overview).
   </Step>
   <Step title="Send or schedule" icon="clock">
     Send now or schedule for later, then watch delivery and replies come in on
@@ -87,13 +96,13 @@ Before you begin, you need:
     Required for reliable US SMS delivery at scale.
   </Card>
   <Card title="Build a dynamic segment" icon="filter" href="/contacts/segments">
-    Target the right contacts automatically with rules.
+    Group the right contacts automatically with rules.
   </Card>
   <Card title="Automate follow-up" icon="diagram-project" href="/automation/workflow-builder">
     Send a welcome sequence when someone joins.
   </Card>
   <Card title="Hire an AI Employee" icon="user-robot" href="/automation/ai-employees">
-    Let AI answer and qualify inbound replies.
+    Let AI answer incoming replies and sort out the serious leads.
   </Card>
 </CardGroup>
 

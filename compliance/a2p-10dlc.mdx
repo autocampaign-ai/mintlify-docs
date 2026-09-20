@@ -1,39 +1,47 @@
 ---
 title: "A2P 10DLC registration"
-description: "Register your brand and campaign so US carriers deliver your SMS reliably."
+description: "Register your business and your texting use case so US carriers deliver your texts reliably."
 icon: "shield-check"
 ---
 
 <Info>
-  **Time to complete:** ~20 minutes to submit &nbsp;·&nbsp; **Carrier approval:**
-  typically 1–2 business days &nbsp;·&nbsp; **Difficulty:** Intermediate
+  **Time to complete:** ~20 minutes to submit, then 1–2 business days for carrier
+  review &nbsp;·&nbsp; **Difficulty:** Intermediate
 </Info>
 
 ## What is A2P 10DLC?
 
 **A2P 10DLC** (Application-to-Person, 10-Digit Long Code) is the US carrier
-framework for sending business messages from standard 10-digit numbers. Carriers
-require every business (a **brand**) and every messaging use case (a **campaign**)
-to be registered with The Campaign Registry (TCR). Registered senders get higher
-throughput and reliable delivery; unregistered traffic is filtered or blocked.
+registration required to send business texts from a standard 10-digit local number.
+Carriers require every business (a **brand**) and every texting use case (a
+**campaign**) to be registered with The Campaign Registry (TCR), the industry body
+that keeps the list. Registered senders can send more messages per day and get
+reliable delivery. Unregistered texts are filtered or blocked.
+
+<Tip>
+  **In short:** 1) Connect Twilio or Telnyx. 2) Register your business as a brand
+  and wait for approval. 3) Register your texting use case as a campaign and attach
+  your numbers.
+</Tip>
 
 Autocampaign AI handles registration for both [Twilio](/providers/twilio) and
-[Telnyx](/providers/telnyx) from inside the app — you fill in two forms and Autocampaign AI
-submits them to the carriers on your behalf.
+[Telnyx](/providers/telnyx) from inside the app. You fill in two forms and
+Autocampaign AI submits them to the carriers on your behalf.
 
 <Note>
   10DLC applies to **US mobile numbers**. If you only message outside the US, you
-  may not need it — but registering is still recommended for deliverability.
+  may not need it. Registering is still recommended for reliable delivery.
 </Note>
 
-## The registration sequence
+## Register in this order
 
-Registration has a strict order because each step depends on the previous one:
+Registration has a strict order because each step depends on the one before:
 
 <Steps>
   <Step title="Connect your provider">
-    Connect [Twilio](/providers/twilio) or [Telnyx](/providers/telnyx) first —
-    brand and campaign registration run through your connected account.
+    Connect [Twilio](/providers/twilio) or [Telnyx](/providers/telnyx) first. A
+    [provider](/getting-started/glossary#provider) is the phone company behind your
+    texting numbers. Brand and campaign registration run through your connected account.
   </Step>
   <Step title="Register your Brand">
     Submit your business details. The brand must be **approved** before you can
@@ -41,10 +49,10 @@ Registration has a strict order because each step depends on the previous one:
   </Step>
   <Step title="Create a Messaging Service / Profile">
     A campaign must be linked to a messaging service (Twilio) or messaging profile
-    (Telnyx).
+    (Telnyx). This is the container your provider uses to group your numbers.
   </Step>
   <Step title="Register your Campaign">
-    Submit your use case, sample messages, and opt-in details.
+    Submit your use case, sample messages, and how people agree to receive your texts.
   </Step>
   <Step title="Attach phone numbers">
     Assign numbers to the messaging service so they send under the approved campaign.
@@ -53,7 +61,7 @@ Registration has a strict order because each step depends on the previous one:
 
 <Warning>
   You **cannot** register a campaign until the brand shows an approved status
-  (`APPROVED`, `VERIFIED`, or `ACTIVE`). Attempting earlier returns: *"Brand is not
+  (`APPROVED`, `VERIFIED`, or `ACTIVE`). Trying earlier returns: *"Brand is not
   approved yet (current status: …). Wait for approval before registering the campaign."*
 </Warning>
 
@@ -93,20 +101,20 @@ Publish: add the file at the path above, then delete this note and the comment m
     | **Brand Type** | Optional | Standard or Sole Proprietor |
     | **Legal Business Name** | Required | Your registered legal name |
     | **Business Type** | Required | Private / Public Company, Non-Profit, Government, Partnership |
-    | **EIN (Tax ID)** | Required | e.g. `12-3456789` |
+    | **EIN (Tax ID)** | Required | Your business tax ID, e.g. `12-3456789` |
     | **Business Industry** | Required | e.g. Retail, Healthcare, Technology (24 options) |
     | **Company Type** | Required | Private / Public / Non-Profit / Government |
-    | **Website URL** | Required | Must be a valid `https://` URL |
-    | **Brand Contact Email** | Required | Used for 2FA verification |
+    | **Website URL** | Required | Your website address; must start with `https://` |
+    | **Brand Contact Email** | Required | Used to send a verification code that confirms it's you (2FA) |
     | **Social Media URLs** | Optional | LinkedIn, X, etc. |
     | **Stock Exchange / Ticker** | Required for **public** companies only | Shown only when Company Type = Public |
   </Accordion>
   <Accordion title="Authorized Representative" icon="user">
     | Field | Required | Notes |
     | --- | --- | --- |
-    | **First / Last Name** | Required | The authorized contact |
+    | **First / Last Name** | Required | The person authorized to speak for the business |
     | **Email Address** | Required | Valid email |
-    | **Phone Number** | Required | E.164 format, e.g. `+14155552671` |
+    | **Phone Number** | Required | International format with country code (E.164), e.g. `+14155552671` |
     | **Job Title** | Required | e.g. CEO |
     | **Job Position** | Required | Director, GM, VP, CEO, CFO, CTO, COO, Other |
   </Accordion>
@@ -116,7 +124,7 @@ Publish: add the file at the path above, then delete this note and the comment m
     | **Street Address (Line 1)** | Required | |
     | **Street Address (Line 2)** | Optional | |
     | **City / State / ZIP** | Required | ZIP allows letters, digits, spaces, hyphens |
-    | **Country** | Required | 2-letter ISO code, e.g. `US` |
+    | **Country** | Required | 2-letter country code, e.g. `US` |
   </Accordion>
 </AccordionGroup>
 
@@ -126,7 +134,7 @@ carrier reviews it.
 
 <Tip>
   Your **EIN and legal business name must exactly match** your IRS records. A
-  mismatch is the most common cause of brand rejection.
+  mismatch is the most common reason a brand is rejected.
 </Tip>
 
 ## Register your Campaign
@@ -160,7 +168,8 @@ Publish: add the file at the path above, then delete this note and the comment m
     - **Campaign description** — minimum **40 characters**. Describe what the
       campaign is used for.
     - **Opt-in flow** — minimum **40 characters** (max 2048). Describe exactly how
-      people consent to receive messages. **Required by carriers.**
+      people agree to receive your texts ([opt-in](/getting-started/glossary#opt-in)).
+      **Required by carriers.**
   </Accordion>
   <Accordion title="Sample messages">
     - **Sample message #1 and #2** — required, minimum **20 characters** each.
@@ -187,7 +196,7 @@ registration."* The campaign starts as **In progress**.
   use case or whose opt-in description is vague.
 </Warning>
 
-## Status reference
+## What the status badges mean
 
 Autocampaign AI shows a colored badge for both the brand and the campaign.
 
@@ -214,7 +223,7 @@ Publish: add the file at the path above, then delete this note and the comment m
   <Tab title="Campaign statuses">
     | Badge | Statuses | Meaning |
     | --- | --- | --- |
-    | <Icon icon="circle-check" color="#16a34a" /> Green | Verified, MNO Provisioned | Approved and live |
+    | <Icon icon="circle-check" color="#16a34a" /> Green | Verified, MNO Provisioned | Approved and live (MNO = the mobile carrier) |
     | <Icon icon="clock" color="#d97706" /> Amber | In progress, Pending, TCR Accepted, TCR Pending Review | Under review (1–2 business days typical) |
     | <Icon icon="circle-xmark" color="#dc2626" /> Red | Failed, Rejected, TCR Rejected, MNO Rejected | Rejected — review and resubmit |
     | <Icon icon="ban" color="#dc2626" /> Red ban | Suspended | Carrier suspended the campaign |
@@ -223,7 +232,7 @@ Publish: add the file at the path above, then delete this note and the comment m
 </Tabs>
 
 <Note>
-  Statuses update automatically as Autocampaign AI syncs with the carrier. You don't need
+  Statuses update automatically as Autocampaign AI checks with the carrier. You don't need
   to refresh or resubmit while a badge is amber.
 </Note>
 
@@ -232,25 +241,25 @@ Publish: add the file at the path above, then delete this note and the comment m
 <AccordionGroup>
   <Accordion title="How long does approval take?">
     Brand verification is often quick; campaign approval typically takes **1–2
-    business days**. Some use cases (like political or charity) may take longer due
-    to additional carrier vetting.
+    business days**. Some use cases (like political or charity) may take longer
+    because carriers check them more closely.
   </Accordion>
   <Accordion title="What's the difference between a brand and a campaign?">
     A **brand** is your business identity (registered once). A **campaign** is a
-    specific messaging use case (marketing, 2FA, notifications). One brand can have
+    specific texting use case (marketing, 2FA, notifications). One brand can have
     multiple campaigns.
   </Accordion>
   <Accordion title="Do I need an EIN? What if I'm a sole proprietor?">
-    Standard brands require an EIN. Sole proprietors can register using the **Sole
-    Proprietor** brand type / use case ($2/mo), which has lower throughput limits
-    and a lighter verification path.
+    Standard brands require an EIN (your business tax ID). Sole proprietors can
+    register using the **Sole Proprietor** brand type / use case ($2/mo). It allows
+    fewer messages per day and has a lighter verification path.
   </Accordion>
   <Accordion title="Can I edit my sample messages after approval?">
-    Changing a campaign's use case or samples generally requires re-review by the
-    carrier. Register the campaign that matches how you'll actually message.
+    Changing a campaign's use case or samples generally means the carrier reviews it
+    again. Register the campaign that matches how you'll actually message.
   </Accordion>
   <Accordion title="Do daily limits depend on my brand?">
-    Yes. Your daily message throughput is determined by your **brand trust score**,
+    Yes. How many messages you can send per day is set by your **brand trust score**,
     which the carriers assign during vetting.
   </Accordion>
   <Accordion title="Are opt-out keywords included automatically?">
@@ -263,35 +272,36 @@ Publish: add the file at the path above, then delete this note and the comment m
 ## Troubleshooting
 
 <AccordionGroup>
-  <Accordion title="Brand rejected or 'Unverified'">
-    Almost always an identity-data mismatch. Verify that your **Legal Business
-    Name**, **EIN**, and **address** exactly match your IRS/official records, then
-    edit and resubmit. A `.gov`/`.org` mismatch for non-profits is also common.
+  <Accordion title="Why was my brand rejected or marked 'Unverified'?">
+    Almost always because the business details don't match official records. Check
+    that your **Legal Business Name**, **EIN**, and **address** exactly match your
+    IRS/official records, then edit and resubmit. Non-profits: a `.gov`/`.org`
+    website mismatch is also common.
   </Accordion>
-  <Accordion title="'Brand is not approved yet' when creating a campaign">
+  <Accordion title="Why do I see 'Brand is not approved yet' when creating a campaign?">
     The brand badge isn't green yet. Wait until it shows **Approved / Verified**
-    before registering a campaign — the campaign form is gated on brand approval.
+    before registering a campaign. The campaign form stays locked until the brand is approved.
   </Accordion>
-  <Accordion title="Campaign rejected (TCR Rejected / MNO Rejected)">
+  <Accordion title="Why was my campaign rejected (TCR Rejected / MNO Rejected)?">
     Common causes: opt-in flow too vague, sample messages that don't match the use
-    case, missing STOP/HELP handling in samples, or links to a domain that doesn't
-    describe the messaging program. Tighten your opt-in description and samples,
-    then resubmit.
+    case, or missing STOP/HELP handling in samples. Links to a website that doesn't
+    describe the texting program also cause rejections. Tighten your opt-in
+    description and samples, then resubmit.
   </Accordion>
-  <Accordion title="'Customer Profile is not compliant' (Twilio)">
-    Twilio's underlying TrustHub business profile isn't approved. Complete Twilio's
-    business profile verification in the Twilio Console, then retry brand
+  <Accordion title="Why does Twilio say 'Customer Profile is not compliant'?">
+    Twilio's own business profile (called TrustHub) isn't approved yet. Complete
+    Twilio's business profile verification in the Twilio Console, then retry brand
     registration in Autocampaign AI.
   </Accordion>
-  <Accordion title="Can't delete a brand">
+  <Accordion title="Why can't I delete my brand?">
     *"Cannot delete brand: N campaign(s) still connected. Delete the campaigns
-    first."* Remove the dependent campaigns before deleting the brand.
+    first."* Remove the connected campaigns before deleting the brand.
   </Accordion>
 </AccordionGroup>
 
 <CardGroup cols={2}>
   <Card title="Opt-out management" icon="ban" href="/compliance/opt-out">
-    STOP handling and keyword configuration.
+    STOP handling and keyword settings.
   </Card>
   <Card title="Opt-in & auto-reply" icon="circle-check" href="/compliance/opt-in">
     Consent and re-subscribe behavior.

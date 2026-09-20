@@ -6,13 +6,13 @@ icon: "inbox"
 
 ## Overview
 
-The inbox is where you have conversations with contacts. Every inbound reply lands
-here, linked to the contact, so you (and your team, and your
-[AI Employees](/automation/ai-employees)) can respond from one place. Open it from
-**Inbox** in the sidebar (`/inbox`).
+The inbox is where you talk with your [contacts](/getting-started/glossary#contact).
+Every reply a customer sends lands here, linked to their contact record, so you,
+your team, and your [AI Employees](/automation/ai-employees) can respond from one
+place. Open it from **Inbox** in the sidebar (`/inbox`).
 
 <Info>
-  **Difficulty:** Beginner
+  **Time to complete:** ~5 minutes &nbsp;·&nbsp; **Difficulty:** Beginner
 </Info>
 
 ## Layout
@@ -21,9 +21,10 @@ The inbox has three panels:
 
 - **Left** — the conversation list, with search, filters, sort, and a **Pinned**
   section.
-- **Middle** — the conversation thread and message composer.
-- **Right** — the contact's details, tags, opt-out status, notes, and the **AI
-  assistant** control.
+- **Middle** — the conversation thread and message composer (where you type).
+- **Right** — the contact's details, [tags](/getting-started/glossary#tag),
+  [opt-out](/getting-started/glossary#opt-out) status (whether they've asked to
+  stop receiving messages), notes, and the **AI assistant** control.
 
 Tabs above the list filter by **All**, **Unread**, **Read**, and **Archived**.
 
@@ -46,7 +47,7 @@ Publish: add the file at the path above, then delete this note and the comment m
   </Step>
   <Step title="Reply">
     Type in the composer and send (Enter to send, Shift+Enter for a new line). Insert
-    a [quick message](/campaigns/quick-messages) by typing `/`.
+    a [quick message](/campaigns/quick-messages) (a saved reply) by typing `/`.
   </Step>
   <Step title="Add an internal note">
     Switch to **note** mode to leave a private note for your team — not visible to the
@@ -60,9 +61,11 @@ Publish: add the file at the path above, then delete this note and the comment m
 
 ## Channels
 
-Conversations can span **SMS**, **WhatsApp**, and **email** (shown as channel tabs
-in the thread). SMS shows a character/segment counter. Sending is blocked when the
-contact is opted out, the conversation is archived, or there's no connected number.
+Conversations can span **SMS**, **WhatsApp**, and **email**. Each
+[channel](/getting-started/glossary#channel) (the way a message travels) shows as a
+tab in the thread. SMS shows a character counter and how many text segments
+(160-character parts) the message uses. Sending is blocked when the contact is
+opted out, the conversation is archived, or there's no connected number.
 
 <Note>
   The email composer is read-only for now — email sending from the inbox is coming
@@ -73,13 +76,15 @@ contact is opted out, the conversation is archived, or there's no connected numb
 
 Inbound WhatsApp messages appear on the contact's **WhatsApp** channel tab once the
 [WhatsApp channel](/channels/whatsapp) is connected. A reply from the contact opens a
-**24-hour window**:
+**24-hour window** (WhatsApp's rule: you can message freely for 24 hours after
+their last message):
 
 - While it's open, the composer shows **You can reply normally** and you can send text
   (up to 4,096 characters) and attachments.
 - When it's closed, the composer is blocked with **Use an approved WhatsApp template to
-  start this message**. Click **Choose a template**, pick an approved template
-  (previewed with the contact's details), and click **Send template**.
+  start this message**. Click **Choose a template**, pick an approved
+  [template](/getting-started/glossary#template) (previewed with the contact's
+  details), and click **Send template**.
 - A contact who replied `STOP` on WhatsApp shows **This contact has opted out of
   WhatsApp. Sending is disabled** — templates can't override that.
 
@@ -98,8 +103,8 @@ Publish: add the file at the path above, then delete this note and the comment m
 
 Click the **Message composer** button above the conversation list and choose
 **WhatsApp** (it appears only when the channel is connected). In **Compose WhatsApp**,
-add up to 50 existing contacts under **To**, write a **Message**, and click **Send** —
-one message goes to each contact and each lands in its own conversation. If any
+add up to 50 existing contacts under **To**, write a **Message**, and click **Send**.
+One message goes to each contact, and each lands in its own conversation. If any
 recipient's window is closed, the panel switches to a **Template** picker; you can
 also switch manually with **Send a template instead**. Opted-out contacts are listed
 so you can **Remove** them before sending.
@@ -119,8 +124,9 @@ messages appear in a panel where you can reschedule, send now, or cancel them.
 In the contact panel, the **AI Employee** card lets you **Assign** an
 [AI Employee](/automation/ai-employees) to handle the conversation, **Take over** to
 reply yourself, or **Resume AI**. Use the composer's **AI Autopilot** menu to switch
-between **Auto-send** and **Draft & approve** (you **Edit** or **Approve & Send** each
-reply). AI-authored replies are labeled with the employee's name.
+between **Auto-send** and **Draft & approve** (the AI writes a draft and you **Edit**
+or **Approve & Send** each reply). AI-authored replies are labeled with the
+employee's name.
 
 {/* MEDIA-TODO screenshot | /images/inbox/overview-ai-employee-card.png
 Capture: An open conversation showing the AI Employee card in the contact panel with an assigned employee and the Take over button, plus the composer's AI Autopilot menu open on Auto-send and Draft & approve. At least one AI-authored reply labeled with the employee's name should be in the thread.
@@ -133,7 +139,7 @@ Publish: add the file at the path above, then delete this note and the comment m
 </Frame>
 */}
 
-## Real-time
+## See updates as they happen
 
 The inbox updates live — new messages, status changes, assignments, and notes
 appear instantly for your whole team without refreshing.
@@ -153,7 +159,7 @@ appear instantly for your whole team without refreshing.
     Email replies from the inbox aren't enabled yet. Email campaigns still send
     normally.
   </Accordion>
-  <Accordion title="Do quick messages support variables?">
+  <Accordion title="Can quick messages fill in details like a first name?">
     No — quick messages are plain text. See [Quick messages](/campaigns/quick-messages).
   </Accordion>
 </AccordionGroup>
@@ -161,15 +167,16 @@ appear instantly for your whole team without refreshing.
 ## Troubleshooting
 
 <AccordionGroup>
-  <Accordion title="I can't send a reply">
+  <Accordion title="Why can't I send a reply?">
     Check that the contact isn't opted out, the conversation isn't archived, and you
     have a connected number for the channel.
   </Accordion>
-  <Accordion title="The AI stopped replying">
-    In **Auto-send** mode, sending a manual reply pauses the AI (Human controlled).
-    Use **Resume AI** to hand it back. See [AI Employees](/automation/ai-employees).
+  <Accordion title="Why did the AI stop replying?">
+    In **Auto-send** mode, sending a reply yourself pauses the AI (shown as Human
+    controlled). Use **Resume AI** to hand it back. See
+    [AI Employees](/automation/ai-employees).
   </Accordion>
-  <Accordion title="I can't type a WhatsApp reply">
+  <Accordion title="Why can't I type a WhatsApp reply?">
     The contact's 24-hour window has closed. Use **Choose a template** to send an
     approved template, or wait for the contact to message you again. See
     [WhatsApp](/channels/whatsapp).

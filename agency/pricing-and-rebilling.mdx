@@ -6,13 +6,18 @@ icon: "dollar-sign"
 
 ## Overview
 
-The pricing page is where you decide what clients pay for each plan, give a
-client a special price, and connect your own Stripe account so clients are
-invoiced automatically. Reach it from a client card's **More actions → View
-pricing** (`/agency/pricing`).
+The pricing page is where you decide what clients pay for each plan and give a
+client a special price. It is also where you connect your own Stripe account so
+clients are invoiced automatically (this is called rebilling). Reach it from a
+client card's **More actions → View pricing** (`/agency/pricing`).
+
+<Tip>
+  **In short:** 1) Set a standard client price for each plan. 2) Give any client
+  a special price if needed. 3) Connect Stripe and start billing each client.
+</Tip>
 
 <Info>
-  **Difficulty:** Intermediate &nbsp;·&nbsp; Prices are visible to agency **Owners** and **Admins**; connecting Stripe and starting or stopping billing are **Owner**-only.
+  **Time to complete:** ~15 minutes &nbsp;·&nbsp; **Difficulty:** Intermediate &nbsp;·&nbsp; Prices are visible to agency **Owners** and **Admins**; connecting Stripe and starting or stopping billing are **Owner**-only.
 </Info>
 
 ## Before you start
@@ -20,15 +25,16 @@ pricing** (`/agency/pricing`).
 - You need an agency with at least one client — see
   [Agency console](/agency/overview).
 - To bill clients automatically, you need your own Stripe account and its
-  secret key (Stripe shows it under **Developers → API keys**).
+  secret key (a private code that lets Autocampaign AI create invoices on your
+  behalf). Stripe shows it under **Developers → API keys**.
 
 ## How the numbers work
 
 - **Your cost** — the Autocampaign AI list price for the plan.
 - **Client price** — what you charge. Left empty, a client follows your
   standard price for their plan.
-- **Your earnings** — client price minus your cost, with the margin as a share
-  of the client price ($70 on $149 is 47%).
+- **Your earnings** — client price minus your cost, with your margin (the share
+  of the client price you keep) shown too ($70 on $149 is 47%).
 
 Only your agency team sees costs and earnings; client workspaces never do.
 
@@ -36,9 +42,10 @@ Only your agency team sees costs and earnings; client workspaces never do.
 
 <Steps>
   <Step title="Optionally set a suggested-pricing rule" icon="percent">
-    Under **Suggested pricing**, enter a **Markup percent** and click **Save
-    rule** (Owners only). Empty plan prices then show **Suggested: $X/mo**.
-    Suggestions only — nothing changes until you save a price.
+    Under **Suggested pricing**, enter a **Markup percent** (how much to add on
+    top of your cost) and click **Save rule** (Owners only). Empty plan prices
+    then show **Suggested: $X/mo**. Suggestions only — nothing changes until you
+    save a price.
   </Step>
   <Step title="Enter a client price per plan" icon="table">
     In the **Plan / Your cost / Client price / Your earnings** table, type a
@@ -80,15 +87,16 @@ usage** or **I pay for usage**.
 
 ## Connect Stripe and bill clients
 
-Rebilling charges each client their monthly **Client price** on your own Stripe
-account. The money goes straight to you.
+Rebilling charges each client their monthly **Client price** through your own
+Stripe account. The money goes straight to you.
 
 <Steps>
   <Step title="Connect your Stripe account" icon="credit-card">
     Under **Get paid by your clients**, paste **Your Stripe secret key (sk_…)**
-    and click **Connect**. Autocampaign AI verifies the key, stores it encrypted
-    and never shows it again. The card then reads **Connected to Stripe account
-    &lt;id&gt;**, with a **Test mode** badge for a test key.
+    and click **Connect**. Autocampaign AI checks the key, stores it encrypted
+    (scrambled so no one can read it) and never shows it again. The card then
+    reads **Connected to Stripe account &lt;id&gt;**, with a **Test mode** badge
+    for a test key.
 
     {/* MEDIA-TODO screenshot | /images/agency/pricing-and-rebilling-stripe-connected-card.png
     Capture: The Get paid by your clients card after connecting with a test key, reading Connected to Stripe account with the Test mode badge and the Disconnect action.
@@ -130,10 +138,10 @@ account. The money goes straight to you.
 
 ## What clients are charged and see
 
-Stripe emails your client a hosted invoice from your Stripe account each month,
-due within 7 days. No card is needed up front — the client pays from the
-invoice, which comes from your account rather than Autocampaign AI. Nothing
-about rebilling appears inside the client's workspace.
+Stripe emails your client a hosted invoice (a web page where they can pay) from
+your Stripe account each month, due within 7 days. No card is needed up front —
+the client pays from the invoice, which comes from your account rather than
+Autocampaign AI. Nothing about rebilling appears inside the client's workspace.
 
 ## Statuses
 
@@ -169,7 +177,7 @@ price.
   </Accordion>
   <Accordion title="Can I see the Stripe key I connected?">
     No. It is stored encrypted and never shown again. Disconnect and connect a
-    new key if you rotate it.
+    new key if you replace it.
   </Accordion>
 </AccordionGroup>
 
@@ -180,7 +188,7 @@ price.
     The key must be a secret key starting with `sk_test_` or `sk_live_`, not a
     publishable key, and must be valid for your account.
   </Accordion>
-  <Accordion title="Start billing is disabled">
+  <Accordion title="Start billing is greyed out">
     Set a **Client price** for that client first, and check Stripe shows as
     connected below the table.
   </Accordion>

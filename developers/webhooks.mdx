@@ -1,14 +1,22 @@
 ---
 title: "Webhooks"
-description: "Receive real-time events at your own endpoints, with signed, retried deliveries."
+description: "Have Autocampaign AI tell your own systems automatically when something happens, with signed and retried deliveries."
 icon: "webhook"
 ---
 
 ## Overview
 
-Webhooks push events from Autocampaign AI to your own URL in real time — for example, when a
-contact is created or a campaign completes. Manage them at **Settings → Webhooks**
-(`/settings/webhooks`).
+**Not a developer?** A [webhook](/getting-started/glossary#webhook) is a way for
+another program to be told automatically when something happens here — for
+example, when a new contact is added. Your developer sets it up; send them this
+page. Three terms you'll hear. The **endpoint URL** is the web address on their
+side that receives each notice. The **payload** is the data inside each notice.
+The **signing secret** is a shared password that proves each notice really came
+from Autocampaign AI.
+
+Webhooks push events from Autocampaign AI to your own URL as they happen — for
+example, when a contact is created or a campaign completes. Manage them at
+**Settings → Webhooks** (`/settings/webhooks`).
 
 {/* MEDIA-TODO video | /videos/developers/webhooks-create-and-test-webhook.mp4
 Capture: Walkthrough of creating a signed webhook endpoint, sending a test event, and reading the delivery log. Target length: 60–90 seconds.
@@ -23,7 +31,8 @@ Publish: add the file at the path above (or swap the video tag for a YouTube or 
 */}
 
 <Info>
-  **Difficulty:** Advanced &nbsp;·&nbsp; **Permission:** Manage webhooks.
+  **Time to complete:** ~15 minutes &nbsp;·&nbsp; **Difficulty:** Advanced &nbsp;·&nbsp; You need a
+  [role](/getting-started/glossary#role) that can manage webhooks.
 </Info>
 
 ## Create a webhook
@@ -106,7 +115,7 @@ compare it (in constant time) to `v1`. Reject stale timestamps.
 ## Deliveries and retries
 
 - Failed deliveries retry up to **3 attempts** (after ~1 and ~5 minutes), then
-  dead-letter.
+  are set aside as failed (dead-lettered).
 - An endpoint that fails repeatedly is **auto-disabled** — re-enable it after fixing.
 - View the **delivery log** with status, payload, and response, and **retry** failed
   deliveries manually.
@@ -134,8 +143,8 @@ Publish: add the file at the path above, then delete this note and the comment m
     Use the endpoint's rotate-secret action; the new secret is shown once.
   </Accordion>
   <Accordion title="What if my endpoint is down?">
-    Deliveries retry a few times, then dead-letter. Persistent failures auto-disable
-    the endpoint until you re-enable it.
+    Deliveries retry a few times, then are set aside as failed (dead-lettered).
+    Persistent failures auto-disable the endpoint until you re-enable it.
   </Accordion>
 </AccordionGroup>
 
@@ -147,8 +156,8 @@ Publish: add the file at the path above, then delete this note and the comment m
     secret using HMAC-SHA256, and compare to the `v1` value in `X-Autocampaign-Signature`.
   </Accordion>
   <Accordion title="My endpoint was auto-disabled">
-    It hit repeated terminal failures. Fix the endpoint, then re-activate it — this
-    resets the failure streak.
+    It hit repeated final failures (ones that won't be retried). Fix the endpoint,
+    then re-activate it — this resets the failure streak.
   </Accordion>
 </AccordionGroup>
 

@@ -6,9 +6,14 @@ icon: "users-gear"
 
 ## Overview
 
-Roles determine what each member can access and do. Autocampaign AI ships with five
-built-in roles and lets you create custom ones. Manage roles at **Settings →
-Roles** (`/settings/roles`) and assign them on **Settings → Users**.
+Roles decide what each [member](/getting-started/glossary#member) can see and do.
+Autocampaign AI comes with five built-in roles and lets you create custom ones.
+Manage roles at **Settings → Roles** (`/settings/roles`) and assign them on
+**Settings → Users**.
+
+<Info>
+  **Time to complete:** ~5 minutes &nbsp;·&nbsp; **Difficulty:** Beginner
+</Info>
 
 ## Built-in roles
 
@@ -34,7 +39,7 @@ Built-in roles can't be edited or deleted.
 </Steps>
 
 <Note>
-  The **Owner** role can't be assigned to others through the UI.
+  The **Owner** role can't be assigned to others in the app.
 </Note>
 
 ## Create a custom role
@@ -44,9 +49,10 @@ Built-in roles can't be edited or deleted.
     Go to **Settings → Roles** and click **Create**.
   </Step>
   <Step title="Name it and set permissions">
-    Give the role a **name** and description, then use the **permission matrix** to
-    grant create/read/update/delete on each area (contacts, campaigns, inbox,
-    channels, billing, and more).
+    Give the role a **name** and description. Then use the **permission matrix**
+    (a grid of checkboxes) to choose whether the role can create, read, update, or
+    delete items in each area. Areas include contacts, campaigns, inbox, channels,
+    billing, and more.
 
     {/* MEDIA-TODO screenshot | /images/getting-started/users-roles-permission-matrix.png
     Capture: The create-role screen with a name and description entered and the permission matrix visible, with create, read, update and delete granted on some areas (contacts, campaigns, inbox) and not on others (billing).
@@ -64,13 +70,14 @@ Built-in roles can't be edited or deleted.
   </Step>
 </Steps>
 
-## Permissions
+## How permissions work
 
 Permissions are grouped by area (for example, Contacts, Campaigns, Segments, Inbox,
-Channels, Billing, Analytics, API keys, Webhooks). Most support the standard
-create / read / update / delete actions, plus a few specialized ones (like send or
-pause a campaign, reply or assign in the inbox). The UI you see adapts to your
-permissions — actions you can't perform are hidden or disabled.
+Channels, Billing, Analytics, [API keys](/getting-started/glossary#api-key),
+[Webhooks](/getting-started/glossary#webhook)). Most offer the standard
+create / read / update / delete actions, plus a few special ones (like send or
+pause a campaign, reply or assign in the inbox). The screens you see adapt to your
+permissions — actions you can't perform are hidden or greyed out.
 
 ## FAQ
 
@@ -83,8 +90,8 @@ permissions — actions you can't perform are hidden or disabled.
     Not until you reassign those members to another role.
   </Accordion>
   <Accordion title="How do I give someone billing access without full admin?">
-    Create a custom role granting billing read/manage and the other areas you want,
-    then assign it.
+    Create a custom role that grants billing read and manage, plus the other areas
+    you want, then assign it.
   </Accordion>
 </AccordionGroup>
 

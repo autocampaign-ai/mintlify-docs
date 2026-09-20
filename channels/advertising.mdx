@@ -13,9 +13,13 @@ icon: "bullhorn"
 ## Overview
 
 The advertising channel connects your ad accounts so new **lead-form leads** flow
-straight into Autocampaign AI as contacts — ready to text — and so you can see which
+straight into Autocampaign AI as contacts — ready to text. It also shows you which
 campaigns turn into customers. Autocampaign AI supports **Google Ads** and **Meta Ads**
 (Facebook/Instagram). Find it under **Advertising** in the sidebar.
+
+<Info>
+  **Time to complete:** ~10 minutes per ad account &nbsp;·&nbsp; **Difficulty:** Beginner
+</Info>
 
 <CardGroup cols={2}>
   <Card title="Connect Google Ads" icon="google" href="/providers/google-ads">
@@ -30,8 +34,9 @@ campaigns turn into customers. Autocampaign AI supports **Google Ads** and **Met
 
 - **Automatic lead capture** — every new lead-ad submission becomes a contact
   (source **Google Ads** or **Meta Ads**), matched by phone if they already exist.
-- **Attribution** — each contact records the platform, campaign, and lead form they
-  came from. See [Ad attribution](/analytics/ad-attribution).
+- **Attribution** (knowing which ad brought each lead) — each contact records the
+  platform, campaign, and lead form they came from. See
+  [Ad attribution](/analytics/ad-attribution).
 - **Performance** — the **Campaign Performance** page shows how ad spend turns into
   contacts, appointments, and customers.
 
@@ -46,13 +51,13 @@ Publish: add the file at the path above, then delete this note and the comment m
 </Frame>
 */}
 
-## Pages
+## What each page shows
 
 | Page | What it shows |
 | --- | --- |
-| **Google Ads / Meta Ads** | Connect and manage each platform, with per-account KPIs. |
+| **Google Ads / Meta Ads** | Connect and manage each platform, with key numbers (KPIs) per account. |
 | **Connected Accounts** | All connected ad accounts and their status. |
-| **Campaign Performance** | KPIs, a lead-to-customer funnel, and a campaign table. |
+| **Campaign Performance** | Key numbers, a lead-to-customer funnel (how many leads became customers), and a campaign table. |
 | **Lead Sources** | Where all your contacts come from, across every source. |
 
 ## Get started
@@ -79,12 +84,14 @@ Publish: add the file at the path above, then delete this note and the comment m
     available.
   </Accordion>
   <Accordion title="How do leads become contacts?">
-    Lead-form submissions arrive via each platform's lead webhook and are created as
-    contacts automatically, with the ad source recorded.
+    Each platform notifies Autocampaign AI through a webhook (an automatic message
+    between systems) when someone submits a lead form. The lead is created as a
+    contact automatically, with the ad source recorded.
   </Accordion>
   <Accordion title="Do I need a developer token or API key?">
-    No — you connect by signing in with Google or Facebook (OAuth). Autocampaign AI handles
-    the technical credentials behind the scenes.
+    No — you connect by signing in with Google or Facebook, a secure sign-in that
+    never shares your password. Autocampaign AI handles the technical details behind
+    the scenes.
   </Accordion>
 </AccordionGroup>
 

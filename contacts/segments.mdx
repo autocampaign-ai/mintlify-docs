@@ -1,23 +1,28 @@
 ---
 title: "Segments (static & dynamic)"
-description: "Group contacts manually or with rule-based dynamic segments that update themselves."
+description: "Group contacts by hand, or with rules so the group updates itself."
 icon: "filter"
 ---
 
 ## Overview
 
-A **segment** is a group of contacts you can target in campaigns. Autocampaign AI has two
-kinds:
+A [segment](/getting-started/glossary#segment) is a group of contacts you can target
+in campaigns. Autocampaign AI has two kinds:
 
-- **Static** — you add and remove contacts manually. The membership only changes
+<Tip>
+  **In short:** 1) Click New Segment and pick Static or Dynamic. 2) Add contacts by
+  hand, or build rules. 3) Check the live preview, then save.
+</Tip>
+
+- **Static** — you add and remove contacts yourself. The group only changes
   when you change it.
-- **Dynamic** — you define **rules**, and Autocampaign AI keeps membership up to date
+- **Dynamic** — you set **rules**, and Autocampaign AI keeps the group up to date
   automatically as contacts change.
 
 Find them under **Segments** in the sidebar (`/segments`).
 
 <Info>
-  **Difficulty:** Beginner (static) / Intermediate (dynamic)
+  **Time to complete:** ~5–15 minutes &nbsp;·&nbsp; **Difficulty:** Beginner (static) / Intermediate (dynamic)
 </Info>
 
 ## Create a segment
@@ -49,25 +54,25 @@ Find them under **Segments** in the sidebar (`/segments`).
   </Step>
 </Steps>
 
-## Static segments
+## Fill a static segment
 
 A new static segment starts empty. To fill it:
 
 1. Open the segment's detail page and go to the **Contacts** tab.
-2. Click **Add Contacts**, search and multi-select contacts, then confirm.
-3. Or click **Import Contacts** to import a CSV directly into this segment.
+2. Click **Add Contacts**, search and select several contacts, then confirm.
+3. Or click **Import Contacts** to import a spreadsheet (CSV) directly into this segment.
 
 Remove contacts anytime from the same tab. Static segments are ideal for
-hand-picked lists and CSV imports.
+hand-picked lists and spreadsheet imports.
 
-## Dynamic segments and the rule builder
+## Build rules for a dynamic segment
 
-Dynamic segments are defined by rules. The builder has two levels of grouping:
+Dynamic segments are defined by rules. The rule builder has two levels of grouping:
 
 - A top-level **Match ALL / ANY** toggle across groups.
 - Each **group** has its own **AND / OR** toggle across its conditions.
 
-You can have up to **10 groups** and **50 conditions** total.
+You can have up to **10 groups** and **50 conditions** in total.
 
 {/* MEDIA-TODO screenshot | /images/contacts/segment-rule-builder.png
 Capture: The rule builder for a dynamic segment with two groups: the top-level Match ALL / ANY toggle, each group's AND / OR toggle, and three or four complete conditions (for example Stage is Qualified, Tags has tag VIP, Created At within last 30 days).
@@ -96,20 +101,20 @@ Publish: add the file at the path above (or swap the video tag for a YouTube or 
 
 <Tabs>
   <Tab title="Contact info">
-    | Field | Operators |
+    | Field | Conditions |
     | --- | --- |
     | **Status** (Active / Invalid / Archived) | Is, Is not |
     | **Stage** (New Lead … Customer, Lost, Archived) | Is, Is not, Is any of, Is none of |
     | **First Name / Last Name / Email / Phone** | Equals, Does not equal, Contains, Does not contain, Is empty, Is not empty |
   </Tab>
   <Tab title="Activity">
-    | Field | Operators |
+    | Field | Conditions |
     | --- | --- |
     | **Source** (CSV Import, Manual, Web Form, Google Ads, Meta Ads) | Is, Is not |
     | **Opted Out** | Is (yes/no) |
   </Tab>
   <Tab title="Dates">
-    | Field | Operators |
+    | Field | Conditions |
     | --- | --- |
     | **Created At** | Is after, Is before, Within last, Not within last |
     | **Last Contacted** | Is after, Is before, Within last, Not within last |
@@ -118,24 +123,24 @@ Publish: add the file at the path above (or swap the video tag for a YouTube or 
     "Created within last 30 days").
   </Tab>
   <Tab title="Tags">
-    | Field | Operators |
+    | Field | Conditions |
     | --- | --- |
     | **Tags** | Has tag, Does not have tag |
   </Tab>
 </Tabs>
 
 <Note>
-  Rules today are based on contact attributes, activity, dates, and tags. There
-  isn't a "replied to campaign X" or "campaign status" rule field. To follow up
-  on campaign responders, use the [poll → segment](#create-a-segment-from-a-poll)
+  Rules today are based on contact details, activity, dates, and tags. There
+  isn't a "replied to campaign X" or "campaign status" rule. To follow up
+  with people who responded to a campaign, use the [poll → segment](#create-a-segment-from-a-poll)
   flow or tags.
 </Note>
 
-### Live preview
+### Check who matches before you save
 
 As you edit rules (once each group has a complete condition), a **preview** panel
-shows the matching contact count and a sample of who qualifies — so you can confirm
-the audience before saving.
+shows how many contacts match and a sample of who qualifies. That way you can
+confirm the audience before saving.
 
 {/* MEDIA-TODO screenshot | /images/contacts/segments-live-preview.png
 Capture: The rule builder with complete conditions and the preview panel showing the matching contact count and the sample list of qualifying contacts.
@@ -150,8 +155,8 @@ Publish: add the file at the path above, then delete this note and the comment m
 
 ### How dynamic segments stay current
 
-Dynamic segments are **event-driven**, not on a timer. Membership recomputes
-automatically when:
+Dynamic segments update **as things happen**, not on a timer. The group is
+recalculated automatically when:
 
 - You create or edit the segment's rules.
 - A contact is created, updated, or has tags changed.
@@ -165,47 +170,47 @@ You can turn poll responders into a static segment for follow-up. On a poll's
 **Votes** tab, click **Create Segment from "&lt;option&gt;"** next to an option to
 build a static segment of everyone who chose that answer. See [Polls](/campaigns/polls).
 
-## Segment actions
+## Other things you can do with a segment
 
 - **Use in Campaign** — jump straight to a new campaign targeting the segment.
 - **Edit** — change the name, description, or (for dynamic) the rules.
-- **Clone** — duplicate a segment (membership for static, rules for dynamic).
-- **Delete** — soft-delete the segment.
+- **Clone** — duplicate a segment (the members for static, the rules for dynamic).
+- **Delete** — hides the segment; it isn't permanently erased.
 
 ## FAQ
 
 <AccordionGroup>
   <Accordion title="Can I change a static segment to dynamic later?">
-    No — the type is fixed at creation. Create a new segment of the other type if
+    No. The type is fixed when you create it. Create a new segment of the other type if
     you need to switch.
   </Accordion>
   <Accordion title="Do I have to refresh a dynamic segment?">
-    No. It recomputes automatically when rules or contacts change. The status badge
+    No. It updates automatically when rules or contacts change. The status badge
     tells you when it's working.
   </Accordion>
   <Accordion title="Can I exclude a segment from a campaign?">
-    Segment-level exclusion isn't available. Instead, add "does not have tag" or
-    "is not" conditions inside a dynamic segment's rules to exclude those contacts.
+    Leaving out a whole segment isn't available. Instead, add "does not have tag" or
+    "is not" conditions inside a dynamic segment's rules to leave those contacts out.
   </Accordion>
   <Accordion title="How many contacts can a segment hold?">
-    Segments scale to your contact list. Manual add/remove operations handle up to
-    1,000 contacts per action; use CSV import for larger static lists.
+    Segments grow with your contact list. Adding or removing by hand handles up to
+    1,000 contacts per action; use a spreadsheet import for larger static lists.
   </Accordion>
 </AccordionGroup>
 
 ## Troubleshooting
 
 <AccordionGroup>
-  <Accordion title="'Cannot manually add contacts to a dynamic segment'">
-    Dynamic segments populate from rules — you can't add contacts by hand. Edit the
+  <Accordion title="Why do I see 'Cannot manually add contacts to a dynamic segment'?">
+    Dynamic segments fill from rules, so you can't add contacts by hand. Edit the
     rules instead, or create a static segment for a hand-picked list.
   </Accordion>
-  <Accordion title="My dynamic segment count looks stale">
+  <Accordion title="Why does my dynamic segment count look out of date?">
     Check the status badge. If it shows **Computing** or **Queued**, it's still
     updating. If it shows **Failed**, re-open and re-save the rules.
   </Accordion>
-  <Accordion title="I can't import into my segment">
-    Only **static** segments can be a CSV import target. Dynamic segments build
+  <Accordion title="Why can't I import into my segment?">
+    Only **static** segments can be a spreadsheet import target. Dynamic segments build
     themselves from rules.
   </Accordion>
 </AccordionGroup>

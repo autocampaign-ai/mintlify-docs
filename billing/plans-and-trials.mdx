@@ -6,11 +6,17 @@ icon: "credit-card"
 
 ## Overview
 
-Every new workspace starts on a **card-free trial**. When you are ready, choose a
-plan, and Autocampaign AI bills it monthly or yearly through a secure hosted
-checkout. Manage all of it at **Account → Plan & Billing** in the sidebar
-(`/billing`). The page is titled **Plan & subscription** and has three tabs:
-**Plans & subscription**, **Usage**, and **Invoices**.
+Every new [workspace](/getting-started/glossary#workspace) starts on a
+**card-free [trial](/getting-started/glossary#trial)**. When you are ready,
+choose a [plan](/getting-started/glossary#plan), and Autocampaign AI bills it
+monthly or yearly through a secure checkout page run by our payment provider.
+Manage all of it at **Account → Plan & Billing** in the sidebar (`/billing`). The
+page is titled **Plan & subscription** and has three tabs: **Plans &
+subscription**, **Usage**, and **Invoices**.
+
+<Tip>
+  **In short:** 1) Your trial starts free — no card needed. 2) Choose a plan when ready and pay at checkout. 3) Change, cancel, or reactivate any time from Plan & Billing.
+</Tip>
 
 {/* MEDIA-TODO screenshot | /images/billing/plans-and-trials-plan-and-billing-page.png
 Capture: The Plan & subscription page for a workspace on trial: the sidebar entry Account → Plan & Billing highlighted, the three tabs (Plans & subscription, Usage, Invoices), the plan card showing Trialing, Trial ends with a date, and the Choose a plan button. Include the Trial · N days left indicator in the app header.
@@ -24,8 +30,8 @@ Publish: add the file at the path above, then delete this note and the comment m
 */}
 
 <Info>
-  **Difficulty:** Beginner &nbsp;·&nbsp; **Permission:** Billing read to view,
-  Billing manage to change plans, buy add-ons, or cancel. Members without billing
+  **Time to complete:** ~10 minutes &nbsp;·&nbsp; **Difficulty:** Beginner &nbsp;·&nbsp; By default, only Owners and Admins can
+  view this page and change plans, buy add-ons, or cancel. Members without billing
   access don't see the sidebar entry.
 </Info>
 
@@ -37,10 +43,11 @@ Publish: add the file at the path above, then delete this note and the comment m
   carries through **Continue with Google** and **Continue with Microsoft**.
 - Signing up without a plan in the link starts the trial on the default plan.
   Invited teammates join an existing workspace and don't get their own trial.
-- Prices, limits, and included credits are shown in-app on each plan card and may
-  change. See [Credits & usage](/billing/wallet-billing) for how credits work.
+- Prices, limits, and included [credits](/getting-started/glossary#credits) are
+  shown in-app on each plan card and may change. See
+  [Credits & usage](/billing/wallet-billing) for how credits work.
 
-## Your trial
+## Understand your trial
 
 The trial starts automatically at signup — no card, nothing to charge. Your
 subscription shows the **Trialing** status, and the plan card lists **Trial ends**
@@ -58,25 +65,25 @@ with the date.
   plan catalog (**Choose the plan that fits your business**) so you can pick one.
 </Note>
 
-### When the trial ends
+### What happens when the trial ends
 
 Nothing is charged. The billing page switches to **Your trial has ended** — "No
 card on file, so nothing was charged — and everything you built is still here" —
-above the plan catalog. Your data is preserved, but the subscription is locked:
-outgoing sends are withheld and actions gated by your plan are refused until you
-choose a plan.
+above the plan catalog. Your data is kept, but the subscription is locked:
+outgoing sends are held back and anything your plan controls is blocked until
+you choose a plan.
 
 ## Choose a plan
 
 <Steps>
-  <Step title="Pick a billing interval" icon="calendar">
+  <Step title="Pick monthly or yearly" icon="calendar">
     Use the **Monthly** / **Yearly** toggle. Plans without a yearly price show
     **Monthly billing only**.
   </Step>
   <Step title="Choose plan" icon="hand-pointer">
     Compare features, **Limits**, and **Includes … credits** on each card, then click
-    **Choose plan**. The button reads **Redirecting…** while the hosted checkout
-    opens. Enter your card there.
+    **Choose plan**. The button reads **Redirecting…** while the secure checkout
+    page opens. Enter your card there.
 
     {/* MEDIA-TODO screenshot | /images/billing/plans-and-trials-plan-catalog.png
     Capture: The plan catalog with the Monthly / Yearly toggle and at least three plan cards showing features, Limits, Includes … credits, and the Choose plan button. Do not capture the hosted checkout.
@@ -118,7 +125,8 @@ choose a plan.
     */}
   </Step>
   <Step title="Confirm">
-    Upgrades apply in place and are prorated on your next invoice. You'll see
+    Upgrades apply straight away. On your next invoice you pay only for the part
+    of the period you used the new plan (this is called prorating). You'll see
     **Plan updated — your new limits and credits apply now** or, if the change is
     still being confirmed, **Upgrade submitted**. A new checkout only opens when a
     card is needed.
@@ -128,8 +136,8 @@ choose a plan.
     **Features you will lose**, and reduced **Included credits**. If you're already
     over a new limit, existing items are kept but you can't add more. Click
     **Downgrade anyway** or **Keep current plan**. Downgrades take effect
-    immediately; included credits are reduced pro-rata and any price difference is
-    credited on your next invoice.
+    immediately. Included credits are reduced in proportion to the time left in
+    the period, and any price difference is credited on your next invoice.
 
     {/* MEDIA-TODO screenshot | /images/billing/plans-and-trials-downgrade-dialog.png
     Capture: The Downgrade to …? dialog showing Limits that will shrink, Features you will lose, and the reduced Included credits, with the Downgrade anyway and Keep current plan buttons.
@@ -144,50 +152,52 @@ choose a plan.
   </Step>
 </Steps>
 
-## Payment method and invoices
+## Update your card and find invoices
 
-- Click **Manage plan** on the plan card to open the hosted billing portal, where
-  you update your card. Add-on purchases charge the saved card directly.
+- Click **Manage plan** on the plan card to open the secure billing portal (a
+  page run by our payment provider), where you update your card. Add-on
+  purchases charge the saved card directly.
 - The **Invoices** tab lists **Invoice history** with billing period, amount, and
   status (**PAID**, **OPEN**, **VOID**, **UNCOLLECTIBLE**). Use **View invoice** or
   **Download PDF**. Invoices stay available after a subscription ends.
 
-## Usage alerts
+## Read usage alerts
 
-Alerts escalate at **70%**, **85%**, and **100%** of a limit:
+Alerts step up at **70%**, **85%**, and **100%** of a limit:
 
 - **Approaching plan limits** — "You're using most of your …" (70%) and "You're
   getting close to your … limit" (85%).
 - **Resource limit reached** — "Your … are used up" (100%).
 
 Each alert has **Buy more** and **Upgrade plan** buttons. Alerts for sending
-resources (SMS, Email, Voice minutes, AI credits, Storage) appear on every page;
-alerts for capacity limits (contacts, tags, segments, and so on) appear only in
-the affected module and on the billing page. Only members with billing access see
+resources (SMS, Email, Voice minutes, AI credits, Storage) appear on every page.
+Alerts for count limits (contacts, tags, segments, and so on) appear only in the
+affected area and on the billing page. Only members with billing access see
 them. Dismissing an alert hides it for good; restore it with **Show hidden usage
 alerts** on the **Usage** tab. A **Credits running low** notification also reaches
-billing members, at most once per credit pool per day.
+billing members, at most once per credit pool (one balance per type, such as
+SMS or email) per day.
 
 <Note>
   A plan can set its own first warning point, in which case that replaces 70%. The
-  85% and 100% rungs are fixed.
+  85% and 100% steps are fixed.
 </Note>
 
-## Out of credits
+## What happens when you run out of credits
 
 When a credit pool hits zero, the **Usage** tab shows **Out of credits** — "sends on
 these channels will fail until you top up" — with a **Buy credits** button.
 
-- **Campaigns and sequences:** the run is auto-paused rather than failed. Message
-  rows show **Out of credits** (or **Payment overdue**, **Subscription inactive**,
-  **Plan limit reached**, **Not included in plan**). Top up, then click
-  **Resume**; held messages send from where they stopped.
+- **Campaigns and sequences:** the run pauses on its own rather than failing.
+  Message rows show **Out of credits** (or **Payment overdue**, **Subscription
+  inactive**, **Plan limit reached**, **Not included in plan**). Top up, then
+  click **Resume**; held messages send from where they stopped.
 - **Direct actions** (inbox replies, AI runs): the action is refused with
   **Not enough credits — buy a credit pack to continue.** Hitting a count limit
   shows **Plan limit exceeded**, and a feature outside your plan shows
   **Your plan does not include this feature — upgrade to unlock it.**
 - **Overdue payment:** status becomes **Past due** or **Grace period** (with the
-  end date on the plan card). Sends are withheld with
+  end date on the plan card). Sends are held back with
   **Your payment is overdue — update your payment method to restore service.**
 
 ## Cancel or reactivate
@@ -214,14 +224,14 @@ is untouched" — with the plan catalog and your invoices.
     you choose a plan.
   </Accordion>
   <Accordion title="Is my data deleted when the trial ends?">
-    No. Everything is preserved; sending resumes once you subscribe.
+    No. Everything is kept; sending resumes once you subscribe.
   </Accordion>
   <Accordion title="Can I switch between monthly and yearly?">
-    Yes — pick the interval in the **Upgrade or change plan** dialog. Some plans
+    Yes — pick the option in the **Upgrade or change plan** dialog. Some plans
     are monthly only.
   </Accordion>
   <Accordion title="Who gets usage alerts?">
-    Members whose role includes billing read (Owner and Admin by default). See
+    Members whose role can view billing (Owner and Admin by default). See
     [Users & roles](/getting-started/users-roles).
   </Accordion>
 </AccordionGroup>

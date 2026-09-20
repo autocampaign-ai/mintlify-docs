@@ -1,21 +1,25 @@
 ---
 title: "Module builder"
-description: "Create custom data modules with your own sections, fields, and records."
+description: "Create your own record types with custom sections, fields, and records."
 icon: "cubes"
 ---
 
 ## Overview
 
-The module builder lets you extend Autocampaign AI's data model. You can add **custom
-fields** to built-in modules like Contacts, or create entirely **new modules**
-(record types) such as "Deals" or "Properties" — each with your own sections and
-fields. Manage everything at **Settings → Module Setup** (`/settings/module-setup`).
+Most teams never need this page. Use it if you want to store extra information
+the app does not have a field for.
+
+The module builder lets you extend the information the app stores. You can add
+[custom fields](/getting-started/glossary#custom-field) to built-in modules like
+Contacts, or create entirely **new modules** (record types) such as "Deals" or
+"Properties". Each has your own sections and fields. Manage everything at
+**Settings → Module Setup** (`/settings/module-setup`).
 
 <Info>
-  **Difficulty:** Advanced
+  **Time to complete:** ~15 minutes &nbsp;·&nbsp; **Difficulty:** Advanced
 </Info>
 
-## How it's organized
+## How modules are organized
 
 <Steps>
   <Step title="Module" icon="cube">
@@ -26,7 +30,7 @@ fields. Manage everything at **Settings → Module Setup** (`/settings/module-se
     A titled group of fields within a module, with a chosen column count.
   </Step>
   <Step title="Field" icon="input-text">
-    A single data attribute — text, number, date, dropdown, and more.
+    A single piece of information — text, number, date, dropdown, and more.
   </Step>
 </Steps>
 
@@ -38,8 +42,8 @@ fields. Manage everything at **Settings → Module Setup** (`/settings/module-se
   </Step>
   <Step title="Add a field to a module">
     Select a module, open the **Fields** tab, choose a section, and add a field.
-    Pick its **type**, set validation, options (for dropdowns), default value, and
-    help text.
+    Pick its **type**, set validation (rules about what can be entered), options
+    (for dropdowns), default value, and help text.
 
     {/* MEDIA-TODO screenshot | /images/automation/module-builder-add-field-form.png
     Capture: Module Setup with a module selected in the left rail, the Fields tab open, and the add-field form showing the type picker, validation, dropdown options, default value and help text.
@@ -57,8 +61,8 @@ fields. Manage everything at **Settings → Module Setup** (`/settings/module-se
   </Step>
   <Step title="Arrange the layout">
     Use the **Layout** tab to choose a record layout (single, two/three column, or
-    tabbed), pick header and list columns, and optionally enable a **kanban** view
-    grouped by a dropdown field.
+    tabbed) and pick header and list columns. Optionally turn on a **kanban** view
+    (cards in columns) grouped by a dropdown field.
 
     {/* MEDIA-TODO screenshot | /images/automation/module-builder-layout-tab.png
     Capture: The Layout tab for a custom module showing the record layout choice, header and list column pickers, and the kanban option grouped by a dropdown field.
@@ -84,8 +88,8 @@ fields. Manage everything at **Settings → Module Setup** (`/settings/module-se
 | **Relational** | Lookup (link to another record), User (link to a teammate) |
 
 Each field can be **required**, **unique**, **filterable**, **searchable**, or
-read-only, and can carry validation rules and conditional visibility (show/require
-a field based on another field's value).
+read-only. It can also carry validation rules and conditional visibility (show or
+require a field based on another field's value).
 
 ## Records
 
@@ -97,24 +101,27 @@ Custom modules get their own records screens:
 
 ## Modules and contacts
 
-**Contacts** (and **Tickets**) are built-in **system modules**. Their core fields
-are fixed, but you can add your own custom fields alongside them — those fields then
-appear on contacts as columns, form fields, filters, and [CSV import](/contacts/import-csv)
-targets. See [Custom fields](/contacts/custom-fields).
+**Contacts** (and **Tickets**) are built-in **system modules** (ones Autocampaign AI
+provides). Their core fields are fixed, but you can add your own custom fields
+alongside them. Those fields then appear on contacts as columns, form fields, and
+filters, and can be filled by [CSV import](/contacts/import-csv). See
+[Custom fields](/contacts/custom-fields).
 
 ## FAQ
 
 <AccordionGroup>
   <Accordion title="What's the difference between a custom field and a custom module?">
-    A **custom field** adds an attribute to an existing module (like Contacts). A
-    **custom module** is a whole new record type with its own fields and records.
+    A **custom field** adds one piece of information to an existing module (like
+    Contacts). A **custom module** is a whole new record type with its own fields
+    and records.
   </Accordion>
-  <Accordion title="Can I relate records to each other?">
+  <Accordion title="Can I link records to each other?">
     Yes — use a **Lookup** field to link a record to another module's record, or a
     **User** field to link to a team member.
   </Accordion>
-  <Accordion title="Do custom fields work as message merge tags?">
-    No — merge tags are limited to standard contact fields. See
+  <Accordion title="Can I use custom fields as merge tags in messages?">
+    No — [merge tags](/getting-started/glossary#merge-tag) (placeholders that fill
+    in each contact's details) only work with standard contact fields. See
     [Custom fields](/contacts/custom-fields).
   </Accordion>
 </AccordionGroup>

@@ -1,17 +1,19 @@
 ---
 title: "Quick messages"
-description: "Saved reply snippets you insert in the Inbox by typing a slash command."
+description: "Saved replies you insert in the Inbox by typing a slash (/)."
 icon: "bolt"
 ---
 
 ## Overview
 
-Quick messages are canned replies for one-to-one conversations in the
-[Inbox](/inbox/overview). Instead of retyping common answers, you type `/` in the
-message composer and pick a saved reply. Each quick message has a `/slug` trigger.
+[Quick messages](/getting-started/glossary#quick-message) are saved replies for
+one-to-one conversations in the [Inbox](/inbox/overview). Instead of retyping
+common answers, you type `/` in the message composer and pick a saved reply. Each
+quick message has a short `/slug` shortcut (for example `/greeting`) that you type
+to insert it.
 
 <Info>
-  **Where they're used:** the Inbox conversation composer &nbsp;·&nbsp;
+  **Time to complete:** ~2 minutes &nbsp;·&nbsp; **Where they're used:** the Inbox conversation composer &nbsp;·&nbsp;
   **Difficulty:** Beginner
 </Info>
 
@@ -50,7 +52,7 @@ settings page). Open the manager and add a new one:
 | Field | Required | Notes |
 | --- | --- | --- |
 | **Name** | Yes | Up to 50 characters, e.g. "Greeting" |
-| **Slug** | Yes | Lowercase letters, numbers, `-`/`_`; this is your `/trigger` |
+| **Slug** | Yes | Lowercase letters, numbers, `-`/`_`; this is the shortcut you type after `/` |
 | **Message** | Yes | Up to 1,600 characters |
 
 Edit or delete existing quick messages inline in the same drawer.
@@ -63,8 +65,8 @@ Edit or delete existing quick messages inline in the same drawer.
 ## FAQ
 
 <AccordionGroup>
-  <Accordion title="Do quick messages support merge tags?">
-    No — quick-message bodies are plain text with no variables or categories. For
+  <Accordion title="Do quick messages support merge tags (placeholders like a first name)?">
+    No — quick-message bodies are plain text with no merge tags or categories. For
     personalized, reusable content use [templates](/campaigns/templates).
   </Accordion>
   <Accordion title="Where do I manage them?">
@@ -72,8 +74,8 @@ Edit or delete existing quick messages inline in the same drawer.
     page in Settings.
   </Accordion>
   <Accordion title="What's the difference from a template?">
-    Quick messages are fast, plain-text snippets for live replies. Templates are
-    richer, categorized, merge-tag-enabled messages for campaigns, text links, and
+    Quick messages are fast, plain-text replies for live conversations. Templates are
+    richer, categorized messages with merge tags, for campaigns, text links, and
     workflows.
   </Accordion>
 </AccordionGroup>

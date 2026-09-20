@@ -1,24 +1,24 @@
 ---
 title: "Custom fields"
-description: "Store extra data on contacts with custom fields you define in Module Setup."
+description: "Store extra details on contacts with fields you define yourself in Module Setup."
 icon: "table-columns"
 ---
 
 ## Overview
 
-Custom fields let you store data beyond the standard contact details — think
-"Account tier", "Renewal date", or "Lead score". You define them once in **Module
-Setup**, and they then appear on contacts as columns, form fields, filters, and
-import targets.
+[Custom fields](/getting-started/glossary#custom-field) let you store details beyond
+the standard contact information. Think "Account tier", "Renewal date", or "Lead
+score". You define them once in **Module Setup**. They then appear on contacts as
+columns, form fields, filters, and import targets.
 
 <Info>
-  **Where to manage them:** Settings → Module Setup (`/settings/module-setup`)
-  &nbsp;·&nbsp; **Difficulty:** Intermediate
+  **Time to complete:** ~5 minutes &nbsp;·&nbsp; **Difficulty:** Intermediate
+  &nbsp;·&nbsp; **Where to manage them:** Settings → Module Setup (`/settings/module-setup`)
 </Info>
 
-## Field types
+## Types of field you can create
 
-Autocampaign AI's module builder supports a rich set of field types:
+Autocampaign AI's module builder supports a wide range of field types:
 
 | Group | Types |
 | --- | --- |
@@ -29,7 +29,7 @@ Autocampaign AI's module builder supports a rich set of field types:
 | **Relational** | Lookup, User |
 
 Each field can be marked **required**, **unique**, **filterable**, or
-**searchable**, and can have a default value, placeholder, help text, and
+**searchable**. It can also have a default value, placeholder, help text, and
 validation rules.
 
 ## Create a custom field
@@ -71,21 +71,24 @@ validation rules.
   </Step>
 </Steps>
 
-For the full module-builder capabilities, see [Module builder](/automation/module-builder).
+For everything the module builder can do, see [Module builder](/automation/module-builder).
 
 ## Where custom fields appear
 
 Once created, a custom field shows up in several places:
 
-- **Contact list** — as a toggleable column (use the **Columns** menu).
+- **Contact list** — as a column you can show or hide (use the **Columns** menu).
 - **Add / Edit contact** — as a form field below the standard details.
 - **Filters** — filterable fields appear in the Contacts **Filters** panel with
-  operators (equals, contains, greater/less than, is empty, and so on).
-- **CSV import** — importable fields become mapping targets (marked "Custom").
+  choices such as equals, contains, greater/less than, is empty, and so on.
+- **CSV import** — importable fields become mapping targets (marked "Custom") when
+  you import a spreadsheet.
 
 <Warning>
-  **Custom fields are not available as message merge tags.** The merge tags you can
-  insert into SMS and email are the standard contact fields only —
+  **Custom fields are not available as message merge tags.** A
+  [merge tag](/getting-started/glossary#merge-tag) is a placeholder like `first_name`
+  that fills in each contact's details when a message is sent. The merge tags you can
+  insert into SMS and email are the standard contact fields only:
   `first_name`, `last_name`, `full_name`, `phone`, `email`, and the address fields.
   See [Templates](/campaigns/templates).
 </Warning>
@@ -95,19 +98,20 @@ Once created, a custom field shows up in several places:
 <AccordionGroup>
   <Accordion title="Can I use a custom field like {{account_tier}} in a message?">
     No. Merge tags are limited to standard contact fields. Custom fields are for
-    storing, filtering, and segmenting data — not for message personalization today.
+    storing, filtering, and grouping data, not for personalizing messages today.
   </Accordion>
   <Accordion title="Can I filter or segment on a custom field?">
     Yes, if the field is marked **filterable**. It then appears in the Contacts
-    filter panel. (Segment rule building on custom fields is available via the API.)
+    filter panel. (Building [segment](/getting-started/glossary#segment) rules on
+    custom fields is available through the API, for developers.)
   </Accordion>
   <Accordion title="Which field types can't be imported?">
-    Lookup, User, and Auto-number fields are excluded from CSV import — everything
+    Lookup, User, and Auto-number fields are left out of CSV import. Everything
     else can be mapped.
   </Accordion>
   <Accordion title="What's the difference between a custom field and a tag?">
-    A **tag** is a simple label (present or not). A **custom field** stores a typed
-    value (text, number, date, choice). Use tags for grouping,
+    A **tag** is a simple label (present or not). A **custom field** stores a value
+    of a set type (text, number, date, choice). Use tags for grouping,
     [custom fields](/contacts/custom-fields) for data.
   </Accordion>
 </AccordionGroup>
@@ -115,11 +119,11 @@ Once created, a custom field shows up in several places:
 ## Troubleshooting
 
 <AccordionGroup>
-  <Accordion title="My custom field isn't showing as a contact column">
-    Confirm it's active in Module Setup, then enable it in the **Columns** menu on
+  <Accordion title="Why isn't my custom field showing as a contact column?">
+    Confirm it's active in Module Setup, then turn it on in the **Columns** menu on
     the Contacts list.
   </Accordion>
-  <Accordion title="I can't map a CSV column to my custom field">
+  <Accordion title="Why can't I map a spreadsheet column to my custom field?">
     Create the field in Module Setup first, and check its type isn't Lookup, User,
     or Auto-number (those can't be imported).
   </Accordion>
