@@ -6,14 +6,18 @@ icon: "address-book"
 
 ## Overview
 
-Contacts are the people you reach through campaigns, conversations, and
-automations. The **Contacts** page (**Contacts** in the sidebar, at `/contacts`)
-lists everyone in your workspace with their tags, source, pipeline stage, and
-opt-in status.
+[Contacts](/getting-started/glossary#contact) are the people you reach through
+campaigns, conversations, and automations. The **Contacts** page (**Contacts** in
+the sidebar, at `/contacts`) lists everyone in your workspace with their tags,
+source, pipeline stage, and opt-in status.
+
+<Info>
+  **Time to complete:** ~2 minutes to add a contact &nbsp;·&nbsp; **Difficulty:** Beginner
+</Info>
 
 <CardGroup cols={2}>
   <Card title="Import from CSV" icon="file-import" href="/contacts/import-csv">
-    Bulk-add contacts with column mapping.
+    Add many contacts at once from a spreadsheet.
   </Card>
   <Card title="Build a segment" icon="filter" href="/contacts/segments">
     Group contacts for targeted campaigns.
@@ -22,14 +26,14 @@ opt-in status.
 
 ## The contacts list
 
-The table shows these columns (you can show/hide most from the **Columns** menu):
+The table shows these columns (you can show or hide most from the **Columns** menu):
 
 | Column | Description |
 | --- | --- |
 | **Name** | Avatar + first and last name |
 | **Phone** | With country flag; click to copy |
 | **Email** | Contact email |
-| **Tags** | Up to two tag chips, then a "+N" overflow |
+| **Tags** | Up to two tag chips, then a "+N" for the rest |
 | **Source** | How the contact entered your list |
 | **Stage** | Pipeline stage badge |
 | **Opted-out** | "Opted in" / "Opted out" badge |
@@ -86,9 +90,10 @@ Publish: add the file at the path above, then delete this note and the comment m
 ## Edit, delete, and bulk actions
 
 - **Edit** — click the pencil icon on a row, or open the contact and edit.
-- **Delete** — click the trash icon and confirm. Deletes are **soft** (recoverable).
+- **Delete** — click the trash icon and confirm. Deleted contacts are hidden, not
+  permanently erased, so they can be recovered.
 - **Bulk delete** — select rows with the checkboxes, then **Delete** in the bulk bar.
-- **Change stage** — open a contact and pick a new **Stage** inline.
+- **Change stage** — open a contact and pick a new **Stage** in place.
 - **Toggle opt-in** — open a contact and use the marketing opt-in switch.
 
 ## Filter and search
@@ -107,11 +112,11 @@ narrow the list by:
 Open a contact to see:
 
 - **Contact information** — email, phone, source, editable **stage**, created date.
-- **Tags** — add or remove tags inline.
+- **Tags** — add or remove tags in place.
 - **Communication preferences** — marketing opt-in toggle.
 - **Address** — full mailing address.
-- **Where this contact came from** — ad attribution (platform, campaign, lead form),
-  shown when the contact originated from [Google or Meta Ads](/channels/advertising).
+- **Where this contact came from** — which ad brought them in (platform, campaign,
+  lead form), shown when the contact came from [Google or Meta Ads](/channels/advertising).
 - **Activity** — a live timeline of everything that happened: created/updated,
   tag changes, stage moves, conversation assignments, and ad-lead events.
 
@@ -126,21 +131,21 @@ Publish: add the file at the path above, then delete this note and the comment m
 </Frame>
 */}
 
-## Reference: statuses, stages, sources
+## What statuses, stages, and sources mean
 
 <Tabs>
   <Tab title="Status">
-    - **Active** — a normal, sendable contact.
+    - **Active** — a normal contact you can message.
     - **Invalid** — the number/email couldn't be used.
-    - **Archived** — set aside, excluded from active workflows.
+    - **Archived** — set aside, left out of active workflows.
   </Tab>
   <Tab title="Stage">
     New Lead → Engaged → Qualified → Appointment Booked → Customer, plus **Lost**
     and **Archived**. Stages are a simple pipeline you can filter and segment on.
   </Tab>
   <Tab title="Source">
-    CSV Import, Manual, Web Form, Text Link, Inbound SMS, Google Ads, Meta Ads —
-    recorded automatically based on how the contact was created.
+    CSV Import, Manual, Web Form, Text Link, Inbound SMS, Google Ads, Meta Ads.
+    Recorded automatically based on how the contact was created.
   </Tab>
 </Tabs>
 
@@ -148,14 +153,14 @@ Publish: add the file at the path above, then delete this note and the comment m
 
 <AccordionGroup>
   <Accordion title="Is deleting a contact permanent?">
-    No. Deletes are soft, so a contact is hidden rather than destroyed.
+    No. A deleted contact is hidden rather than destroyed.
   </Accordion>
   <Accordion title="Can I export contacts to CSV?">
     Exporting isn't available in the app today. You can filter and segment
-    in-product, and import via CSV.
+    in the app, and import via CSV.
   </Accordion>
   <Accordion title="How do opted-out contacts behave?">
-    They're excluded from campaign audiences automatically. See
+    They're left out of campaign audiences automatically. See
     [Opt-out management](/compliance/opt-out).
   </Accordion>
   <Accordion title="Where do custom fields come from?">
@@ -167,11 +172,11 @@ Publish: add the file at the path above, then delete this note and the comment m
 ## Troubleshooting
 
 <AccordionGroup>
-  <Accordion title="A phone number won't save">
+  <Accordion title="Why won't a phone number save?">
     Phone numbers accept digits, spaces, hyphens, parentheses, and an optional
     leading `+`, up to 20 characters. Remove any other characters.
   </Accordion>
-  <Accordion title="I can't find a contact I imported">
+  <Accordion title="Why can't I find a contact I imported?">
     Check the **Source = CSV Import** filter, and confirm the import finished
     successfully in [Import history](/contacts/import-csv#import-history).
   </Accordion>

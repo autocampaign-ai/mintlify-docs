@@ -6,12 +6,12 @@ icon: "link"
 
 ## Overview
 
-Short links turn a long destination URL into a short, trackable link. Autocampaign AI
+Short links turn a long web address into a short link you can track. Autocampaign AI
 counts clicks (total and unique) and shows device and time breakdowns. Manage them
 on the **Links** page (`/links`) under the **Short Links** tab.
 
 <Info>
-  **Difficulty:** Beginner
+  **Time to complete:** ~3 minutes &nbsp;·&nbsp; **Difficulty:** Beginner
 </Info>
 
 ## Create a short link
@@ -23,7 +23,7 @@ on the **Links** page (`/links`) under the **Short Links** tab.
   <Step title="Enter the details">
     | Field | Required | Notes |
     | --- | --- | --- |
-    | **Destination URL** | Yes | The `http(s)` URL to shorten (up to 2,048 characters) |
+    | **Destination URL** | Yes | The web address to shorten, starting with `http://` or `https://` (up to 2,048 characters) |
     | **Label** | No | An internal name, e.g. "Spring promo" |
     | **Expiry** | No | Optional expiry date/time — leave empty for a link that never expires |
 
@@ -45,18 +45,19 @@ on the **Links** page (`/links`) under the **Short Links** tab.
 </Steps>
 
 <Note>
-  There's no custom-slug field — the short code is generated for you using an
-  unambiguous alphabet. Every short link is tracked automatically; there's no
-  on/off toggle.
+  There's no custom-slug field — the short code is generated for you using only
+  letters and numbers that are hard to mix up. Every short link is tracked
+  automatically; there's no on/off toggle.
 </Note>
 
-## Analytics and QR
+## See clicks and get a QR code
 
 Open a short link (`/short-links/:id`) for three tabs:
 
 - **Overview** — Total Clicks and Unique Clicks, a clicks-over-time chart, and a
   device breakdown (mobile/desktop/tablet).
-- **QR Code** — a downloadable QR that points at the link, with scan stats.
+- **QR Code** — a downloadable QR code (a square barcode people scan with their
+  phone camera) that points at the link, with scan stats.
 - **Settings** — edit the label and expiry.
 
 {/* MEDIA-TODO screenshot | /images/campaigns/text-links-analytics-overview.png
@@ -70,12 +71,12 @@ Publish: add the file at the path above, then delete this note and the comment m
 </Frame>
 */}
 
-## Automatic link tracking in SMS campaigns
+## How links are tracked in text campaigns
 
-You don't need to shorten links by hand for campaigns. When you compose an **SMS
-campaign**, Autocampaign AI detects URLs in your message and can track them — each becomes
-a **unique short URL per recipient**, so you get per-contact click attribution in
-the campaign's analytics.
+You don't need to shorten links by hand for campaigns. When you write an **SMS
+campaign**, Autocampaign AI detects web addresses in your message and can track
+them. Each becomes a **unique short URL per recipient**, so the campaign's results
+show which contact clicked.
 
 <Note>
   Email campaigns handle click tracking through the email provider, so this
@@ -87,14 +88,14 @@ the campaign's analytics.
 ## FAQ
 
 <AccordionGroup>
-  <Accordion title="Can I choose my own short code / slug?">
-    No — codes are generated automatically to avoid collisions and ambiguous
-    characters.
+  <Accordion title="Can I choose my own short code (the part after /r/)?">
+    No — codes are generated automatically so no two links clash and no characters
+    can be mixed up.
   </Accordion>
   <Accordion title="What's the difference between a short link and campaign link tracking?">
     A **short link** is a standalone link you create and share anywhere. **Campaign
-    link tracking** automatically shortens URLs inside an SMS campaign, per
-    recipient, for attribution.
+    link tracking** automatically shortens web addresses inside an SMS campaign,
+    one per recipient, so you can see who clicked.
   </Accordion>
   <Accordion title="Can a short link expire?">
     Yes — set an **Expiry**. After it passes, the link shows as **Expired** and stops
@@ -105,13 +106,14 @@ the campaign's analytics.
 ## Troubleshooting
 
 <AccordionGroup>
-  <Accordion title="My link shows 'Expired'">
+  <Accordion title="Why does my link show 'Expired'?">
     Its expiry date has passed. Edit the link in the **Settings** tab to extend or
     remove the expiry.
   </Accordion>
-  <Accordion title="Clicks aren't being counted">
-    Click recording is best-effort and never blocks the redirect. Give it a moment,
-    and confirm you're viewing the right time range on the Overview tab.
+  <Accordion title="Why aren't clicks being counted?">
+    Clicks are recorded in the background and never slow down or block the
+    visitor's redirect. Give it a moment, and confirm you're viewing the right time
+    range on the Overview tab.
   </Accordion>
 </AccordionGroup>
 

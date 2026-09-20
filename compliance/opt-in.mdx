@@ -1,44 +1,45 @@
 ---
 title: "Opt-in & auto-reply"
-description: "Let previously opted-out contacts re-subscribe, and send an automatic confirmation."
+description: "Let people who opted out re-subscribe by text, and send an automatic confirmation."
 icon: "circle-check"
 ---
 
 ## Overview
 
-Opt-in is how a contact who previously opted out can **re-subscribe** to your
-messages. When someone replies with an opt-in keyword like **START**, Autocampaign AI
-clears their opt-out flag, records the consent on their timeline, and can send an
-optional welcome-back confirmation.
+[Opt-in](/getting-started/glossary#opt-in) is how a contact who previously opted out
+can **re-subscribe** to your messages. When someone replies with an opt-in keyword
+like **START**, Autocampaign AI clears their opt-out flag, records the consent on their
+timeline, and can send an optional welcome-back confirmation.
 
-You configure opt-in keywords and the auto-reply at **Settings → Opt-out**, in the
+You set up opt-in keywords and the auto-reply at **Settings → Opt-out**, in the
 right-hand **Opt-In Settings** column (next to [Opt-out](/compliance/opt-out)).
 
 <Info>
-  **Difficulty:** Beginner &nbsp;·&nbsp; **Permission:** viewing needs Settings
-  read; changes need Settings update (Owner/Admin).
+  **Time to complete:** ~5 minutes &nbsp;·&nbsp; **Difficulty:** Beginner &nbsp;·&nbsp;
+  **Who can do this:** anyone with access to Settings can view; you need to be an
+  Owner or Admin to make changes.
 </Info>
 
 ## How opt-in works
 
 <Steps>
   <Step title="A contact replies with an opt-in keyword">
-    Autocampaign AI checks inbound messages for opt-in keywords. Detection is the same as
-    opt-out: case-insensitive, start-anchored, whole-word (`STARTUP` won't match
-    `START`).
+    Autocampaign AI checks incoming messages for opt-in keywords. Detection works the
+    same as opt-out. Capitals don't matter, and the keyword must be at the start of
+    the message as a whole word (`STARTUP` won't match `START`).
   </Step>
   <Step title="The contact is re-subscribed">
-    If the contact was previously opted out, Autocampaign AI clears the flag, records an
-    **Opted in** event on their timeline, and they become eligible for campaigns
-    again. If they were never opted out, nothing changes.
+    If the contact was previously opted out, Autocampaign AI clears the flag and records an
+    **Opted in** event on their timeline. They can receive campaigns again. If they
+    were never opted out, nothing changes.
   </Step>
   <Step title="An optional confirmation is sent">
-    If you've set an opt-in auto-reply, Autocampaign AI sends it (subject to the
-    provider-reserved keyword rules below).
+    If you've set an opt-in auto-reply, Autocampaign AI sends it. See the exceptions for
+    keywords your provider answers itself, below.
   </Step>
 </Steps>
 
-### Default keywords
+### The default keywords
 
 Every workspace starts with the carrier-standard opt-in keywords:
 
@@ -48,11 +49,11 @@ START, UNSTOP, YES
 
 <Note>
   Opt-in only affects contacts who are **currently opted out**. An opt-in keyword
-  from an unknown number (one that has never contacted you) is ignored — it does
+  from an unknown number (one that has never contacted you) is ignored. It does
   not create a contact.
 </Note>
 
-## Configure opt-in
+## Set up opt-in
 
 <Steps>
   <Step title="Open opt-in settings">
@@ -70,7 +71,7 @@ START, UNSTOP, YES
     */}
   </Step>
   <Step title="Manage keywords">
-    Add custom re-subscribe keywords (for example, `subscribe`) under **Keywords**.
+    Add your own re-subscribe keywords (for example, `subscribe`) under **Keywords**.
     Up to **75** per workspace, same rules as opt-out.
   </Step>
   <Step title="Set a welcome-back auto-reply (optional)">
@@ -79,51 +80,52 @@ START, UNSTOP, YES
   </Step>
 </Steps>
 
-## About "auto-reply" and AI
+## Auto-replies are not written by AI
 
-The opt-in and opt-out auto-replies are **static messages you configure** — the
-exact text you enter is sent back verbatim. They are **not** AI-generated.
+The opt-in and opt-out auto-replies are **fixed messages you write yourself**. The
+exact text you enter is sent back word for word. They are **not** AI-generated.
 
-If you want AI to answer, qualify, or route **inbound conversations**, that's a
-separate feature — see [AI Employees](/automation/ai-employees), which work alongside
+If you want AI to answer, qualify, or route **incoming conversations**, that's a
+separate feature. See [AI Employees](/automation/ai-employees), which work alongside
 your [Inbox](/inbox/overview). Compliance replies (opt-in/opt-out confirmations)
-remain deterministic on purpose.
+always send your exact text, on purpose.
 
-## Provider-reserved keywords
+## Keywords your provider answers for you
 
-Like opt-out, providers reserve the standard opt-in keywords:
+Like opt-out, your [provider](/getting-started/glossary#provider) (the phone company
+behind your numbers) reserves the standard opt-in keywords:
 
 - **Twilio** automatically handles `START, UNSTOP, YES` and sends its own
   confirmation, so Autocampaign AI skips its reply for those. Your custom keywords are
   answered by Autocampaign AI.
-- **Telnyx** behaves similarly when advanced opt-in sync is applied on the profile.
+- **Telnyx** behaves the same way when advanced opt-in sync is turned on for the profile.
 
-## Consent and audit trail
+## How consent is recorded
 
-Autocampaign AI records how each contact entered your list via a **consent source**, such
-as CSV import, manual entry, web form ([join link](/campaigns/join-links)), text
-link, inbound SMS, or an ad platform (Google/Meta). Join-link web forms also store
+Autocampaign AI records how each contact entered your list as a **consent source**.
+Examples: CSV import, manual entry, web form ([join link](/campaigns/join-links)),
+text link, inbound SMS, or an ad platform (Google/Meta). Join-link web forms also store
 a snapshot of the exact consent wording, timestamp, and other evidence per
 submission. Opt-in and opt-out events are logged on the contact's activity
-timeline for compliance.
+timeline so you have a record if anyone asks.
 
 ## FAQ
 
 <AccordionGroup>
   <Accordion title="Does replying START always re-subscribe someone?">
-    Only if they were opted out. If they were never opted out, the keyword is a
-    no-op — no change and no reply.
+    Only if they were opted out. If they were never opted out, nothing happens:
+    no change and no reply.
   </Accordion>
   <Accordion title="Will an opt-in from a brand-new number create a contact?">
-    No. Unlike opt-out (which records STOP even from unknown numbers for
-    compliance), opt-in from a number that never contacted you is ignored.
+    No. Opt-out is different: a STOP is recorded even from unknown numbers, for
+    compliance. An opt-in from a number that never contacted you is ignored.
   </Accordion>
   <Accordion title="Is the opt-in confirmation written by AI?">
-    No. It's the static message you configure. For AI-assisted inbound replies, use
-    an [AI Employee](/automation/ai-employees).
+    No. It's the fixed message you write yourself. For AI-assisted replies to
+    incoming messages, use an [AI Employee](/automation/ai-employees).
   </Accordion>
   <Accordion title="Why didn't my welcome-back message send?">
-    For provider-reserved keywords (START, UNSTOP, YES) the carrier sends its own
+    For the standard keywords (START, UNSTOP, YES) the carrier sends its own
     reply and blocks Autocampaign AI's. Custom keywords you add are answered by Autocampaign AI.
   </Accordion>
 </AccordionGroup>
@@ -131,16 +133,16 @@ timeline for compliance.
 ## Troubleshooting
 
 <AccordionGroup>
-  <Accordion title="A re-subscribed contact still isn't getting campaigns">
+  <Accordion title="Why isn't a re-subscribed contact getting campaigns?">
     Confirm an **Opted in** event appears on their timeline. If they opted in after
     a campaign's audience was built, they'll be included in the next send.
   </Accordion>
-  <Accordion title="Custom opt-in keyword isn't working">
-    Check it's spelled correctly and that the inbound message *starts* with it.
-    Matching is start-anchored and whole-word.
+  <Accordion title="Why isn't my custom opt-in keyword working?">
+    Check it's spelled correctly and that the incoming message *starts* with it.
+    The keyword must be at the start of the message and be a whole word.
   </Accordion>
 </AccordionGroup>
 
 <Card title="Opt-out management" icon="ban" href="/compliance/opt-out">
-  STOP handling and keyword configuration.
+  STOP handling and keyword settings.
 </Card>

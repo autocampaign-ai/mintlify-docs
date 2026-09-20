@@ -7,9 +7,9 @@ icon: "gauge"
 ## Overview
 
 The **Dashboard** is your home screen — the first item in the sidebar (`/`). It
-is built from widgets. Until you change it, you see the built-in **Overview**
-layout described below; you can rearrange it or build your own with
-[custom dashboards](/analytics/custom-dashboards).
+is built from widgets (one tile each on the dashboard). Until you change it, you
+see the built-in **Overview** layout described below. You can rearrange it or
+build your own with [custom dashboards](/analytics/custom-dashboards).
 
 {/* MEDIA-TODO screenshot | /images/analytics/dashboard-overview-layout.png
 Capture: The Dashboard on the built-in Overview layout with populated data: the period selector and Customize button at the top, the four key metric tiles, and the Campaign Performance Overview chart. Capture the top of the page at a desktop width.
@@ -23,14 +23,15 @@ Publish: add the file at the path above, then delete this note and the comment m
 */}
 
 <Info>
-  **Difficulty:** Beginner &nbsp;·&nbsp; The default period is **Last 7 days**.
+  **Time to complete:** ~5 minutes &nbsp;·&nbsp; **Difficulty:** Beginner &nbsp;·&nbsp; The default period is **Last 7 days**.
 </Info>
 
 ## Before you start
 
-- Every role — **Owner**, **Admin**, **Manager**, **Agent**, and **Viewer** — can
-  open the Dashboard.
-- Until workspace setup is finished, new members go through onboarding first and
+- Every [role](/getting-started/glossary#role) — **Owner**, **Admin**,
+  **Manager**, **Agent**, and **Viewer** — can open the Dashboard.
+- Until [workspace](/getting-started/glossary#workspace) setup is finished, new
+  [members](/getting-started/glossary#member) go through onboarding first and
   may see a setup checklist beside the dashboard. See the
   [onboarding checklist](/getting-started/onboarding-checklist).
 
@@ -54,7 +55,8 @@ Publish: add the file at the path above, then delete this note and the comment m
   </Step>
   <Step title="Or set a custom range" icon="calendar-range">
     Use the date-range picker next to it. Dates before your workspace was created
-    are disabled. The selection is stored in the URL, so you can bookmark a view.
+    are greyed out. Your choice is saved in the page address (URL), so you can
+    bookmark a view.
   </Step>
 </Steps>
 
@@ -64,17 +66,19 @@ The period applies to every analytics widget on the dashboard.
 
 <AccordionGroup>
   <Accordion title="Key metrics" icon="chart-simple">
-    Four tiles: **Active Conversations** (with a per-channel breakdown),
-    **Opt-out Rate**, **Reply Rate**, and **AI vs Human** (**AI Handled** vs
-    **Human Handled** conversations). Tiles show the change **from last period**.
+    Four tiles: **Active Conversations** (with a breakdown per
+    [channel](/getting-started/glossary#channel)),
+    **Opt-out Rate** (the share of people who asked to stop receiving messages),
+    **Reply Rate**, and **AI vs Human** (**AI Handled** vs **Human Handled**
+    conversations). Tiles show the change **from last period**.
   </Accordion>
   <Accordion title="Campaign Performance Overview" icon="paper-plane">
     A chart of **Sent**, **Delivered**, **Failed**, **Replied**, and **Opt-out**
-    across your campaigns in the period.
+    across your [campaigns](/getting-started/glossary#campaign) in the period.
   </Accordion>
   <Accordion title="Recent Inbox" icon="inbox">
     Your latest conversations, filterable by **All**, **SMS**, or **Email**, with
-    an inline **Quick reply...** box. **View All Messages** opens the
+    a **Quick reply...** box right there. **View All Messages** opens the
     [Inbox](/inbox/overview).
   </Accordion>
   <Accordion title="Opt-out & Unsubscribe Trends" icon="ban">
@@ -83,29 +87,31 @@ The period applies to every analytics widget on the dashboard.
   <Accordion title="Channel Subscriptions & Engagement" icon="chart-pie">
     Two breakdowns: **Channel Subscriptions** (subscribers per channel) and
     **Message Engagement** (**Read & Replied**, **Read & No Reply**, **Unread**,
-    **Read & Opt Out**). For SMS, "read" is approximated by "delivered" because
-    carriers don't provide read receipts.
+    **Read & Opt Out**). For SMS, "read" is estimated from "delivered" because
+    phone carriers don't report when a text is read.
   </Accordion>
   <Accordion title="Poll Insights" icon="square-poll-vertical">
     **Total Polls**, **Total Responses**, **Avg Response Rate**, and **Top
-    Performing Poll**, plus the option breakdown for the [poll](/campaigns/polls)
+    Performing Poll**, plus the answer breakdown for the [poll](/campaigns/polls)
     you select.
   </Accordion>
   <Accordion title="Web Form Performance Overview" icon="link-simple">
     **Total Web Forms**, **Total Clicks**, **Unique Visitors**, and **Conversion
-    Rate**; a **Conversion Funnel** (**Viewed → Unique Views → Submitted →
-    Joined**) for the [web form](/campaigns/join-links) you select; and **Traffic
-    Source Analytics** using last-touch attribution.
+    Rate**. Below them, a **Conversion Funnel** (**Viewed → Unique Views →
+    Submitted → Joined**) for the [web form](/campaigns/join-links) you select.
+    **Traffic Source Analytics** credits the last place a visitor came from
+    before they submitted.
   </Accordion>
   <Accordion title="Link Performance" icon="link">
     **Total Clicks**, **Unique Clicks**, **Active Links**, and **Click-Through
-    Rate** for your [tracked links](/campaigns/text-links), with **Top
-    Performers** (top campaign, link, device, country, and browser) and **Recent
-    Link Activity**.
+    Rate** (the share of people who clicked) for your
+    [tracked links](/campaigns/text-links). It also shows **Top Performers**
+    (top campaign, link, device, country, and browser) and **Recent Link
+    Activity**.
   </Accordion>
 </AccordionGroup>
 
-## More widgets
+## Add more widgets
 
 Click **Customize** to add widgets that aren't in the Overview layout: **Unread
 Conversations**, **Appointments Today**, **Quick Actions**, **Usage Snapshot**,
@@ -114,7 +120,7 @@ and share them — see [Custom dashboards](/analytics/custom-dashboards).
 
 <Note>
   The Dashboard is a snapshot of engagement. For leads, revenue, appointments,
-  deliverability, and a CSV export, use [Analytics reports](/analytics/reports).
+  delivery problems, and a CSV export, use [Analytics reports](/analytics/reports).
 </Note>
 
 ## FAQ
@@ -125,7 +131,8 @@ and share them — see [Custom dashboards](/analytics/custom-dashboards).
     [campaigns](/analytics/campaign-analytics), estimated send cost and ROI are in
     [Analytics reports](/analytics/reports), and charges are under
     [Wallet & billing](/billing/wallet-billing). The **Usage Snapshot** widget shows
-    remaining SMS and email credits if your role can view billing.
+    remaining SMS and email [credits](/getting-started/glossary#credits) if your
+    role can view billing.
   </Accordion>
   <Accordion title="Can I change what the Dashboard shows?">
     Yes. Click **Customize** to add, remove, resize, and reorder widgets. See
@@ -141,7 +148,8 @@ and share them — see [Custom dashboards](/analytics/custom-dashboards).
 
 <AccordionGroup>
   <Accordion title="A widget says “Failed to load …”">
-    Click **Retry** on the widget. Other widgets load independently.
+    Click **Retry** on the widget. Other widgets load on their own, so they are
+    not affected.
   </Accordion>
   <Accordion title="A widget says “You don't have permission to view this widget.”">
     Your role doesn't include that data. Ask an Owner or Admin to adjust your

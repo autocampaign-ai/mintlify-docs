@@ -6,9 +6,10 @@ icon: "calendar-check"
 
 ## Overview
 
-A **meeting type** is a kind of meeting people can book with you — like "Intro
-Call" or "Demo". Each has its own duration, location, availability, and booking
-link. Manage them under **Meeting Types** (`/meeting-types`).
+A **[meeting type](/getting-started/glossary#meeting-type)** is a kind of meeting
+people can book with you — like "Intro Call" or "Demo". Each has its own duration,
+location, availability, and booking link. Manage them under **Meeting Types**
+(`/meeting-types`).
 
 <Info>
   **Difficulty:** Intermediate
@@ -31,14 +32,17 @@ Publish: add the file at the path above, then delete this note and the comment m
 
 <AccordionGroup>
   <Accordion title="Details" icon="pen">
-    **Name**, a **URL slug** (used in the booking link, auto-suggested), a
-    **Description**, a **Color**, and a **Location**: **Google Meet**, **Phone call**,
-    **In person** (address), or **Custom link** (URL).
+    **Name**, a **URL slug** (the short name at the end of the booking link,
+    suggested automatically), a **Description** and a **Color**. Then a
+    **Location**: **Google Meet**, **Phone call**, **In person** (address), or
+    **Custom link** (URL).
   </Accordion>
   <Accordion title="Scheduling" icon="clock">
-    Choose an **availability schedule**, set the **duration**, **slot increment**,
-    **buffers** before/after, **minimum notice**, **booking window** (how far ahead),
-    and optional **daily/weekly booking limits**.
+    Choose an **availability schedule** (your bookable hours) and set the
+    **duration**. Then set the **slot increment** (how far apart start times are),
+    **buffers** before/after (gaps kept free around each meeting), **minimum
+    notice**, **booking window** (how far ahead), and optional **daily/weekly
+    booking limits**.
   </Accordion>
   <Accordion title="Questions" icon="circle-question">
     Add up to 10 custom booking questions (short/long text, dropdown, checkbox,
@@ -50,7 +54,7 @@ Publish: add the file at the path above, then delete this note and the comment m
   </Accordion>
   <Accordion title="Host" icon="user">
     Assign to **yourself**, **a specific user**, or **round robin** across a team
-    (with per-member weights).
+    (bookings take turns between hosts, with per-member weights).
   </Accordion>
 </AccordionGroup>
 
@@ -77,7 +81,7 @@ Publish: add the file at the path above (or swap the video tag for a YouTube or 
   **Google** calendar connected. Microsoft connections can't create Meet links.
 </Note>
 
-## Manage
+## Edit, duplicate, or archive a meeting type
 
 From the list you can **Edit**, **Duplicate**, and **Archive/Activate** a meeting
 type. Archived types can't be booked.
@@ -89,11 +93,11 @@ type. Archived types can't be booked.
     No — paid bookings aren't supported. Meeting types are free to book.
   </Accordion>
   <Accordion title="How do reminders get sent?">
-    Invitees and hosts receive email and SMS reminders based on the offsets you set
+    Invitees and hosts receive email and SMS reminders at the times you set
     (for example, 24 hours before).
   </Accordion>
   <Accordion title="What's round robin?">
-    Bookings are distributed across a team of hosts, optionally weighted so some hosts
+    Bookings are spread across a team of hosts, optionally weighted so some hosts
     get more.
   </Accordion>
 </AccordionGroup>

@@ -12,26 +12,28 @@ Open **Campaigns** in the sidebar (`/campaigns`) and click a campaign
 **Links**.
 
 <Info>
-  **Difficulty:** Beginner &nbsp;·&nbsp; Click **Refresh** to pull the latest
+  **Time to complete:** ~10 minutes &nbsp;·&nbsp; **Difficulty:** Beginner &nbsp;·&nbsp; Click **Refresh** to pull the latest
   numbers while a campaign is sending.
 </Info>
 
 ## Before you start
 
-- You need a role that can view campaigns. Bulk actions on recipients also need
-  access to [segments](/contacts/segments).
+- You need a [role](/getting-started/glossary#role) that can view campaigns.
+  Bulk actions on recipients also need access to
+  [segments](/contacts/segments).
 - Link click numbers require tracked links in the message. See
   [Text links](/campaigns/text-links).
 
 ## Read the Overview tab
 
 <Steps>
-  <Step title="Check aggregate performance" icon="chart-simple">
-    **Aggregate Performance (All Runs)** shows **Queued**, **Sent** (% of
-    recipients), **Delivered** (% of sent), **Failed**, and **Cancelled**. If
-    recipients were skipped because they had opted out, **Failed** adds a note
-    such as *12 unsubscribed, not sent*. Text campaigns also show **Total cost**,
-    **Total clicks**, and **Unique clicks**.
+  <Step title="Check the totals across every run" icon="chart-simple">
+    **Aggregate Performance (All Runs)** adds up every run of the campaign. It
+    shows **Queued** (waiting to send), **Sent** (% of recipients), **Delivered**
+    (% of sent), **Failed**, and **Cancelled**. If recipients were skipped
+    because they had [opted out](/getting-started/glossary#opt-out), **Failed**
+    adds a note such as *12 unsubscribed, not sent*. Text campaigns also show
+    **Total cost**, **Total clicks**, and **Unique clicks**.
 
     {/* MEDIA-TODO screenshot | /images/analytics/campaign-analytics-overview-tab.png
     Capture: A sent text campaign's detail page on the Overview tab, showing the three tabs (Overview, Executions, Links), the Refresh button, and the Aggregate Performance (All Runs) cards including Total cost, Total clicks, and Unique clicks.
@@ -45,32 +47,33 @@ Open **Campaigns** in the sidebar (`/campaigns`) and click a campaign
     */}
   </Step>
   <Step title="Review experiment results" icon="flask">
-    If the campaign ran an A/B test, **Experiment results** compares **Version A**
-    and **Version B** and marks the **Winner**. See
-    [Campaign experiments](/campaigns/experiments).
+    If the campaign ran an A/B test (two versions sent to see which does better),
+    **Experiment results** compares **Version A** and **Version B** and marks
+    the **Winner**. See [Campaign experiments](/campaigns/experiments).
   </Step>
   <Step title="Review email performance" icon="envelope-open-text">
     Email campaigns add **Email performance** — **Sent**, **Delivered**,
-    **Opens**, **Open rate**, **Clicks**, **Click-through rate**, **Bounces**, and
-    **Unsubscribes** — and a **Delivery funnel** (**Recipients → Delivered →
-    Opened → Clicked**).
+    **Opens**, **Open rate**, **Clicks**, **Click-through rate** (the share of
+    recipients who clicked), **Bounces** (emails that couldn't be delivered), and
+    **Unsubscribes**. They also show a **Delivery funnel**, which counts how many
+    people reached each step: **Recipients → Delivered → Opened → Clicked**.
   </Step>
   <Step title="See clicks by link" icon="link">
-    Below **Campaign Details** and **Template Preview**, a per-link table
-    (**Clicks by link** for text, **Link clicks** for email) breaks clicks down by
-    link.
+    Below **Campaign Details** and **Template Preview**, a table breaks clicks
+    down by link. It is called **Clicks by link** for text and **Link clicks**
+    for email.
   </Step>
 </Steps>
 
 <Note>
-  **Total cost** counts only charges the carrier has confirmed. While messages
-  are still settling it reads *so far · N/M settled*, and *N of M unconfirmed* if
-  some charges could not be confirmed. Email campaigns don't show a cost card.
-  Apple Mail and some email clients pre-fetch images, so treat open rates as
-  directional.
+  **Total cost** counts only charges the phone carrier has confirmed. While
+  charges are still being confirmed it reads *so far · N/M settled*, and *N of M
+  unconfirmed* if some charges could not be confirmed. Email campaigns don't show
+  a cost card. Apple Mail and some other email apps open images in the background,
+  which counts as an open, so treat open rates as a rough guide.
 </Note>
 
-## Drill into a run
+## Look at a single run
 
 The **Executions** tab lists every run of the campaign — one for a one-time send,
 many for a recurring campaign.
@@ -81,11 +84,11 @@ many for a recurring campaign.
     same delivery cards for that run alone, plus **Total clicks** and **Unique
     clicks** (and **Opens** and **Unique opens** for email).
   </Step>
-  <Step title="Inspect recipients" icon="users">
+  <Step title="Look at each recipient" icon="users">
     **Messages for this run** lists each recipient with **Contact**, **From**,
     **To**, **Status**, **Engagement**, and **Sent**. **Engagement** shows a
-    **Replied** chip, the links a text recipient clicked, or **Opened** and
-    **Clicked** chips for email. For email, click **Activity** on a row to open
+    **Replied** marker, the links a text recipient clicked, or **Opened** and
+    **Clicked** markers for email. For email, click **Activity** on a row to open
     **Recipient activity** — the delivery timeline for that person (**Processed**,
     **Delivered**, **Opened**, **Clicked**, **Bounced**, and so on).
 
@@ -107,20 +110,23 @@ many for a recurring campaign.
   </Step>
   <Step title="Act on recipients" icon="bolt">
     Select rows — or select all matching recipients across pages — and open **Bulk
-    actions**: **Add to segment** (static segments only), **Remove from segment**,
-    or **Export CSV** to download the selected contacts.
+    actions**. Choose **Add to segment** (static segments only — lists you fill by
+    hand), **Remove from segment**, or **Export CSV** to download the selected
+    contacts.
   </Step>
 </Steps>
 
-Per-recipient statuses: **Queued**, **Sending**, **Sent**, **Delivered**,
-**Undelivered**, **Failed**, **Cancelled**, **Rejected**.
+Each recipient shows one of these statuses: **Queued** (waiting to send),
+**Sending**, **Sent**, **Delivered**, **Undelivered**, **Failed**, **Cancelled**,
+**Rejected**.
 
 ## Review link performance
 
 The **Links** tab summarizes **Total links**, **Total clicks**, **Unique clicks**,
-and **CTR**; highlights the **Top link**, **Most clicks by** (contact), **Top
-device**, **Top country**, and **Top browser**; and lists every link with
-**Destination**, **Clicks**, **Unique clicks**, **CTR**, and **Last click**.
+and **CTR** (click-through rate — the share of recipients who clicked). It
+highlights the **Top link**, **Most clicks by** (contact), **Top device**, **Top
+country**, and **Top browser**. It also lists every link with **Destination**,
+**Clicks**, **Unique clicks**, **CTR**, and **Last click**.
 
 {/* MEDIA-TODO screenshot | /images/analytics/campaign-analytics-links-tab.png
 Capture: The Links tab of a campaign that has tracked links with clicks: the summary cards (Total links, Total clicks, Unique clicks, CTR), the highlights (Top link, Most clicks by, Top device, Top country, Top browser), and the per-link table.
@@ -135,7 +141,7 @@ Publish: add the file at the path above, then delete this note and the comment m
 
 <Note>
   Analytics on this page cover one campaign. To compare campaigns, see revenue
-  and ROI, or export a campaign performance CSV, use
+  and ROI (return on what you spent), or export a campaign performance CSV, use
   [Analytics reports](/analytics/reports).
 </Note>
 
@@ -143,7 +149,7 @@ Publish: add the file at the path above, then delete this note and the comment m
 
 <AccordionGroup>
   <Accordion title="Where do I see replies?">
-    Recipients who replied get a **Replied** chip in the run's **Engagement**
+    Recipients who replied get a **Replied** marker in the run's **Engagement**
     column. There is no reply-rate card on the campaign; workspace reply totals
     are in [Analytics reports](/analytics/reports), and the conversations
     themselves are in the [Inbox](/inbox/overview).
@@ -154,7 +160,7 @@ Publish: add the file at the path above, then delete this note and the comment m
     segments update from their own rules, so you can't add to them.
   </Accordion>
   <Accordion title="Why don't text campaigns show opens?">
-    Carriers don't report read receipts for SMS. Use link clicks and replies
+    Phone carriers don't report when a text is read. Use link clicks and replies
     instead.
   </Accordion>
   <Accordion title="What does the recipient export contain?">
@@ -172,10 +178,10 @@ Publish: add the file at the path above, then delete this note and the comment m
   </Accordion>
   <Accordion title="Total cost looks too low">
     Look at the hint under the figure. Costs appear as carriers confirm them, so
-    a recent send reads *so far* until every message settles.
+    a recent send reads *so far* until every message is confirmed.
   </Accordion>
   <Accordion title="Remove from segment is unavailable">
-    The campaign targets no segment, or only dynamic segments whose membership is
+    The campaign targets no segment, or only dynamic segments whose members are
     set by rules.
   </Accordion>
   <Accordion title="Executions says “No executions yet”">

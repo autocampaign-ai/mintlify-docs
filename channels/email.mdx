@@ -7,21 +7,25 @@ icon: "envelope"
 ## Overview
 
 Autocampaign AI's email channel lets you send email [campaigns](/campaigns/overview) from
-your own domain. Delivery is handled for you — you don't connect Gmail, Outlook, or
-an SMTP server. Instead, you **verify a sending domain** and add **sender
-identities**, then send.
+your own domain (the part of your email address after the @). Delivery is handled
+for you — you don't connect Gmail, Outlook, or a mail server of your own. Instead,
+you **verify a sending domain** (prove you own it) and add
+[**senders**](/getting-started/glossary#sender) (the from-names and addresses
+you send as), then send.
 
 <Info>
-  **Difficulty:** Intermediate (DNS setup) &nbsp;·&nbsp; **Time:** ~10 minutes plus
-  DNS propagation
+  **Time to complete:** ~10 minutes, plus waiting for your DNS changes to take
+  effect &nbsp;·&nbsp; **Difficulty:** Intermediate (DNS setup)
 </Info>
 
 ## Set up email in two steps
 
 <Steps>
   <Step title="Verify a sending domain" icon="globe">
-    Add your domain and publish the DNS records Autocampaign AI gives you so your email is
-    authenticated (SPF/DKIM) and links are tracked. See
+    Add your domain, then add the [DNS records](/getting-started/glossary#dns-record)
+    Autocampaign AI gives you. These are settings in your domain provider's control
+    panel (such as GoDaddy or Cloudflare). They include SPF and DKIM (records that
+    prove email really comes from you) and turn on link tracking. See
     [Sending domains](/providers/email-domains).
   </Step>
   <Step title="Add a sender" icon="user">
@@ -33,30 +37,32 @@ identities**, then send.
 Once a sender is verified, choose it when creating an [email campaign](/campaigns/overview).
 
 <Note>
-  There's no Gmail / Microsoft 365 / SMTP connection to configure. Email sending is
-  managed by Autocampaign AI — your only setup is domain verification and senders.
+  There's no Gmail, Microsoft 365, or mail-server connection to set up. Email
+  sending is managed by Autocampaign AI — your only setup is domain verification and
+  senders.
 </Note>
 
 ## FAQ
 
 <AccordionGroup>
   <Accordion title="Can I connect my Gmail or Outlook mailbox?">
-    No. Autocampaign AI sends email on your behalf from your **verified domain** — there's no
-    per-mailbox OAuth or SMTP connection.
+    No. Autocampaign AI sends email on your behalf from your **verified domain** — you
+    don't connect individual mailboxes.
   </Accordion>
   <Accordion title="Do I need my own SendGrid or SES account?">
     No. Email delivery is handled by the platform. You only verify a domain and add
     senders.
   </Accordion>
   <Accordion title="Why verify a domain at all?">
-    Domain authentication (SPF/DKIM) is what makes your email land in inboxes instead
-    of spam, and lets you send from `you@yourdomain.com` rather than a shared address.
+    Domain authentication (the SPF and DKIM records that prove email really comes
+    from you) is what makes your email land in inboxes instead of spam. It also
+    lets you send from `you@yourdomain.com` rather than a shared address.
   </Accordion>
 </AccordionGroup>
 
 <CardGroup cols={2}>
   <Card title="Verify a domain" icon="globe" href="/providers/email-domains">
-    Publish DNS records to authenticate your domain.
+    Add DNS records to prove you own your domain.
   </Card>
   <Card title="Add a sender" icon="user" href="/providers/email-senders">
     Create your from-address.

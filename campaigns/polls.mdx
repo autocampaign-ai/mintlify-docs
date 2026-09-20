@@ -7,12 +7,12 @@ icon: "square-poll-vertical"
 ## Overview
 
 A poll sends an SMS question with numbered options. Contacts reply with a number
-(or the option's text) to vote, and you can turn the responders to any option into
-a [segment](/contacts/segments) for follow-up. Find polls under **Polls** in the
-sidebar (`/polls`).
+(or the option's text) to vote. You can turn the responders to any option into a
+[segment](/contacts/segments) (a saved group of contacts) for follow-up. Find
+polls under **Polls** in the sidebar (`/polls`).
 
 <Info>
-  **Difficulty:** Beginner &nbsp;·&nbsp; Votes are accepted while a poll is **Active**.
+  **Time to complete:** ~10 minutes &nbsp;·&nbsp; **Difficulty:** Beginner &nbsp;·&nbsp; Votes are accepted while a poll is **Active**.
 </Info>
 
 ## Create a poll
@@ -22,10 +22,11 @@ sidebar (`/polls`).
     Select one or more phone numbers to send from.
   </Step>
   <Step title="Message & options" icon="pen">
-    Write the **Poll Question** (merge tags supported, e.g. `{{first_name}}`).
-    Autocampaign AI appends the numbered option list automatically. Add **2–10 options**
-    (each up to 60 characters, drag to reorder). Optionally turn on **Allow multiple
-    options** so a contact can pick several.
+    Write the **Poll Question**. You can use
+    [merge tags](/getting-started/glossary#merge-tag) such as `{{first_name}}` to
+    fill in each contact's details. Autocampaign AI appends the numbered option list
+    automatically. Add **2–10 options** (each up to 60 characters, drag to reorder).
+    Optionally turn on **Allow multiple options** so a contact can pick several.
 
     {/* MEDIA-TODO screenshot | /images/campaigns/polls-question-and-options.png
     Capture: The Message & options step of the poll wizard with a Poll Question, three options, the Allow multiple options toggle, and the message preview showing the numbered option list appended automatically.
@@ -57,7 +58,7 @@ Contacts simply **reply to the poll SMS**:
 - With a **number** — `2` votes for the second option.
 - With the **option text** — replying "blue" matches the option labeled "Blue".
 
-Matching is case-insensitive. For multiple-choice polls, replies like `1, 3` or
+Capitals don't matter. For multiple-choice polls, replies like `1, 3` or
 "yes and maybe" record several votes; each option in a separate reply also works.
 For single-choice polls, only the first matched option counts and a second vote is
 rejected.
@@ -67,7 +68,7 @@ rejected.
   they received (within a 14-day window) while it's **Active**.
 </Note>
 
-## Act on the answers (auto-segment)
+## Act on the answers
 
 The built-in way to act on responses is to create a segment from the voters of an
 option:
@@ -78,8 +79,9 @@ option:
   </Step>
   <Step title="Create a segment from an option">
     Click **Create Segment from "&lt;option&gt;"** next to any option with votes.
-    Autocampaign AI builds a **static segment** of everyone who chose that option, named
-    after the poll and option, and takes you to it.
+    Autocampaign AI builds a **static segment** (a fixed list that doesn't update
+    itself) of everyone who chose that option, named after the poll and option.
+    Then it takes you to it.
 
     {/* MEDIA-TODO screenshot | /images/campaigns/polls-create-segment-from-option.png
     Capture: A poll's detail page on the Votes tab with several options that have votes, the Create Segment from option button next to each, and the Votes table below.
@@ -97,19 +99,19 @@ option:
 You can then target that segment with a follow-up [campaign](/campaigns/overview).
 
 <Note>
-  Tagging contacts automatically per answer is supported in the platform's data
-  model but isn't configurable from the current poll builder — use the
-  **create-segment-from-option** flow above to act on answers today.
+  Automatically tagging contacts by their answer isn't available in the poll
+  builder yet. Use **Create Segment from "&lt;option&gt;"** above to act on
+  answers today.
 </Note>
 
-## Poll statuses
+## Understand poll statuses
 
 **Scheduled** → **Broadcasting** → **Active** → **Closed** / **Expired**, plus
 **Cancelled**. Votes are only counted while a poll is **Active**. You can **Close**
 a poll early (no more votes), **Cancel** before/while sending, or **Delete** a
 finished poll.
 
-## Analytics
+## Read the results
 
 The poll's **Overview** and **Analytics** show:
 
@@ -131,8 +133,8 @@ The poll's **Overview** and **Analytics** show:
     additional distinct options are added; the same option twice counts once.
   </Accordion>
   <Accordion title="Can I export poll results?">
-    A CSV export isn't available today. Use the analytics views and create segments
-    from responders.
+    A CSV (spreadsheet) export isn't available today. Use the analytics views and
+    create segments from responders.
   </Accordion>
   <Accordion title="When do votes stop counting?">
     When the poll is Closed, Expired (auto-close), or Cancelled — or if a reply
@@ -143,11 +145,11 @@ The poll's **Overview** and **Analytics** show:
 ## Troubleshooting
 
 <AccordionGroup>
-  <Accordion title="A reply didn't register as a vote">
+  <Accordion title="Why didn't a reply count as a vote?">
     The sender must be a known contact, the poll must still be **Active**, and the
     reply must start with a valid option number or match an option's text.
   </Accordion>
-  <Accordion title="Votes stopped coming in">
+  <Accordion title="Why did votes stop coming in?">
     Check the poll status — it may have auto-closed (Expired) or been Closed.
   </Accordion>
 </AccordionGroup>

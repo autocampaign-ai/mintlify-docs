@@ -1,48 +1,50 @@
 ---
 title: "Opt-out management"
-description: "Handle STOP keywords automatically and keep your SMS sending compliant."
+description: "Handle STOP replies automatically and keep your texting within the rules."
 icon: "ban"
 ---
 
 ## Overview
 
 When someone replies **STOP** (or another opt-out keyword), they must stop
-receiving your messages — it's a legal requirement and a carrier rule. Autocampaign AI
-detects opt-out keywords on every inbound message, flags the contact, and excludes
-them from all future campaigns automatically.
+receiving your messages. It's a legal requirement and a carrier rule. Autocampaign AI
+checks every incoming message for opt-out keywords, flags the contact, and leaves
+them out of all future campaigns automatically. This is called
+[opt-out](/getting-started/glossary#opt-out).
 
 You manage opt-out keywords and the optional confirmation reply at **Settings →
 Opt-out** (the page shows Opt-out and [Opt-in](/compliance/opt-in) side by side).
 
 <Info>
-  **Difficulty:** Beginner &nbsp;·&nbsp; **Permission:** viewing needs Settings
-  read (Owner/Admin/Manager); changes need Settings update (Owner/Admin).
+  **Time to complete:** ~5 minutes &nbsp;·&nbsp; **Difficulty:** Beginner &nbsp;·&nbsp;
+  **Who can do this:** Owners, Admins and Managers can view; you need to be an
+  Owner or Admin to make changes.
 </Info>
 
 ## How opt-out detection works
 
 <Steps>
   <Step title="A contact replies with a keyword">
-    Autocampaign AI checks each inbound message against your opt-out keywords **before** any
-    other processing (so `STOP` in reply to a poll is treated as an opt-out, not a vote).
+    Autocampaign AI checks each incoming message against your opt-out keywords **before**
+    anything else. So `STOP` in reply to a poll counts as an opt-out, not a vote.
   </Step>
   <Step title="The keyword is matched">
-    Matching is **case-insensitive** and **anchored to the start** of the message,
-    matching whole words. `STOP`, `stop`, `STOP.`, and `STOP now` all opt out;
+    Capitals don't matter, and the keyword must be at the **start** of the message
+    as a whole word. `STOP`, `stop`, `STOP.`, and `STOP now` all opt out;
     `STOPOVER` does not.
   </Step>
   <Step title="The contact is opted out">
-    Autocampaign AI marks the contact as opted out, records an **Opted out** entry on their
-    activity timeline (with the keyword and message), and removes them from future
-    campaign audiences. Repeated STOPs are a no-op.
+    Autocampaign AI marks the contact as opted out and records an **Opted out** entry on
+    their activity timeline (with the keyword and message). They are removed from
+    future campaign audiences. Repeated STOPs change nothing further.
   </Step>
   <Step title="An optional confirmation is sent">
-    If you've configured an auto-reply message, Autocampaign AI sends it (see limitations
-    with provider-reserved keywords below).
+    If you've set up an auto-reply message, Autocampaign AI sends it. See the exceptions
+    for keywords your provider answers itself, below.
   </Step>
 </Steps>
 
-### Default keywords
+### The default keywords
 
 Every workspace starts with the carrier-standard opt-out keywords:
 
@@ -50,7 +52,7 @@ Every workspace starts with the carrier-standard opt-out keywords:
 STOP, STOPALL, STOP ALL, UNSUBSCRIBE, CANCEL, END, QUIT
 ```
 
-## Opt-outs on other channels
+## How opt-outs work on WhatsApp and calls
 
 - **WhatsApp** — a contact who replies with one of your opt-out keywords on
   [WhatsApp](/channels/whatsapp) is opted out of WhatsApp only. A contact who has
@@ -59,7 +61,7 @@ STOP, STOPALL, STOP ALL, UNSUBSCRIBE, CANCEL, END, QUIT
   contact out of SMS. Unblocking the number does not opt them back in. See
   [Calls](/inbox/calls).
 
-## Configure opt-out
+## Set up opt-out
 
 <Steps>
   <Step title="Open opt-out settings">
@@ -67,7 +69,7 @@ STOP, STOPALL, STOP ALL, UNSUBSCRIBE, CANCEL, END, QUIT
   </Step>
   <Step title="Manage keywords">
     Under **Keywords**, type a keyword and press **Enter** (or click **Add**) to add
-    a custom one such as `leave` or `optout`. Edit or delete any keyword inline. You
+    your own, such as `leave` or `optout`. Edit or delete any keyword in place. You
     can have up to **75 keywords** per workspace.
   </Step>
   <Step title="Set an auto-reply (optional)">
@@ -88,47 +90,47 @@ Publish: add the file at the path above, then delete this note and the comment m
 </Frame>
 */}
 
-## Provider-reserved keywords
+## Keywords your provider answers for you
 
-Carriers and providers reserve the standard keywords and reply to them at the
-network edge:
+Carriers and your [provider](/getting-started/glossary#provider) (the phone company
+behind your numbers) reserve the standard keywords and reply to them before the
+message reaches Autocampaign AI:
 
 - **Twilio** automatically handles `STOP, STOPALL, STOP ALL, UNSUBSCRIBE, CANCEL,
-  END, QUIT`. For these, Twilio sends its own STOP confirmation and blocks Autocampaign AI's
-  duplicate reply. Your custom keywords (like `leave`) are detected and answered by
-  Autocampaign AI instead.
-- **Telnyx** behaves similarly when advanced opt-out sync is applied on the profile.
+  END, QUIT`. For these, Twilio sends its own STOP confirmation and blocks
+  Autocampaign AI's duplicate reply. Your custom keywords (like `leave`) are detected
+  and answered by Autocampaign AI instead.
+- **Telnyx** behaves the same way when advanced opt-out sync is turned on for the profile.
 
 <Note>
-  Because of this, your custom auto-reply may not be sent for the standard keywords
-  — the provider's own STOP reply is delivered instead. Both may arrive in some
-  configurations.
+  Because of this, your custom auto-reply may not be sent for the standard keywords.
+  The provider's own STOP reply is delivered instead. Both may arrive in some setups.
 </Note>
 
 ## FAQ
 
 <AccordionGroup>
   <Accordion title="Does opting out apply across all channels?">
-    Opting out flags the **contact**, so they're excluded from future SMS campaign
+    Opting out flags the **contact**, so they're left out of future SMS campaign
     audiences. Always confirm consent before re-adding anyone.
   </Accordion>
   <Accordion title="Can an opted-out contact rejoin?">
-    Yes — if they reply with an opt-in keyword like **START**. See
-    [Opt-in & auto-reply](/compliance/opt-in). They also can't be re-onboarded
+    Yes, if they reply with an opt-in keyword like **START**. See
+    [Opt-in & auto-reply](/compliance/opt-in). They also can't be re-added
     through a [join link](/campaigns/join-links) while opted out.
   </Accordion>
   <Accordion title="Is there a limit on keywords?">
-    Yes, **75 per workspace**. Keywords are stored case-insensitively and must
+    Yes, **75 per workspace**. Capitals don't matter, and each keyword must
     contain at least one letter or digit.
   </Accordion>
   <Accordion title="Where can I see who opted out?">
     Each contact's activity timeline shows an **Opted out** event with the keyword
-    and inbound message. Opted-out contacts are excluded from campaign sends
+    and incoming message. Opted-out contacts are left out of campaign sends
     automatically.
   </Accordion>
   <Accordion title="Can I add a STOP footer to my messages?">
-    Autocampaign AI doesn't add an opt-out footer automatically. Include opt-out language in
-    your message copy where appropriate — carriers expect it, especially for
+    Autocampaign AI doesn't add an opt-out footer automatically. Include opt-out wording in
+    your message text where appropriate. Carriers expect it, especially for
     marketing.
   </Accordion>
 </AccordionGroup>
@@ -136,20 +138,20 @@ network edge:
 ## Troubleshooting
 
 <AccordionGroup>
-  <Accordion title="My custom opt-out reply isn't being sent">
-    For provider-reserved keywords (STOP, UNSUBSCRIBE, etc.), the carrier sends its
+  <Accordion title="Why isn't my custom opt-out reply being sent?">
+    For the standard keywords (STOP, UNSUBSCRIBE, etc.), the carrier sends its
     own reply and blocks Autocampaign AI's. Your custom auto-reply is sent only for
-    non-reserved keywords you've added yourself.
+    keywords you've added yourself.
   </Accordion>
-  <Accordion title="A contact still received a campaign after opting out">
-    Opt-out is evaluated at send time. If the campaign was already in flight when
-    they replied STOP, the last message may have been queued. New campaigns exclude
-    them. Confirm the **Opted out** event appears on their timeline.
+  <Accordion title="Why did a contact still get a campaign after opting out?">
+    Opt-out is checked at the moment of sending. If the campaign was already going
+    out when they replied STOP, the last message may already have been on its way.
+    New campaigns leave them out. Confirm the **Opted out** event appears on their timeline.
   </Accordion>
-  <Accordion title="'STOP' matched but a longer word shouldn't have">
-    Matching is whole-word and start-anchored, so `STOPOVER` won't match `STOP`. If
-    a message opted out unexpectedly, check whether it *starts* with one of your
-    keywords.
+  <Accordion title="Why did a longer word count as STOP?">
+    The keyword must be a whole word at the start of the message, so `STOPOVER`
+    won't match `STOP`. If a message opted out unexpectedly, check whether it
+    *starts* with one of your keywords.
   </Accordion>
 </AccordionGroup>
 

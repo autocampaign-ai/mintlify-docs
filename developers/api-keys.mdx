@@ -1,12 +1,21 @@
 ---
 title: "API keys"
-description: "Create and manage API keys to access the Autocampaign AI API programmatically."
+description: "Create and manage API keys so other programs can connect to your Autocampaign AI account."
 icon: "key"
 ---
 
 ## Overview
 
-API keys let external systems and integrations act on your workspace through the
+**Not a developer?** This page is for whoever is connecting another program to
+your account. An [API key](/getting-started/glossary#api-key) is a password that
+lets another program use your account. Create one here, send it to your
+developer privately (never by email or chat), and point them to this page. If
+they also mention a **webhook**, an **endpoint URL**, a **signing secret**, or a
+**payload**, those are explained in plain words on the
+[Webhooks](/developers/webhooks) page.
+
+API keys let external systems and [integrations](/getting-started/glossary#integration)
+act on your [workspace](/getting-started/glossary#workspace) through the
 Autocampaign AI API. Manage them at **Settings → API keys** (`/settings/api-keys`).
 
 {/* MEDIA-TODO video | /videos/developers/api-keys-create-and-rotate-key.mp4
@@ -22,14 +31,15 @@ Publish: add the file at the path above (or swap the video tag for a YouTube or 
 */}
 
 <Info>
-  **Difficulty:** Advanced &nbsp;·&nbsp; **Permission:** Manage API keys (human
-  users only).
+  **Time to complete:** ~5 minutes &nbsp;·&nbsp; **Difficulty:** Advanced &nbsp;·&nbsp; You need a
+  [role](/getting-started/glossary#role) that can manage API keys, and you must be
+  signed in as a person — a key can't be used to create other keys.
 </Info>
 
 <Warning>
   An API key acts with **Owner-level** permissions for your workspace — anyone with
-  the key can do anything an owner can. Store it securely and never commit it to
-  source control.
+  the key can do anything an owner can. Store it securely and never save it in
+  your code repository (source control).
 </Warning>
 
 ## Create an API key
@@ -72,7 +82,8 @@ Publish: add the file at the path above (or swap the video tag for a YouTube or 
 
 ## Authenticate
 
-Send the key on each request using either header:
+Send the key on each request using either header (the part of a request that
+carries the key):
 
 ```http
 X-API-Key: et_live_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
@@ -86,8 +97,8 @@ Authorization: Bearer et_live_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 ## Rotate, revoke, delete
 
-- **Rotate** — generates a new secret (shown once) and immediately invalidates the
-  old one. Use this if a key may be exposed.
+- **Rotate** — generates a new secret (shown once) and immediately stops the old
+  one working. Use this if a key may have leaked.
 - **Revoke** — stops the key working immediately, keeping its history.
 - **Delete** — removes it from the list.
 
@@ -95,14 +106,14 @@ Keys show a status of **active**, **revoked**, or **expired**, plus when they we
 last used.
 
 <Note>
-  API keys can't manage other API keys or webhooks — those actions require a
-  signed-in user.
+  API keys can't manage other API keys or [webhooks](/getting-started/glossary#webhook)
+  — those actions require a signed-in user.
 </Note>
 
 ## FAQ
 
 <AccordionGroup>
-  <Accordion title="Can I scope a key to specific permissions?">
+  <Accordion title="Can I limit a key to specific permissions?">
     Not today — every key has Owner-level access. Treat keys as highly sensitive and
     rotate them regularly.
   </Accordion>
@@ -111,7 +122,7 @@ last used.
   </Accordion>
   <Accordion title="How do I use the API?">
     See the [API reference](/api/introduction) for authentication, conventions, and
-    available endpoints.
+    available endpoints (the web addresses your program sends requests to).
   </Accordion>
 </AccordionGroup>
 
@@ -125,5 +136,5 @@ last used.
 </AccordionGroup>
 
 <Card title="Set up webhooks" icon="webhook" href="/developers/webhooks">
-  Receive real-time events.
+  Get told automatically when something happens in your account.
 </Card>

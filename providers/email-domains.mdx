@@ -5,15 +5,18 @@ icon: "globe"
 ---
 
 <Info>
-  **Time to complete:** ~10 minutes plus DNS propagation &nbsp;·&nbsp;
-  **Difficulty:** Intermediate
+  **Time to complete:** ~10–15 minutes, plus up to 48 hours for DNS changes to take
+  effect &nbsp;·&nbsp; **Difficulty:** Intermediate
 </Info>
 
 ## Overview
 
-To send email from your own address, you verify the domain it belongs to by adding
-a few DNS records. This authenticates your mail (SPF and DKIM) and sets up link
-tracking, so your campaigns are trusted and land in inboxes. Manage domains at
+To send email from your own address, you verify the domain it belongs to (the part
+after the @). You do this by adding a few
+[DNS records](/getting-started/glossary#dns-record) — settings in your domain
+provider's control panel, such as GoDaddy or Cloudflare. These include SPF and DKIM (records that prove email really comes from you) and
+set up link tracking, so your campaigns are trusted and land in inboxes. Manage
+domains at
 **Settings → Email → Sending domains** (`/settings/email/domains`).
 
 {/* MEDIA-TODO video | /videos/providers/email-domains-verify-domain.mp4
@@ -36,12 +39,13 @@ Publish: add the file at the path above (or swap the video tag for a YouTube or 
     domain like `acme.com` (no `https://`, no path).
   </Step>
   <Step title="Copy the DNS records">
-    Autocampaign AI shows a set of **CNAME** records covering **SPF**, **DKIM**, and a
-    **tracking domain**. Copy each record's host and value.
+    Autocampaign AI shows a set of **CNAME** records (a type of DNS record that points
+    one name at another) covering **SPF**, **DKIM**, and a **tracking domain**. Copy
+    each record's host and value.
   </Step>
   <Step title="Add them at your DNS provider">
-    Open your DNS provider (GoDaddy, Cloudflare, Namecheap, etc.) and add the records
-    exactly as shown.
+    Open your DNS provider (the company that manages your domain, such as GoDaddy,
+    Cloudflare, or Namecheap) and add the records exactly as shown.
   </Step>
   <Step title="Verify">
     Back in Autocampaign AI, click **Verify**. Autocampaign AI re-checks your DNS and updates the
@@ -60,9 +64,10 @@ Publish: add the file at the path above, then delete this note and the comment m
 </Frame>
 */}
 
-## Verification status
+## Check the verification status
 
-- **Pending** — waiting for DNS to propagate (can take minutes up to 48 hours).
+- **Pending** — waiting for your DNS changes to spread across the internet (can
+  take minutes up to 48 hours).
 - **Verified** — authenticated and ready to send from.
 - **Failed** — DNS wasn't detected within 48 hours; fix the records and re-verify.
 
@@ -78,7 +83,7 @@ Publish: add the file at the path above, then delete this note and the comment m
 */}
 
 <Note>
-  DNS changes can take time to propagate. Autocampaign AI re-checks pending domains
+  DNS changes can take time to take effect. Autocampaign AI re-checks pending domains
   automatically — you don't have to keep clicking **Verify**.
 </Note>
 
@@ -87,14 +92,16 @@ Publish: add the file at the path above, then delete this note and the comment m
 <AccordionGroup>
   <Accordion title="What records do I add?">
     CNAME records for SPF, DKIM, and a tracking subdomain — Autocampaign AI generates them
-    for your domain. A DMARC record isn't part of this flow.
+    for your domain. A DMARC record (a further email-security record) isn't part of
+    this setup.
   </Accordion>
   <Accordion title="Do I need to own the domain?">
     Yes — you must be able to add DNS records for it. You can't verify a domain you
     don't control (like `gmail.com`).
   </Accordion>
   <Accordion title="How long does verification take?">
-    Often a few minutes, but DNS can take up to 48 hours to propagate globally.
+    Often a few minutes, but DNS changes can take up to 48 hours to take effect
+    everywhere.
   </Accordion>
 </AccordionGroup>
 
@@ -102,11 +109,13 @@ Publish: add the file at the path above, then delete this note and the comment m
 
 <AccordionGroup>
   <Accordion title="'Enter a bare domain like acme.com'">
-    Remove the scheme and path — enter just `acme.com`, not `https://acme.com/`.
+    Remove the `https://` and anything after the domain — enter just `acme.com`,
+    not `https://acme.com/`.
   </Accordion>
-  <Accordion title="Domain stuck on 'Pending'">
-    Double-check each CNAME host and value matches exactly (watch for your provider
-    auto-appending the domain). Propagation can take up to 48 hours.
+  <Accordion title="Why is my domain stuck on 'Pending'?">
+    Double-check each CNAME host and value matches exactly. Some providers add your
+    domain to the end of the host automatically — check for that. Changes can take
+    up to 48 hours to take effect.
   </Accordion>
   <Accordion title="'This domain is already registered'">
     The domain is already added to your workspace. Open it from the list instead of

@@ -7,16 +7,23 @@ icon: "whatsapp"
 ## Overview
 
 The WhatsApp channel connects a **WhatsApp Business** number to Autocampaign AI so
-customers can message you on WhatsApp and you can reply from the
+customers can message you on WhatsApp. You can reply from the
 [Inbox](/inbox/overview), send from [workflows](/automation/workflow-builder) and
 [sequences](/campaigns/sequences), or let an [AI Employee](/automation/ai-employees)
 answer. Connect it under **Settings → Channels → WhatsApp**
 (`/settings/channels/whatsapp`); manage templates under **Templates → WhatsApp**
 (`/templates/whatsapp`).
 
+<Tip>
+  **In short:** 1) Connect your WhatsApp Business number through Meta. 2) Create
+  message templates and get them approved. 3) Reply from the inbox, workflows, or AI Employees.
+</Tip>
+
 <Info>
-  **Difficulty:** Intermediate &nbsp;·&nbsp; Connecting needs channel-management
-  permission; templates need the **WhatsApp templates** permissions.
+  **Time to complete:** ~15–30 minutes to connect, plus Meta's template review
+  &nbsp;·&nbsp; **Difficulty:** Intermediate &nbsp;·&nbsp; You need to be an Owner
+  or Admin, or ask an admin to give you permission to manage channels and WhatsApp
+  templates.
 </Info>
 
 ## Before you start
@@ -55,22 +62,22 @@ answer. Connect it under **Settings → Channels → WhatsApp**
   </Step>
 </Steps>
 
-## The 24-hour window and consent
+## Understand the 24-hour window and consent
 
-Every inbound WhatsApp message opens a **24-hour customer-service window** for that
-contact and records them as opted in to WhatsApp.
+Every incoming WhatsApp message opens a **24-hour customer-service window** for that
+contact and records them as [opted in](/getting-started/glossary#opt-in) to WhatsApp.
 
 - **Window open** — send free-form text (up to 4,096 characters) and media.
-- **Window closed** (no inbound message in the last 24 hours, or none ever) — only an
+- **Window closed** (no incoming message in the last 24 hours, or none ever) — only an
   **approved template** can be sent. That's how you start or restart a conversation.
 - **Opted out** — a contact who replies with an opt-out keyword (for example `STOP`,
-  as set under **Settings → Opt-out**) can't be messaged on WhatsApp at all, templates
-  included. Their `STOP` still appears in the thread.
+  as set under **Settings → Opt-out**) can't be messaged on WhatsApp at all. That
+  includes templates. Their `STOP` still appears in the thread.
 
 <Note>
-  A WhatsApp `STOP` doesn't silence SMS (though an SMS opt-out also blocks WhatsApp),
-  and it's sticky — there's currently no switch on the contact record to opt them back
-  in.
+  A WhatsApp `STOP` doesn't silence SMS (though an SMS opt-out also blocks WhatsApp).
+  It also can't be undone for now — there's no switch on the contact record to opt
+  them back in.
 </Note>
 
 ## Message templates
@@ -100,8 +107,9 @@ Publish: add the file at the path above (or swap the video tag for a YouTube or 
   </Step>
   <Step title="Editor" icon="pen">
     Enter a **Template name** and **Language code** (default `en_US`), then write the
-    **Message body** (up to 1,024 characters). Use **Personalize** to insert merge
-    tags such as `{{first_name}}`; add a fallback with `{{first_name|"there"}}`.
+    **Message body** (up to 1,024 characters). Use **Personalize** to insert
+    [merge tags](/getting-started/glossary#merge-tag) (placeholders that fill in each
+    contact's details) such as `{{first_name}}`; add a fallback with `{{first_name|"there"}}`.
     Optionally add a **Header** and **Footer** (60 characters each) and up to three
     **Buttons** — **Quick reply** or **Website link**. Merge tags work only in the body.
   </Step>
@@ -118,7 +126,7 @@ use** copies one into your workspace; **Duplicate** copies your own.
 
 ## Reply and compose in the inbox
 
-Inbound WhatsApp messages land in the [Inbox](/inbox/overview) on the contact's
+Incoming WhatsApp messages land in the [Inbox](/inbox/overview) on the contact's
 **WhatsApp** channel tab; unknown numbers become a new contact named "Unknown". Text,
 images, and documents arrive with captions; other types show a placeholder such as
 `[Voice message]`. While the window is open the composer shows **You can reply
@@ -149,18 +157,18 @@ contact's page or drawer opens the same composer.
   text. Set **If WhatsApp can't message this contact right now** to **Skip this step**
   or **Send an approved template instead** with a **Fallback template**.
 - **Send WhatsApp Template** / **WhatsApp Template** sends an approved template
-  directly. Publishing is blocked while a step references an unapproved template.
+  directly. You can't publish while a step uses a template that isn't approved yet.
 - Both steps respect quiet hours and skip contacts who opted out of WhatsApp.
 - **AI Employees** reply on WhatsApp with WhatsApp-style formatting. If the window
   closes before the reply goes out, the run is logged as skipped (WhatsApp window
-  closed), not as an error; the AI never sends templates on its own.
+  closed), not as an error. The AI never sends templates on its own.
 
 <Note>
   WhatsApp isn't a campaign channel yet — use sequences or workflows for automated
   WhatsApp sends.
 </Note>
 
-## Status and limits
+## Check status and limits
 
 | Item | Limit |
 | --- | --- |
@@ -190,7 +198,7 @@ and templates count toward your [plan's allowances](/billing/plans-and-trials).
 ## Troubleshooting
 
 <AccordionGroup>
-  <Accordion title="The connect window failed or timed out">
+  <Accordion title="Why did the connect window fail or time out?">
     Allow pop-ups, check the number belongs to the selected WhatsApp Business Account,
     and click **Connect with WhatsApp** again.
   </Accordion>
@@ -198,7 +206,7 @@ and templates count toward your [plan's allowances](/billing/plans-and-trials).
     Names are unique per language in your workspace — rename it or change the
     **Language code**.
   </Accordion>
-  <Accordion title="A workflow step was skipped">
+  <Accordion title="Why was a workflow step skipped?">
     The contact opted out, or the window was closed and the step is set to **Skip this
     step**. Add a **Fallback template** to send instead.
   </Accordion>

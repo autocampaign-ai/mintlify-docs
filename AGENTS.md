@@ -29,6 +29,20 @@
 - Code formatting for file names, commands, paths, keywords (`STOP`), and code references.
 - Every module page follows: Overview → Before you start → How-to (`<Steps>`) → FAQ (`<AccordionGroup>`) → Troubleshooting.
 
+## Write for non-technical readers
+
+- The reader runs a small business or works the front desk. Assume no technical background.
+- Explain every technical term the first time it appears on a page, in the same sentence or the next,
+  or link it to the [glossary](getting-started/glossary.mdx): `[segment](/getting-started/glossary#segment)`.
+- Never show permission codes such as `channels:manage`. Say "ask an Owner or Admin for permission to manage channels".
+- No engineering words in customer pages: queue, entitlement, rate-limited, payload, schema, provisioned, null, boolean, cron.
+  The `api/` section is the only exception.
+- Every page with steps carries `**Time to complete:** … · **Difficulty:** …` in an `<Info>` under Overview.
+- Pages over about 850 words open with a `<Tip>**In short:** 1) … 2) … 3) …</Tip>` after the first paragraph.
+- Headings say what the reader does ("Connect Twilio"). FAQ and troubleshooting titles read as the reader would ask them.
+- Keep sentences under about 25 words. Prefer everyday words: use, start, set up, turn on.
+- Run `python3 scripts/check-docs.py` and `mint broken-links` before opening a pull request.
+
 ## Content boundaries
 
 - Document customer-facing features only. Do not document platform-admin,

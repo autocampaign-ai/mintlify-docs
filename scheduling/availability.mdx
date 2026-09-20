@@ -6,13 +6,13 @@ icon: "clock"
 
 ## Overview
 
-Availability schedules define when people can book you. Each
-[meeting type](/scheduling/meeting-types) uses a schedule, so slots only appear
-during your bookable hours. Manage schedules under **Availability**
-(`/availability`).
+[Availability](/getting-started/glossary#availability) schedules define when
+people can book you. Each [meeting type](/scheduling/meeting-types) (a kind of
+appointment people can book) uses a schedule, so time slots only appear during
+your bookable hours. Manage schedules under **Availability** (`/availability`).
 
 <Info>
-  **Difficulty:** Beginner
+  **Time to complete:** ~5 minutes &nbsp;·&nbsp; **Difficulty:** Beginner
 </Info>
 
 ## Set your weekly hours
@@ -22,11 +22,12 @@ during your bookable hours. Manage schedules under **Availability**
     Choose an existing schedule (one is marked **Default**) or create a new one.
   </Step>
   <Step title="Set the timezone">
-    Weekly hours are wall-clock times in the schedule's **timezone**.
+    Weekly hours are local times in the schedule's **timezone**.
   </Step>
-  <Step title="Toggle days and set ranges">
-    Turn each day on/off. For enabled days, set one or more time ranges (for example,
-    9:00–12:00 and 13:00–17:00). Use **Copy to…** to reuse a day's hours on others.
+  <Step title="Turn days on and set hours">
+    Turn each day on/off. For each day that is on, set one or more time ranges (for
+    example, 9:00–12:00 and 13:00–17:00). Use **Copy to…** to reuse a day's hours on
+    others.
 
     {/* MEDIA-TODO screenshot | /images/scheduling/availability-weekly-hours.png
     Capture: A schedule marked Default with its timezone shown, several days enabled, one day with two time ranges (9:00–12:00 and 13:00–17:00), one day switched off, and the Copy to… control visible.
@@ -41,7 +42,7 @@ during your bookable hours. Manage schedules under **Availability**
   </Step>
 </Steps>
 
-## Date overrides
+## Set different hours for specific dates
 
 Add **overrides** for specific dates — mark a day **unavailable** (holidays) or set
 custom hours just for those dates. Overrides take priority over your weekly hours.
@@ -57,7 +58,7 @@ Publish: add the file at the path above, then delete this note and the comment m
 </Frame>
 */}
 
-## Multiple schedules
+## Use more than one schedule
 
 Create several named schedules (for example, "Sales hours" and "Support hours") and
 assign different ones to different meeting types. Meeting types using a deleted
@@ -66,7 +67,7 @@ schedule fall back to the default.
 ## FAQ
 
 <AccordionGroup>
-  <Accordion title="Why don't external calendar events block my slots?">
+  <Accordion title="Why don't my other calendar's events block my slots?">
     They can — connect a [calendar](/scheduling/calendar-integrations) and mark it
     "Check for conflicts" so busy times remove slots automatically.
   </Accordion>
@@ -78,12 +79,12 @@ schedule fall back to the default.
 ## Troubleshooting
 
 <AccordionGroup>
-  <Accordion title="'Time ranges overlap' / 'End must be after start'">
+  <Accordion title="I see 'Time ranges overlap' or 'End must be after start'">
     Fix the day's ranges so they don't overlap and each end time is after its start.
   </Accordion>
   <Accordion title="No slots show on my booking page">
-    Confirm the schedule has enabled days with hours, the timezone is correct, and no
-    override marks the date unavailable.
+    Confirm the schedule has days turned on with hours set, the timezone is correct,
+    and no override marks the date unavailable.
   </Accordion>
 </AccordionGroup>
 

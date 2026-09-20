@@ -6,13 +6,13 @@ icon: "tag"
 
 ## Overview
 
-Tags are simple labels you attach to contacts — like `VIP`, `Trial`, or
-`Newsletter`. Use them to filter the contacts list, build [segments](/contacts/segments),
-and target campaigns. A contact can have any number of tags.
+[Tags](/getting-started/glossary#tag) are simple labels you attach to contacts, like
+`VIP`, `Trial`, or `Newsletter`. Use them to filter the contacts list, build
+[segments](/contacts/segments), and target campaigns. A contact can have any number of tags.
 
 <Info>
-  **Where to manage them:** **CRM → Audience → Tags** in the sidebar (`/tags`)
-  &nbsp;·&nbsp; **Difficulty:** Beginner
+  **Time to complete:** ~2 minutes &nbsp;·&nbsp; **Difficulty:** Beginner
+  &nbsp;·&nbsp; **Where to manage them:** **CRM → Audience → Tags** in the sidebar (`/tags`)
 </Info>
 
 <Note>
@@ -29,7 +29,7 @@ and target campaigns. A contact can have any number of tags.
   <Step title="Create a tag">
     Type a name in the **Search tags, or type a new name to add...** box (up to 50
     characters) and click **Add** or press Enter. If a tag with that name already
-    exists, the button stays disabled. The same box filters the list as you type.
+    exists, the button stays greyed out. The same box filters the list as you type.
 
     {/* MEDIA-TODO screenshot | /images/contacts/tags-page-add-tag.png
     Capture: The Tags page with several colored tags listed, a new name typed into the "Search tags, or type a new name to add..." box with the Add button enabled, and the Edit tag (pencil) and Delete tag (trash) icons visible on a row.
@@ -43,9 +43,9 @@ and target campaigns. A contact can have any number of tags.
     */}
   </Step>
   <Step title="Rename or delete">
-    Click **Edit tag** (pencil) to rename a tag inline — press Enter to save or
-    Escape to cancel — or **Delete tag** (trash) to remove it. Deleting a tag removes
-    it from every contact — this can't be undone.
+    Click **Edit tag** (pencil) to rename a tag in place. Press Enter to save or
+    Escape to cancel. Click **Delete tag** (trash) to remove it. Deleting a tag removes
+    it from every contact, and this can't be undone.
   </Step>
 </Steps>
 
@@ -60,10 +60,10 @@ You can add tags in several places:
 
 - **On a contact** — in the create/edit dialog, or the **Tags** section of the
   contact detail page. Start typing to search existing tags or create a new one on
-  the fly.
+  the spot.
 - **In bulk from the contacts list** — select contacts, open **Bulk Actions**, and
-  choose **Assign Tags**. Duplicate assignments are skipped automatically.
-- **During CSV import** — apply tags to every imported contact in the **Tags &
+  choose **Assign Tags**. Tags a contact already has are skipped automatically.
+- **During a spreadsheet import** — apply tags to every imported contact in the **Tags &
   Options** step. See [Import contacts](/contacts/import-csv).
 
 {/* MEDIA-TODO screenshot | /images/contacts/tags-bulk-assign.png
@@ -78,21 +78,21 @@ Publish: add the file at the path above, then delete this note and the comment m
 */}
 
 <Tip>
-  You can create a tag from anywhere the tag input appears — you don't have to visit
+  You can create a tag from anywhere the tag box appears. You don't have to visit
   the **Tags** page first.
 </Tip>
 
 ## Use tags to target contacts
 
 - **Filter** the contacts list, then act on the results.
-- **Build a segment** with a "Has tag" rule for automatic, always-current audiences
-  — see [Segments](/contacts/segments).
+- **Build a segment** with a "Has tag" rule for an audience that always stays
+  current. See [Segments](/contacts/segments).
 
 ## FAQ
 
 <AccordionGroup>
   <Accordion title="Can I set a tag's color?">
-    Not manually — Autocampaign AI derives a consistent color from the tag's name.
+    Not by hand. Autocampaign AI picks a consistent color from the tag's name.
   </Accordion>
   <Accordion title="What happens when I delete a tag?">
     It's removed from all contacts, and from any join links, SMS templates, tickets,
@@ -100,24 +100,24 @@ Publish: add the file at the path above, then delete this note and the comment m
     care.
   </Accordion>
   <Accordion title="How are tags different from segments?">
-    A tag is a manual label you attach. A [segment](/contacts/segments) is a group —
-    it can be static (manually managed) or dynamic (auto-updated from rules, which
-    can include tags).
+    A tag is a label you attach yourself. A [segment](/contacts/segments) is a group.
+    It can be static (you manage the members) or dynamic (updated automatically from
+    rules, which can include tags).
   </Accordion>
-  <Accordion title="Can I bulk-apply a tag to many contacts at once?">
+  <Accordion title="Can I apply a tag to many contacts at once?">
     Yes. Select contacts in the list, open **Bulk Actions → Assign Tags**, pick the
-    tags, and click **Apply Tags**. You can also apply tags to every row during
-    [CSV import](/contacts/import-csv).
+    tags, and click **Apply Tags**. You can also apply tags to every row during a
+    [spreadsheet import](/contacts/import-csv).
   </Accordion>
 </AccordionGroup>
 
 ## Troubleshooting
 
 <AccordionGroup>
-  <Accordion title="I can't add a tag — the Add button is disabled">
+  <Accordion title="Why can't I add a tag? The Add button is greyed out">
     A tag with that exact name already exists, or the name is empty or over 50
-    characters. Adjust the name. Tag names are case-sensitive, so "VIP" and "vip"
-    are treated as different tags — search, however, ignores case.
+    characters. Adjust the name. Capitals matter in tag names, so "VIP" and "vip"
+    are treated as different tags. Search, however, ignores capitals.
   </Accordion>
 </AccordionGroup>
 

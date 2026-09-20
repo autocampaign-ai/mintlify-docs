@@ -1,33 +1,43 @@
 ---
 title: "AI Employees"
-description: "Hire an AI Employee that answers inbound conversations, works toward a goal, uses skills, and hands off to your team."
+description: "Hire an AI Employee that answers incoming conversations, works toward a goal, uses skills, and hands off to your team."
 icon: "user-robot"
 ---
 
 ## Overview
 
-An AI Employee replies to inbound conversations in your [Inbox](/inbox/overview) on
-SMS, WhatsApp, email, and the chat widget. It follows a job, works toward a goal,
-answers from your [knowledge bases](/automation/knowledge-base), uses the skills you
-allow, and asks a teammate for help when it should. Find employees under
+An [AI Employee](/getting-started/glossary#ai-employee) replies to incoming
+conversations in your [Inbox](/inbox/overview) on SMS, WhatsApp, email, and the
+[chat widget](/getting-started/glossary#chat-widget). It follows a job, works toward a goal, and answers from your
+[knowledge bases](/automation/knowledge-base) (the documents it reads to answer
+questions). It uses only the skills (actions) you allow, and asks a teammate for
+help when it should. Find employees under
 **Marketing → Automation & AI → AI Employees** (`/ai-employees`).
 
+<Tip>
+  **In short:** 1) Hire an employee with the seven-step wizard. 2) Assign it to
+  conversations by hand, by default, or by workflow. 3) Let it send replies or
+  approve its drafts first.
+</Tip>
+
 <Info>
-  **Difficulty:** Intermediate &nbsp;·&nbsp; Only **Active** employees can reply.
+  **Time to complete:** ~20 minutes &nbsp;·&nbsp; **Difficulty:** Intermediate &nbsp;·&nbsp; Only **Active** employees can reply.
 </Info>
 
 ## Before you start
 
 - Create a [knowledge base](/automation/knowledge-base) if the employee should answer
   from your documents.
-- Set up [meeting types](/scheduling/meeting-types) if it should book appointments.
-- Your plan limits how many employees you can have, and every reply spends
-  [AI credits](/billing/wallet-billing).
+- Set up [meeting types](/scheduling/meeting-types) (the kinds of appointments people
+  can book) if it should book appointments.
+- Your [plan](/getting-started/glossary#plan) sets how many employees you can have.
+  Every reply spends [AI credits](/billing/wallet-billing) (the balance that pays
+  for AI work).
 
 ## Hire an employee
 
-Click **New Employee**. The wizard has seven steps; a draft is saved after
-**Employee details**, so you can leave and **Continue hiring** later.
+Click **New Employee**. The wizard (a guided form) has seven steps. A draft is saved
+after **Employee details**, so you can leave and **Continue hiring** later.
 
 {/* MEDIA-TODO video | /videos/automation/ai-employees-hire-wizard-walkthrough.mp4
 Capture: Walk through the full New Employee wizard, from choosing a job to Create & activate, pausing briefly on each of the seven steps. Target length: 2–3 minutes.
@@ -47,7 +57,8 @@ Publish: add the file at the path above (or swap the video tag for a YouTube or 
     **Lead Qualification Specialist**, **Customer Support**, **Appointment
     Scheduler**, **Marketing Assistant**, **Collections Officer**, **FAQ Assistant**,
     **Review Collector** — or **Custom Employee**. A job pre-fills the goal, skills,
-    and human-help triggers; you can change all of them.
+    and human-help triggers (the situations where it asks a teammate for help). You
+    can change all of them.
   </Step>
   <Step title="Employee details" icon="id-badge">
     Set the **Name**, **Job title**, **Avatar**, **Description**, **Language**, and
@@ -86,11 +97,11 @@ Publish: add the file at the path above (or swap the video tag for a YouTube or 
     book?** (up to 10). Skills marked **Coming soon** can't be selected yet.
   </Step>
   <Step title="Human help" icon="hand">
-    Choose **When should this employee ask for help?** from ten triggers (for
-    example *Customer asks for a human*, *Refund request*, *Negative sentiment*,
-    *AI is not confident*, *Legal request*) and add **Custom phrases** (up to 25).
-    Under **When help happens**, pick **Assign to** a teammate, **Leave
-    conversation summary**, and **Notify team**.
+    Choose **When should this employee ask for help?** from ten triggers. Examples:
+    *Customer asks for a human*, *Refund request*, *Negative sentiment*, *AI is not
+    confident*, *Legal request*. Add **Custom phrases** (up to 25). Under **When
+    help happens**, pick **Assign to** a teammate, **Leave conversation summary**,
+    and **Notify team**.
   </Step>
   <Step title="Review" icon="check">
     Confirm the summary, then click **Create employee** (saves as **Draft**) or
@@ -99,13 +110,17 @@ Publish: add the file at the path above (or swap the video tag for a YouTube or 
 </Steps>
 
 <Note>
-  You don't choose an AI model. The **Overview** tab shows which one powers the
-  employee under **Powered by** — it is managed by the platform.
+  You don't choose an AI model (the engine that writes the replies). The
+  **Overview** tab shows which one powers the employee under **Powered by**.
+  Autocampaign AI manages it for you.
 </Note>
 
-Activation is blocked if **Search Knowledge Base** is ticked with no knowledge base
-attached, a booking skill has no meeting type, or a **Collect Reviews** goal has no
-saving skill (**Add Note**, **Update Customer**, or **Update Custom Fields**).
+Activation is blocked when:
+
+- **Search Knowledge Base** is ticked but no knowledge base is attached.
+- A booking skill has no meeting type.
+- A **Collect Reviews** goal has no saving skill (**Add Note**, **Update Customer**,
+  or **Update Custom Fields**).
 
 ## Put the employee on conversations
 
@@ -114,22 +129,24 @@ An employee only replies on conversations it's assigned to. Three ways:
 - **From the inbox** — in the contact panel's **AI Employee** card, click **Assign**
   and select an employee. Use **Change** or **Unassign** later.
 - **Automatically** — set **Default employee for new conversations** on the AI
-  Employees page, or pick an **AI Employee** per phone number (**Channels**), per
+  Employees page. Or pick an **AI Employee** per phone number (**Channels**), per
   email sender (**Settings → Email → Senders**), or in the
-  [chat widget](/settings/chat-widget). A new inbound conversation goes to the
-  number's employee, then the default. A conversation a teammate already owns is
-  never taken over.
-- **From a workflow** — add the **Assign AI Employee** action in the
-  [workflow builder](/automation/workflow-builder). The employee replies when the
-  contact next messages; it doesn't send anything on its own.
+  [chat widget](/settings/chat-widget). A new incoming conversation goes to the
+  number's employee first, then to the default. A conversation a teammate already
+  owns is never taken over.
+- **From a workflow** (an automation that runs steps for you) — add the **Assign AI
+  Employee** action in the [workflow builder](/automation/workflow-builder). The
+  employee replies when the contact next messages; it doesn't send anything on its
+  own.
 
-## Auto-send or draft & approve
+## Choose between auto-send and draft & approve
 
 Assigning an employee puts the conversation in **AI active**: the employee sends
-its own replies. To review first, open the composer's **AI Autopilot** menu and
-choose **Draft & approve**. The chip reads **Autopilot: Draft & approve**, and each
-reply appears as a banner — **&lt;employee&gt; needs approval** — with **Edit** and
-**Approve & Send**. A newer inbound message replaces an unapproved draft.
+its own replies. To review first, open the **AI Autopilot** menu in the composer
+(the box where you type replies) and choose **Draft & approve**. The chip (small
+label) reads **Autopilot: Draft & approve**, and each reply appears as a banner —
+**&lt;employee&gt; needs approval** — with **Edit** and **Approve & Send**. A newer
+incoming message replaces an unapproved draft.
 
 {/* MEDIA-TODO screenshot | /images/automation/ai-employees-draft-approve-banner.png
 Capture: An inbox conversation in Draft & approve mode: the composer chip reading Autopilot: Draft & approve and the banner saying the employee needs approval, with Edit and Approve & Send visible.
@@ -156,37 +173,39 @@ In **Draft & approve** mode, replying yourself doesn't pause the employee — it
 drafting the next reply for your approval.
 
 **Conversation states:** AI active · Supervised · Handover pending · Human
-controlled · AI suspended. After three consecutive failed runs a conversation is
-**AI suspended** until you **Resume AI**.
+controlled · AI suspended. After three failed reply attempts in a row, a
+conversation is **AI suspended** until you **Resume AI**.
 
-### Human help in practice
+### What happens when the employee asks for help
 
-When a trigger fires, the employee sends its courtesy line, the conversation goes to
-**Handover pending**, the chosen teammate is assigned, the team is notified, and an
-AI-written summary note is added to the thread. A **Goal** card in the contact
-panel shows the checklist and lets you **Mark complete**.
+When a trigger fires, the employee sends its courtesy line and the conversation
+goes to **Handover pending**. The chosen teammate is assigned, the team is
+notified, and an AI-written summary note is added to the thread. A **Goal** card in
+the contact panel shows the checklist and lets you **Mark complete**.
 
-## Channels and limits
+## What replies look like on each channel
 
 - **SMS** replies are plain text, capped at 1,000 characters by default.
 - **WhatsApp** replies use WhatsApp formatting. If the 24-hour customer-service
-  window has closed, the reply is skipped and logged — the employee never sends
-  templates.
-- **Email** replies are formatted (up to 2,000 characters); an SMS opt-out doesn't
-  block email replies.
+  window has closed (WhatsApp only lets you reply freely within 24 hours of the
+  customer's last message), the reply is skipped and logged. The employee never
+  sends templates.
+- **Email** replies are formatted (up to 2,000 characters). An SMS
+  [opt-out](/getting-started/glossary#opt-out) (a request to stop receiving texts)
+  doesn't block email replies.
 - **Chat widget** replies support rich text. Opted-out contacts with no email
   address can't be assigned.
-- Each reply reserves AI credits; with none left the run is skipped as **Not
+- Each reply sets aside AI credits; with none left the reply is skipped as **Not
   enough credits**.
 
 ## Manage employees
 
 Each card shows today's **Conversations**, **Appointments**, **Handovers**, and
 **Goal success**, with **Pause**, **Resume**, **Duplicate**, and **Delete**. The
-profile has **Overview** (edit any section and **Save**), **Activity** (every
-interaction — what the customer asked, the reply, actions taken, knowledge used,
-and why a reply was skipped), and **Test chat**, which runs the saved configuration
-without touching real conversations.
+profile has three tabs. **Overview** lets you edit any section and **Save**.
+**Activity** lists every interaction: what the customer asked, the reply, actions
+taken, knowledge used, and why a reply was skipped. **Test chat** lets you try the
+saved setup without touching real conversations.
 
 {/* MEDIA-TODO screenshot | /images/automation/ai-employees-profile-activity-tab.png
 Capture: An employee profile on the Activity tab with several interactions listed, including one that shows actions taken and knowledge used, and one skipped reply with its reason.
@@ -209,15 +228,15 @@ Publish: add the file at the path above, then delete this note and the comment m
 
 <AccordionGroup>
   <Accordion title="Does the employee reply to everyone automatically?">
-    Only on conversations it's assigned to — manually, by a default or per-number
+    Only on conversations it's assigned to — by hand, by a default or per-number
     assignment, or by a workflow.
   </Accordion>
-  <Accordion title="Can it book meetings or update my CRM?">
-    Yes. Enable the booking, customer, and opportunity skills. Opportunity skills act
-    only on the conversation's contact and their open deal — see
+  <Accordion title="Can it book meetings or update my contacts and deals?">
+    Yes. Turn on the booking, customer, and opportunity skills. Opportunity skills
+    act only on the conversation's contact and their open deal — see
     [Opportunities](/crm/opportunities).
   </Accordion>
-  <Accordion title="Is the composer's AI Reply the same thing?">
+  <Accordion title="Is the AI Reply button in the composer the same thing?">
     No. **AI Reply** and **AI Draft** rewrite or compose text for you and need no
     employee. They also use AI credits.
   </Accordion>
@@ -235,12 +254,12 @@ Publish: add the file at the path above, then delete this note and the comment m
     contact isn't opted out, and you have AI credits. The **Activity** tab shows the
     skip reason.
   </Accordion>
-  <Accordion title="Answers ignore my documents">
+  <Accordion title="The answers ignore my documents">
     Attach the knowledge base on the **Knowledge** step, tick **Search Knowledge
-    Base**, and confirm ingestion finished.
+    Base**, and confirm the sources finished processing (status **Completed**).
   </Accordion>
-  <Accordion title="Create & activate fails">
-    Read the validation message — usually a missing knowledge base, meeting type, or
+  <Accordion title="Create & activate fails with an error">
+    Read the message shown — usually a missing knowledge base, meeting type, or
     saving skill (see above).
   </Accordion>
 </AccordionGroup>

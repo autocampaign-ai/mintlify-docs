@@ -6,17 +6,24 @@ icon: "comment-sms"
 
 ## Overview
 
-The SMS channel is Autocampaign AI's two-way texting capability. You connect one SMS
-provider — [Twilio](/providers/twilio) or [Telnyx](/providers/telnyx) — and Autocampaign AI
-handles sending, inbound replies, delivery status, and
-[A2P 10DLC](/compliance/a2p-10dlc) registration.
+The SMS channel is Autocampaign AI's two-way texting feature. You connect one SMS
+[provider](/getting-started/glossary#provider) — [Twilio](/providers/twilio) or
+[Telnyx](/providers/telnyx) — and Autocampaign AI handles sending, incoming replies,
+and delivery status. It also handles [A2P 10DLC](/compliance/a2p-10dlc)
+registration (the US carrier registration required to send business texts from a
+local number).
+
+<Info>
+  **Time to complete:** ~30 minutes to connect and add numbers, plus 1–2 days for
+  10DLC carrier approval &nbsp;·&nbsp; **Difficulty:** Intermediate
+</Info>
 
 <CardGroup cols={2}>
   <Card title="Connect Twilio" icon="plug" href="/providers/twilio">
-    Account SID + Auth Token.
+    Uses your Account SID and Auth Token (two codes from your Twilio account).
   </Card>
   <Card title="Connect Telnyx" icon="plug" href="/providers/telnyx">
-    API Key (Messaging scope).
+    Uses an API key (a password that lets Autocampaign AI use your Telnyx account) with Messaging scope.
   </Card>
 </CardGroup>
 
@@ -27,8 +34,10 @@ handles sending, inbound replies, delivery status, and
     Your connected Twilio or Telnyx account. Only one is active per workspace.
   </Step>
   <Step title="Messaging service / profile" icon="gear">
-    A container that groups numbers and holds the webhook + 10DLC campaign link.
-    Twilio calls it a **messaging service**; Telnyx calls it a **messaging profile**.
+    A group for your phone numbers. It also holds the
+    [webhook](/getting-started/glossary#webhook) (the automatic link that delivers
+    replies to Autocampaign AI) and your 10DLC campaign link. Twilio calls it a
+    **messaging service**; Telnyx calls it a **messaging profile**.
   </Step>
   <Step title="Phone numbers" icon="hashtag">
     The numbers you send from, attached to a messaging service.
@@ -48,13 +57,14 @@ handles sending, inbound replies, delivery status, and
 The **Set Up Your Channel** wizard guides you through these in order right after
 you connect.
 
-## Numbers and messaging services
+## Buy and assign numbers
 
 On the SMS channel's **Numbers** tab you can:
 
-- **Buy a number** — filter by country, area code, or a contains-pattern, choose
-  SMS/MMS/Voice capabilities, and purchase.
-- **Assign a number** to a messaging service via the inline dropdown.
+- **Buy a number** — filter by country, area code, or digits the number should
+  contain. Choose what it can do (SMS for texts, MMS for pictures, Voice for
+  calls), and purchase.
+- **Assign a number** to a messaging service using the dropdown in its row.
 - **Create a messaging service** with a friendly name.
 
 {/* MEDIA-TODO screenshot | /images/channels/sms-numbers-tab.png
@@ -72,44 +82,44 @@ Publish: add the file at the path above, then delete this note and the comment m
 
 [Calls](/inbox/calls) run on the same provider as your SMS channel. A number can
 place and receive calls only if it has the **Voice** capability at your provider.
-If you switch messaging provider, re-enable voice under **Settings → Voice**.
+If you switch messaging provider, turn voice back on under **Settings → Voice**.
 
-## Inbound, delivery, and compliance
+## Replies, delivery, and opt-outs
 
 - **Replies** arrive in your [Inbox](/inbox/overview), linked to the contact.
-- **Delivery status** updates automatically via provider webhooks (configured for
-  you — no manual setup).
-- **Opt-outs** (STOP) and **opt-ins** (START) are detected on every inbound message
+- **Delivery status** updates automatically. Your provider reports it through
+  webhooks, which are set up for you.
+- **Opt-outs** (STOP) and **opt-ins** (START) are detected on every incoming message
   — see [Opt-out](/compliance/opt-out) and [Opt-in](/compliance/opt-in).
 
 ## FAQ
 
 <AccordionGroup>
   <Accordion title="Which provider should I choose?">
-    Both are carrier-grade. Choose based on your existing account, pricing, and
-    number availability. Twilio uses Account SID + Auth Token; Telnyx uses an API
-    Key with Messaging scope.
+    Both are reliable, large carriers. Choose based on your existing account,
+    pricing, and number availability. Twilio uses an Account SID and Auth Token;
+    Telnyx uses an API Key with Messaging scope.
   </Accordion>
   <Accordion title="Can I send MMS?">
-    Yes, if your number and provider support it — enable the **MMS** capability when
-    buying a number.
+    Yes, if your number and provider support it — turn on the **MMS** capability
+    when buying a number.
   </Accordion>
-  <Accordion title="Do I configure webhooks myself?">
-    No. Autocampaign AI registers inbound and delivery-status webhooks on your messaging
-    service automatically when you finish setup.
+  <Accordion title="Do I set up webhooks myself?">
+    No. Autocampaign AI sets up the webhooks for replies and delivery status on your
+    messaging service automatically when you finish setup.
   </Accordion>
 </AccordionGroup>
 
 ## Troubleshooting
 
 <AccordionGroup>
-  <Accordion title="Messages fail to send">
+  <Accordion title="Why do my messages fail to send?">
     Confirm the channel badge is **Active**, the sending number is attached to a
     messaging service, and — for US traffic — your 10DLC campaign is approved.
   </Accordion>
-  <Accordion title="Replies aren't showing in the inbox">
-    Finish the setup wizard so webhooks are registered, and confirm the number
-    belongs to a managed messaging service.
+  <Accordion title="Why aren't replies showing in the inbox?">
+    Finish the setup wizard so the webhooks are set up, and confirm the number
+    belongs to a messaging service that Autocampaign AI manages.
   </Accordion>
 </AccordionGroup>
 

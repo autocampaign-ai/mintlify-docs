@@ -8,11 +8,11 @@ icon: "circle-question"
 
 <AccordionGroup>
   <Accordion title="How do I send my first message?">
-    Connect an SMS provider ([Twilio](/providers/twilio) or [Telnyx](/providers/telnyx)),
+    Connect an SMS [provider](/getting-started/glossary#provider) ([Twilio](/providers/twilio) or [Telnyx](/providers/telnyx)),
     [import contacts](/contacts/import-csv), then create a [campaign](/campaigns/overview).
     See the [Quickstart](/quickstart).
   </Accordion>
-  <Accordion title="Do I need my own Twilio/Telnyx account?">
+  <Accordion title="Do I need my own Twilio or Telnyx account?">
     Yes — you connect your own provider account. Autocampaign AI sends through it.
   </Accordion>
   <Accordion title="How do I invite my team?">
@@ -20,73 +20,45 @@ icon: "circle-question"
   </Accordion>
 </AccordionGroup>
 
-## Compliance
+## Sending messages
 
 <AccordionGroup>
-  <Accordion title="Do I have to register 10DLC?">
-    For reliable delivery to US mobile numbers, yes. See [A2P 10DLC](/compliance/a2p-10dlc).
-  </Accordion>
-  <Accordion title="How are opt-outs handled?">
-    STOP and similar keywords opt a contact out automatically, and they're excluded
-    from future campaigns. See [Opt-out management](/compliance/opt-out).
-  </Accordion>
-  <Accordion title="Is the opt-in auto-reply written by AI?">
-    No — it's a static message you configure. AI replies are a separate
-    [AI Employees](/automation/ai-employees) feature for the inbox.
-  </Accordion>
-</AccordionGroup>
-
-## Contacts & campaigns
-
-<AccordionGroup>
-  <Accordion title="Can I use custom fields as merge tags?">
-    No — merge tags are limited to standard contact fields. See
-    [Custom fields](/contacts/custom-fields).
-  </Accordion>
-  <Accordion title="Can a campaign target multiple segments?">
-    One segment per campaign today. Build a dynamic segment that captures everyone you
+  <Accordion title="Can a campaign go to more than one segment?">
+    One [segment](/getting-started/glossary#segment) per campaign today. Build a dynamic segment (one that fills itself from rules) that captures everyone you
     want. See [Segments](/contacts/segments).
   </Accordion>
-  <Accordion title="Where do replies show up?">
-    In the unified [Inbox](/inbox/overview), linked to the contact.
+  <Accordion title="What's the difference between a sequence and a campaign?">
+    A campaign sends one message to a whole audience at once; a [sequence](/getting-started/glossary#sequence) sends each
+    contact a timed chain of emails, texts, and WhatsApp messages, and stops when
+    they reply, book, or opt out. See [Sequences](/campaigns/sequences).
   </Accordion>
-  <Accordion title="Can I export contacts?">
-    Contact CSV export isn't available today; import and in-app segmentation are.
+  <Accordion title="Can I put custom fields into a message as merge tags?">
+    No — [merge tags](/getting-started/glossary#merge-tag) (placeholders that fill in each contact's details) are limited to standard contact fields. See
+    [Custom fields](/contacts/custom-fields).
   </Accordion>
-</AccordionGroup>
-
-## Channels, CRM & languages
-
-<AccordionGroup>
+  <Accordion title="Can I connect Gmail or Outlook to send email?">
+    No — Autocampaign AI sends from your **[verified domain](/getting-started/glossary#verified-domain)**. There's no mailbox or SMTP
+    (mail server) connection. See [Email channel](/channels/email).
+  </Accordion>
   <Accordion title="Can I message customers on WhatsApp?">
     Yes — connect a WhatsApp Business number under **Settings → Channels → WhatsApp**
     and reply from the Inbox, sequences, workflows, or an AI Employee. Outside the
     24-hour window after a customer's last message you can only send an approved
     template, and WhatsApp isn't a campaign channel yet. See [WhatsApp](/channels/whatsapp).
   </Accordion>
+</AccordionGroup>
+
+## Replies, calls and chat
+
+<AccordionGroup>
+  <Accordion title="Where do replies show up?">
+    In the unified [Inbox](/inbox/overview), linked to the contact.
+  </Accordion>
   <Accordion title="Can my team make and receive phone calls?">
     Yes — enable voice under **Settings → Voice** to call in the browser on your
     Twilio or Telnyx numbers that have the Voice capability, with business hours,
-    IVR menus, voicemail, and recordings. Every call appears under **Calls** and in
+    IVR menus (press-1-for-sales phone menus), voicemail, and recordings. Every call appears under **Calls** and in
     the contact's inbox thread. See [Calls](/inbox/calls).
-  </Accordion>
-  <Accordion title="How do I track deals?">
-    Use **CRM → Opportunities** to move deals through pipeline stages on a board or
-    list until they're **Won** or **Lost**. A default **Sales Pipeline** is created
-    the first time you open it. See [Opportunities](/crm/opportunities) and
-    [Pipelines](/crm/pipelines).
-  </Accordion>
-  <Accordion title="What's the difference between a sequence and a campaign?">
-    A campaign sends one message to a whole audience at once; a sequence sends each
-    contact a timed chain of emails, texts, and WhatsApp messages, and stops when
-    they reply, book, or opt out. See [Sequences](/campaigns/sequences).
-  </Accordion>
-  <Accordion title="Which languages does the app support?">
-    English, Arabic (right-to-left), Brazilian Portuguese, Chinese, French, German,
-    Portuguese, and Spanish. Switch from the language button in the header or
-    **Language** in your account menu — the choice is saved per browser and doesn't
-    change the language of messages you send. See
-    [Navigate the app](/getting-started/navigate-the-app#change-the-language).
   </Accordion>
   <Accordion title="Can I add live chat to my website?">
     Yes — set it up under **Settings → Website Chat**. See
@@ -94,24 +66,45 @@ icon: "circle-question"
   </Accordion>
 </AccordionGroup>
 
-## Email
+## Contacts and deals
 
 <AccordionGroup>
-  <Accordion title="Can I connect Gmail or Outlook to send email?">
-    No — Autocampaign AI sends from your **verified domain**. There's no mailbox or SMTP
-    connection. See [Email channel](/channels/email).
+  <Accordion title="Can I export my contacts?">
+    Contact CSV export isn't available today; import and in-app segmentation are.
+  </Accordion>
+  <Accordion title="How do I track deals?">
+    Use **CRM → Opportunities** to move deals through [pipeline](/getting-started/glossary#pipeline) stages on a board or
+    list until they're **Won** or **Lost**. A default **Sales Pipeline** is created
+    the first time you open it. See [Opportunities](/crm/opportunities) and
+    [Pipelines](/crm/pipelines).
   </Accordion>
 </AccordionGroup>
 
-## Automation & AI
+## Texting rules
 
 <AccordionGroup>
-  <Accordion title="Can an AI Employee book meetings or update a CRM?">
+  <Accordion title="Do I have to register my business to send texts (10DLC)?">
+    For reliable delivery to US mobile numbers, yes. See [A2P 10DLC](/compliance/a2p-10dlc).
+  </Accordion>
+  <Accordion title="What happens when someone texts STOP?">
+    STOP and similar keywords opt a contact out automatically, and they're excluded
+    from future campaigns. See [Opt-out management](/compliance/opt-out).
+  </Accordion>
+  <Accordion title="Is the welcome text someone gets after opting in written by AI?">
+    No — it's a fixed message you write once. AI replies are a separate
+    [AI Employees](/automation/ai-employees) feature for the inbox.
+  </Accordion>
+</AccordionGroup>
+
+## Automation and AI
+
+<AccordionGroup>
+  <Accordion title="Can an AI Employee book meetings or update my CRM?">
     Yes — enable the booking, customer, and opportunity skills when you hire it. See
     [AI Employees](/automation/ai-employees).
   </Accordion>
-  <Accordion title="Is there a 'contact replied' workflow trigger?">
-    Use a **Wait → until something happens → Contact replies** step inside a
+  <Accordion title="Can a workflow wait until a contact replies?">
+    Yes. Use a **Wait → until something happens → Contact replies** step inside a
     [workflow](/automation/workflow-builder).
   </Accordion>
 </AccordionGroup>
@@ -119,12 +112,32 @@ icon: "circle-question"
 ## Billing
 
 <AccordionGroup>
-  <Accordion title="Is billing a prepaid SMS wallet?">
-    It's a subscription with entitlements and add-ons; **AI credits** are the
+  <Accordion title="Do I pre-pay for texts like a wallet?">
+    Not exactly. It's a subscription with plan limits and add-ons; **AI credits** are the
     wallet-like balance. See [Plans & billing](/billing/wallet-billing).
   </Accordion>
 </AccordionGroup>
 
-<Card title="Still stuck?" icon="life-ring" href="/support/troubleshooting">
-  See the troubleshooting guide.
-</Card>
+## Languages and access
+
+<AccordionGroup>
+  <Accordion title="Which languages does the app support?">
+    English, Arabic (right-to-left), Brazilian Portuguese, Chinese, French, German,
+    Portuguese, and Spanish. Switch from the language button in the header or
+    **Language** in your account menu — the choice is saved per browser and doesn't
+    change the language of messages you send. See
+    [Navigate the app](/getting-started/navigate-the-app#change-the-language).
+  </Accordion>
+</AccordionGroup>
+
+## Still stuck?
+
+<AccordionGroup>
+  <Accordion title="I can't find my answer here — what now?">
+    Check the [Troubleshooting](/support/troubleshooting) guide for common
+    problems and their fixes. To send a bug report or question without leaving the
+    app, click the **?** button (**Report an issue**) in the top header — that page
+    explains how. You can also email
+    [support@autocampaign.ai](mailto:support@autocampaign.ai).
+  </Accordion>
+</AccordionGroup>

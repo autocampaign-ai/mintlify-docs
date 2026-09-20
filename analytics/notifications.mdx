@@ -6,8 +6,8 @@ icon: "bell"
 
 ## Overview
 
-The notification **bell** in the header keeps you informed in real time. It has two
-tabs — **Messages** and **Alerts** — each with its own unread count.
+The notification **bell** in the header keeps you informed as things happen. It
+has two tabs — **Messages** and **Alerts** — each with its own unread count.
 
 {/* MEDIA-TODO screenshot | /images/analytics/notifications-bell-panel.png
 Capture: The notification bell in the header clicked open, showing the Messages and Alerts tabs with unread counts, a few notifications of different types, and the Mark all as read and View all actions.
@@ -24,14 +24,19 @@ Publish: add the file at the path above, then delete this note and the comment m
   **Difficulty:** Beginner
 </Info>
 
-## Messages vs alerts
+## What lands in each tab
 
-- **Messages** — inbound conversations, campaign replies, and conversations assigned
-  to you.
-- **Alerts** — everything else: campaign status changes, CSV import results, segment
-  updates, poll events, team changes, channel/provider issues, knowledge-base
-  ingestion, AI handover requests, meeting bookings, calendar/ad connection issues,
-  and workflow alerts.
+- **Messages** — incoming conversations, [campaign](/getting-started/glossary#campaign)
+  replies, and conversations assigned to you.
+- **Alerts** — everything else: campaign status changes, CSV import results,
+  [segment](/getting-started/glossary#segment) updates, poll events, team changes,
+  [channel](/getting-started/glossary#channel) or
+  [provider](/getting-started/glossary#provider) issues,
+  [knowledge base](/getting-started/glossary#knowledge-base) updates (when
+  uploaded documents finish processing), AI handover requests (an
+  [AI Employee](/getting-started/glossary#ai-employee) asking a person to take
+  over), meeting bookings, calendar or ad connection issues, and
+  [workflow](/getting-started/glossary#workflow) alerts.
 
 You only see notifications for areas your [role](/getting-started/users-roles)
 allows.
@@ -42,19 +47,20 @@ allows.
 - **Mark as read** individually, or **Mark all as read** for the active tab.
 - **View all** opens the full history.
 
-Notifications update live over a real-time connection, and important ones also show
-a toast.
+Notifications appear the moment they happen, without reloading the page.
+Important ones also show a small pop-up in the corner of the screen.
 
 ## FAQ
 
 <AccordionGroup>
   <Accordion title="Why don't I see certain notifications?">
-    Notifications respect permissions — you only receive ones for areas your role can
-    access.
+    Notifications follow your role — you only receive ones for areas your role
+    can access.
   </Accordion>
   <Accordion title="Do I get emails or texts too?">
-    The bell is for in-app notifications. Autocampaign AI separately sends transactional email
-    and SMS for things like invitations and password resets.
+    The bell is for notifications inside the app. Autocampaign AI separately
+    sends automatic emails and texts for things like invitations and password
+    resets.
   </Accordion>
   <Accordion title="Is there a low-balance alert?">
     Billing alerts aren't part of the notification bell today — check

@@ -6,13 +6,14 @@ icon: "ticket"
 
 ## Overview
 
-Tickets track work items and support requests within your team — each with a
-status, priority, assignee, comments, attachments, and an activity log. Open them
-from **Communication → Tickets** in the sidebar (`/tickets`). Each ticket has its
-own page at `/tickets/:ticketId`.
+Tickets track to-dos and support requests within your team. Each ticket has a
+status, a priority, an assignee (the teammate responsible), comments, attachments,
+and an activity log (a history of every change). Open them from
+**Communication → Tickets** in the sidebar (`/tickets`). Each ticket has its own
+page at `/tickets/:ticketId`.
 
 <Info>
-  **Difficulty:** Beginner
+  **Time to complete:** ~5 minutes &nbsp;·&nbsp; **Difficulty:** Beginner
 </Info>
 
 <Note>
@@ -22,9 +23,9 @@ own page at `/tickets/:ticketId`.
 
 ## Before you start
 
-What you can do depends on your role: creating, editing, commenting on, and
-deleting tickets are separate permissions. Buttons you don't have permission for
-are hidden or disabled.
+What you can do depends on your [role](/getting-started/glossary#role). Your admin
+controls who can create, edit, comment on, and delete tickets. If a button is
+missing or greyed out, ask an Owner or Admin for that permission.
 
 ## Create a ticket
 
@@ -54,7 +55,7 @@ are hidden or disabled.
   </Step>
 </Steps>
 
-## Views
+## Switch between list and board views
 
 Switch between **List view** and **Board view** (one column per status); your
 choice is remembered on that browser. On the board, drag a card to another column
@@ -75,7 +76,7 @@ Use **Search tickets…** to match the subject, description, or ticket number. O
 **Filters** to narrow by **Status**, **Priority**, **Assignee**, **Due date range**,
 or **Overdue only**, and **Clear all filters** to reset.
 
-## Statuses and priorities
+## Understand statuses and priorities
 
 <Tabs>
   <Tab title="Status">
@@ -107,9 +108,10 @@ Open a ticket to:
   is shown but can't be changed there.
 - **Edit** the subject and description with **Edit**, and add or remove **Tags**.
 - **Attach** files under **Attachments** with **Upload** — up to 25 MB each.
-  Anyone who can view the ticket can **Download** them. Executable and other
+  Anyone who can view the ticket can **Download** them. Program files and other
   risky file types are blocked.
-- Fill in **Custom fields**, if your workspace has added any to tickets in the
+- Fill in [custom fields](/getting-started/glossary#custom-field), if your
+  [workspace](/getting-started/glossary#workspace) has added any to tickets in the
   [module builder](/automation/module-builder).
 - Review the **Activity** tab — a timeline of status changes, assignments, due
   dates, tags, comments, and attachments.
@@ -145,16 +147,16 @@ Publish: add the file at the path above, then delete this note and the comment m
 ## Troubleshooting
 
 <AccordionGroup>
-  <Accordion title="I can't change a ticket to a certain status">
-    Status changes follow a fixed workflow — for example, a **Closed** ticket can
+  <Accordion title="Why can't I change a ticket to a certain status?">
+    Status changes follow a fixed order — for example, a **Closed** ticket can
     only be **Reopened**, and a **Resolved** ticket can't go straight back to
     **Open**. Only allowed next statuses appear in the dropdown.
   </Accordion>
-  <Accordion title="My file won't upload">
-    Files over 25 MB are rejected ("File is too large"), and executable file types
-    are blocked. Compress the file or share a link in a comment instead.
+  <Accordion title="Why won't my file upload?">
+    Files over 25 MB are rejected ("File is too large"), and program files are
+    blocked. Compress the file or share a link in a comment instead.
   </Accordion>
-  <Accordion title="I can't edit or delete a comment">
+  <Accordion title="Why can't I edit or delete a comment?">
     Only the person who wrote a comment can edit or delete it.
   </Accordion>
 </AccordionGroup>

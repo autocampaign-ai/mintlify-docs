@@ -1,11 +1,17 @@
 ---
 title: "Troubleshooting"
-description: "Fix common errors across providers, compliance, email, ads, and webhooks — and report a bug from the app."
+description: "Fix common problems with texting, email, ads, imports, and developer connections — and report a bug from the app."
 icon: "wrench"
 ---
 
-Common issues and fixes, grouped by area. If you're still stuck, contact
+**How to use this page:** find the section for the part of the app that's giving
+you trouble, then open the entry whose title matches what you're seeing.
+If you're still stuck, use **Report an issue** below or email
 [support@autocampaign.ai](mailto:support@autocampaign.ai).
+
+<Info>
+  **Time to complete:** ~5 minutes &nbsp;·&nbsp; **Difficulty:** Beginner
+</Info>
 
 ## Report a bug from the app
 
@@ -47,7 +53,7 @@ You can send a bug report, idea, or support request without leaving Autocampaign
 
 **What's attached automatically:** the address of the page you filed it from, plus
 your name, email, and organization so support knows who to reply to. Nothing else
-is captured — no automatic screenshot, console log, or contact data.
+is captured — no automatic screenshot, browser log, or contact data.
 
 **What happens next:** the report goes to the Autocampaign AI support team and shows
 under **My Reports** with a status — **New**, **In Progress**, **Planned**,
@@ -59,120 +65,124 @@ there with **Send reply**, and attach more files if asked.
   You only see reports you filed yourself, not your teammates' reports.
 </Note>
 
-## SMS provider connection
+## Connecting Twilio or Telnyx
 
 <AccordionGroup>
-  <Accordion title="Twilio: 'Invalid credentials'">
+  <Accordion title="Twilio says 'Invalid credentials' when I connect">
     Re-copy your **Account SID** (`AC…`) and **Auth Token** (32 chars) from the Twilio
-    Console → Account Info. Watch for trailing spaces and rotated tokens. See
-    [Connect Twilio](/providers/twilio).
+    Console → Account Info. Watch for trailing spaces and tokens that have since
+    been replaced. See [Connect Twilio](/providers/twilio).
   </Accordion>
-  <Accordion title="Telnyx: 'API key is missing required permissions'">
-    Your API key needs the **Messaging** scope. Recreate the key with Messaging
-    enabled. See [Connect Telnyx](/providers/telnyx).
+  <Accordion title="Telnyx says 'API key is missing required permissions'">
+    Your Telnyx [API key](/getting-started/glossary#api-key) (a password that lets
+    Autocampaign AI use your Telnyx account) needs the **Messaging** permission.
+    Recreate the key with Messaging enabled. See [Connect Telnyx](/providers/telnyx).
   </Accordion>
-  <Accordion title="Replies aren't arriving">
-    Finish the setup wizard so webhooks are registered, and confirm the number is
-    attached to a managed messaging service/profile.
+  <Accordion title="Customers reply but nothing shows in my Inbox">
+    Finish the setup wizard so [webhooks](/getting-started/glossary#webhook) (the
+    connection that tells us about incoming texts) are registered. Then confirm
+    the number is attached to a managed messaging service/profile.
   </Accordion>
 </AccordionGroup>
 
-## SMS delivery (common Twilio error codes)
+## Texts not delivering (common Twilio error codes)
 
 <AccordionGroup>
-  <Accordion title="30007 — message filtered / blocked by carrier">
+  <Accordion title="My texts fail with error 30007 (filtered or blocked by the carrier)">
     Usually a content or compliance issue. Register [10DLC](/compliance/a2p-10dlc),
     avoid spam-trigger wording and shortened public URLs, and keep opt-in/opt-out
     language clear.
   </Accordion>
-  <Accordion title="30034 — unregistered / pending 10DLC">
-    The sending number isn't associated with an approved A2P campaign. Complete
+  <Accordion title="My texts fail with error 30034 (10DLC not registered or still pending)">
+    The sending number isn't linked to an approved A2P campaign. Complete
     [10DLC registration](/compliance/a2p-10dlc) and attach the number to the
     registered messaging service.
   </Accordion>
-  <Accordion title="21608 — number not enabled / trial restriction">
+  <Accordion title="My texts fail with error 21608 (number not enabled or trial restriction)">
     The from-number can't send to that destination (e.g. a trial number to an
     unverified recipient). Verify the number and destination, or upgrade the provider
     account.
   </Accordion>
-  <Accordion title="21610 — recipient has opted out (STOP)">
+  <Accordion title="My texts fail with error 21610 (the person opted out with STOP)">
     Expected when messaging an opted-out contact — the carrier blocks it. Autocampaign AI
     already excludes opted-out contacts; see [Opt-out](/compliance/opt-out).
   </Accordion>
 </AccordionGroup>
 
-## A2P 10DLC
+## Registering to text (A2P 10DLC)
 
 <AccordionGroup>
-  <Accordion title="Brand rejected / Unverified">
+  <Accordion title="My 10DLC brand was rejected or shows Unverified">
     Almost always an identity mismatch. Ensure your **Legal Business Name**, **EIN**,
     and **address** exactly match your IRS records, then resubmit.
   </Accordion>
-  <Accordion title="'Brand is not approved yet' when creating a campaign">
+  <Accordion title="I see 'Brand is not approved yet' when I create a campaign">
     Wait until the brand badge is green (Approved/Verified) before registering a
     campaign.
   </Accordion>
-  <Accordion title="Campaign rejected (TCR/MNO Rejected)">
+  <Accordion title="My 10DLC campaign was rejected (TCR/MNO Rejected)">
     Tighten your opt-in flow description and make sample messages match your use case.
     See [A2P 10DLC](/compliance/a2p-10dlc#troubleshooting).
   </Accordion>
 </AccordionGroup>
 
-## Email
+## Sending email
 
 <AccordionGroup>
-  <Accordion title="Domain stuck on 'Pending'">
-    Check each CNAME host/value matches exactly (your DNS provider may auto-append the
-    domain). Propagation can take up to 48 hours. See [Sending domains](/providers/email-domains).
+  <Accordion title="My email domain has been 'Pending' for hours">
+    Check each CNAME record's host and value matches exactly (your
+    [DNS](/getting-started/glossary#dns-record) provider may add the domain on
+    the end automatically). DNS changes can take up to 48 hours to spread. See
+    [Sending domains](/providers/email-domains).
   </Accordion>
-  <Accordion title="'Domain not verified' when sending">
+  <Accordion title="I see 'Domain not verified' when I try to send email">
     You can only send from a **Verified** domain and a sender on it. Complete DNS
     verification first.
   </Accordion>
-  <Accordion title="'Email must end with @yourdomain'">
+  <Accordion title="I see 'Email must end with @yourdomain' when adding a sender">
     A sender's address must belong to its verified domain. See
     [Senders](/providers/email-senders).
   </Accordion>
 </AccordionGroup>
 
-## Advertising
+## Connecting ad accounts
 
 <AccordionGroup>
-  <Accordion title="'Permission wasn't granted' / OAuth failed">
+  <Accordion title="I see 'Permission wasn't granted' when connecting my ad account">
     You declined a permission during Google/Facebook sign-in. Reconnect and allow
     access. See [Google Ads](/providers/google-ads) / [Meta Ads](/providers/meta-ads).
   </Accordion>
-  <Accordion title="'No ad accounts found'">
+  <Accordion title="I see 'No ad accounts found' after signing in">
     You signed in with an account that has no ad accounts. Reconnect with the account
     that manages your ads.
   </Accordion>
-  <Accordion title="Account shows 'Needs attention'">
+  <Accordion title="My ad account shows 'Needs attention'">
     Access expired or was revoked. Click **Reconnect** to restore lead flow.
   </Accordion>
 </AccordionGroup>
 
-## Webhooks
+## Webhooks (for your developer)
 
 <AccordionGroup>
-  <Accordion title="Signature verification fails">
+  <Accordion title="My developer says the webhook signature doesn't verify">
     Sign `<timestamp>.<raw-body>` (raw bytes, pre-parse) with HMAC-SHA256 using your
     signing secret, and compare to `v1` in `X-Autocampaign-Signature`. See
     [Webhooks](/developers/webhooks).
   </Accordion>
-  <Accordion title="My endpoint was auto-disabled">
+  <Accordion title="My webhook stopped receiving events (auto-disabled)">
     Repeated failures disable an endpoint. Fix it and re-activate to reset the failure
     streak.
   </Accordion>
 </AccordionGroup>
 
-## Contacts & import
+## Importing contacts
 
 <AccordionGroup>
-  <Accordion title="CSV rows failed with 'Invalid phone number format'">
+  <Accordion title="Some rows of my import failed with 'Invalid phone number format'">
     Phone values allow digits, spaces, hyphens, parentheses, and a leading `+`, up to
     20 characters. Clean the column and re-import. See [Import](/contacts/import-csv).
   </Accordion>
-  <Accordion title="'File does not appear to contain valid CSV text'">
+  <Accordion title="My import says 'File does not appear to contain valid CSV text'">
     Re-export as **CSV UTF-8** (not `.xlsx`) and keep it under 10 MB / 50,000 rows.
   </Accordion>
 </AccordionGroup>

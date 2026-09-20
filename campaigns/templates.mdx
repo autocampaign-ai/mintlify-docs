@@ -6,21 +6,26 @@ icon: "file-lines"
 
 ## Overview
 
-Templates are reusable message bodies you write once and use across campaigns,
-sequences, the Inbox, and join flows. Find them under **Marketing → Campaigns →
-Templates** in the sidebar (`/templates`). The page has four tabs, each with its own
-URL:
+[Templates](/getting-started/glossary#template) are messages you write once and
+reuse in campaigns, sequences, the Inbox, and join links. Find them under
+**Marketing → Campaigns → Templates** in the sidebar (`/templates`). The page has
+four tabs, each with its own URL.
+
+<Tip>
+  **In short:** 1) Write a text template with merge tags. 2) Design an email in
+  the drag-and-drop builder. 3) Reuse them in campaigns, sequences, and the Inbox.
+</Tip>
 
 | Tab | Route | What it holds |
 | --- | --- | --- |
-| **SMS** | `/templates/sms` | Text templates with merge tags and a segment counter |
+| **SMS** | `/templates/sms` | Text templates with merge tags (placeholders that fill in contact details) and a segment counter |
 | **Email** | `/templates/email` | Designed emails built in the drag-and-drop builder |
 | **WhatsApp** | `/templates/whatsapp` | Templates you submit for WhatsApp approval |
 | **Library** | `/templates/library` | Curated starters — see [Template Library](/campaigns/template-library) |
 
 <Info>
-  **Difficulty:** Beginner (SMS) to Intermediate (email builder) &nbsp;·&nbsp; Each tab
-  is shown only to members with permission to read that template type. Opening
+  **Time to complete:** ~15 minutes &nbsp;·&nbsp; **Difficulty:** Beginner (SMS) to Intermediate (email builder) &nbsp;·&nbsp; Each tab
+  shows only if your role lets you view that template type. Opening
   `/templates` lands you on the **Library** tab when you can see it, otherwise SMS.
 </Info>
 
@@ -31,12 +36,12 @@ URL:
 
 ## Before you start
 
-- To send test emails from the builder you need a verified sender — see
-  [Email senders](/providers/email-senders).
+- To send test emails from the builder you need a verified sender (an email
+  address you've proven you own) — see [Email senders](/providers/email-senders).
 - You can draft WhatsApp templates any time, but submitting them for approval needs
   a connected WhatsApp channel — see [WhatsApp](/channels/whatsapp).
-- Built-in **System** templates are read-only. Editing one saves an editable copy to
-  your workspace and leaves the original untouched.
+- Built-in **System** templates can't be changed directly. Editing one saves an
+  editable copy to your workspace and leaves the original untouched.
 
 ## Create an SMS template
 
@@ -55,8 +60,8 @@ URL:
   </Step>
   <Step title="Personalize with merge tags" icon="code">
     Click **Insert variable** to add a tag such as `{{first_name}}`. The footer shows
-    **N variable(s) · N characters · N segment(s)**, and **Preview** renders the body
-    with sample values so you see what a recipient sees.
+    **N variable(s) · N characters · N segment(s)**, and **Preview** shows the
+    message with sample values, so you see what a recipient sees.
 
     {/* MEDIA-TODO screenshot | /images/campaigns/templates-sms-template-editor.png
     Capture: The SMS template form with Template name, Category, and a Message body containing a first name merge tag, the Insert variable control, the footer counter showing variables, characters, and segments, and the Preview rendering sample values.
@@ -75,9 +80,9 @@ URL:
   </Step>
 </Steps>
 
-### Merge tags
+### Available merge tags
 
-Templates support 12 contact tags and 4 organization tags:
+Templates support 12 contact merge tags and 4 organization merge tags:
 
 - **Contact:** `first_name`, `last_name`, `full_name`, `phone`, `email`,
   `street_address`, `address_line_2`, `city`, `state`, `postal_code`, `country`,
@@ -90,39 +95,41 @@ Templates support 12 contact tags and 4 organization tags:
   contact has no first name.
 </Tip>
 
-### Character and segment counter
+### How the character and segment counter works
 
-The counter is encoding-aware. Plain text sends as GSM-7 (160 characters per single
-segment, 153 each when concatenated). One emoji or other non-GSM character switches
-the whole message to UCS-2 (70 per single segment, 67 when concatenated), so a
-"short" message with an emoji can cost two segments.
+The counter knows how your text will be encoded (the technical format carriers
+use). Plain text sends as GSM-7, which fits 160 characters in one segment, or 153
+per segment when a longer message is split. One emoji or other special character
+switches the whole message to UCS-2, which fits only 70 per segment (67 when
+split). So a "short" message with an emoji can cost two segments.
 
 ### Manage SMS templates
 
 From a template card's menu: **Edit**, **Duplicate**, **Preview**, **Use in
 campaign**, **Use in Inbox**, **Archive** or **Restore**, and **Delete**. Templates
 are **Active** or **Archived**. Deleting a template doesn't change campaigns that
-already reference it. Click the star to add a template to favorites.
+already use it. Click the star to add a template to favorites.
 
 ## Create an email template
 
 <Steps>
   <Step title="Start a template" icon="envelope">
-    Go to **Templates → Email** and click **New template**. Enter a **Template name**,
-    pick a **Category** (Marketing, Newsletter, Promotional, Announcement,
-    Transactional, Welcome, Event, General), and choose **Start from**: **Blank**,
+    Go to **Templates → Email** and click **New template**. Enter a **Template name**
+    and pick a **Category** (Marketing, Newsletter, Promotional, Announcement,
+    Transactional, Welcome, Event, General). Then choose **Start from**: **Blank**,
     **Template** (a starter gallery of system and active templates), **Copy
     existing**, or **From Library** (see [Template Library](/campaigns/template-library)).
   </Step>
   <Step title="Design in the builder" icon="pen-ruler">
     The builder opens at `/email-templates/:id/builder`. Add a layout first
-    (**1 column**, **2 columns**, or **3 columns**), then drag blocks from the
+    (**1 column**, **2 columns**, or **3 columns**). Then drag blocks from the
     **Blocks** panel: **Text**, **Heading**, **Image**, **Button**, **Divider**,
     **Spacer**, **Social**, **Header**, **Footer**, **Menu**, **Columns**, and
-    **Custom HTML**. Presets (**Hero**, **Image + Text**, **3 Features**) drop in a
-    ready-made section. Double-click text to edit it inline and use **Merge tags** to
-    personalize. The **Theme** panel sets colors, font family, container width, and
-    button style; the **Layers** tab shows the structure.
+    **Custom HTML** (for web code your designer supplies). Presets (**Hero**,
+    **Image + Text**, **3 Features**) drop in a ready-made section. Double-click
+    text to edit it in place and use **Merge tags** to personalize. The **Theme**
+    panel sets colors, font family, container width, and button style; the
+    **Layers** tab shows the structure.
 
     {/* MEDIA-TODO screenshot | /images/campaigns/templates-email-builder.png
     Capture: The email builder with a partly built design on the canvas (a Header, a Hero preset, and a Button), the Blocks panel open on the side, and the top bar showing the save state, Preview, Send test, and Done.
@@ -136,22 +143,22 @@ already reference it. Click the star to add a template to favorites.
     */}
   </Step>
   <Step title="Preview and test" icon="eye">
-    Click **Preview** to check **Desktop**, **Tablet**, and **Mobile** renderings, with
+    Click **Preview** to check **Desktop**, **Tablet**, and **Mobile** views, with
     a **Dark mode** toggle. Click **Send test**, choose **Send from** (a verified
     sender) and **Send to**, then **Send test** to email a copy to yourself or a
     teammate.
   </Step>
   <Step title="Publish" icon="paper-plane">
-    Changes autosave about 1.5 seconds after you stop editing (the top bar shows
-    **Saved**, **Unsaved changes**, or **Saving…**). Click **Done** to return. New
-    templates are **Draft**; choose **Publish** from the template's menu to make it
-    **Active** — only Active templates appear in campaign pickers.
+    Changes save automatically about 1.5 seconds after you stop editing (the top
+    bar shows **Saved**, **Unsaved changes**, or **Saving…**). Click **Done** to
+    return. New templates are **Draft**; choose **Publish** from the template's
+    menu to make it **Active** — only Active templates appear in campaign pickers.
   </Step>
 </Steps>
 
-**Export HTML** copies or downloads the compiled, email-client-safe HTML. Use
-**Undo** and **Redo** to step through edits. A design can hold up to 60 rows and 200
-blocks (30 per column).
+**Export HTML** copies or downloads the finished email code (HTML), built to
+display correctly in email apps. Use **Undo** and **Redo** to step through edits.
+A design can hold up to 60 rows and 200 blocks (30 per column).
 
 <Note>
   The email builder needs a wide window. On small screens you can still manage
@@ -165,7 +172,7 @@ The **WhatsApp** tab lists your WhatsApp templates by status (**All**, **Approve
 **Purpose** → **Editor** → **Review**, then **Save draft** or **Submit for review**.
 Use **Sync status** to pull the latest review decisions. **Personalize** inserts the
 12 contact merge tags in the message body only — the header, footer, and buttons must
-be static text. Only **Draft** and **Rejected** templates can be edited. See
+be fixed text. Only **Draft** and **Rejected** templates can be edited. See
 [WhatsApp](/channels/whatsapp) for setup, approval, and sending rules.
 
 ## Use templates elsewhere
@@ -204,18 +211,19 @@ places that use them — there's no separate media page.
   </Step>
   <Step title="Attach files to a text message" icon="paperclip">
     In SMS composers (campaigns, sequences, workflows, polls, Inbox) click **Attach
-    file**. Attachments turn the message into MMS. Each file must be under 600 KB —
-    the safe cross-carrier limit — and a message carries at most 10 attachments.
-    Images (JPEG, PNG, GIF), short MP4 or 3GP clips, MP3 or AMR audio, PDFs, and
-    calendar files are accepted. **Attach contact card** adds your organization's
-    vCard from **Settings → Organization**.
+    file**. Attachments turn the message into MMS (a text with a picture or file
+    attached). Each file must be under 600 KB — the size every phone carrier
+    accepts — and a message carries at most 10 attachments. Images (JPEG, PNG,
+    GIF), short MP4 or 3GP clips, MP3 or AMR audio, PDFs, and calendar files are
+    accepted. **Attach contact card** adds your organization's vCard (a digital
+    business card) from **Settings → Organization**.
   </Step>
 </Steps>
 
-Every upload gets a permanent, unguessable public link, which is what mail clients
-and carriers fetch when your message is delivered — even days after you schedule it.
-Lead forms and the chat widget offer **Upload** or **Image URL** for logos and
-backgrounds.
+Every upload gets a permanent web link that can't be guessed. Email apps and phone
+carriers load the file from that link when your message is delivered — even days
+after you schedule it. Lead forms and the chat widget offer **Upload** or **Image
+URL** for logos and backgrounds.
 
 <Note>
   Uploads can't be deleted from the app today, and there's no alt-text or folder
@@ -227,7 +235,7 @@ backgrounds.
 <AccordionGroup>
   <Accordion title="Can I edit a System template?">
     Not directly. Open it and click **Save as copy** (SMS) or make your first edit in
-    the builder (email) — a copy named "… (copy)" is added to your library and the
+    the builder (email). A copy named "… (copy)" is added to your library and the
     original stays unchanged.
   </Accordion>
   <Accordion title="Why doesn't my email template show up in the campaign composer?">
@@ -246,16 +254,17 @@ backgrounds.
 ## Troubleshooting
 
 <AccordionGroup>
-  <Accordion title="Send test is disabled or shows 'No verified email senders'">
+  <Accordion title="Why is Send test greyed out or showing 'No verified email senders'?">
     Add and verify a sender first. See [Email senders](/providers/email-senders).
   </Accordion>
-  <Accordion title="The builder says 'Template changed elsewhere'">
+  <Accordion title="Why does the builder say 'Template changed elsewhere'?">
     Someone else saved this template while you had it open. Click **Reload** to
     continue from the latest version.
   </Accordion>
-  <Accordion title="My upload was rejected even though the file looked fine">
-    The server checks the actual file bytes, not the extension. Re-export the file in
-    a supported format and confirm it's under the size limit shown in the dialog.
+  <Accordion title="Why was my upload rejected when the file looked fine?">
+    We check the file's actual contents, not just its name ending (such as .png).
+    Re-export the file in a supported format and confirm it's under the size limit
+    shown in the dialog.
   </Accordion>
 </AccordionGroup>
 

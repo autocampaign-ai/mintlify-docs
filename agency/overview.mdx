@@ -6,22 +6,29 @@ icon: "building"
 
 ## Overview
 
-The agency layer sits above your client workspaces. Each client keeps its own
-workspace with its own contacts, campaigns and members; the console adds a
-management view on top, where you add clients, set the prices they pay, apply
-reusable [setups](/agency/setups-and-branding) and watch health and usage. Once
-you belong to an agency, three entries appear in the sidebar: **My Agency**
-(`/agency`), **Setups** (`/agency/setups`) and **Branding** (`/agency/branding`).
+The agency layer sits above your client
+[workspaces](/getting-started/glossary#workspace) (each client's own account
+inside Autocampaign AI). Each client keeps its own workspace with its own contacts,
+campaigns and members. The console adds a management view on top, where you add
+clients, set the prices they pay, apply reusable
+[setups](/agency/setups-and-branding) and watch health and usage. Once you belong
+to an agency, three entries appear in the sidebar: **My Agency** (`/agency`),
+**Setups** (`/agency/setups`) and **Branding** (`/agency/branding`).
+
+<Tip>
+  **In short:** 1) Create your agency and name it. 2) Add each client with the
+  five-step wizard. 3) Watch health, revenue and usage from My Agency.
+</Tip>
 
 <Info>
-  **Difficulty:** Intermediate &nbsp;·&nbsp; The agency entries appear only for agency members; everyone else sees a normal workspace sidebar.
+  **Time to complete:** ~15 minutes &nbsp;·&nbsp; **Difficulty:** Intermediate &nbsp;·&nbsp; The agency entries appear only for agency members; everyone else sees a normal workspace sidebar.
 </Info>
 
 ## Before you start
 
 - Any signed-in user can create an agency. Each user belongs to **one** agency.
-- Adding clients and changing prices requires the agency **Owner** or **Admin**
-  role (see [Agency roles](#agency-roles-vs-workspace-roles)).
+- To add clients and change prices, you need to be the agency **Owner** or an
+  **Admin** (see [Agency roles](#how-agency-roles-differ-from-workspace-roles)).
 
 ## Create your agency
 
@@ -36,14 +43,14 @@ you belong to an agency, three entries appear in the sidebar: **My Agency**
   </Step>
 </Steps>
 
-## The My Agency page
+## What My Agency shows
 
-**My Agency** shows four stats — **Client workspaces** (healthy / need
-attention / at risk), **Monthly revenue** (what clients pay you), **Platform
-cost** (what you pay Autocampaign AI) and **Estimated earnings** — plus
-**Agency usage this period**, **Clients needing attention** (past-due payments,
-high usage or a missing plan), up to six client cards under **Your clients**
-with **View all clients** (`/agency/clients`), and **Recent activity**, a
+**My Agency** shows four stats. **Client workspaces** (healthy / need attention /
+at risk), **Monthly revenue** (what clients pay you), **Platform cost** (what you
+pay Autocampaign AI) and **Estimated earnings**. Below them you see **Agency usage
+this period** and **Clients needing attention** (past-due payments, high usage or
+a missing plan). Then come up to six client cards under **Your clients**, with
+**View all clients** (`/agency/clients`). Last is **Recent activity**, a
 plain-language log of price changes, setup installs and branding updates.
 
 {/* MEDIA-TODO screenshot | /images/agency/overview-my-agency-page.png
@@ -66,7 +73,7 @@ Publish: add the file at the path above, then delete this note and the comment m
 ## Add a client workspace
 
 Click **Add Client** on **My Agency**, on **Clients**, or in the workspace
-switcher. The wizard (`/agency/clients/new`) has five steps:
+switcher. The wizard (a guided form at `/agency/clients/new`) has five steps:
 
 {/* MEDIA-TODO video | /videos/agency/overview-add-client-walkthrough.mp4
 Capture: Add a client workspace with the five-step Add Client wizard, ending on the success screen. Target length: 2–3 minutes.
@@ -90,7 +97,8 @@ Publish: add the file at the path above (or swap the video tag for a YouTube or 
     Ready-made setups matching the industry you typed are marked **Recommended**.
   </Step>
   <Step title="Choose their plan" icon="list-check">
-    Select a plan. **Your cost** is the Autocampaign AI price for it.
+    Select a [plan](/getting-started/glossary#plan). **Your cost** is the
+    Autocampaign AI price for it.
   </Step>
   <Step title="Set your price" icon="dollar-sign">
     Choose **Use the AutoCampaign price**, **Add a percentage on top** or
@@ -115,9 +123,9 @@ Publish: add the file at the path above (or swap the video tag for a YouTube or 
   </Step>
 </Steps>
 
-You get a new workspace with you as its **Owner**, an **Admin** membership for
-every other agency Owner and Admin, an **Admin** invitation to your client if
-you entered an email, and the setup contents as drafts. The success screen
+You get a new workspace with you as its **Owner**. Every other agency Owner and
+Admin gets an **Admin** membership, your client gets an **Admin** invitation if
+you entered an email, and the setup contents arrive as drafts. The success screen
 offers **Open workspace** or **Add another client**.
 
 <Note>
@@ -128,12 +136,12 @@ offers **Open workspace** or **Add another client**.
 
 ## Manage clients
 
-Each card on **Clients** shows the plan, a health badge (**Healthy**, **Needs
-attention**, **At risk** or **No billing data**), **Your client pays**, **You
-make**, usage bars for **Texts**, **Email** and **AI**, and the member count.
-**Open workspace** switches you into the client's workspace (the one you are in
-reads **Current workspace**). **More actions** offers **View pricing**, **Open
-workspace**, **Getting started checklist** and **Save as Setup**.
+Each card on **Clients** shows the plan and a health badge (**Healthy**, **Needs
+attention**, **At risk** or **No billing data**). It also shows **Your client
+pays**, **You make**, usage bars for **Texts**, **Email** and **AI**, and the
+member count. **Open workspace** switches you into the client's workspace (the
+one you are in reads **Current workspace**). **More actions** offers **View
+pricing**, **Open workspace**, **Getting started checklist** and **Save as Setup**.
 
 {/* MEDIA-TODO screenshot | /images/agency/overview-client-card-more-actions.png
 Capture: The Clients page with several client cards showing plan, health badge, Your client pays, You make, usage bars and member count, with one card's More actions menu open.
@@ -150,7 +158,7 @@ The checklist tracks the client's first steps. Six items — from **Plan chosen*
 to **Team member invited** — complete automatically; **Branding reviewed
 together** is one you tick off yourself.
 
-## Agency roles vs workspace roles
+## How agency roles differ from workspace roles
 
 | Agency role | What it allows |
 | --- | --- |
@@ -158,7 +166,8 @@ together** is one you tick off yourself.
 | **Admin** | Add clients, set prices, manage setups and branding, view activity. |
 | **Staff** | See only the client workspaces they are a member of; view setups. |
 
-Inside a client workspace you act with your **workspace** role, so the usual
+Inside a client workspace you act with your **workspace**
+[role](/getting-started/glossary#role), so the usual
 [roles and permissions](/getting-started/users-roles) apply. Your client's
 members never see agency prices or margins.
 

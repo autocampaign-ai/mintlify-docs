@@ -5,15 +5,23 @@ icon: "plug"
 ---
 
 <Info>
-  **Time to complete:** ~10 minutes to connect &nbsp;·&nbsp; **Difficulty:** Beginner
+  **Time to complete:** ~15–30 minutes to connect and add numbers, plus 1–2 days for
+  10DLC carrier approval &nbsp;·&nbsp; **Difficulty:** Beginner
 </Info>
 
 ## Overview
 
-Telnyx is one of two SMS providers Autocampaign AI supports (the other is
-[Twilio](/providers/twilio)). Connecting Telnyx lets Autocampaign AI send text messages
-through your Telnyx numbers and messaging profiles, receive replies in your
-[Inbox](/inbox/overview), and handle [A2P 10DLC](/compliance/a2p-10dlc) registration.
+Telnyx is one of two SMS [providers](/getting-started/glossary#provider) Autocampaign AI
+supports (the other is [Twilio](/providers/twilio)). Connecting Telnyx lets
+Autocampaign AI send text messages through your Telnyx numbers and messaging
+profiles, and receive replies in your [Inbox](/inbox/overview). It also handles
+[A2P 10DLC](/compliance/a2p-10dlc) registration (the US carrier registration
+required to send business texts from a local number).
+
+<Tip>
+  **In short:** 1) Paste a Telnyx API key with Messaging scope. 2) Register your
+  10DLC brand and pick a messaging profile. 3) Add numbers and finish setup.
+</Tip>
 
 <Note>
   In Telnyx, a **messaging profile** plays the same role that a *messaging service*
@@ -32,14 +40,17 @@ through your Telnyx numbers and messaging profiles, receive replies in your
 You need:
 
 - A [Telnyx account](https://telnyx.com) with a phone number, or funds to buy one.
-- A Telnyx **API Key** with **Messaging scope enabled** (Telnyx Portal → **API Keys**).
+- A Telnyx [**API Key**](/getting-started/glossary#api-key) — a password that lets
+  Autocampaign AI use your Telnyx account (Telnyx Portal → **API Keys**). It must
+  have **Messaging scope enabled**, meaning the key is allowed to send messages.
 - Optionally, a **Messaging Profile ID** (Telnyx Portal → **Messaging → Messaging
   Profiles**) if you want to link an existing profile.
-- The **Manage channels** permission in Autocampaign AI (Owner or Admin).
+- To be an Owner or Admin in Autocampaign AI, or have an admin give you permission to
+  manage channels.
 
 <Warning>
   The API key must have the **Messaging** scope. A key without it connects to
-  Telnyx but can't send messages, and Autocampaign AI will reject it during validation.
+  Telnyx but can't send messages, and Autocampaign AI will reject it when checking it.
 </Warning>
 
 ## Connect Telnyx
@@ -60,7 +71,7 @@ You need:
     </Frame>
     */}
   </Step>
-  <Step title="Enter your credentials">
+  <Step title="Enter your Telnyx details">
     On the **Connect** tab, fill in:
 
     | Field | Required | Where to find it | Format |
@@ -68,12 +79,13 @@ You need:
     | **API Key** | Yes | Telnyx Portal → API Keys (Messaging scope) | Starts with `KEY` |
     | **Messaging Profile ID** | No | Telnyx Portal → Messaging → Messaging Profiles | A UUID |
 
-    Autocampaign AI validates format live — the API Key must start with `KEY`, and the
-    Messaging Profile ID (if provided) must be a valid UUID.
+    Autocampaign AI checks the format as you type — the API Key must start with `KEY`.
+    The Messaging Profile ID (if provided) must be a UUID (a long ID made of
+    letters, numbers, and dashes).
   </Step>
   <Step title="Connect & save">
-    Click **Connect & Save Credentials**. Autocampaign AI calls Telnyx to list your
-    messaging profiles as a live check before saving. On success you'll see
+    Click **Connect & Save Credentials**. Autocampaign AI checks the key with Telnyx
+    by listing your messaging profiles before saving. On success you'll see
     **"Channel connected successfully"** and the setup wizard opens.
 
     {/* MEDIA-TODO screenshot | /images/providers/telnyx-connect.png
@@ -98,7 +110,8 @@ After connecting, the **Set Up Your Channel** wizard runs in the recommended ord
     Register the business that will send messages — see [A2P 10DLC](/compliance/a2p-10dlc).
   </Step>
   <Step title="Messaging Profile" icon="gear">
-    Select one or more messaging profiles, or create a new one.
+    Select one or more messaging profiles (the groups that hold your numbers), or
+    create a new one.
 
     {/* MEDIA-TODO screenshot | /images/providers/telnyx-setup-wizard.png
     Capture: The Set Up Your Channel wizard on the Messaging Profile step, with the four steps (10DLC Brand, Messaging Profile, 10DLC Campaign, Numbers) visible in the progress header and one profile selected.
@@ -124,18 +137,22 @@ Click **Finish Setup** to save.
 
 ### Buy a phone number
 
-From the **Numbers** step, click **Buy New Number**, choose a **Country**,
-optionally filter by **Area Code** or a **Contains** pattern, select
-**Capabilities** (SMS / MMS / Voice), then **Search Numbers** → **Buy** and confirm.
+From the **Numbers** step, click **Buy New Number** and choose a **Country**.
+Optionally filter by **Area Code** or a **Contains** pattern, and select
+**Capabilities** (SMS for texts, MMS for pictures, Voice for calls). Then
+**Search Numbers** → **Buy** and confirm.
 
-## Webhooks
+## How replies reach Autocampaign AI (webhooks)
 
-Webhooks are configured automatically. Autocampaign AI sets your messaging profile's
-webhook URL to `https://<your-app-domain>/webhooks/sms/telnyx` (with a failover
-URL for delivery events). Inbound webhooks are verified with Telnyx's Ed25519
-signature (`telnyx-signature-ed25519` + `telnyx-timestamp`).
+[Webhooks](/getting-started/glossary#webhook) are the addresses Telnyx uses to
+send replies and delivery updates to Autocampaign AI. They are set up automatically.
+Autocampaign AI sets your messaging profile's webhook URL to
+`https://<your-app-domain>/webhooks/sms/telnyx` (with a backup URL for delivery
+events). Incoming webhooks are verified with Telnyx's Ed25519 signature
+(`telnyx-signature-ed25519` + `telnyx-timestamp`), so only genuine requests from
+Telnyx are accepted.
 
-## Channel status
+## Check the channel status
 
 The header shows **Active**, **Disconnected**, or **Error**. After connecting, the
 Connect tab shows only a masked API Key. Use **Disconnect** to remove the channel
@@ -145,12 +162,12 @@ Connect tab shows only a masked API Key. Use **Disconnect** to remove the channe
 
 <AccordionGroup>
   <Accordion title="Do I need a Messaging Profile ID to connect?">
-    No — it's optional. If you leave it blank, Autocampaign AI discovers your messaging
-    profiles from the API key and lets you pick one during setup.
+    No — it's optional. If you leave it blank, Autocampaign AI finds your messaging
+    profiles using the API key and lets you pick one during setup.
   </Accordion>
   <Accordion title="What scope does my API key need?">
-    The **Messaging** scope. Enable it when creating the key in the Telnyx Portal.
-    A key without Messaging scope is rejected during validation.
+    The **Messaging** scope. Turn it on when creating the key in the Telnyx Portal.
+    A key without Messaging scope is rejected when checked.
   </Accordion>
   <Accordion title="What's the difference between a profile and a service?">
     They're the same concept across providers. Telnyx calls it a **messaging
@@ -178,9 +195,9 @@ Connect tab shows only a masked API Key. Use **Disconnect** to remove the channe
     The API Key field must start with `KEY`. You may have pasted a different token
     — copy the API key value, not the key ID or a public key.
   </Accordion>
-  <Accordion title="Numbers don't receive replies">
-    Finish setup so Autocampaign AI can write the webhook URL to your messaging profile, and
-    confirm the number is attached to that profile.
+  <Accordion title="Why don't my numbers receive replies?">
+    Finish setup so Autocampaign AI can save its webhook address to your messaging
+    profile, and confirm the number is attached to that profile.
   </Accordion>
 </AccordionGroup>
 
